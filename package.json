@@ -1,0 +1,22 @@
+{
+  "name": "settle-mcp",
+  "version": "0.1.0",
+  "description": "SETTLE MCP: a Model Context Protocol server that explains SETTLE and KANERVA, sets them up on your machine, and runs them.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "settle-mcp": "src/bin.js" },
+  "main": "src/server.js",
+  "files": ["src", "content", "docs", "tools", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build-docs": "node tools/build_mcp_docs.mjs",
+    "check-docs": "node tools/build_mcp_docs.mjs --check",
+    "showcase": "node tools/record-showcase.mjs",
+    "start": "node src/bin.js",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.31.0",
+    "zod": "^3.25.76"
+  }
+}
