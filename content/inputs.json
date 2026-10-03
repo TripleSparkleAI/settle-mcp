@@ -1,5 +1,5 @@
 {
- "hash": "537ae6875803b19f4a52597d937a1ebf63d6bb777a272b43c40ff1d83669f7c3",
+ "hash": "d00b3032a2c4ad43de2a2c66e7144370255a6c7945af3a8c453e4d6c536baa22",
  "inputs": [
   {
    "path": "sites/settle-site/src/data/mcpDocs.js",
@@ -7,11 +7,11 @@
   },
   {
    "path": "sites/settle-site/i18n/en.json",
-   "sha256": "692a174ef3deead7838ab0bbe6717e4224a0a7b03e440289827a3c870fec4637"
+   "sha256": "4f4b860016b17bf831d029ebec70b3b1f2ef03f2973a6899d31b72bb13f60c7b"
   },
   {
    "path": "sites/settle-site/i18n/GLOSSARY.md",
-   "sha256": "0a5a8bcc2ec71b0b6aa65ccd43844770d183b0f13c5813ddd80ba61f0e7c3f0f"
+   "sha256": "4757407392479d4b47fded9bbc3c103968fd908eadd949ac9883b6682601a7d6"
   },
   {
    "path": "sites/settle-site/src/pages/What.jsx",

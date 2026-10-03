@@ -479,7 +479,6 @@
 - `data.herocontrols.2e48d9ed`: lean
 - `data.herocontrols.32b1687c`: two neons
 - `data.herocontrols.339dd666`: 1 = cool over 170 frames, hold 90
-- `data.herocontrols.3680f761`: GLYPHS only · the logograms, on shuffle
 - `data.herocontrols.37002578`: live equations
 - `data.herocontrols.37627100`: abstracts
 - `data.herocontrols.4064f59e`: the hero symphony: a 432 Hz binaural pair on a 40 Hz beat, the flute and old tunes, chosen by THE DJ from the picture.
@@ -519,13 +518,13 @@
 - `data.herocontrols.9c091df5`: every light in one neon
 - `data.herocontrols.9ec703f1`: cycle
 - `data.herocontrols.a0587ca6`: A screen can only flicker in whole frames. At 120 frames a second, 40 Hz is three frames a cycle, and the site alternates two lit and one dark with one lit and two dark, so it averages half and half.
-- `data.herocontrols.a180b8d5`: logograms drawn from pictures
 - `data.herocontrols.a4a8e18c`: the temperature at the start of each picture
 - `data.herocontrols.a73b9d01`: DEFAULT MODE
 - `data.herocontrols.a772ccab`: lit in one neon, unlit in another
 - `data.herocontrols.a8192eaa`: pointer trail
 - `data.herocontrols.a8341d95`: how hard each light wants the picture
 - `data.herocontrols.acbab921`: EQUATIONS only · the equations, on shuffle
+- `data.herocontrols.ad72b866`: words settled onto the platonic solids
 - `data.herocontrols.ae14a8bd`: WINAMP SCOPE · the sound wave as a row of dots, as an oscilloscope draws it
 - `data.herocontrols.b04f20cf`: shapes
 - `data.herocontrols.b19db6b9`: the SETTLE code: rose agrees, orange is heat, indigo is off
@@ -537,6 +536,7 @@
 - `data.herocontrols.c28debdf`: cooling speed
 - `data.herocontrols.cf7242b6`: the small films: the horse and the topic films
 - `data.herocontrols.d0628a39`: dim
+- `data.herocontrols.d0ad84e5`: GLYPHS only · the platonic logograms, on shuffle
 - `data.herocontrols.d11670df`: 40 Hz between the ears on a 216 / 256 Hz pair, an airy pad above, the picture's static under.
 - `data.herocontrols.d41ece95`: VU METERS · two needles: the left reads the sound below 500 Hz, the right the sound above it
 - `data.herocontrols.da79e5a5`: in mice, 40 Hz light together with 40 Hz sound (1 ms tones of 10 kHz) lowered amyloid more widely than either alone, including in the prefrontal cortex
@@ -2635,122 +2635,50 @@
 - `hero.gamma.shown`: {hz} Hz shown
 - `hero.gamma.warnfirst`: Flashing light: a warning comes first.
 - `hero.glyph.adjust`: adjust
-- `hero.glyph.attention.label`: ATTENTION
-- `hero.glyph.attention.note`: the word ATTENTION kept as a SETTLE memory of 45 things and settled from a copy with 11 bits wrong; every ink spur is a yes, and the spurs spell ATTENTION, five to a letter
-- `hero.glyph.attractor.label`: ATTRACTOR
-- `hero.glyph.attractor.note`: the word ATTRACTOR kept as a SETTLE memory of 45 things and settled from a copy with 11 bits wrong; every ink spur is a yes, and the spurs spell ATTRACTOR, five to a letter
-- `hero.glyph.backprop.label`: BACKPROP
-- `hero.glyph.backprop.note`: the word BACKPROP kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell BACKPROP, five to a letter
 - `hero.glyph.bar`: back to the bar
-- `hero.glyph.basin.label`: BASIN
-- `hero.glyph.basin.note`: the word BASIN kept as a SETTLE memory of 25 things and settled from a copy with 6 bits wrong; every ink spur is a yes, and the spurs spell BASIN, five to a letter
-- `hero.glyph.binding.label`: BINDING
-- `hero.glyph.binding.note`: the word BINDING kept as a SETTLE memory of 35 things and settled from a copy with 9 bits wrong; every ink spur is a yes, and the spurs spell BINDING, five to a letter
-- `hero.glyph.bundling.label`: BUNDLING
-- `hero.glyph.bundling.note`: the word BUNDLING kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell BUNDLING, five to a letter
-- `hero.glyph.capacity.label`: CAPACITY
-- `hero.glyph.capacity.note`: the word CAPACITY kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell CAPACITY, five to a letter
-- `hero.glyph.cerebellum.label`: CEREBELLUM
-- `hero.glyph.cerebellum.note`: the word CEREBELLUM kept as a SETTLE memory of 50 things and settled from a copy with 13 bits wrong; every ink spur is a yes, and the spurs spell CEREBELLUM, five to a letter
-- `hero.glyph.clean-up.label`: CLEAN-UP
-- `hero.glyph.clean-up.note`: the word CLEAN-UP kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell CLEAN-UP, five to a letter
-- `hero.glyph.diffusion.label`: DIFFUSION
-- `hero.glyph.diffusion.note`: the word DIFFUSION kept as a SETTLE memory of 45 things and settled from a copy with 11 bits wrong; 40 of 45 came back, so the spurs read LIFGEWIOL
-- `hero.glyph.dropout.label`: DROPOUT
-- `hero.glyph.dropout.note`: the word DROPOUT kept as a SETTLE memory of 35 things and settled from a copy with 9 bits wrong; every ink spur is a yes, and the spurs spell DROPOUT, five to a letter
-- `hero.glyph.embedding.label`: EMBEDDING
-- `hero.glyph.embedding.note`: the word EMBEDDING kept as a SETTLE memory of 45 things and settled from a copy with 11 bits wrong; every ink spur is a yes, and the spurs spell EMBEDDING, five to a letter
-- `hero.glyph.equilibrium.label`: EQUILIBRIUM
-- `hero.glyph.equilibrium.note`: the word EQUILIBRIUM kept as a SETTLE memory of 55 things and settled from a copy with 14 bits wrong; every ink spur is a yes, and the spurs spell EQUILIBRIUM, five to a letter
 - `hero.glyph.expand`: expand
 - `hero.glyph.flute`: sound and 40 Hz light
 - `hero.glyph.flute.on`: sound and 40 Hz light · light on
-- `hero.glyph.geom-address.label`: ADDRESS
-- `hero.glyph.geom-address.note`: the word ADDRESS kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a triangle; every straight mark is a yes, and read clockwise from the gap at the top they spell ADDRESS, five to a letter
-- `hero.glyph.geom-analogy.label`: ANALOGY
-- `hero.glyph.geom-analogy.note`: the word ANALOGY kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a circle broken into straight facets; every straight mark is a yes, and read clockwise from the gap at the top they spell ANALOGY, five to a letter
-- `hero.glyph.geom-best-match.label`: BEST-MATCH
-- `hero.glyph.geom-best-match.note`: the word BEST-MATCH kept as a SETTLE memory of 50 things, settled from a copy with 13 bits wrong and drawn on a hexagon; every straight mark is a yes, and read clockwise from the gap at the top they spell BEST-MATCH, five to a letter
-- `hero.glyph.geom-bit-counters.label`: BIT-COUNTERS
-- `hero.glyph.geom-bit-counters.note`: the word BIT-COUNTERS kept as a SETTLE memory of 60 things, settled from a copy with 15 bits wrong and drawn on a square; every straight mark is a yes, and read clockwise from the gap at the top they spell BIT-COUNTERS, five to a letter
-- `hero.glyph.geom-burn-in.label`: BURN-IN
-- `hero.glyph.geom-burn-in.note`: the word BURN-IN kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a hexagon; every straight mark is a yes, and read clockwise from the gap at the top they spell BURN-IN, five to a letter
-- `hero.glyph.geom-cross-entropy.label`: CROSS-ENTROPY
-- `hero.glyph.geom-cross-entropy.note`: the word CROSS-ENTROPY kept as a SETTLE memory of 65 things, settled from a copy with 16 bits wrong and drawn on a triangle; every straight mark is a yes, and read clockwise from the gap at the top they spell CROSS-ENTROPY, five to a letter
-- `hero.glyph.geom-data-word.label`: DATA WORD
-- `hero.glyph.geom-data-word.note`: the word DATA WORD kept as a SETTLE memory of 45 things, settled from a copy with 11 bits wrong and drawn on a triangle; every straight mark is a yes, and read clockwise from the gap at the top they spell DATA WORD, five to a letter
-- `hero.glyph.geom-elbo.label`: ELBO
-- `hero.glyph.geom-elbo.note`: the word ELBO kept as a SETTLE memory of 20 things, settled from a copy with 5 bits wrong and drawn on a frame with a shape nested inside; every straight mark is a yes, and read clockwise from the gap at the top they spell ELBO, five to a letter
-- `hero.glyph.geom-entropy.label`: ENTROPY
-- `hero.glyph.geom-entropy.note`: the word ENTROPY kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a pentagon; every straight mark is a yes, and read clockwise from the gap at the top they spell ENTROPY, five to a letter
-- `hero.glyph.geom-gibbs.label`: GIBBS
-- `hero.glyph.geom-gibbs.note`: the word GIBBS kept as a SETTLE memory of 25 things, settled from a copy with 6 bits wrong and drawn on a pentagon; 22 of 25 came back, so the marks read GMBBG
-- `hero.glyph.geom-granule-cell.label`: GRANULE CELL
-- `hero.glyph.geom-granule-cell.note`: the word GRANULE CELL kept as a SETTLE memory of 60 things, settled from a copy with 15 bits wrong and drawn on a hexagon; every straight mark is a yes, and read clockwise from the gap at the top they spell GRANULE CELL, five to a letter
-- `hero.glyph.geom-hamming-ball.label`: HAMMING BALL
-- `hero.glyph.geom-hamming-ball.note`: the word HAMMING BALL kept as a SETTLE memory of 60 things, settled from a copy with 15 bits wrong and drawn on a square; every straight mark is a yes, and read clockwise from the gap at the top they spell HAMMING BALL, five to a letter
-- `hero.glyph.geom-heat-bath.label`: HEAT BATH
-- `hero.glyph.geom-heat-bath.note`: the word HEAT BATH kept as a SETTLE memory of 45 things, settled from a copy with 11 bits wrong and drawn on a hexagon; every straight mark is a yes, and read clockwise from the gap at the top they spell HEAT BATH, five to a letter
-- `hero.glyph.geom-item-memory.label`: ITEM MEMORY
-- `hero.glyph.geom-item-memory.note`: the word ITEM MEMORY kept as a SETTLE memory of 55 things, settled from a copy with 14 bits wrong and drawn on a square; every straight mark is a yes, and read clockwise from the gap at the top they spell ITEM MEMORY, five to a letter
-- `hero.glyph.geom-kanerva.label`: KANERVA
-- `hero.glyph.geom-kanerva.note`: the word KANERVA kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a triangle; every straight mark is a yes, and read clockwise from the gap at the top they spell KANERVA, five to a letter
-- `hero.glyph.geom-majority.label`: MAJORITY
-- `hero.glyph.geom-majority.note`: the word MAJORITY kept as a SETTLE memory of 40 things, settled from a copy with 10 bits wrong and drawn on a circle broken into straight facets; every straight mark is a yes, and read clockwise from the gap at the top they spell MAJORITY, five to a letter
-- `hero.glyph.geom-mean-field.label`: MEAN FIELD
-- `hero.glyph.geom-mean-field.note`: the word MEAN FIELD kept as a SETTLE memory of 50 things, settled from a copy with 13 bits wrong and drawn on a frame with a shape nested inside; every straight mark is a yes, and read clockwise from the gap at the top they spell MEAN FIELD, five to a letter
-- `hero.glyph.geom-metropolis.label`: METROPOLIS
-- `hero.glyph.geom-metropolis.note`: the word METROPOLIS kept as a SETTLE memory of 50 things, settled from a copy with 13 bits wrong and drawn on a circle broken into straight facets; every straight mark is a yes, and read clockwise from the gap at the top they spell METROPOLIS, five to a letter
-- `hero.glyph.geom-permutation.label`: PERMUTATION
-- `hero.glyph.geom-permutation.note`: the word PERMUTATION kept as a SETTLE memory of 55 things, settled from a copy with 14 bits wrong and drawn on a frame with a shape nested inside; every straight mark is a yes, and read clockwise from the gap at the top they spell PERMUTATION, five to a letter
-- `hero.glyph.geom-perplexity.label`: PERPLEXITY
-- `hero.glyph.geom-perplexity.note`: the word PERPLEXITY kept as a SETTLE memory of 50 things, settled from a copy with 13 bits wrong and drawn on a circle broken into straight facets; every straight mark is a yes, and read clockwise from the gap at the top they spell PERPLEXITY, five to a letter
-- `hero.glyph.geom-replica.label`: REPLICA
-- `hero.glyph.geom-replica.note`: the word REPLICA kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a square; every straight mark is a yes, and read clockwise from the gap at the top they spell REPLICA, five to a letter
-- `hero.glyph.geom-sequence.label`: SEQUENCE
-- `hero.glyph.geom-sequence.note`: the word SEQUENCE kept as a SETTLE memory of 40 things, settled from a copy with 10 bits wrong and drawn on a frame with a shape nested inside; every straight mark is a yes, and read clockwise from the gap at the top they spell SEQUENCE, five to a letter
-- `hero.glyph.geom-settle.label`: SETTLE
-- `hero.glyph.geom-settle.note`: the word SETTLE kept as a SETTLE memory of 30 things, settled from a copy with 8 bits wrong and drawn on a square; every straight mark is a yes, and read clockwise from the gap at the top they spell SETTLE, five to a letter
-- `hero.glyph.geom-sparse-coding.label`: SPARSE CODING
-- `hero.glyph.geom-sparse-coding.note`: the word SPARSE CODING kept as a SETTLE memory of 65 things, settled from a copy with 16 bits wrong and drawn on a triangle; every straight mark is a yes, and read clockwise from the gap at the top they spell SPARSE CODING, five to a letter
-- `hero.glyph.geom-unbinding.label`: UNBINDING
-- `hero.glyph.geom-unbinding.note`: the word UNBINDING kept as a SETTLE memory of 45 things, settled from a copy with 11 bits wrong and drawn on a pentagon; every straight mark is a yes, and read clockwise from the gap at the top they spell UNBINDING, five to a letter
-- `hero.glyph.geom-vote.label`: VOTE
-- `hero.glyph.geom-vote.note`: the word VOTE kept as a SETTLE memory of 20 things, settled from a copy with 5 bits wrong and drawn on a hexagon; every straight mark is a yes, and read clockwise from the gap at the top they spell VOTE, five to a letter
-- `hero.glyph.geom-xor.label`: XOR
-- `hero.glyph.geom-xor.note`: the word XOR kept as a SETTLE memory of 15 things, settled from a copy with 4 bits wrong and drawn on a pentagon; every straight mark is a yes, and read clockwise from the gap at the top they spell XOR, five to a letter
-- `hero.glyph.hebbian.label`: HEBBIAN
-- `hero.glyph.hebbian.note`: the word HEBBIAN kept as a SETTLE memory of 35 things and settled from a copy with 9 bits wrong; 23 of 35 came back, so the spurs read LAFFUSI
-- `hero.glyph.hypervector.label`: HYPERVECTOR
-- `hero.glyph.hypervector.note`: the word HYPERVECTOR kept as a SETTLE memory of 55 things and settled from a copy with 14 bits wrong; every ink spur is a yes, and the spurs spell HYPERVECTOR, five to a letter
-- `hero.glyph.kanerva.label`: KANERVA
-- `hero.glyph.kanerva.note`: the word KANERVA kept as a SETTLE memory of 35 things and settled from a copy with 9 bits wrong; every ink spur is a yes, and the spurs spell KANERVA, five to a letter
-- `hero.glyph.langevin.label`: LANGEVIN
-- `hero.glyph.langevin.note`: the word LANGEVIN kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell LANGEVIN, five to a letter
-- `hero.glyph.logits.label`: LOGITS
-- `hero.glyph.logits.note`: the word LOGITS kept as a SETTLE memory of 30 things and settled from a copy with 8 bits wrong; every ink spur is a yes, and the spurs spell LOGITS, five to a letter
 - `hero.glyph.picture.paused`: picture · paused
 - `hero.glyph.picture.playing`: picture · playing
 - `hero.glyph.pin`: pin · keep the hero live on every page
 - `hero.glyph.pinned`: pinned · the hero stays live on every page
-- `hero.glyph.settle.label`: SETTLE
-- `hero.glyph.settle.note`: the word SETTLE kept as a SETTLE memory of 30 things and settled from a copy with 8 bits wrong; 27 of 30 came back, so the spurs read SETDLT
-- `hero.glyph.softmax.label`: SOFTMAX
-- `hero.glyph.softmax.note`: the word SOFTMAX kept as a SETTLE memory of 35 things and settled from a copy with 9 bits wrong; every ink spur is a yes, and the spurs spell SOFTMAX, five to a letter
+- `hero.glyph.plato-annealing.label`: ANNEALING
+- `hero.glyph.plato-annealing.note`: the word ANNEALING kept as a SETTLE memory of 45 things, settled from a copy with 11 bits wrong and drawn on a dodecahedron; every bold edge and filled point is a yes, and read in order they spell ANNEALING, five to a letter
+- `hero.glyph.plato-binding.label`: BINDING
+- `hero.glyph.plato-binding.note`: the word BINDING kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on an octahedron; 34 of 35 came back, so the lit parts read BILDING
+- `hero.glyph.plato-boltzmann.label`: BOLTZMANN
+- `hero.glyph.plato-boltzmann.note`: the word BOLTZMANN kept as a SETTLE memory of 45 things, settled from a copy with 11 bits wrong and drawn on an icosahedron; every bold edge and filled point is a yes, and read in order they spell BOLTZMANN, five to a letter
+- `hero.glyph.plato-entropy.label`: ENTROPY
+- `hero.glyph.plato-entropy.note`: the word ENTROPY kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a cube; every bold edge and filled point is a yes, and read in order they spell ENTROPY, five to a letter
+- `hero.glyph.plato-free-energy.label`: FREE ENERGY
+- `hero.glyph.plato-free-energy.note`: the word FREE ENERGY kept as a SETTLE memory of 55 things, settled from a copy with 14 bits wrong and drawn on an icosahedron; every bold edge and filled point is a yes, and read in order they spell FREE ENERGY, five to a letter
+- `hero.glyph.plato-gibbs.label`: GIBBS
+- `hero.glyph.plato-gibbs.note`: the word GIBBS kept as a SETTLE memory of 25 things, settled from a copy with 6 bits wrong and drawn on an octahedron; every bold edge and filled point is a yes, and read in order they spell GIBBS, five to a letter
+- `hero.glyph.plato-hamming.label`: HAMMING
+- `hero.glyph.plato-hamming.note`: the word HAMMING kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a cube; 32 of 35 came back, so the lit parts read HAMMIVE
+- `hero.glyph.plato-hopfield.label`: HOPFIELD
+- `hero.glyph.plato-hopfield.note`: the word HOPFIELD kept as a SETTLE memory of 40 things, settled from a copy with 10 bits wrong and drawn on a dodecahedron; every bold edge and filled point is a yes, and read in order they spell HOPFIELD, five to a letter
+- `hero.glyph.plato-hypervector.label`: HYPERVECTOR
+- `hero.glyph.plato-hypervector.note`: the word HYPERVECTOR kept as a SETTLE memory of 55 things, settled from a copy with 14 bits wrong and drawn on an icosahedron; every bold edge and filled point is a yes, and read in order they spell HYPERVECTOR, five to a letter
+- `hero.glyph.plato-ising.label`: ISING
+- `hero.glyph.plato-ising.note`: the word ISING kept as a SETTLE memory of 25 things, settled from a copy with 6 bits wrong and drawn on two nested tetrahedra; every bold edge and filled point is a yes, and read in order they spell ISING, five to a letter
+- `hero.glyph.plato-kanerva.label`: KANERVA
+- `hero.glyph.plato-kanerva.note`: the word KANERVA kept as a SETTLE memory of 35 things, settled from a copy with 9 bits wrong and drawn on a dodecahedron; every bold edge and filled point is a yes, and read in order they spell KANERVA, five to a letter
+- `hero.glyph.plato-landauer.label`: LANDAUER
+- `hero.glyph.plato-landauer.note`: the word LANDAUER kept as a SETTLE memory of 40 things, settled from a copy with 10 bits wrong and drawn on an icosahedron; every bold edge and filled point is a yes, and read in order they spell LANDAUER, five to a letter
+- `hero.glyph.plato-memory.label`: MEMORY
+- `hero.glyph.plato-memory.note`: the word MEMORY kept as a SETTLE memory of 30 things, settled from a copy with 8 bits wrong and drawn on a cube; 27 of 30 came back, so the lit parts read ?EMKVY
+- `hero.glyph.plato-p-bit.label`: P-BIT
+- `hero.glyph.plato-p-bit.note`: the word P-BIT kept as a SETTLE memory of 25 things, settled from a copy with 6 bits wrong and drawn on two nested tetrahedra; every bold edge and filled point is a yes, and read in order they spell P-BIT, five to a letter
+- `hero.glyph.plato-settle.label`: SETTLE
+- `hero.glyph.plato-settle.note`: the word SETTLE kept as a SETTLE memory of 30 things, settled from a copy with 8 bits wrong and drawn on an icosahedron; every bold edge and filled point is a yes, and read in order they spell SETTLE, five to a letter
+- `hero.glyph.plato-spin.label`: SPIN
+- `hero.glyph.plato-spin.note`: the word SPIN kept as a SETTLE memory of 20 things, settled from a copy with 5 bits wrong and drawn on two nested tetrahedra; every bold edge and filled point is a yes, and read in order they spell SPIN, five to a letter
 - `hero.glyph.sound.muted`: sound · muted by MUTE ALL (top right)
 - `hero.glyph.sound.off`: sound · off
 - `hero.glyph.sound.on`: sound · on
-- `hero.glyph.sparsity.label`: SPARSITY
-- `hero.glyph.sparsity.note`: the word SPARSITY kept as a SETTLE memory of 40 things and settled from a copy with 10 bits wrong; every ink spur is a yes, and the spurs spell SPARSITY, five to a letter
-- `hero.glyph.spin-glass.label`: SPIN GLASS
-- `hero.glyph.spin-glass.note`: the word SPIN GLASS kept as a SETTLE memory of 50 things and settled from a copy with 13 bits wrong; every ink spur is a yes, and the spurs spell SPIN GLASS, five to a letter
 - `hero.glyph.stop`: stop the 40 Hz light
-- `hero.glyph.superposition.label`: SUPERPOSITION
-- `hero.glyph.superposition.note`: the word SUPERPOSITION kept as a SETTLE memory of 65 things and settled from a copy with 16 bits wrong; every ink spur is a yes, and the spurs spell SUPERPOSITION, five to a letter
-- `hero.glyph.temperature.label`: TEMPERATURE
-- `hero.glyph.temperature.note`: the word TEMPERATURE kept as a SETTLE memory of 55 things and settled from a copy with 14 bits wrong; every ink spur is a yes, and the spurs spell TEMPERATURE, five to a letter
-- `hero.glyph.transformer.label`: TRANSFORMER
-- `hero.glyph.transformer.note`: the word TRANSFORMER kept as a SETTLE memory of 55 things and settled from a copy with 14 bits wrong; every ink spur is a yes, and the spurs spell TRANSFORMER, five to a letter
 - `hero.light.about`: about the 40 Hz light
 - `hero.light.hint`: The light changes nothing about the sound.
 - `hero.light.reduced`: Your system asks for reduced motion, so the 40 Hz light stays off.
@@ -2901,6 +2829,13 @@
 - `hero.stop40`: STOP 40 Hz
 - `hero.strip`: the hero, still · click to pin it live here
 - `hero.strip.aria`: Show the hero live here, and pin it to every page
+- `hero.tip.adjust`: ADJUST
+- `hero.tip.bar`: BAR
+- `hero.tip.expand`: EXPAND
+- `hero.tip.light`: LIGHT
+- `hero.tip.picture`: PICTURE
+- `hero.tip.pin`: PIN
+- `hero.tip.sound`: SOUND
 - `hero.totop`: Back to the top
 - `hero.track.film`: FILMS AND FRAMES
 - `hero.track.vis`: VISUALISERS
