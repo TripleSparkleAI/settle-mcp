@@ -80,7 +80,7 @@ Each bar gives the largest number of stored patterns a memory still recalls at l
 
 Capacity here is P90, the largest stored count at which 90% of reads recall. The chart follows it as the memory grows, and the equations are the prediction we tested it against.
 
-Equations: Bricken and Pehlevan 2021, Eq. 25, as given in the SDMSCALE experiment's report.
+Equations: Bricken and Pehlevan 2021, Eq. 25, as given in the report of SDMSCALE.
 
 ## (RECORDED · CODED NOTES)
 

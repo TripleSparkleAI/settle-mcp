@@ -22,7 +22,7 @@ Ask the MCP. pkg It always has the answers to 'what is this?' and 'how do I use 
 
 A program names its things in a `model` block. Yes is +1 and no is -1 underneath, and every answer SETTLE gives is a count of how often a thing was yes.
 
-The light was on in 88.0% of 40,000 samples. For a lean of 1 the exact answer is (1 + tanh 1) / 2 = 88.08%, so the count is right to within the noise of counting. Move the slider to see the rule for any lean.
+The light was on in % of 40,000 samples. For a lean of 1 the exact answer is (1 + tanh 1) / 2 = 88.08%, so the count is right to within the noise of counting. Move the slider to see the rule for any lean.
 
 A pull of 1 makes two things agree about 88% of the time, the same number as a lean of 1 makes one thing say yes, and for the same reason: the rule inside is one rule. Pulls are also how news travels. Hold one light and its pulls carry what you saw to the others.
 
@@ -44,7 +44,7 @@ For a picture the count is per pixel: how often each light was on is that pixel'
 
 ## (WAT DAT)
 
-The Rust run wrote both pictures. One sample scores 7.27 dB; forty score 22.39 dB.
+The Rust run wrote both pictures. One sample scores dB; forty score dB.
 
 ## (WAT DAT · THE HORSE, IN TRUE TIME)
 

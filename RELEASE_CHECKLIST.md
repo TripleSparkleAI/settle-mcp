@@ -20,27 +20,24 @@ The whole journey a stranger takes, run from the export `--push` would publish, 
 | package.json | `repository`, `homepage`, `bugs` and `author` point at github.com/triplesparkle/settle-mcp; `private` stays true (it blocks `npm publish`, and npx from GitHub still works) |
 | licence | MIT, `LICENSE` in the repository |
 
-## To make it public (the navigator's steps, in order)
+## Making it public (in the launch walk)
 
-1. Once lane MCPREADY has landed, push the current export from the main checkout, still private: `bash SETTLE/tools/export_settle_repos.sh --only settle-mcp --push`.
-   It creates nothing new (the repository exists), pushes `main`, and refuses to push unless GitHub reads PRIVATE.
-2. Check it from outside this checkout: `npx -y --allow-git=root github:triplesparkle/settle-mcp --version` must
-   print SDK 1.32.0 (today it prints 1.31.0, the old push).
-3. Make it public on GitHub: `gh repo edit triplesparkle/settle-mcp --visibility public --accept-visibility-change-consequences`.
-   The export script never changes a visibility, by design; this is the one step it leaves to you.
-4. Flip the site's switch: in `SETTLE/settle-site/src/repo.js`, `mcp: { repo: 'settle-mcp', visibility: 'public' }`.
-5. Change the words that say it is private, in `SETTLE/settle-site/src/data/mcpDocs.js` (`oneCommand`, `needs`,
-   the "Or run it from a clone" step and `support.issues`), add the four translations, rebuild with
-   `node SETTLE/settle-mcp/tools/build_mcp_docs.mjs`, and commit.
-   ⚠ After step 3, `export_settle_repos.sh --push` refuses to push settle-mcp, because it pushes only to a
-   repository GitHub reads as PRIVATE. Allowing a public repository there is a one-line change to `push_one` in
-   that script, and it is your decision; until then, later exports of settle-mcp are pushed by hand
-   (`git -C SETTLE/REPOS/settle-mcp push origin main`).
-6. Optional, later: publish to npm (remove `"private": true`, `npm publish`); the one command becomes
+The navigator ruled the repositories public at launch, under the MIT licence (2026-10-09). The by-hand steps that
+were here are now part of `SETTLE/launch.sh`:
+
+1. Push the current export, which carries `LICENSE`: `bash SETTLE/tools/export_settle_repos.sh --only settle-mcp --push`.
+   The export creates nothing new (the repository exists) and pushes to a repository that reads PRIVATE or PUBLIC.
+2. `bash SETTLE/launch.sh --public` (step 7 of the walk, just before the site's deploying push) makes settle-mcp
+   public with the other seven SETTLE repositories, refuses one whose GitHub copy has no MIT licence yet, and reads
+   each one back as PUBLIC.
+3. Check it from outside this checkout: `npx -y --allow-git=root github:triplesparkle/settle-mcp --version` must print
+   the SDK version in package.json.
+4. Optional, later: publish to npm (remove `"private": true`, `npm publish`); the one command becomes
    `npx -y settle-mcp` and needs no git flag. And list it in an MCP registry.
 
-⚠ The SETTLE and KANERVA repositories are private too. Setup takes them as sources, so a stranger who can run
-settle-mcp but cannot read those two repositories can use PART ONE (docs and help) and not setup.
+The site already says public: `SETTLE/settle-site/src/repo.js` reads `public` for every repository, and the words in
+`SETTLE/settle-site/src/data/mcpDocs.js` that said private were changed with it (lane PUBLICLAUNCH). SETTLE and
+KANERVA go public in the same step, so setup can fetch them for anyone.
 
 
 ## Checked on 2026-10-05
@@ -62,10 +59,8 @@ settle-mcp but cannot read those two repositories can use PART ONE (docs and hel
 
 1. **Publish to npm or not.** `"private": true` is set in package.json so that nothing is published by accident.
    Remove it to publish. The name `settle-mcp` was free on npm on 2026-10-05 (`npm view settle-mcp` returned 404).
-2. **Make the repositories public or not.** `triplesparkle/settle-mcp`, `triplesparkle/SETTLE` and
-   `triplesparkle/KANERVA` are private. The README tells a reader that a clone needs access. If they become public,
-   that sentence and the "It is private for now" line in `SETTLE/settle-site/src/data/mcpDocs.js` change, and the docs
-   are rebuilt.
+2. **Make the repositories public or not.** DECIDED: public at launch (the navigator, 2026-10-09). The README and
+   docs say so; `SETTLE/launch.sh --public` does it.
 3. **The repository fields in package.json.** Done 2026-10-06: `repository`, `homepage`, `bugs` and `author` point at
    github.com/triplesparkle/settle-mcp.
 4. **The copyright holder.** `LICENSE` says "Copyright (c) 2026 TripleSparkle". Confirm the legal name of the holder.

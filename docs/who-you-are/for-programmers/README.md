@@ -21,9 +21,9 @@ write or a read wakes, and integer counters that vote. Its README states it in p
 lists its modules, its examples and its tests. SETTLE's `sdm`,
 `memory` and `softsdm` statements call this crate.
 
-settle-mcp has 11 tools. Docs and help work before anything is installed. Setup fetches, builds and checks both
-packages in a folder you name, as a dry run first. Usage runs a program, stores and recalls with a memory, and runs
-the crate's quickstart.
+settle-mcp has 12 tools. Docs and help work before anything is installed. Setup fetches, builds and checks both
+packages in a folder you name, as a dry run first. Usage runs a program, stores and recalls with a memory, runs a
+KANERVA program, and runs the crate's quickstart.
 
 ## How you can use it in your project
 
@@ -34,7 +34,7 @@ Hopfield-style memory, a grid denoiser, a linear system solved by noisy springs.
 samples it, and the output is text you can parse. A program is a plain file, so it goes in version control beside
 your code, and `settle --help` lists every statement the build you have understands.
 
-```settle file=SETTLE/settle-site/src/how/02_weather.settle
+```settle file=weather.settle
 model :weather do
   thing :rain,      leans: :no, by: 1
   thing :sprinkler, leans: :no, by: 0.5
@@ -94,7 +94,7 @@ statement builds a Kanerva memory out of things: the bit-counters live in the pu
 and the data things, and a read is a settle. That is the point of putting the two in one language: a memory read
 and a probability question are the same operation, so a program can condition on what the memory recalls.
 
-```settle file=SETTLE/settle-rs/examples/sdm.settle
+```settle file=examples/sdm.settle
 model :mind do
   sdm :s, word-size: 256, hard-locations: 2000
   s.write :cat
@@ -124,16 +124,18 @@ back whole; at 40% the memory says `nothing clear`, the right answer for a memor
 
 Three things on this site are machine learning done with these tools.
 
-- SDMCHAT is a language model whose context is a Kanerva address: the recent tokens address a store, the store's
-  votes feed the next-token head. The live chat opens on the champion, the model with the lowest held-out test bits
-  per byte among the models that read a store. Today that is the SDM read model (3,600 hard locations, two hops),
-  at 1.60233 test bits per byte. The page is `#/sdmchat`.
+- [SDMCHAT](#/sdmchat) is a language model whose context is a Kanerva address: the recent tokens address a store,
+  and the store's votes feed the next-token head. Every model it offers reads a store of 3,600 hard locations, and
+  the page lists each one with its held-out bits per byte; the chat opens on the best chat-tuned model. How the
+  models were trained is on [SDMCHAT-MODEL](#/sdmchat-model).
 - We also measured the store against its own absence. The learned store costs 0.017 to 0.025 bits per byte against
-  the same model without it, in every seed (`#/results/sdmllm`). Read the reports before you build on a number.
+  the same model without it, in every seed ([the SDMLLM result](#/results/sdmllm)). Read the reports before you
+  build on a number.
 - A settling machine trained on binarised digits by contrastive divergence: 64 hidden things reach 93.8% against
-  logistic regression at 91.2. It uses the `learn` family of statements; the live page is `#/learn-settle`.
+  logistic regression at 91.2. It uses the `learn` family of statements; the live page is
+  [SETTLE-TOUR](#/settle-tour).
 
-The poem lab on `#/sdmpoem` is the smallest end-to-end case: a Kanerva memory learns a whole poem in the browser tab
+The poem lab on [SDMPOEM](#/sdmpoem) is the smallest end-to-end case: a Kanerva memory learns a whole poem in the browser tab
 and recites it, with its speed and size shown beside the chat model. Read it when you want to see how far a memory
 alone goes before a learned head is needed.
 
@@ -148,7 +150,7 @@ answer in its own output.
 - Linear systems: `solve.settle` puts real numbers on springs and drifts them. `solve :a, :b, :c, matrix: "4 1 0;
   1 3 1; 0 1 2", target: "1 2 3"` settles to a = 0.2244, b = 0.1137, c = 1.4588 against the exact 0.2222, 0.1111,
   1.4444, a relative error of 1.008% (run 2026-10-02). The spread of the numbers gives the inverse matrix.
-- Seating, sudoku, graph colouring, factoring: `#/puzzles` runs them live. Annealing finds exact answers where random
+- Seating, sudoku, graph colouring, factoring: [the puzzles page](#/puzzles) runs them live. Annealing finds exact answers where random
   guessing finds none: every sudoku, every colouring, max-cut from 16 nodes.
 
 A problem fits when you can write its cost as leans and pulls, or as springs between numbers. A problem with
@@ -162,11 +164,11 @@ long-range constraints that cannot be written pairwise is a poor fit, and the do
    lean, run it again, watch the percentage move.
 3. Add the memory. Write `memory :m, size: 512`, `m.remember :cat`, `m.recall read-address: :cat, address-noise:
    0.3, seed: 1` in a run block. The output names what came back and how clearly.
-4. Give it to your assistant. `claude mcp add settle -- node /path/to/settle-mcp/src/bin.js`, then ask `help` with a
-   topic. The setup tool builds both packages in a folder you choose, and runs nothing until you confirm the plan id
+4. Give it to your assistant. `claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp`,
+   then ask `help` with a topic. The setup tool builds both packages in a folder you choose, and runs nothing until you confirm the plan id
    it printed.
 
-Nothing is published to a package registry yet, and the repositories are private.
+Nothing is published to a package registry yet. The repositories are public, under the MIT licence.
 
 ## The detailed docs
 

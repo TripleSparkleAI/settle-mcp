@@ -277,6 +277,7 @@
 - `chatkit.arch.mlp`: no SDM, MLP only
 - `chatkit.arch.partial`: a memory written while it reads and an MLP in every layer
 - `chatkit.arch.store`: a trained SDM store read twice per token, then one MLP readout
+- `chatkit.facts.legend`: After the kind of model come the tokens it trained on in all, what it was last trained on ({kinds}), and its score in bits per byte on that text, lower is better.
 - `chatkit.foot.greedy`: 0 (greedy)
 - `chatkit.foot.ms`: {ms} ms
 - `chatkit.foot.seed`: seed {n}
@@ -284,9 +285,12 @@
 - `chatkit.foot.temp`: temp {v}
 - `chatkit.foot.tokens`: {n} tokens
 - `chatkit.foot.tps`: {tps} tok/s
+- `chatkit.kind.base`: base: trained on web text, scored on held-out web text
+- `chatkit.kind.chat`: chat: tuned on chat turns, scored on held-out chat turns
+- `chatkit.kind.epic`: epic: tuned on epic verse, scored on held-out epic lines
 - `chatkit.off`: off
 - `chatkit.option.default`: default
-- `chatkit.option.epics`: {bpb} bpb on epic lines
+- `chatkit.option.eval`: {bpb} bpb on its slice
 - `chatkit.reads.none`: reads no SDM
 - `chatkit.reads.sdm`: reads an SDM of {M} locations
 - `chatkit.reads.short`: reads an SDM
@@ -326,6 +330,7 @@
 - `contact.letter.reply`: reply to
 - `contact.lines.label`: WHERE
 - `contact.lines.title`: Where to find us
+- `contact.open`: open
 - `contact.orn.sr`: Around the form, small drawings of pigeons, letters, stamps and postmarks settle out of lights and change now and then. They are decoration only.
 - `contact.ph.email`: you@example.com
 - `contact.ph.message`: Write to us. Each letter you type settles into place.
@@ -363,9 +368,9 @@
 - `contact.top.panel`: A small field of lights settling into a ring and the word hello.
 - `contact.top.privacy`: what we keep (privacy)
 - `contact.top.sub`: Write to us, and watch every letter settle into place.
-- `contact.voice`: We built a small language for settling machines and we are still asking what? about it. If you know, write to our address once it is set, or tell us on X. We will read it.
 - `contact.voice.label`: ONE LINE
 - `contact.voice.title`: If you know what this is, please tell us
+- `contact.voice2`: We built a small language for settling machines and we are still asking what? about it. If you know, tell us with the form above. We will read it.
 - `contact.write.label`: WRITE TO US
 - `contact.write.title`: The form and the letter as it settles
 - `contact.x`: X
@@ -383,7 +388,7 @@
 - `credits.brand.found`: Where the project found it: the cover image of the YouTube video "{video}" ({url}), whose description reads "{desc}". The navigator loved this mix, and it inspired the project.
 - `credits.brand.label`: THE BRAND PICTURE · YAYOI KUSAMA
 - `credits.brand.title`: The room that looks like a memory
-- `credits.brand.use`: Use: internal inspiration in this private, local-only repository. It is not shipped or published, and it is not presented as our own work. The home page's room of lights is our own procedural drawing inspired by it.
+- `credits.brand.use2`: Use: the project's inspiration, shown on this page only to credit it. It is not our work and is not presented as our own. The home page's room of lights is our own procedural drawing inspired by it.
 - `credits.brand.why`: Why this picture: the hundreds of lights hung at random look like the hard locations of a sparse distributed memory, and the mirrors look like its large address space. An address wakes the locations near it, like the lights nearest the viewer, and each light pulses like a p-bit.
 - `credits.brand.work`: Work: very likely {work} (2011/2017), Tate collection {tate}. The source names only the artist, so the title is the project's identification and is not confirmed by the source.
 - `credits.card.aria`: {who}: a settle of {what}
@@ -433,7 +438,6 @@
 ## crumb
 
 - `crumb.about`: about
-- `crumb.account`: account
 - `crumb.demos`: demos
 - `crumb.language`: language
 - `crumb.members`: members
@@ -466,12 +470,63 @@
 - `data.brand.fc3c37aa`: blue-green on the left, a contest on the right: fourteen strokes
 - `data.brand.fdd1842b`: the calm when the wind drops on the sea
 - `data.brand.ff3bc11c`: chin · shizumeru
+- `data.chime.00b430f7`: harp de doop
+- `data.chime.03014423`: sparse ping
+- `data.chime.06d5a845`: question
+- `data.chime.0fde171d`: small fanfare
+- `data.chime.121d97fe`: keys goodbye
+- `data.chime.1417aef2`: harmonic pair
+- `data.chime.187d1cbc`: flute trill
+- `data.chime.188c1485`: bing boop
+- `data.chime.21a69c78`: soft blip
+- `data.chime.235d9fc7`: breath
+- `data.chime.24640fde`: crystal shimmer
+- `data.chime.24d8c558`: two-bell nod
+- `data.chime.27ffbb02`: address and word
+- `data.chime.30c707a2`: freeze
+- `data.chime.3988e2e2`: keys hop
+- `data.chime.39b3291f`: down the pentatonic
+- `data.chime.3cc98712`: remembered fifth
+- `data.chime.46dc74cb`: air rising
+- `data.chime.4b7bd481`: flute hello
+- `data.chime.51fea7da`: pluck boop boop
+- `data.chime.54c02645`: hush
+- `data.chime.58be3fbb`: crystal pair
+- `data.chime.65db5b96`: flute de doop
+- `data.chime.6d5f98b8`: doop de bing
+- `data.chime.6ec6a2ce`: blip down
+- `data.chime.7086ef3e`: guitar harmonic
+- `data.chime.7d69f01a`: settled root
+- `data.chime.82085268`: glass tick
+- `data.chime.842b26d7`: double blip
+- `data.chime.848019df`: answer
+- `data.chime.89bac16f`: ground state
+- `data.chime.91b9183f`: flute bing boop
+- `data.chime.94988f2a`: bell trio
+- `data.chime.964314e8`: up the pentatonic
+- `data.chime.9831b137`: p-bit lands
+- `data.chime.9ae0a392`: bing boop de doop
+- `data.chime.9e2f81d1`: neon arpeggio
+- `data.chime.a36f98f9`: glide home
+- `data.chime.a3c93a71`: echo recall
+- `data.chime.b4fab9c3`: hard location
+- `data.chime.c16c671b`: flute chiff
+- `data.chime.c2119d1b`: blip up
+- `data.chime.caa75415`: cooling fifth
+- `data.chime.d9089937`: bell harmonic
+- `data.chime.dfe8cb08`: last flip
+- `data.chime.e603452d`: cue and reply
+- `data.chime.e943860e`: crystal de doop
+- `data.chime.f2a2d3e4`: low blip
+- `data.chime.f7cc6eb7`: harp skip
+- `data.chime.fbf9ed14`: cold drop
 - `data.credits.048ea65e`: The language's own vocabulary; `hold` an output on #/puzzles and it factors.
 - `data.credits.04b0a3c4`: Writing into counters
 - `data.credits.06265f96`: `settle` and `ask` read those weights; temperature on every page.
 - `data.credits.06ad50ec`: two domains of aligned spins and the wall between them
 - `data.credits.10ccfa70`: Soften the edge of the Hamming ball and an SDM read becomes attention.
 - `data.credits.12ef0c17`: The TAP correction: when setting a pixel's lean from a target, subtract what its neighbours will already add.
+- `data.credits.173e6ab5`: `learn` and `examples`; #/settle-tour and the BOLTZLEARN experiments.
 - `data.credits.18220c7d`: The memory SETTLE remembers with: an address space of 2^n corners, a few thousand hard locations scattered in it at random, a write that adds to the counters of every location near the address, and a read that lets those locations vote.
 - `data.credits.1e46386e`: Memory as valleys: store patterns in the pulls and a damaged cue settles back into the nearest one.
 - `data.credits.1eb30541`: a softened read: a softmax peaked on the nearest pattern
@@ -504,7 +559,6 @@
 - `data.credits.6d0e4b45`: a read-address and the Hamming ball of hard locations it wakes
 - `data.credits.6ffc0c97`: the weights e^(-E/T), falling over the energy levels
 - `data.credits.6ffd84e3`: thrml, the block Gibbs sampler SETTLE was cross-checked against, and an all-transistor probabilistic chip: the hardware SETTLE imagines.
-- `data.credits.7154a863`: `learn` and `examples`; #/learn-settle and the BOLTZLEARN experiments.
 - `data.credits.7a3c6e63`: settle-rs model.rs `sweep`, and every live demo on this site.
 - `data.credits.7c2ba9f9`: the hard locations within the activation radius r of the read-address wake up
 - `data.credits.7cb186c0`: The manner of THE PAPER: plain sentences about hard things, one idea at a time.
@@ -556,6 +610,241 @@
 - `data.descend.e81a2566`: E = (1 - x)^2 + 4 (y - x^2)^2: a long curved valley floor. Gradient descent zigzags down the steep walls, then crawls along the floor to (1, 1).
 - `data.descend.ec38f461`: E = x.A.x/2 - b.x with A = [[3, 1], [1, 2]], b = [1, 1]: the NUMBERS springs. One valley, so gradient descent finds it, and the hot cloud is a Gaussian with covariance T A^-1.
 - `data.descend.effcbeee`: E(w, c) = sum over 20 examples of [log(1 + e^z) - y z], z = w x + c, plus (w^2 + c^2)/18: logistic regression with a prior of sd 3. At T = 1 the cloud is the Bayesian posterior over the slope w and the bias c.
+- `data.djline.01f7cc51`: {label}: {question} {answer}
+- `data.djline.024edb75`: {slot}, {at} of {length}
+- `data.djline.039f6f36`: move to a new theme?
+- `data.djline.046c7c0e`: The tune sits about 14 dB under a soft four-on-the-floor and a pad, through these passes, then a limiter. The DJ swaps two at a bar line after {bars} bars when its beat or split light says yes, the whole chain on a new theme, and never mid-bar.
+- `data.djline.0a9cae0b`: the effect chain pushed up?
+- `data.djline.0ac55f50`: droning long
+- `data.djline.0b743013`: {label} {answer}
+- `data.djline.0cfb455b`: house
+- `data.djline.0e4215e8`: ... in {from} to {to}
+- `data.djline.0f6892d9`: the echo guitar
+- `data.djline.139ea5bd`: the jam bell
+- `data.djline.13aeb578`: tempo
+- `data.djline.147aa128`: each
+- `data.djline.1644b896`: the jam chord
+- `data.djline.16cbfd56`: partial {k}: {hz} Hz (left out: a minor theme)
+- `data.djline.18c13d08`: the shape {shape}
+- `data.djline.1a13df0e`: {n} beats
+- `data.djline.1b6d6fe9`: play the symphony
+- `data.djline.1c57ac73`: {beat} Hz beat
+- `data.djline.1ce4eeb8`: lock the theme
+- `data.djline.1d2ba6ed`: {a} and {b}
+- `data.djline.1e625673`: a film, frame {n}
+- `data.djline.208ac500`: the old tune surfaces: {tune}, note for note
+- `data.djline.20df2144`: the hall reverb opened up?
+- `data.djline.2222dc25`: {beat} Hz (home)
+- `data.djline.22693293`: heat
+- `data.djline.22c3f286`: the picture
+- `data.djline.2448ca2f`: lead
+- `data.djline.24d5a4ac`: {n} harmonics of {hz} Hz
+- `data.djline.24e33901`: drums {drums} · bass {bass} · texture {texture}
+- `data.djline.2643c44e`: a low drone and a far flute, very slow, very wet, slow beats
+- `data.djline.26a13b72`: film frame
+- `data.djline.2765e008`: overlap
+- `data.djline.27cb3b23`: close
+- `data.djline.280f644a`: a film
+- `data.djline.291fd677`: GO STATIC
+- `data.djline.29cc5095`: energy
+- `data.djline.2a180c98`: drop to the drone alone?
+- `data.djline.2a6cd783`: SPLIT
+- `data.djline.2aa1ff7c`: Open the DJ view: how the sound follows the picture
+- `data.djline.2b1abcad`: no pulse yet
+- `data.djline.2c1f5fda`: the bar's settle: {n} sweeps, cooling from temperature {from} to {to}
+- `data.djline.2c584cec`: A collected tune as written, on the raw flute alone, in a light room. Nothing else sounds.
+- `data.djline.2cb6be5b`: bars in this theme
+- `data.djline.2cddb34c`: Each melodic part plays through a warm drive and two to four more effects, settled fresh each set from a deck so no part wears the same chain twice in a row. The clear flute is the one instrument with no effects.
+- `data.djline.2d9e9ff3`: carrier {hz} Hz
+- `data.djline.2e08f571`: the jam vox
+- `data.djline.2e3d90b1`: intro
+- `data.djline.2f725e59`: playing long
+- `data.djline.2f78a943`: the DJ's effects: {mood}, {drive} drive, {band} {q} resonance
+- `data.djline.30fc573a`: settled
+- `data.djline.312fd389`: picture
+- `data.djline.33260e7f`: the bass line under it?
+- `data.djline.3502c715`: {mode}, split into {n} ({how})
+- `data.djline.35a1350f`: flips
+- `data.djline.363437a8`: tones {tones} · {from} Hz to {to} Hz · {bells} bells · {tag}
+- `data.djline.3635d65b`: the handover to the DJ
+- `data.djline.3867a461`: tag {tag}
+- `data.djline.3a6f2adb`: arc
+- `data.djline.3ba1f8b8`: carries the key of the last set ({key})
+- `data.djline.3bab97f5`: {a} with {b} {w}
+- `data.djline.3c6468f4`: texture
+- `data.djline.3ddc94d8`: base
+- `data.djline.3dfe1526`: new target
+- `data.djline.409924a3`: Swing {swing} of a beat.
+- `data.djline.41514bb9`: calm and landed
+- `data.djline.433e3aea`: hold still on one great harmonic?
+- `data.djline.44dbba0a`: {n} Hz pulse
+- `data.djline.4594fdc9`: crystal
+- `data.djline.473a5759`: {label}, surfacing
+- `data.djline.4b402720`: the evolving pad?
+- `data.djline.4b43c19e`: the first slow pulse
+- `data.djline.4bce1ddd`: Use headphones to hear the binaural beat.
+- `data.djline.4c362f68`: Every four bars the planner scores {count} plans of the next sixteen bars against the set's energy arc, the theme, the picture, your steering and the votes, with a habit prior that keeps changes on 8 and 16 bar lines, and settles one, cooling like the lights do.
+- `data.djline.4d5df3bf`: partial {k}: {hz} Hz
+- `data.djline.4e9f3590`: yes
+- `data.djline.4f0a7d80`: the hum: {variant} at {rate}
+- `data.djline.508fb458`: key lifted {n}
+- `data.djline.50ae46ec`: bed
+- `data.djline.50b1805d`: tracks
+- `data.djline.50b8d09c`: you
+- `data.djline.5114fd8c`: waiting for the picture's first numbers
+- `data.djline.514a68b5`: every pitch from A = 432 Hz · {n} cleared tunes
+- `data.djline.52869196`: next tune
+- `data.djline.533d9983`: the new tune in ABC
+- `data.djline.535830aa`: the chord as quick plucks?
+- `data.djline.53dcb77a`: bass
+- `data.djline.54087228`: the last notes: {notes}
+- `data.djline.581ab193`: clear, no effects
+- `data.djline.58d84040`: the flute is resting
+- `data.djline.5955feaa`: pad
+- `data.djline.59a267dc`: NEW THEME
+- `data.djline.5a197aea`: leans on {n} rated tags
+- `data.djline.5b13e81f`: a low drone on the root?
+- `data.djline.5cb68de8`: next
+- `data.djline.5efc69a7`: away from 40 Hz
+- `data.djline.60b4a3d6`: chain
+- `data.djline.62366ffa`: no
+- `data.djline.62eb540b`: theme {name}
+- `data.djline.63dfa837`: sweep {k} of {n}, settling
+- `data.djline.6411f16d`: change the binaural beat?
+- `data.djline.68410493`: tune
+- `data.djline.68727a8b`: {phase} (landed)
+- `data.djline.6d0236ae`: Each choice is a p-bit. Its lean comes from the hero picture; the pulls tie them together; the DJ cools them like the hero cools its lights, then plays what they say.
+- `data.djline.6ee2f34e`: stopped
+- `data.djline.6f0a5eb5`: pure flute
+- `data.djline.6f6add63`: binaural
+- `data.djline.7165822b`: the trained set
+- `data.djline.71ef5835`: playing
+- `data.djline.73ede079`: a film plays
+- `data.djline.7558d625`: the jam pluck
+- `data.djline.7689fa6d`: resting long
+- `data.djline.780c3b67`: the clear flute
+- `data.djline.7b7574d4`: THE DJ's colour on one voice: a harmonic overdrive, a vocoder
+- `data.djline.7b8af63b`: glass and bells in a bright mode, slow, with long held harmonics
+- `data.djline.7d1f72fd`: the jam settle burst
+- `data.djline.7e5cace2`: THE TUNE
+- `data.djline.7f1590be`: reheating
+- `data.djline.822a98a1`: cost {cost} of {budget} units · {swaps} swaps · {bars} bars with this chain
+- `data.djline.83223225`: the fuzz lead
+- `data.djline.83d03615`: length
+- `data.djline.848019df`: answer
+- `data.djline.866d25bd`: generated from the {mode} scale, not an old tune
+- `data.djline.87ab2050`: THE McKUSKER FLUTE · PURE
+- `data.djline.87b82de3`: split
+- `data.djline.87ffd61d`: Every visit opens with this ambient set, never house: soft tones, isochronic pulses (one tone switched on and off cleanly at a slow rate), a warm pad and a gentle 40 Hz pulse. In DEFAULT MODE it plays alone: the picture's static and the binaural pair rest until the handover. The shape is the same every visit; the key, the order of the rates, the tones and the timings are settled fresh. At {length} it blends into the DJ's first set over {handover} s.
+- `data.djline.8891f421`: the DJ has not decided yet
+- `data.djline.88ab1811`: THE HOUSE SET · {n} OF {total} PASSES
+- `data.djline.8b8c1558`: Each is a p-bit. Inside a phrase each leans hard to stay as it is; on a 4-bar line and at a section change the section, the picture, the theme, your steering and the votes decide.
+- `data.djline.8c33b84c`: a harmonic tone joins
+- `data.djline.8c44b5ea`: THE RACK · {n} EFFECTS, AMOUNTS MOVED BY THE DJ
+- `data.djline.8ccd5293`: chosen: {parts}
+- `data.djline.8fb83851`: {n} sweeps, T {from} → {to}
+- `data.djline.905255c5`: beat
+- `data.djline.90dcde62`: symphony level
+- `data.djline.91be90b3`: now: {moves}
+- `data.djline.92294e39`: chop
+- `data.djline.93ab4b6b`: CHANGE BEAT
+- `data.djline.940612aa`: its opening motif
+- `data.djline.9610c174`: the arc: {sections}; now {section}
+- `data.djline.969f16e2`: a generated phrase
+- `data.djline.9752c80e`: {label}: the DJ decides, or held yes or no
+- `data.djline.9803902c`: the distorted flute
+- `data.djline.98a255f1`: FLUTE
+- `data.djline.9b759fb9`: unknown
+- `data.djline.9b99e7dd`: level
+- `data.djline.9c2a180a`: the {n} letters of {word}
+- `data.djline.9c5dee26`: {bpm} bpm in {from} to {to}
+- `data.djline.9d9c45bb`: no harmonics of {hz} Hz
+- `data.djline.9e4d1811`: bells
+- `data.djline.9fefa6c2`: no tune yet
+- `data.djline.a0233177`: longest run shared with a source: {runs} (one phrase at most)
+- `data.djline.a0f6c56e`: wash
+- `data.djline.a1b09f9f`: harmonics
+- `data.djline.a20d7724`: WHAT THE HERO SAYS
+- `data.djline.a357ea92`: votes
+- `data.djline.a6eb79a8`: outro
+- `data.djline.a707bb34`: a field texture (wind, water, birds)?
+- `data.djline.a8f277f2`: theme
+- `data.djline.aa24b5fc`: the kick, the hats and the clap?
+- `data.djline.ab59f0d6`: bars since a change
+- `data.djline.ab8db1e4`: hold the beat at 40 Hz
+- `data.djline.acdb6237`: arps
+- `data.djline.acf00867`: split the harmonic into more partials?
+- `data.djline.adc649b8`: hold
+- `data.djline.b3b066ba`: drums
+- `data.djline.b57a526d`: bring in the flute with the tune?
+- `data.djline.b5ed4791`: flute
+- `data.djline.b637f614`: the blend eases
+- `data.djline.b71f9b12`: peak
+- `data.djline.b814e6fc`: cooling
+- `data.djline.b8a5f57d`: the low-pass closed down?
+- `data.djline.bb34a54d`: landed
+- `data.djline.bd0bc4d1`: {section} at bar {bar}
+- `data.djline.c0023726`: flute and fiddle over a pipe drone in A, at a dancing pace
+- `data.djline.c08206ec`: seed {n}
+- `data.djline.c39bf2a3`: build
+- `data.djline.c5ad46ac`: waits for the first sound
+- `data.djline.c5d17cc4`: a voice answering the tune?
+- `data.djline.c7a6c4a8`: The DJ at work
+- `data.djline.c7e16877`: filter
+- `data.djline.c8f6d3e9`: section {name}
+- `data.djline.ca422b3f`: THE OPENING BLEND
+- `data.djline.cf9a732c`: the arc
+- `data.djline.d00e399b`: silence, then one soft tone
+- `data.djline.d0c33c60`: harp
+- `data.djline.d0d29338`: the chop
+- `data.djline.d0d729ba`: lo-fi keys
+- `data.djline.d14fb47f`: Close the DJ view
+- `data.djline.d204498b`: the tune on the flute?
+- `data.djline.d20b2371`: lean {v}
+- `data.djline.d290c23b`: static
+- `data.djline.d3a90be6`: neutral hum
+- `data.djline.d3b268f1`: DRONE
+- `data.djline.d4c3fffe`: the 40 Hz pulse enters
+- `data.djline.d5dec7ab`: fiddle and harp, quick and warm, beats that keep moving
+- `data.djline.d691c207`: the opener's bells
+- `data.djline.d7f8e520`: THE VOICES · EVERY INSTRUMENT THROUGH ITS OWN CHAIN
+- `data.djline.d98031f8`: phase
+- `data.djline.d9a65873`: the phase guitar
+- `data.djline.d9bdd248`: opening blend
+- `data.djline.dc2a4672`: tracks and controls
+- `data.djline.dd4c840b`: THE SOUND
+- `data.djline.ddd4448e`: held too long
+- `data.djline.de759abe`: leans on {n} earlier sets, the nearer ones more
+- `data.djline.e0db243c`: holding the phrase
+- `data.djline.e3976a64`: breakdown
+- `data.djline.e4fad5bf`: a random draw
+- `data.djline.e6e3d54b`: fiddle
+- `data.djline.e91c6c3e`: THE COMPOSER
+- `data.djline.e928686c`: a word
+- `data.djline.e932b8cb`: starts on your first click or key press
+- `data.djline.e98475f9`: a shape
+- `data.djline.eafd31d1`: pulls: {pulls}
+- `data.djline.eb8590fb`: THE MIX MACHINE SETTLES ELEVEN CHOICES, ONCE A BAR
+- `data.djline.eb8d6ff1`: hum
+- `data.djline.ec6ee012`: mode
+- `data.djline.ec904eb6`: THE PLANNER · {section} · BAR {bar} OF SET {set}
+- `data.djline.eeda06a8`: waiting
+- `data.djline.f0310062`: {mode}, split into {n}
+- `data.djline.f05da4cd`: the blend blooms
+- `data.djline.f06da505`: the first set: nothing carried yet
+- `data.djline.f4fbab06`: {a} against {b} {w}
+- `data.djline.f520c118`: soft pluck
+- `data.djline.f63548f1`: THE DJ SETTLES SIX CHOICES, ONCE A BAR
+- `data.djline.f7efb128`: the word {word}
+- `data.djline.f9b7d3fd`: muted (MUTE ALL)
+- `data.djline.f9dab73b`: stop the symphony
+- `data.djline.fa9831cf`: momentum
+- `data.djline.fcd48611`: drone
+- `data.djline.fd6ac406`: a long hall: held harmonics, bells, the flute in plain chant
+- `data.djline.fd7a1c48`: the second slow pulse
+- `data.djline.fec3a7d4`: hot
+- `data.djline.ff55af40`: ears
+- `data.djline.ffc8ed4d`: habit
 - `data.docsroute.2c08eeb7`: Example programs, run
 - `data.docsroute.478503eb`: Guide
 - `data.docsroute.58e096de`: About
@@ -653,6 +942,7 @@
 - `data.herocontrols.4efae178`: films
 - `data.herocontrols.5255aaf4`: the deep science fleets: the mathematics under SETTLE and the SDM, worked through
 - `data.herocontrols.58274a24`: enfold / unfold
+- `data.herocontrols.58317efb`: our SDM model's sizing grid, width 256 to 1024 by 20M and 60M tokens: wider and longer score lower, from 1.667 to 1.560 bits per byte; the ring is not run yet
 - `data.herocontrols.592c5264`: WINAMP BARS · the house set as chunky bars, low notes left, each with a cap that hangs and falls
 - `data.herocontrols.5a81bdb0`: recall
 - `data.herocontrols.5b269a4b`: There is no screen version of a binaural beat. A binaural beat works because each ear hears a different tone; both eyes see the same screen.
@@ -675,6 +965,8 @@
 - `data.herocontrols.7e648dc1`: WORDS only · the words, on shuffle
 - `data.herocontrols.812d107e`: pull
 - `data.herocontrols.8170409b`: old plates
+- `data.herocontrols.8998fba4`: width and tokens
+- `data.herocontrols.91832181`: measured and still to come
 - `data.herocontrols.91bd38e9`: cool to cold T and stay
 - `data.herocontrols.947b93a6`: FILMS only · the small films, on shuffle
 - `data.herocontrols.956a8a45`: ISTED? · the film
@@ -697,6 +989,7 @@
 - `data.herocontrols.acbab921`: EQUATIONS only · the equations, on shuffle
 - `data.herocontrols.ad72b866`: words settled onto the platonic solids
 - `data.herocontrols.ae14a8bd`: WINAMP SCOPE · the sound wave as a row of dots, as an oscilloscope draws it
+- `data.herocontrols.af3a246d`: what our model's scaling runs have measured (9 filled squares) beside the 34 grid runs of wave 11, outlined until they finish (51 of 56 done when drawn)
 - `data.herocontrols.afc53d8f`: the kindness fleet: harmony and reconciliation, said through real computations
 - `data.herocontrols.b04f20cf`: shapes
 - `data.herocontrols.b19db6b9`: the SETTLE code: rose agrees, orange is heat, indigo is off
@@ -794,10 +1087,10 @@
 - `data.hownotes.f1e458ff`: Old rivals: a strong push apart.
 - `data.hownotes.fa7b442d`: One sample (after one warm-up sweep).
 - `data.hownotes.fe58dbab`: 150 by 100 = 15,000 things, one per pixel, each pulled toward its four neighbours by 0.2.
+- `data.kanerva.1500130b`: At Kanerva's 1988 operating point (1,000-bit words, a million hard locations, ten thousand stored patterns) the critical distance, the farthest a read-address can start and still come back to its pattern, measured 204.3 bits: above the 188 read from Kanerva's own figure and above our own signal-to-noise estimate of 165.
 - `data.kanerva.16a69249`: The memory can say "I never stored that"
 - `data.kanerva.1e932ea1`: A soft edge turns SDM into attention
 - `data.kanerva.21e866df`: Kanerva's own critical distance, rebuilt at a million hard locations
-- `data.kanerva.3706471f`: At Kanerva's 1988 operating point (1,000-bit words, a million hard locations, ten thousand stored patterns) the critical distance, the farthest a read-address can start and still come back to its pattern, measured 204.3 bits: above Kanerva's figure of 188 and above our own signal-to-noise estimate of 165.
 - `data.kanerva.5117afe7`: At equal memory, SDM holds far more than a Hopfield net
 - `data.kanerva.5f4cabcc`: With a read-address that has 10% of its bits wrong, the number of patterns the memory recalls in 90% of reads rises almost in proportion to the number of hard locations, from 2,000 hard locations to a million.
 - `data.kanerva.819e340b`: With the memory of a million 256-bit hard locations, a Hopfield net of the same size recalls 100 patterns at 10% address-noise; SDM read by address recalls 20,000, and SDM read by content (the top-k rows that match the read-address) 70,000.
@@ -943,8 +1236,8 @@
 - `data.mnist.ccb03a08`: H=2000 settled 95.87 in [95.0, 97.0], above M3's mean: HIT.
 - `data.mnist.cd7c386b`: H=100 settled mean 91.86 in [89.0, 93.0], 3.78 below M3: HIT.
 - `data.mnist.d57fb142`: settling costs, against the exact readout
-- `data.mnist.d6bfed54`: joint_h500_s1, settled readout, all 10,000 test digits (recorded): rows true, columns answer
 - `data.mnist.d7d78fd8`: deskewing
+- `data.mnist.d9939d30`: the 500-hidden machine (seed 1), settled readout, all 10,000 test digits (recorded): rows true, columns answer
 - `data.mnist.dedd6d77`: Settling is slower than sealed: 10 sweeps leave 2.18 points on the table and 30 sweeps 0.56; a machine with more hidden things settles more slowly still.
 - `data.mnist.df09010f`: test error
 - `data.mnist.df3771bb`: deep belief net 784-500-500-2000-10 (stacked RBMs, generative fine-tuning)
@@ -1135,8 +1428,11 @@
 - `data.relax.f55e34cc`: THE COOL-DOWN
 - `data.relax.f7b3237b`: arms up, feet out
 - `data.results.003b8f5e`: Hopfield bounds and the 30% win right; 40% win wrong
+- `data.results.00483ded`: a stiff Nishimori read stalls
+- `data.results.009c719f`: belief propagation at the true flip rate
 - `data.results.00ce4e94`: Unsolvable sudoku with no clashing givens: 0 of 50 at 200k sweeps.
 - `data.results.017ecbe2`: the inverse from the spread
+- `data.results.01b43524`: TRACK-C FRESH
 - `data.results.01cd48da`: Z3 column rows within 15 points of the seal
 - `data.results.0205e0fd`: colour
 - `data.results.026cc74e`: smooth 0.2 soft warm
@@ -1145,32 +1441,50 @@
 - `data.results.03cd03cf`: rate gap
 - `data.results.04842188`: forced bits
 - `data.results.04d29236`: no pulls, bits
+- `data.results.04f6be9b`: no settle miscorrections
 - `data.results.05149fde`: Negative controls:
+- `data.results.054daeb9`: the pixel-shuffle control
 - `data.results.0595e39b`: wrong at fire 0.05; holds at 0.01
 - `data.results.062afdea`: largest gap 0.147 vs SDMKEYS S2000a
+- `data.results.06b3ab3e`: the Nishimori read at kappa 4
+- `data.results.06f2f85f`: chain warm
 - `data.results.07383cd2`: every control refuses what it should
 - `data.results.0804e2ea`: row shuffle 0 of 180 at M/100
 - `data.results.085cd0d9`: dwave annealing 11 of 20 at its default schedule
+- `data.results.088cd8e7`: chain failures that are search failures, 10,000 sweeps
 - `data.results.08a98c9e`: Positive control for the instrument:
 - `data.results.08fa9629`: the best checkpoint with a real SDM read
+- `data.results.09eece2f`: what a warm start is worth
+- `data.results.09fdac69`: a different film
 - `data.results.0a377624`: result
 - `data.results.0b30c608`: training text (fineweb-edu)
 - `data.results.0b573d9a`: Does a properly trained store beat the no-store control?
 - `data.results.0b869eef`: Bethe on the big grid
+- `data.results.0bb3b31d`: the Nishimori read at kappa 1
+- `data.results.0ccb2778`: lowest at kappa 2, but kappa 4 is not worse
 - `data.results.0d75b568`: Z4 drop
+- `data.results.0eb182d8`: Block error on the random-flip channel, 200 blocks per cell, 400 sweeps
 - `data.results.0f289c53`: Can a settled machine learn a small classification task, against a plain baseline?
 - `data.results.0f40bc4e`: TAP soft 80
 - `data.results.0f6ddf92`: things (columns / Rosenberg)
 - `data.results.0fbe7b43`: captured by a rival
+- `data.results.1015aee9`: a final-state signal cannot refuse a landing
+- `data.results.101f430b`: the chain from noise decoded 50 of 50 at rate 0.5, against a sealed 10
 - `data.results.108eace7`: TEST bits per byte, 20M training tokens
+- `data.results.10a6b9a2`: Does the anneal's schedule matter, do many short anneals beat one long one at the same sweeps, and how often does a walk end at the answer rather than merely pass it?
 - `data.results.10c80c7d`: Horse, median PSNR dB, warm, against the pull J
 - `data.results.11489b64`: sdm 1.627, gap to qwen 0.038 (sealed 0.10 to 0.25)
 - `data.results.11640924`: shuffled V
+- `data.results.11b44ef8`: BP 50
 - `data.results.11f5b38a`: no correction
 - `data.results.12a318b0`: Reproduction control:
 - `data.results.12d00afe`: J 0.2 warm
 - `data.results.1420380c`: Shuffled-energy control: every arrangement a valley with chance 1/(n+1)
+- `data.results.1428d567`: final state at 10,403, many short anneals against one long one
+- `data.results.147a8806`: the chain gadget with the ramp at rate 0.75, p 0.01
 - `data.results.15432d0b`: total N
+- `data.results.161f5c4c`: predicted tanh 80
+- `data.results.173913b6`: the landing census
 - `data.results.18000261`: measured
 - `data.results.185cbaca`: Valley count grows about e^(0.21 n); a seed plus a valley index needs about n bits to name an n-bit file (pigeonhole, measured); the landscape is useful as a prior, and not as a store.
 - `data.results.18f26f37`: | weather, clean file | 0.0008 / 0.0005, PASS |
@@ -1182,38 +1496,54 @@
 - `data.results.1b3263c2`: shuffled labels 7.8
 - `data.results.1b8f878a`: Bethe soft 1000
 - `data.results.1bad4b47`: Negative control: dropping the first 1,000 merges changes 12 of 12 encodings.
+- `data.results.1be8e347`: a first-read signal carries the refusal
 - `data.results.1beff7db`: frozen between sdm and nostore: 1.607, in order
 - `data.results.1d7b3e7a`: Paired differences over the identical 3,873 TEST windows
 - `data.results.1d88bed9`: J 0 cold
+- `data.results.1df0f8b4`: Blocks decoded of 50 by sweeps, warm start (post-hoc)
 - `data.results.1e9dab1d`: 100 sweeps
 - `data.results.1f0dde4e`: best 30% capacity over radii
 - `data.results.1f2faccf`: MF soft 1000
+- `data.results.1f477655`: visits that end at the answer, short walks against million-sweep walks
 - `data.results.2014169b`: The exact colourability of the generated graphs (colourable of 10 per cell)
 - `data.results.2078ca7b`: Adam 0.35 above SGD
+- `data.results.20b0b677`: the predicted 80-sweep read
 - `data.results.21580954`: fake
 - `data.results.223373cc`: right at 0.1 (100), wrong at 0.4 and on direction
+- `data.results.22394d02`: the first frame after a cut
 - `data.results.2387d373`: cold 80 x 1 far below 8 x 10
 - `data.results.240f0d86`: inversions against the exact answer
 - `data.results.241f1037`: | random16, largest pull (r6-r12, 1.134) flipped | rate gap 0.611, pair gap 1.620, FAIL |
 - `data.results.24451f6b`: The radii (n 256)
 - `data.results.248a50be`: collapse above 0.25
 - `data.results.24c5249a`: settle read, all soft cells
+- `data.results.25217a7f`: recovery after the cut
 - `data.results.2555196b`: confounded by load
 - `data.results.26057b90`: long-run rb read, checkerboard Metropolised Gibbs, J 0.2 (post-hoc)
+- `data.results.26399a6b`: At light load the cheap predictors match the store within noise; at heavy load they collapse long before it does, because the store's rows are placed by address. Never-stored cues stall because about 1,400 patterns share the vote. Calibrating the minimum of four signals refuses as well as the union and keeps more recall.
 - `data.results.2644deef`: more chains fix the gap; the cause was autocorrelation
 - `data.results.26682197`: Bethe bits 80
 - `data.results.267f452b`: SETTLE on the max-cut
+- `data.results.27106467`: col chain block4
 - `data.results.27cb79b3`: horse, TAP leans, warm: dB against sweeps per frame
 - `data.results.280f9474`: update
 - `data.results.2837fec0`: Information: seeds S, pointer bits, coverage of all 2^16 strings
+- `data.results.285bb404`: 1k best / final
+- `data.results.28677e4f`: Content-read predictors against the store: mean absolute error in the failure fraction
 - `data.results.286b9194`: 1,000 digits: four walkers match SGD with better doubt
 - `data.results.298989a0`: text stored in 512 things with a clean whole cue, compressed
+- `data.results.29f5a4ca`: the predictors at light load
 - `data.results.2b6204e3`: arm (warm)
+- `data.results.2bc96cdc`: 13 of 16 capacities within one checkpoint
+- `data.results.2c162322`: a stiffer penalty is worse everywhere
 - `data.results.2c448d04`: n 1000 at 1e5 equals n 256
 - `data.results.2c624497`: bits read against the coin-noise law
 - `data.results.2c8c0a91`: inverse from the spread, kappa 1000
 - `data.results.2d0767e0`: location use (distinct top-k locations, last hop)
 - `data.results.2d1a1075`: SDM much cleaner than sealed
+- `data.results.2e7a06df`: A memory can refuse a never-stored cue by how far its read travelled from the cue, and that rule follows the exact nearest-neighbour limit wherever such cues move. Where they stall at heavy load, a rule that calibrates four signals on the memory's own random probes refuses 98% or more everywhere.
+- `data.results.2ea14e11`: more sweeps
+- `data.results.2ef72f25`: zero noise
 - `data.results.2f0aedaf`: chars wrong after one flipped bit, AC at 61 bytes
 - `data.results.2f6ff393`: factoring reach at one million sweeps
 - `data.results.2fc941c2`: mirror
@@ -1223,26 +1553,35 @@
 - `data.results.313c9888`: The trade-off frontier (radius scan, P90 at 10 / 30 / 40%)
 - `data.results.317e793b`: Block 2, softness sweep on storeopt_qstop, seed 0
 - `data.results.3197bd75`: warm and cold agree; cold beats the Python player cold
+- `data.results.33382ac9`: var ratio
 - `data.results.34063b45`: Hopfield P90
+- `data.results.3426f85a`: col sum single
 - `data.results.343761bf`: factor 899 at 50k sweeps: walks that visited the answer, and ended in it
 - `data.results.34592c18`: Never-stored cues: 0 of 60 recalled at 10% and at 30% in all 40 cells.
 - `data.results.34681bbd`: direction confirmed (settle 0/420), magnitude missed at fire 0.05
+- `data.results.351257e0`: rate 0.5, p 0.03, 200 blocks: the sum gadget with the penalty ramp, 400 sweeps
+- `data.results.352021d0`: the cold end of the schedule
 - `data.results.35224e88`: Non-symmetric: 20 of 20 random matrices refused, with the offending entry named.
 - `data.results.355124f7`: gzip -9 (system)
+- `data.results.359a794f`: carrying the correction beats carrying the leans
 - `data.results.35b7be61`: block threshold
 - `data.results.35f8e793`: precond20 exact
+- `data.results.3609237d`: the crowded address store breaks travel
 - `data.results.3616ac3e`: Block 3, the sealed winner (storeopt_qstop, softness 0.25) over seeds
 - `data.results.3668f595`: Entry shuffle: 0 of 60 at 10% and 30% for all four reads (address, density, block, top-k), every M, both loads.
 - `data.results.366abb09`: at 65 others every compressed arm's C90 was 0
 - `data.results.36d45296`: qwen
 - `data.results.37386ae0`: id
+- `data.results.37863e23`: 2 tau tanh I
 - `data.results.37f59626`: 2 tau of tanh I
 - `data.results.37f8068c`: three-pattern mixture
 - `data.results.386f27b5`: arm
+- `data.results.38ea7d20`: the two soft scalings agree
 - `data.results.394e1218`: horse against the frame 7 ahead, 13.09 and 12.59 dB (still 22.4 and 9.9 dB below the right frame); colour against shot B, 9.91 dB
 - `data.results.39555391`: SNR (SDMSCALE)
 - `data.results.39a2d8ba`: Time correlation of the chain (filmsharp_tau, 3 frames)
 - `data.results.39f18ad3`: Hopfield units
+- `data.results.39f609e3`: the live player
 - `data.results.3a1123cf`: rb 80 at J 0.2, checkerboard Metropolised Gibbs (random-order Gibbs 35.44)
 - `data.results.3b2a0301`: elimination far faster (load-confounded)
 - `data.results.3b520912`: sd
@@ -1254,9 +1593,12 @@
 - `data.results.3d0c5c38`: No context-addressed store beats no-store across seeds. Stopping the query gradient removes S0's whole store cost, and the store then ties the control; the one consistent winner is a table keyed on the current token, which works as an untied input embedding.
 - `data.results.3d0e0221`: SETTLE best-so-far
 - `data.results.3d2777e2`: each colour channel within 0.06 dB of the law
+- `data.results.3d480d93`: rule S in the heavy top-k cells
+- `data.results.3dfb333d`: the better split of a budget
 - `data.results.3e5c33ad`: SDM SNR P90
 - `data.results.3e7541e7`: Kanerva's critical distance (n 1000, M 10^6): measured
 - `data.results.3e84357c`: Text back per note, E in bytes (memory, cue, others, damage)
+- `data.results.3e87c277`: Wrong parity matrix** (codebook seed 2, seed-1 codewords, p 0 and 0.01): the sent word comes back 0 of 50 from settle and from BP, at both rates.
 - `data.results.3ebd12aa`: Z3 primes
 - `data.results.3f360054`: inverse from the spread, kappa 10, sizes 4/16/64
 - `data.results.3f379e65`: mean-field
@@ -1269,6 +1611,7 @@
 - `data.results.41b5f4c6`: compressed C90 was 16 at 50 others, not 0
 - `data.results.422b5caa`: wrong: row-level density blocks; 40% clause right
 - `data.results.432907b2`: fade within the stated ranges
+- `data.results.43a1a017`: Restarts at one million sweeps in all: best / final of 20 (walks that visited; walks that ended at the answer)
 - `data.results.43da0439`: Block 1, seed 0, softness 0.5 (TEST bpb)
 - `data.results.43f176c7`: at equal sweeps dwave's default schedule matches SETTLE's final state
 - `data.results.43f3565d`: Controls: a corrupted export must fail
@@ -1282,9 +1625,12 @@
 - `data.results.46588694`: TAP soft 80 at J 0.2 (mean-field 28.79)
 - `data.results.47efce0e`: cd0.2
 - `data.results.483973e0`: Z3 factoring, 50 seeds
+- `data.results.48531b14`: col chain single
+- `data.results.4879a410`: When should a sparse distributed memory say "I never stored that"?
 - `data.results.48b1ff75`: Z3 reach
 - `data.results.48efcfa1`: cd0.3
 - `data.results.491e0a9c`: system
+- `data.results.492d9e3f`: the predictor at 10% and 40%
 - `data.results.494a00ce`: spread
 - `data.results.49b4b3f8`: QUBO conversion matches dimod
 - `data.results.49efd134`: cd0.4
@@ -1306,6 +1652,7 @@
 - `data.results.4e41f91a`: unigram table -0.0082, -0.0075
 - `data.results.4e4be40e`: weakly (2 vs 0)
 - `data.results.4e73f442`: sealed iteration
+- `data.results.4e7e8994`: Wilson 95%
 - `data.results.4ed9516e`: wrong key lands in note
 - `data.results.4f09d0a5`: Is gradient descent Settling, and what does the cloud of a hot fit give that one fitted model does not?
 - `data.results.501a7a6a`: radius: P90
@@ -1319,15 +1666,20 @@
 - `data.results.529ee39e`: control
 - `data.results.52e351ff`: softmax attention
 - `data.results.532fd704`: Hopfield
+- `data.results.53b5de41`: the exact small code
 - `data.results.54bb1984`: SNR radius
+- `data.results.54fd7b82`: Time correlation at the edge: identical fitted leans for both rules
 - `data.results.5582c487`: mean abs q
+- `data.results.55a9b728`: wrong parity matrix
 - `data.results.56868ff9`: violated as sealed for the pulls read
 - `data.results.56cfd748`: rb 80 J 0.1
 - `data.results.575ccd98`: thrml against exact
 - `data.results.5791c4f4`: use
 - `data.results.57b776d0`: top-k (k = p M)
+- `data.results.57ce6ae9`: Gibbs slows down toward the edge
 - `data.results.57f70199`: right to 27 bytes, wrong at 40 (better) and 55 (worse)
 - `data.results.5838ff92`: shuffle and never-stored right; 49 of 60 at 1e4; the mirror breaks the silent-read clause
+- `data.results.589bb381`: BP p 0.02
 - `data.results.58be4656`: density (sealed)
 - `data.results.5904bed9`: the sealed prediction
 - `data.results.590cffb9`: shared, anneal_each
@@ -1344,6 +1696,7 @@
 - `data.results.5c26f3bc`: samples
 - `data.results.5c5b4442`: secant20 exact
 - `data.results.5cca9a12`: How often does annealing find the exact answer to a hard puzzle, against sweeps and size?
+- `data.results.5cd1888d`: own frame, shuffled
 - `data.results.5d26f54f`: sampler
 - `data.results.5d6b81d2`: rival ahead
 - `data.results.5e7d47e9`: t0.8 repeated-4-gram share
@@ -1353,7 +1706,9 @@
 - `data.results.5fc5eddb`: more sweeps do not help the direct machine
 - `data.results.6025c8bf`: Reads from pure noise (%): hit / mirror / mixture / other / fake / silent
 - `data.results.603d57ce`: Compression always helps: recovered text roughly doubles in every cell. An error-correcting code helps only against stray bits (crowded Hopfield, rate 0.75). The check turns every failure into a refusal: 0 silent wrong texts in 96,000 recalls.
+- `data.results.6040548b`: A warm start is worth about one iteration of the fit, not ten times fewer sweeps; a short cold fit is most of the rescue. Checkerboard Metropolised Gibbs forgets more than twice as fast as Gibbs near the edge, and the speed it predicts for an 80-sweep read lands within 1 dB of the measured reads.
 - `data.results.60d0c96b`: factor 143 at 10,000 sweeps, annealed vs random
+- `data.results.6159efd5`: BP true p
 - `data.results.61978921`: 2 tau bits
 - `data.results.61de5a4d`: mmd seed sd
 - `data.results.61e07e79`: 9x9 easy sudoku at 50,000 sweeps (sealed / measured)
@@ -1365,41 +1720,56 @@
 - `data.results.638d51ed`: a whole mirror image, not domains
 - `data.results.63f23804`: silent
 - `data.results.642dd164`: On sudoku, the number of givens decides whether annealing succeeds, and the solving technique a puzzle needs does not. Colouring gets hard near the threshold (16% and 0% at n 160, degree 4.4 and 4.6). The column encoding factors up to 2,572,807 at one million sweeps where Rosenberg stops at 323, but its successes come from the best-so-far record of a walk that passes through the answer, and not from the state where the walk ends.
+- `data.results.64345fc7`: rule S recall
 - `data.results.64803841`: Equal memory against Hopfield (P90 at 10/20/30/40%)
 - `data.results.64912d9b`: right at 4 and 8 bytes, wrong at 16 and 24 (better)
+- `data.results.64e12fbb`: settle failures that were search failures, not model failures
 - `data.results.651c570c`: T 0.03 cloud matches SGD
 - `data.results.652927a5`: Exact answers: 4x4 enumeration (TAP against mean-field), Newton to 1e-14, and the coin-noise law per colour channel (within 0.06 dB).
+- `data.results.658ab664`: right frame
 - `data.results.65b1d004`: bytes
 - `data.results.65d68728`: dwave, SETTLE's schedule
+- `data.results.6627d935`: FRESH and PERSIST differ by 0.035
 - `data.results.664c55d7`: T = 0 is gradient descent and T = 1 samples the posterior, checked exactly. On MNIST the T 1 posterior is less accurate than SGD; cooled it matches SGD, and four walkers give a doubt that finds rotated digits better than any single model.
+- `data.results.665ef62d`: 34% against a sealed 26.5% or less
 - `data.results.6682e018`: Hopfield N = 20, exact, 10 pattern sets
+- `data.results.66b94c48`: the block threshold at M 1e6
 - `data.results.66caf088`: zero_read
 - `data.results.66e36589`: Random pulls, exact: valleys against size n
 - `data.results.675219c7`: the least-squares cloud's covariance against the exact posterior's, T 1
+- `data.results.676d0451`: Factoring, columns, 50 seeds: best-so-far / final state, percent of runs
 - `data.results.676d839f`: Z1 sudoku 9x9, 5 puzzles x 10 seeds per cell (sealed / measured success %)
+- `data.results.67f94296`: frame 7 ahead
 - `data.results.67fa3815`: variable-length pointer, n = 16
+- `data.results.6862b969`: col sum block4
 - `data.results.689219d9`: miss
 - `data.results.68e24817`: bpb
 - `data.results.697f2239`: the best checkpoint overall
+- `data.results.698570b3`: soft input from the memory, chain settle decoder
 - `data.results.699af689`: Annealing finds exact answers where random guessing finds none: every sudoku, every colouring, max-cut from 16 nodes. Small factoring is a weak demonstration.
 - `data.results.69ae16b2`: load M/100
+- `data.results.6a1cdeda`: the stall census, all but the woken-set overlap
 - `data.results.6a29ff2f`: The architecture is competitive at this size, but the learned store is not: the same model without the store is better by 0.017 to 0.025 bits per byte in every seed, and so are a dense MLP of equal size and a store of frozen random values.
 - `data.results.6a4cc842`: every threshold passed, but 3.0 dB above TAP at 0.30, outside the sealed plus or minus 2
 - `data.results.6ad3de8f`: fit residual (grey)
+- `data.results.6ae3d0d0`: block error
 - `data.results.6b017c21`: delta
 - `data.results.6b097a2f`: How does Kanerva's SDM compare with Hopfield on capacity, fake valleys and fade, and what does a key cost and protect?
 - `data.results.6b8a12db`: fitted leans at J 0.44, soft 1000 (TAP 3.42)
 - `data.results.6ba1614c`: miss by 0.001 on EXACT3
 - `data.results.6bed6bb0`: burn-in bias explains the misses; noise-slope half underpowered
+- `data.results.6c542d41`: top-k at M 1e5, 40%: 10 against 30
 - `data.results.6c9ff71a`: ac+rep3
 - `data.results.6f246f1d`: never worse: held 8 of 8
 - `data.results.6f3d24ae`: The pulls read, SNR radius (P90 at 10/20/30/40%)
 - `data.results.6f432f92`: Temperature 10: 83.86% against 89.51% at T 1, and the worst NLL of any Settling arm (0.7326).
+- `data.results.6f665d90`: every best-so-far count reproduces
 - `data.results.6f957cb5`: context-addressed stores against no store
 - `data.results.6fed9a7b`: Eval-time ablations on trained stores (TEST bpb)
 - `data.results.709aafa4`: accuracy
 - `data.results.70b873a2`: MF bits 80
 - `data.results.72376fe7`: the best rate under crowding is 0.75
+- `data.results.72e5dfc6`: rule R recall
 - `data.results.73bd6816`: Yes, on four small models checked against exact enumeration, 300 seeds each, and never worse; Gibbs stays the default, so every program prints what it printed before.
 - `data.results.73d14d98`: hamming
 - `data.results.7421e2c2`: the sealed 20-point drop could not show at a 16% base
@@ -1409,6 +1779,7 @@
 - `data.results.758eeaa0`: relative error at t = 100,000, random target
 - `data.results.75be0acb`: rerun noise
 - `data.results.75c90c41`: Eval-time on trained stores: shuffle_keys (permute the key rows) and zero_read.
+- `data.results.75d68e6b`: Do moves that change a code bit together with its checks fix LDPCSETTLE's search failures, does reading at the Nishimori temperature decode, and what does the sealed 10,000-sweep rerun say?
 - `data.results.76420597`: 1,000 digits: T 1 cloud 8.57 below SGD
 - `data.results.76e616d6`: Capacity, address read (P90 at 10/20/30/40%; 3 seeds x 40 queries per damage)
 - `data.results.76ec3aa1`: collapse between 0.35 and 0.40
@@ -1417,21 +1788,32 @@
 - `data.results.785d0b8b`: softness 2.0 is 0.022 better, not within 0.01
 - `data.results.78dc4784`: grows 30x, exponent 0.74, 300 at 1e6; 4.0x and 4.3x the SNR radius at 3e5 and 1e6, not 5x
 - `data.results.78e32de5`: right
+- `data.results.78ebf2c3`: missed by one cell
 - `data.results.78f549cb`: clipped steps
 - `data.results.78ff763d`: every arm calibrated except GD and T 10
 - `data.results.7942a6d9`: Var(tanh I) / Var(s)
+- `data.results.79628d6f`: sum random
 - `data.results.798fbc5d`: formula
+- `data.results.79d3281c`: a full warm budget is not worse
+- `data.results.79e06f0b`: the predictor on failure rates, 12 of 12
 - `data.results.7a4b87b3`: Kanerva Fig. 7.3
 - `data.results.7b80c780`: speed
+- `data.results.7bafd283`: restarts: finals hit, best-so-far missed
+- `data.results.7c000daf`: the collapsed gadgets differ by up to 29 points
 - `data.results.7c445ab1`: pair
 - `data.results.7c53a4c5`: 13.09 and 12.59 against the frame 7 ahead; the horse frames share their background
+- `data.results.7c8aa9e2`: the information bit error stays within 1.5 p
 - `data.results.7ccbda98`: follow-up: 16-seed slopes still steep
 - `data.results.7ce1dec4`: load M/30
 - `data.results.7d2e793b`: nostore
 - `data.results.7d86f420`: Tears of Steel one-shot clip, rb, checkerboard Metropolised Gibbs, 20 sweeps (soft Gibbs 35.27)
 - `data.results.7df06952`: tokens (20N / 100N)
+- `data.results.7eae9db4`: TRACK-G on fresh cells
+- `data.results.7f412fae`: bias dB
+- `data.results.7f413754`: 400 sweeps
 - `data.results.7fbb99ca`: T=1 with zero-started leans
 - `data.results.813e849e`: GB10 hours
+- `data.results.8143dbfe`: rule S refusal
 - `data.results.81f14954`: vacuous: both readers 0
 - `data.results.825318e0`: where the parameters and the work sit
 - `data.results.827a917d`: spread (bits)
@@ -1440,8 +1822,12 @@
 - `data.results.8355a535`: random abs q
 - `data.results.8355ce62`: cues whose best rival shared more locations than the target
 - `data.results.8373bda5`: fragility of a compressed note
+- `data.results.841b2ada`: Metropolised Gibbs against Gibbs, time correlation
 - `data.results.84ab60d5`: under 1%
+- `data.results.84e25e1f`: penalty 2 is already the best
+- `data.results.8563b1bf`: Rule R and rule S on fresh seeds: refusal of never-stored cues and recall at 10/20/30/40% damage
 - `data.results.8642ed4d`: MMD falls with the chain length T
+- `data.results.86d8b1a3`: the predictor at 30%
 - `data.results.877e67e0`: reproduction within 0.0026
 - `data.results.87a7e7b6`: Newton5 exact
 - `data.results.87b82de3`: split
@@ -1455,25 +1841,34 @@
 - `data.results.8958bcda`: softness
 - `data.results.895a58ed`: net four walkers: accuracy, NLL and doubt
 - `data.results.8ab1b211`: 36.69 and 47.06
+- `data.results.8ad3ba58`: travel alone fails where the combination does not
 - `data.results.8ae4fbb8`: the soft cut-off
+- `data.results.8b15bc3f`: rule S keeps rule R's recall
 - `data.results.8b31367f`: 64 hidden 93.8: miss on both
+- `data.results.8b3b98ef`: non-codeword target refused
 - `data.results.8b760fac`: ac+ldpc0.5
+- `data.results.8bc4971a`: rule S in the crowded address cell
 - `data.results.8bd278da`: no code beat compression on SDM
 - `data.results.8c2c8e39`: J 0.2 TAP warm
 - `data.results.8c2eebda`: arm (warm, 20 sweeps, J 0.1 TAP unless noted)
 - `data.results.8c5f5fc8`: MNIST, 10,000 digits: T 1 cloud against SGD
 - `data.results.8c92800f`: no memorisation (with a caveat)
+- `data.results.8cde7932`: hard belief propagation reproduces SDMCODED
 - `data.results.8d186d42`: 64 hidden vs logistic regression, per split
 - `data.results.8d2e75f4`: sudoku 9x9 easy, 2,000 / 10,000 / 50,000
 - `data.results.8d7db099`: 10,278,427 0 of 20 at one million sweeps
 - `data.results.8dd16a4b`: LDPC 0.75 failed 1.4% of blocks at 1% error
+- `data.results.8e48aa18`: the ratio falls toward the edge
 - `data.results.8e910730`: merges, identical to the publisher's tokenizer.json
 - `data.results.8e9a4a02`: H100 GPU-hours
+- `data.results.8ec93238`: Negative controls, median PSNR (dB)
 - `data.results.8eeca4b3`: a stranger forced to decode reads
 - `data.results.8ef98382`: Count-store floors (TEST bpb)
 - `data.results.8f1b6da6`: MF soft 80
+- `data.results.8f249410`: every clause run reproduced; two pulls not run
 - `data.results.90073cdc`: 159,197 at 100k sweeps, not the sealed 2,572,807
 - `data.results.90510d01`: 26.71, 1.00 dB under no pulls
+- `data.results.90d4f9ce`: nish k4
 - `data.results.910d4f73`: max-cut n=20, 200 / 1,000 / 5,000
 - `data.results.9130509d`: SDM address, best radius per damage
 - `data.results.91b30226`: Yes: a machine with 64 hidden things reaches 93.8% on binarised digits against logistic regression at 91.2; shuffled labels give chance.
@@ -1484,12 +1879,16 @@
 - `data.results.92728dbb`: hard SDM from noise lands in a memory 68%, fake valley 13%
 - `data.results.929164b9`: 40% 10, under 20
 - `data.results.92e1d7da`: columns 1k / 10k / 100k
+- `data.results.9303c9d8`: LDPCSETTLE reproduced exactly
 - `data.results.93180890`: max-cut n=16, 200 / 1,000 / 5,000
 - `data.results.93c980c9`: wrong key
 - `data.results.94ffce22`: The collapse zone on the horse (15 frames 150x100, warm, seed 1, median PSNR dB)
 - `data.results.9535de44`: uncolourable graphs coloured
 - `data.results.955f9b14`: When a SETTLE model is exported to other samplers' formats, do thrml, dwave-samplers and exact enumeration agree with it?
+- `data.results.957381a1`: the best walk length grows with N
+- `data.results.95b2ec53`: a stiffer penalty multiplies search failures
 - `data.results.95b4c6a6`: right key
+- `data.results.95d501ad`: nish k1
 - `data.results.95edc7eb`: EXACT3, shuffled joint counts (negative control)
 - `data.results.9631b6a8`: largest pull (col / Ros)
 - `data.results.96bb211c`: random-pull V
@@ -1498,8 +1897,11 @@
 - `data.results.97b529b9`: WIDE M 2000
 - `data.results.97dfc1a5`: ac+ldpc0.75
 - `data.results.97ec0929`: SDM loses at a matched pull count
+- `data.results.98abeb1e`: calmin keeps the union's recall
+- `data.results.991155ad`: sum warm
 - `data.results.99fa9291`: budget (M x 256)
 - `data.results.9a140dea`: Can an SDM be the language model itself, trained the normal way at the DeepSeek V4 vocabulary, against a matched transformer and a no-store control?
+- `data.results.9a34d188`: the predictors on never-stored cues
 - `data.results.9a3ab202`: Does settling solve linear systems, and how does the error fall with settling time?
 - `data.results.9a82fb2e`: Do TAP leans fix the mean-field bias, do copies help, and does colour work (Tears of Steel)?
 - `data.results.9b2538b1`: case
@@ -1509,35 +1911,52 @@
 - `data.results.9be724b0`: SDM .01 kernel (infinite locations)
 - `data.results.9dabce40`: N-gram hash arms (store recipe, 3 seeds each)
 - `data.results.9dc3d926`: shape
+- `data.results.9dd37525`: calmin just short on the mean clause
+- `data.results.9de1c8ee`: Non-codeword target** (leans at p 1e-4, lambda 0.2): the calmest arrangement is the target 50 of 50, and the decoder refuses it 50 of 50.
 - `data.results.9e109bff`: capacity at 10% damage against locations M
+- `data.results.9e470614`: TRACK-G on the 56 failure rates
+- `data.results.9e51c9bc`: model failures hit, search failures missed
+- `data.results.9e6ea963`: rule R refused poorly in two heavy cells
 - `data.results.9ede2954`: mean
 - `data.results.9f13282b`: 2,572,807 1 of 20 at one million sweeps (sealed 5%)
 - `data.results.9f3c62b0`: nearest-row distances
+- `data.results.9f752fc8`: one million sweeps
 - `data.results.9f9013dc`: Yes at 30%: P90 grows from 10 to 300 as M goes from 10,000 to 1,000,000. No at 40%: P90 stays at 0 to 3 at every M and radius, because a few whole patterns race for the read and the one sharing the most locations wins. The sealed density read failed; waking the top k rows worked and beats Hopfield at equal memory.
 - `data.results.a1101014`: Races between whole patterns (600 cues at 40% damage per case, address read)
+- `data.results.a15ad7e7`: ten million sweeps at 644,773
 - `data.results.a1f63520`: softness 0.25 best, 4 worst
+- `data.results.a207981a`: Can a settling machine decode an LDPC code, with the parity checks built into its pulls, and does soft input from a memory's last sweeps recover more exact notes?
 - `data.results.a21b1c65`: except at M 1e6, T 10,000: the address read returns 60 of 60, density 55, top-k 60, none silent. The store is a mirror there: mu / sigma = 2.8, so a read changes about 1 bit of 256 and any cue is a fixed point.
 - `data.results.a25980a2`: the step correction helps
 - `data.results.a27a3278`: settled vs exact readout within 2.0 points
 - `data.results.a28c2f1d`: pass vs mean-field agreement below 97% at softness >= 0.5
+- `data.results.a29425b5`: TRACK-R at heavy load
 - `data.results.a2db9ebf`: What the landscape is good for
 - `data.results.a2f5a2f3`: store size
+- `data.results.a2f76837`: the stall at M 1e6, T 10000
 - `data.results.a3398a54`: fitted soft 1000
+- `data.results.a34b3466`: the Gaussian self-vote
 - `data.results.a354700f`: 33.9 frames/s at load 85, low power
+- `data.results.a41ed8a7`: the cold end and the warm end
 - `data.results.a501297d`: fixed 0.4 n
+- `data.results.a51cd94d`: chain random
 - `data.results.a55f2c5c`: Fitted leans hold the horse to J 0.44, where TAP falls below 15 dB between 0.38 and 0.40. The rb read is the soft read in checkerboard order. Checkerboard Metropolised Gibbs lifts bits 80 at J 0.2 from 26.71 to 29.68 dB and the rb read from 35.44 to 39.88.
 - `data.results.a5851565`: G(64, 1/2) best cut 598 from every solver
 - `data.results.a5ca73d7`: Z1 sudoku rows within 15 points of the seal
 - `data.results.a65216ec`: hit at 0.35; above band at 0.40 and 0.44; the crossing clause hit
 - `data.results.a689f732`: logistic regression 91.2, below its sealed range
 - `data.results.a6ea7fbe`: wrong: 40% P90 2/2/2/3
+- `data.results.a6fd9806`: TRACK-C at heavy load
+- `data.results.a7243879`: exact shuffle answer
 - `data.results.a7a0db33`: J 0 cold (exact law)
 - `data.results.a8acc216`: mix3
+- `data.results.a8de442f`: predictor TRACK-P, failure rates against the store
 - `data.results.a8ea232e`: Shuffled training labels: 9.86% (chance is 10%).
 - `data.results.a8ef1eb7`: TAP leans beat mean-field on 20 of 20 exact targets; the mirror flip moves from 0.25-0.3 to 0.35-0.40; copies reduce latency but do not improve quality.
 - `data.results.a9419d51`: the query-gradient stop
 - `data.results.a9603b16`: address P90 at 10% grows with M
 - `data.results.a965fc14`: Z1 order
+- `data.results.a9bb0cbc`: Moving a bit with its checks is the fix: at 400 sweeps it beats the one-thing-at-a-time settle at 10,000. With a penalty that is soft while hot and hard while cold, the settle matches belief propagation at low noise; belief propagation still wins at higher noise. The Nishimori read is the right idea on the wrong model.
 - `data.results.aa5dcf7c`: wrong-shot control 25.4 dB below its own shot
 - `data.results.ab45f730`: method
 - `data.results.ab48178e`: sdm_nostore
@@ -1550,15 +1969,23 @@
 - `data.results.ac6a416b`: budget (SDM M x 256)
 - `data.results.ac6fff06`: wrong on the crossover, right at 40%
 - `data.results.ac7ef196`: behind the Python player at 5 sweeps
+- `data.results.ac88d3a9`: rate, p
 - `data.results.ad58e020`: 93.1% of coordinates within 2 standard errors
 - `data.results.ae33a7b5`: neural models against count stores on the same text
+- `data.results.ae839c67`: rate
 - `data.results.ae863fc0`: SDM with a name cue did better than sealed
 - `data.results.aedf7295`: store sealed to help by 0.06; it costs +0.017 to +0.025
+- `data.results.af82d4bc`: the 80-sweep loss is smaller
 - `data.results.af9eba55`: Sealed predictions, scored
+- `data.results.b06ffe05`: the settle decoder against belief propagation, hard and soft
 - `data.results.b0711d44`: the same at twice the temperature (the negative control)
 - `data.results.b08b665a`: model
 - `data.results.b0ac906b`: full-batch GD 7.04 below SGD at the same budget
+- `data.results.b0c85366`: no silent wrong texts
 - `data.results.b22b4ee9`: all 65.5M train tokens
+- `data.results.b26ab22a`: no refusal
+- `data.results.b279c525`: the prediction from the time correlation
+- `data.results.b2d24d15`: address-read TRACK
 - `data.results.b3748206`: | weather, pull rain-wet_grass flipped to -1.5, checked against SETTLE's true-model moments | rate gap 0.633, pair gap 0.482, FAIL |
 - `data.results.b3da38a2`: sdm beats EXACT3 by 0.069, not 0.1
 - `data.results.b4a8d995`: the unigram control wins by 0.0049
@@ -1576,38 +2003,54 @@
 - `data.results.b8e70c1d`: floor
 - `data.results.b8f0ed6e`: sealed limit
 - `data.results.b97eb71e`: shuffle and zero cost +0.009 to +0.026, not at least +0.15
+- `data.results.b9e518b7`: predicted bits 80
 - `data.results.ba18957e`: Does Metropolised Gibbs (update: :metro) settle closer to the exact yes-rates than Gibbs at the same number of sweeps?
 - `data.results.ba32be24`: new clip overall
+- `data.results.bb384825`: the cost of a full capacity curve at M 1e6
+- `data.results.bb6bb8c5`: rule S refusal of never-stored cues, fresh seeds
 - `data.results.bc336cf8`: softness costs capacity
 - `data.results.bc6c5293`: Keys (Hopfield 512 things, 27-byte note, 20 trials)
 - `data.results.bd126146`: Transformer yardstick, five seeds
 - `data.results.bd46666d`: fitted bits 80
 - `data.results.bd7a73bd`: marginal: 0.176 vs 0.180, both loop
+- `data.results.bd8bd015`: no settle arm beats belief propagation
 - `data.results.bdd919f5`: Negative: 28.3 dB against the source picture, 8.1 against another.
 - `data.results.be9a69e8`: precond sampled
 - `data.results.beb788d4`: BP d*_CD at T = M/100
+- `data.results.bec8545d`: the final state beside the best-so-far on every zoo row
 - `data.results.bee664ef`: T 1 cloud below SGD by 1.84, 1.52, 1.47; one seed under the sealed 1.5
+- `data.results.bf7a86cc`: the refusal rule to use
+- `data.results.bf7bbbe1`: soft input helps belief propagation a little
 - `data.results.bf91c9e5`: growth of the valley count per extra thing
 - `data.results.c05b54ac`: judge confidence
 - `data.results.c1121e84`: ratio
 - `data.results.c146ddb1`: Hopfield 256
 - `data.results.c1c890fe`: mean V
+- `data.results.c20e61a7`: checkerboard Metropolised Gibbs forgets faster
 - `data.results.c24cd5e2`: the condition number decides when the error starts falling
 - `data.results.c27dc7b2`: J 0.1 TAP warm
+- `data.results.c2d75073`: a stiffer penalty removes model failures
 - `data.results.c30d93eb`: copy %
 - `data.results.c32db50a`: Correction vacuity: 28.0 vs 17.9 without.
 - `data.results.c34cd2e3`: coins and noise spread as widely as digits
+- `data.results.c3a8dabf`: The sealed rerun at 10,000 sweeps: LDPCSETTLE's own decoder, 200 blocks
 - `data.results.c3edda9e`: 40% damage, cd0.4 radius, P90 at M 10,000 to 1,000,000
 - `data.results.c42ca81a`: Softness costs recall at a fixed firing count; a little softness (0.1) is free; the soft end is attention, but at an inverse temperature too flat to pick a pattern; a full two-way settle blends patterns. The useful regime is the hard end.
+- `data.results.c46b683a`: ten times cheaper
 - `data.results.c492d763`: the time per update within 30%: missed 2 of 8; :metro was 32% to 35% faster on the weather model
+- `data.results.c522c0dc`: the minimal sudoku with a stronger given lean
+- `data.results.c57b4f0e`: an absolute schedule for every N
 - `data.results.c6895387`: TAP soft 1000
+- `data.results.c6e2969c`: moving a bit with its checks
 - `data.results.c6f3331a`: Largest gap against exact enumeration: yes-rates and pair averages
 - `data.results.c6fa3fea`: greedy longest repeat
 - `data.results.c80b0001`: tie
 - `data.results.c8142e3a`: SETTLE against exact
 - `data.results.c846cebe`: Free-running generation, six prompts, 128 new tokens (means)
+- `data.results.c86fcf8c`: Can the content-woken reads be predicted without running the store, why do never-stored cues stall at heavy load, and does a combined refusal rule do better?
 - `data.results.c87d8df5`: other
 - `data.results.c87e9dd1`: hit up to 0.5; 3.4e-3 at 0.6
+- `data.results.c8d20301`: travel collapses in the heavy cells
 - `data.results.c9708de9`: rb at no pulls is exact after one sweep; the fit at no pulls leaves the picture at 99 dB; rb and bits ride the same chain (identical yes-counts).
 - `data.results.c9a7a1f9`: TAP wins
 - `data.results.c9acdcb9`: G30 >= SINGLES >= GUESS at every count; controls 0 of 50
@@ -1617,12 +2060,14 @@
 - `data.results.cabf608d`: Critical distance (bits) from a cue d bits away: measured / S-map
 - `data.results.cb58700a`: SDM top-k (SNR radius)
 - `data.results.cb9bf3b3`: zero_read s0
+- `data.results.cbcb3ee2`: the warm sum gadget failed far more often than sealed
 - `data.results.cc0d1e17`: Hopfield N = 200 survey: share of random starts landing on a stored pattern or its mirror
 - `data.results.cc909380`: public
 - `data.results.ccb2a639`: storeopt_qstop best block-1 arm, but +0.0001
 - `data.results.ccc26d9a`: agreement with attention at softness 1, and recall
 - `data.results.cd34bff6`: The Cholesky check refuses all seven, so `solve` never says "solved" for them.
 - `data.results.cd67ace5`: Spearman(basin, E)
+- `data.results.cda9645d`: gadget
 - `data.results.cde40de1`: ac+hamming
 - `data.results.cde5b5f2`: embedding
 - `data.results.cdf3e685`: target one ahead
@@ -1635,8 +2080,12 @@
 - `data.results.d29093ca`: colouring n=80, 500 / 2,000 / 10,000
 - `data.results.d2ad3344`: The exact colouring decider agrees with the zoo's exhaustive search on 60 small graphs and on 20 graphs at 40 nodes (8 colourable, 12 not).
 - `data.results.d3c73b8e`: Tears of Steel, rb, checkerboard Metropolised Gibbs, J 0.1
+- `data.results.d3f6e61a`: the address-read control misses
+- `data.results.d48e1eb1`: The checks can be written as springs exactly, but a settle that moves one thing at a time is a poor decoder: belief propagation wins every cell, and nearly every settle failure is a search failure. Soft input helps the chain settle decoder a lot, and no settle arm ever returned a wrong codeword.
+- `data.results.d4981e08`: the final state against the best-so-far in factoring
 - `data.results.d535fe08`: fitted + cluster play bits 80
 - `data.results.d536ff30`: 8 x 10 is 0.08 dB worse than 1 x 80
+- `data.results.d568649a`: rule S refuses 0.982 to 1.000 in 18 of 18
 - `data.results.d5805e56`: verdict
 - `data.results.d5f264dc`: Does compressing a note before storing it let more text fit and come back exactly, and is an error-correcting code worth its space?
 - `data.results.d6085136`: Random keep-calmest: 0% on every sudoku and colouring cell, and on every column-encoded N.
@@ -1644,35 +2093,47 @@
 - `data.results.d66f4f2e`: silent clause unexercised
 - `data.results.d6850e88`: sdm_ngram -0.0034; zero_read +0.006
 - `data.results.d72de20e`: right at 5 and 20 stored, wrong at 10, mirrors right
+- `data.results.d7348117`: the Nishimori kappa-4 arm miscorrected at rate 0.75
 - `data.results.d83e59db`: Does SETTLE reproduce the Python horse-player numbers, and how fast in Rust?
 - `data.results.d842b8a9`: rb with Metropolised Gibbs miss; bits with Metropolised Gibbs hit
 - `data.results.d84ff5cd`: J 0.2 cold
+- `data.results.d8a6cbf7`: the chain gadget beat the sum gadget at rate 0.5
+- `data.results.d8b1369a`: the cut detector
 - `data.results.d8d73256`: median basin
+- `data.results.d94acbb2`: cells
 - `data.results.d9515daa`: SDM non-embedding parameters
 - `data.results.d95a678c`: greedy distinct-2
 - `data.results.d960c69a`: Newton
 - `data.results.d96fe266`: four walkers' doubt above SGD's entropy on every seed
+- `data.results.d9bc8bb0`: ramp chain
 - `data.results.d9d72ff8`: Noisy springs solve A x = b to 0.4-0.8% at t = 100,000; plain relaxation is about 1e8 times more accurate, so the noise pays only for the inverse.
 - `data.results.da08a6fb`: the error under :metro, against Gibbs
 - `data.results.da625147`: recall rate at T 5 and the mechanism
 - `data.results.da87f4c9`: persistent chains fix the yes-rate, not the shape
 - `data.results.da8ad553`: target two ahead
 - `data.results.da942da5`: coordinates within 2 standard errors
+- `data.results.dac327f4`: the answer is found near an absolute temperature of 1
 - `data.results.db027b5a`: max gnorm
+- `data.results.db3b5f34`: heavy loads end in mixtures
+- `data.results.db632972`: the sealed 10,000-sweep rerun
 - `data.results.dbd327d6`: Silent wrong texts** (check passed, text wrong): 0 in 96,000 grid recalls.
 - `data.results.dc2f69d3`: doubt does not find its own errors better than entropy
 - `data.results.dc322812`: cap@10% 80 vs 20
 - `data.results.dc4049d7`: conf
 - `data.results.dc876f37`: greedy repeated-4-gram share
+- `data.results.dca7175d`: full chain
 - `data.results.dcb6c4c9`: p-bits play the horse but trail the Python player past 10 sweeps; pulls above 0.25 flip the grid to its mirror image.
+- `data.results.dcdd2c2a`: the collapsed single mover
 - `data.results.dd85f99f`: Z4 the per-puzzle best, 50 seeds, 10k sweeps (success %)
 - `data.results.ddda53df`: Exact answers:** 4x4 enumeration for TAP, Bethe, the secant fit, the preconditioned fit, exact Newton and both sampled fits
 - `data.results.dea228fc`: Hopfield capacity rule of thumb at n = 256
 - `data.results.ded09fb1`: shuffle s0
+- `data.results.df45576a`: Block error in percent, 200 blocks per cell, 400 sweeps
 - `data.results.e0a8828f`: net SGD 94.44
 - `data.results.e0eff12c`: WIDE saturates
 - `data.results.e124f2ed`: sdm
 - `data.results.e1db07ad`: Metropolised Gibbs, J 0.2, bits
+- `data.results.e243ad40`: the full-space read at T 1
 - `data.results.e31b98b0`: sweeps
 - `data.results.e3a23a3d`: sweep spread 0.0010
 - `data.results.e403e748`: name of a 256-bit grid valley
@@ -1681,15 +2142,18 @@
 - `data.results.e4b16821`: Inversions against the exact answer (4x4 enumeration, 20 targets, RMS grey error)
 - `data.results.e571a7f2`: The staircase (planned, not run)
 - `data.results.e5ca29a6`: sets losing one
+- `data.results.e5cae228`: the combined rules refuse
 - `data.results.e5d1db77`: hard cap@20% = 10
 - `data.results.e5e6b8fa`: overall
 - `data.results.e5e7b03b`: a flipped pull is caught
+- `data.results.e65688c5`: a warm fit against a cold fit at equal budget
 - `data.results.e6bb7368`: Newton sampled
 - `data.results.e712ad8e`: SDM .01 s0.5
 - `data.results.e7607924`: delta vs nostore
 - `data.results.e7a07df4`: 30% damage, cd0.3 radius, M 10,000 to 1,000,000
 - `data.results.e7b87507`: bit-exact vs an independent hard SDM; shuffled counters recall 11/450 at fire 0.01
 - `data.results.e90fbe3c`: qwen 5-seed mean 1.5826
+- `data.results.e929fcbd`: wrong codewords from the settle arms
 - `data.results.e9581cb3`: frames per second at 10 sweeps (loaded M5, one thread)
 - `data.results.e95fec9b`: Bethe
 - `data.results.e97aa6f7`: Mean test accuracy over 3 splits (%), sklearn digits binarised at 8
@@ -1700,13 +2164,17 @@
 - `data.results.eb7d931d`: Faster mixing (bits 80 unless noted, dB)
 - `data.results.ebcb443e`: top-k > 0 everywhere; 100x the density arm, not within 3x
 - `data.results.ec99372b`: shuffle_keys
+- `data.results.ecc18934`: Does starting each frame's lean fit from the last frame's make the film player cheaper, and how fast do the update rules forget near the edge?
 - `data.results.ecdb090a`: Kanerva's point: 204.3
 - `data.results.ed330b7c`: keys: right key reads the text, wrong key reads chance
+- `data.results.ed5cc64b`: A long anneal often visits the answer and then cools out of it. Many short anneals at the same total sweeps turn that visit into a landing: 19 of 20 against 3 of 20 at 10,403. The cold end of the schedule hardly matters.
 - `data.results.eda8c735`: Hopfield capacity right at 0.1/0.2/0.3, wrong at 0.4
 - `data.results.ee1161ff`: Python cold
+- `data.results.ee208c60`: TRACK-C PERSIST
 - `data.results.eecd4ed6`: misses that were under-predictions
 - `data.results.eeceb295`: smooth 0.1 soft warm (post-hoc)
 - `data.results.ef6e7897`: qwen 1.50 ±0.12 sealed, 1.589 measured
+- `data.results.eff2d4c8`: search failures of failures
 - `data.results.eff2dff5`: compression, measured
 - `data.results.f0b7d870`: How does annealing fare on hard sudoku, on graph colouring near the threshold, and on factoring written column by column with carries?
 - `data.results.f194893c`: the pulls read
@@ -1715,7 +2183,9 @@
 - `data.results.f2680cd0`: one chain's doubt below SGD's entropy on rotated digits
 - `data.results.f29c5364`: alone
 - `data.results.f2b87bd1`: delta bpb
+- `data.results.f312a829`: the uninformative control refused above chance in three cells
 - `data.results.f408420f`: shared, anneal
+- `data.results.f4517515`: rule R refusal
 - `data.results.f4a1ea00`: Capacity at 10% damage grows as about M^0.96; SDM beats Hopfield at equal memory from 2,000 locations; Kanerva's critical distance measured 204 bits against his 188.
 - `data.results.f4d79e37`: Exact vs sampled gradients (5 things): sampled fits land within 0.015 (persistent), 0.019 (contrastive) and 0.006 (pseudo-likelihood) of the exact fit
 - `data.results.f5d2ac6a`: smooth 0.2 bits warm
@@ -1723,12 +2193,14 @@
 - `data.results.f6358681`: covered
 - `data.results.f68af399`: negative control: scored against another shot
 - `data.results.f6e6d876`: t0.8 distinct-2
+- `data.results.f711fd5e`: ramp sum
 - `data.results.f73f4c91`: S-map cap
 - `data.results.f7768520`: no pulls: warm equals cold
 - `data.results.f7d0a7e8`: 30% at 1e5 3,000, above the window
 - `data.results.f834edc6`: basin
 - `data.results.f94c6d5a`: Rosenberg 100k
 - `data.results.f9747dca`: qscale01 between storeopt and storeopt_qstop
+- `data.results.fa88c72e`: block moves: never worse by more than 3 points, best gain 9.5
 - `data.results.fafd8865`: 3 of 4 numbers
 - `data.results.fb1a8980`: plain relaxation about 1e8 more accurate
 - `data.results.fb6b03d0`: qwen seed spread 0.054, not under 0.02
@@ -1737,8 +2209,11 @@
 - `data.results.fbe131e0`: T=1 against direct 100
 - `data.results.fc29f573`: the per-puzzle best: 143 beside a prime 46 -> 78, alone 88
 - `data.results.fc2aabc2`: Bethe < TAP
+- `data.results.fc2e40d3`: rule
 - `data.results.fc728b9d`: Yes. One energy-based machine is hard to sample, while a chain of easy steps is not. The chain reaches MMD 1.5 whether its leans start at the data or at zero; a single machine swings from 4.7 to 57 on that start alone.
+- `data.results.fccb5414`: the sum ramp is worse at rate 0.75
 - `data.results.fd5f6a96`: mean-field over TAP error ratio at J 0.10, exact 4x4
+- `data.results.fd761a5d`: the chain from a random start decoded 43% of blocks in one cell
 - `data.results.fe4601d9`: Hopfield-256 cap@20% 20 >= SDM 10
 - `data.results.fe5d2c4b`: dwave default
 - `data.results.feaff322`: Z1 level
@@ -1995,6 +2470,52 @@
 
 ## docs
 
+- `docs.art.ball.1`: A(z): within r bits of z
+- `docs.art.coded.1`: checks tie the bits together
+- `docs.art.coin.1`: push on the thing
+- `docs.art.coin.2`: 1/2 at no push
+- `docs.art.colour.1`: a colour per pixel
+- `docs.art.cooling.1`: sweeps
+- `docs.art.cooling.2`: cold, calm
+- `docs.art.denoise.1`: noisy
+- `docs.art.denoise.2`: settled
+- `docs.art.descend.1`: steps
+- `docs.art.examples.1`: every example ran, output kept
+- `docs.art.export.1`: model
+- `docs.art.extending.1`: your family
+- `docs.art.extending.2`: new statements, leans and pulls
+- `docs.art.families.1`: every statement, family by family
+- `docs.art.held.1`: held at :yes, never moved
+- `docs.art.history.1`: now
+- `docs.art.history.2`: each family added, and when
+- `docs.art.lattice.1`: one thing per pixel
+- `docs.art.learn.1`: pulls learned from examples
+- `docs.art.limits.1`: known limits, written down
+- `docs.art.mailboxes.1`: the address
+- `docs.art.mailboxes.2`: near boxes wake, add counters
+- `docs.art.measured.1`: recall
+- `docs.art.measured.2`: each a seeded measurement
+- `docs.art.modules.1`: twelve modules, no dependencies
+- `docs.art.numbers.1`: numbers held in yes and no lights
+- `docs.art.refuse.1`: far address
+- `docs.art.refuse.2`: "I never stored that"
+- `docs.art.relates.1`: Rust crate
+- `docs.art.relates.2`: same numbers from both
+- `docs.art.ring.1`: stored patterns as low valleys
+- `docs.art.science.1`: energy
+- `docs.art.science.2`: colder
+- `docs.art.syntax.1`: receiver
+- `docs.art.syntax.2`: verb
+- `docs.art.syntax.3`: argument
+- `docs.art.syntax.4`: keyword
+- `docs.art.syntax.5`: one statement is one line
+- `docs.art.tests.1`: unit and cross-module tests
+- `docs.art.valley.1`: arrangements
+- `docs.art.valley.2`: low E, likely
+- `docs.art.writeread.1`: write
+- `docs.art.writeread.2`: read back
+- `docs.art.writeread.3`: a noisy read-address
+- `docs.art.zoo.1`: small models, each solved exactly
 - `docs.claim`: Write the model as leans and pulls, let a machine flip the coins, and stop deriving Bayes’ rule by hand.
 - `docs.info.more`: more in the glossary
 - `docs.info.whatis`: what is {term}?
@@ -2033,7 +2554,13 @@
 - `docs.render.copyDone`: copied
 - `docs.render.copyFail`: copy failed
 - `docs.render.repopath`: a file in the repository: {path}
+- `docs.render.runrecords`: the experiment's own records
 - `docs.route.kanerva.top`: {top}, in one page
+- `docs.runex.lead`: Every program in {dir}, with the output the release binary printed when the site’s data was built. The documented examples are catalogued on the [Examples](#/settle/09-examples) page.
+- `docs.runex.nooutput`: (no output)
+- `docs.runex.status`: Status: {status}.
+- `docs.runex.status.time`: Status: {status}, {seconds} s when the data was built.
+- `docs.runex.title`: Example programs, run
 - `docs.settlesee.intro`: These are the package’s own docs, the words it ships with: the quick start, every component with its props, the options, and then the reference, part by part.
 - `docs.settlesee.kicker`: THE DOCS · THE PACKAGE’S OWN WORDS
 - `docs.settlesee.title`: The reference
@@ -2049,6 +2576,7 @@
 - `docs.strip.aria`: one program per statement family
 - `docs.strip.copy.aria`: copy the {family} program
 - `docs.strip.note`: One small program per statement family, with the output the release binary printed when the site data was built.
+- `docs.strip.rec`: each program as the manual lists it, run by SETTLE when the site was built
 - `docs.strip.summary`: Every family, one program each ({n})
 - `docs.top.aria2`: the other faces, the defaults and where it breaks
 - `docs.top.cap.file`: {lang} · {path}
@@ -2088,8 +2616,8 @@
 
 - `enfold.kind.film`: film
 - `enfold.kind.still`: still
-- `enfold.page.here`: learn-sdm-unfold
-- `enfold.page.title`: LEARN SDM UNFOLD
+- `enfold.page.here`: sdm-unfold
+- `enfold.page.title`: SDM-UNFOLD
 
 ## epics
 
@@ -2098,7 +2626,7 @@
 - `epics.compose.col.fw`: FineWeb-Edu TEST (bpb)
 - `epics.compose.col.run`: run
 - `epics.compose.cue`: cue
-- `epics.compose.data.base`: nothing (SW, 300M FineWeb-Edu tokens)
+- `epics.compose.data.base`: nothing more (the starting model, 300M FineWeb-Edu tokens)
 - `epics.compose.data.ep12`: 12M tokens of the epics
 - `epics.compose.data.fw12`: 12M tokens of FineWeb-Edu (the control)
 - `epics.compose.extra.now`: EP12 is the epic composer in the poem dropdown.
@@ -2108,7 +2636,7 @@
 - `epics.compose.pass`: held
 - `epics.compose.pending`: There are no composed verses here yet.
 - `epics.compose.sampled`: sampled, temperature 0.8, top 50
-- `epics.compose.src`: Lower is better. Source files: {files}. Held-out lines: every 20th block of 64 lines of every work, never trained on ({tokens} scored tokens).
+- `epics.compose.src`: Lower is better. Every number is read from each run's own training record. Held-out lines: every 20th block of 64 lines of every work, never trained on ({tokens} scored tokens).
 - `epics.compose.table.aria`: bits per byte of each run
 - `epics.compose.v1`: BASE on the epic lines between 1.75 and 1.95 bpb: measured {m}
 - `epics.compose.v2`: EP12 lowers the epic bpb by 0.15 to 0.35 against BASE: measured {m}
@@ -2264,6 +2792,11 @@
 - `fb.ask.use`: start with: {p}
 - `fb.ask.window`: your last track · vote
 - `fb.ask.window.title`: The DJ cycled. Vote on your last track before the seconds run out.
+- `fb.chimes.name`: PAGE CHIMES
+- `fb.chimes.said.off`: Page chimes off.
+- `fb.chimes.said.on`: Page chimes on.
+- `fb.chimes.tip.off`: Page chimes are off. Press to hear a short, quiet chime when you change page.
+- `fb.chimes.tip.on`: Page chimes are on: a short, quiet chime plays when you change page, while the sound is on. Press to turn them off.
 - `fb.controls.group`: THE CONTROLS LINE: what is this, the tracks of THE DJ and the flute
 - `fb.ctl.name`: The sound controller: instruments to hit, loops that stack, and the controls that steer THE DJ
 - `fb.djv.aset`: a set
@@ -2619,7 +3152,7 @@
 - `film.chip.stages`: 7 stages
 - `film.clip.horse`: Muybridge horse (1878, public domain), 15 frames, 150x100, grey
 - `film.clip.tos`: Tears of Steel (Blender Foundation, CC BY 3.0), 24 frames from 40.0 s, 160x67, colour
-- `film.clip.tos1`: Tears of Steel, FILMSHARP's one-shot clip, 24 frames from 40.5 s (no cut), 160x67, colour
+- `film.clip.tos1`: Tears of Steel, a one-shot clip with no cut, 24 frames from 40.5 s, 160x67, colour
 - `film.clip.tos_b`: Tears of Steel, shot B (the experiment's negative control), 24 frames from 200.0 s
 - `film.clip.tos_long`: Tears of Steel, 144 frames from 40.0 s (live player only; no experiment measured this clip)
 - `film.ctl.aria`: player controls
@@ -2717,6 +3250,7 @@
 - `film.rec.select`: recorded output
 - `film.rec.src`: the Rust run, frame-locked
 - `film.rec.src.none`: none for this clip
+- `film.rec.src.python`: the Python player, frame-match run
 - `film.rules.checker.cap`: Checkerboard order: the shaded squares first, then the others, the same way every sweep.
 - `film.rules.plain`: The rules differ only in how one pixel is redrawn. All of them settle to the same picture. They differ in how much noise their average carries.
 - `film.rules.random.cap`: Random order: each sweep visits the pixels in a fresh shuffle.
@@ -3003,7 +3537,7 @@
 - `hear.bases.bar`: playing bar {bar} of {bars}, looped
 - `hear.bases.card`: {kind} · {family} · {bpm} bpm · swing {swing} · {bars} bars · {origin}
 - `hear.bases.counts`: {total} bases: {house} house, {ambient} ambient; {midi} from open MIDI, {authored} authored from theory; {fams} families
-- `hear.bases.docs`: The format is settle-hear’s BASE_FORMAT.md; the library, its ledger and its build are in settle-hear/bases/; the theory and its sources are in WIKI_DJ_THEORY.
+- `hear.bases.docs`: The base format, the library, its ledger of sources and licences and its build all ship with settle-hear: the format in BASE_FORMAT.md, the rest in its bases/ folder.
 - `hear.bases.empty`: Pick a kind and a family, then SETTLE A BASE: the library scores every base against what you asked and settles one.
 - `hear.bases.family`: family
 - `hear.bases.family.any`: any
@@ -3030,11 +3564,33 @@
 - `hear.bases.why.none`: nothing against it: the nearest base there is
 - `hear.bases.why.row`: {why} costs {v}
 - `hear.card.label`: the {k} setup
-- `hear.chip.bases`: 300 rhythm beds
+- `hear.chimes.deck`: They are dealt like a deck of cards: every chime plays once before any plays again. A newer chime cuts an older one with a short fade, so quick page changes never pile up.
+- `hear.chimes.fam.blip`: BLIPS
+- `hear.chimes.fam.blip.p`: One soft sine, or a tiny glide.
+- `hear.chimes.fam.breath`: BREATHS
+- `hear.chimes.fam.breath.p`: A band of soft noise, alone or under a quiet note.
+- `hear.chimes.fam.figure`: FIGURES
+- `hear.chimes.fam.figure.p`: Two to four quick notes on one of THE DJ's scales: bing boop de doop.
+- `hear.chimes.fam.harmonic`: HARMONICS
+- `hear.chimes.fam.harmonic.p`: A struck string harmonic, a bell, a crystal shimmer.
+- `hear.chimes.fam.recall`: RECALL
+- `hear.chimes.fam.recall.p`: A note and its softer echo, or a cue and its reply, the way a memory is read back.
+- `hear.chimes.fam.settle`: SETTLING
+- `hear.chimes.fam.settle.p`: Hot notes scattered high that cool and land on the root, the way a p-bit settles.
+- `hear.chimes.label`: THE PAGE CHIMES · ONE PLAYS WHEN YOU CHANGE PAGE
+- `hear.chimes.no.muted`: MUTE ALL is on, so nothing plays. Turn the sound on at the top right.
+- `hear.chimes.no.other`: The sound has not started yet. Press again.
+- `hear.chimes.no.paused`: PAUSE ALL holds every sound, so nothing plays.
+- `hear.chimes.no.vol`: The volume is at 0, so nothing plays.
+- `hear.chimes.plain`: When you move to another page, one short, quiet chime plays just after the page's own sound. All fifty are played by THE DJ's own instruments on its scales; none is a recording.
+- `hear.chimes.played`: Played {name}.
+- `hear.chimes.title`: Fifty short chimes, dealt like a deck
+- `hear.chimes.when`: A chime plays only while the sound is on: MUTE ALL, a volume of 0, PAUSE ALL and the hero's sound pause all silence it, and nothing plays before your first click or key press. PAGE CHIMES on the line under the hero turns them off for this visit. A press below plays one anyway.
+- `hear.chip.bases`: {n} rhythm beds
 - `hear.chip.gesture`: sound after your first click
 - `hear.chip.pkg`: settle-hear
-- `hear.chip.setups`: 11 setups
-- `hear.chip.voices`: 7 voices
+- `hear.chip.setups`: {n} setups
+- `hear.chip.voices`: {n} voices
 - `hear.desk.aria`: setups
 - `hear.desk.label`: LIVE · THE MIXING DESK
 - `hear.desk.settle`: A field of lights settling into words and shapes, with the sound made from its numbers.
@@ -3155,7 +3711,7 @@
 - `hear.setups.label`: THE SETUPS
 - `hear.setups.title`: One setup sounds at a time
 - `hear.title`: Hear
-- `hear.top.cap`: $ settle-hear --setup hero
+- `hear.top.cap`: a heart, then the word hear
 - `hear.top.cap.live`: settling live
 - `hear.top.docs`: the language
 - `hear.top.go`: open the desk
@@ -3266,8 +3822,6 @@
 - `hero.abstract.dscale-data-repeats.note`: our best SDM recipe learning over 200M tokens drawn from a 65,522,263-token shard; at each dashed line the text it reads starts to repeat
 - `hero.abstract.dscale-grid-measured.label`: the wide keep learning
 - `hero.abstract.dscale-grid-measured.note`: our SDM model (discs) and a transformer (squares) on fresh text, 6 widths, 100M to 1.6B tokens: from 400M to 1.6B the width 256 SDM gains 0.001 bits, width 768 gains 0.013
-- `hero.abstract.dscale-grid-pending.label`: measured and still to come
-- `hero.abstract.dscale-grid-pending.note`: what our model's scaling runs have measured (9 filled squares) beside the 34 grid runs of wave 11, outlined until they finish (51 of 56 done when drawn)
 - `hero.abstract.dscale-windows-agree.label`: two seeds, one opinion
 - `hero.abstract.dscale-windows-agree.note`: 3,892 test windows scored by our model trained twice from different random starts: each dot is one window, and the two runs agree on which text is hard, r = 0.9977
 - `hero.abstract.dsdm-critical-collapse.label`: one curve
@@ -3502,8 +4056,6 @@
 - `hero.abstract.ftrain-tokenizers.note`: four tokenizers for our SDM model on the same 95.4M bytes, square area its vocabulary: bits per byte 1.638, 1.637, 1.653 and 1.658, from 16k to 129k
 - `hero.abstract.ftrain-value-rows.label`: value rows after training
 - `hero.abstract.ftrain-value-rows.note`: our SDM's four value tables after 20M tokens of training, every row started at zero: sorted, lit where rows grew past norm 1; 1% of rows hold 42% of table one's weight
-- `hero.abstract.ftrain-width-tokens.label`: width and tokens
-- `hero.abstract.ftrain-width-tokens.note`: our SDM model's sizing grid, width 256 to 1024 by 20M and 60M tokens: wider and longer score lower, from 1.667 to 1.560 bits per byte; the ring is not run yet
 - `hero.abstract.fwrite-bind-bundle.label`: bind and bundle
 - `hero.abstract.fwrite-bind-bundle.note`: enfolding three facts: each 16-bit address bound to its value by XOR, the three summed into counters and signed into the Complicate C; unbinding C with the first address gives back 12 of its 16 bits
 - `hero.abstract.fwrite-cdt-thinning.label`: thinning a bundle
@@ -5169,6 +5721,19 @@
 - `hero.plate.young-two-source-interference.label`: Young's interference
 - `hero.plate.young-two-source-interference.note`: Young's interference of waves from two sources A and B (Course of Lectures on Natural Philosophy, 1807)
 - `hero.play`: ▶ play
+- `hero.readout.energy`: energy {e} ({per}/light)
+- `hero.readout.flips`: flips {n}
+- `hero.readout.lean`: lean {v}
+- `hero.readout.overlap`: overlap {q}%
+- `hero.readout.pbits`: {w} x {h} = {n} p-bits
+- `hero.readout.phase.cooling`: cooling
+- `hero.readout.phase.hot`: hot
+- `hero.readout.phase.reheating`: reheating
+- `hero.readout.phase.settled`: settled
+- `hero.readout.power`: power {bar} {n}/{max}
+- `hero.readout.pull`: pull {v}
+- `hero.readout.rate`: {n} sweeps/s
+- `hero.readout.sweep`: sweep {n}
 - `hero.shake.alive`: alive
 - `hero.shake.alive.note`: The drone trembles the picture, the high sounds pop rings, a colour shift comes now and then, and your clicks make the sound wobble.
 - `hero.shake.aria`: how much the sound moves the picture
@@ -5199,6 +5764,7 @@
 - `hero.sound.more`: more sounds
 - `hero.sound.now`: now
 - `hero.sound.shuffle.note`: every mode in turn, about {min} minutes each, in a random order, with THE DJ on every fourth turn; pick one to keep it.
+- `hero.sound.shuffle.word`: SHUFFLE
 - `hero.sound.symphony.label`: {flute} (the DJ)
 - `hero.strip`: the hero, still · click to pin it live here
 - `hero.strip.aria`: Show the hero live here, and pin it to every page
@@ -5781,6 +6347,9 @@
 - `kanerva.faces.lede3`: Each line of the builder is a line of a .kanerva file. The kanerva command runs the file on KANERVA alone; SETTLE runs the same file through the same parser. One word list says what every line may hold.
 - `kanerva.faces.prints`: The builder, the kanerva command and the settle command all print this line:
 - `kanerva.faces.rails.claim3`: examples/rails.rs writes SETTLE’s sdm, softsdm, sdmscale, refusal and contenttrack programs with the builder, and its {n} lines of output equal SETTLE’s own output byte for byte.
+- `kanerva.faces.rec.balance`: the crate's bit-balance example, as it printed
+- `kanerva.faces.rec.hello`: the crate's hello program and its output, both held by the crate's tests
+- `kanerva.faces.rec.sizing`: the crate's sizing example and its discoveries file
 - `kanerva.faces.title3`: The same memory in Rust, in a file, and in SETTLE
 - `kanerva.faces.words.byrule`: by rule
 - `kanerva.faces.words.col.family`: family
@@ -5791,7 +6360,7 @@
 - `kanerva.faces.words.model`: model
 - `kanerva.faces.words.nokw`: no keywords
 - `kanerva.faces.words.none`: none
-- `kanerva.faces.words.note`: Read from {file} when this site was built, never typed. A default "by rule" is computed from the other keywords. {old} still works as the old spelling of {new}.
+- `kanerva.faces.words.note`: This is the crate’s own word list, {file}, the one file both parsers read. A default "by rule" is computed from the other keywords. {old} still works as the old spelling of {new}.
 - `kanerva.faces.words.run`: run
 - `kanerva.faces.words.summary`: the whole word list: {n} statements in {f} families
 - `kanerva.first.bundle.aria`: how much each word agrees with the bundle
@@ -5927,12 +6496,14 @@
 - `kanerva.page.how.intro`: A sparse distributed memory stores long words of bits. It has a few thousand hard locations, each with a fixed random address and a row of bit-counters. To write a word, every hard location near it adds the word to its bit-counters. To read, you give it a read-address, which can be a noisy copy of a word: a read-address with address-noise. The nearby locations add up their bit-counters, and each bit of the answer is the sign of its sum. Kanerva calls the read-address the retrieval address, and also the retrieval cue.
 - `kanerva.page.how.label`: HOW AN SDM WORKS
 - `kanerva.page.how.name`: The memory is called sparse because its locations are a tiny sample of all possible addresses, and distributed because every word is spread over many hard locations and every hard location holds a blend of many words.
+- `kanerva.page.how.sketch`:  the address ──▶ which hard locations lie within r bits of it? │ ┌──────────┼────────── ▼ ▼ ▼ location 17 location 402 location 988 ... each hard location keeps a row of bit-counters +3 -1 +2 .. +1 -4 +2 .. +2 -1 +1 .. (every word ever written near it, added in) └──────────┼────────── ▼ add the rows, bit by bit +6 -6 +5 .. ▼ keep the sign of each sum 1 0 1 .. ──▶ the answer. read again from it until it stops changing
 - `kanerva.page.how.sketch.aria`: the memory, drawn as a sketch
 - `kanerva.page.how.sources`: Source: P. Kanerva, {book}, MIT Press, 1988. Run the same memory as a machine on SDM explore, or compare three memories on the memory page.
 - `kanerva.page.how.title`: A memory is a few thousand hard locations that vote
 - `kanerva.page.how.why`: Why it works: a noisy address still wakes most of the locations its word was written to. Their bit-counters agree, so they outvote everything else. Read again and the answer gets closer. Try it on 1,200 hard locations: write a word, damage a copy, read from the copy.
 - `kanerva.page.results.label`: RECORDED RESULTS
 - `kanerva.page.results.note`: Each number is a recall count from a seeded simulation. None is a timing claim. The reports say “cue” for a noisy address. The full reports are on the results page, and three memories side by side are on the memory page.
+- `kanerva.page.results.rec`: this experiment's report
 - `kanerva.page.results.title`: What the memory did in our tests
 - `kanerva.page.try.label`: TRY IT
 - `kanerva.page.try.title`: A read-address with noise still finds its pattern
@@ -5946,6 +6517,7 @@
 - `kanerva.path.faces`: the three faces
 - `kanerva.path.note`: {pct}% of the bits of {cat} were flipped, {woke} of the {m} hard locations woke, and they voted {cat} back. Each line of the Rust is a line of {file}, which the {kanerva} command and SETTLE both run: see {faces}. Under it, the same store and recall runs live in this tab, on the crate itself.
 - `kanerva.path.prints`: it prints
+- `kanerva.path.rec`: the crate's hello program and its documentation, whose snippet the crate's tests run
 - `kanerva.path.rust.aria`: Rust: the builder writes four words and reads cat back
 - `kanerva.path.write`: write four words, read one back
 - `kanerva.pitch.claim`: KANERVA reads a stored word back from an address with a fifth of its bits wrong, which no hash table can do.
@@ -5961,6 +6533,7 @@
 - `kanerva.pitch.knife.keys.head`: A keyed note is not cryptography.
 - `kanerva.pitch.knife.noise.body`: At 30% and 40% address-noise the address read does not grow with M, because a 40%-noisy read-address shares about one hard-location with its pattern at every M under that activation-radius.
 - `kanerva.pitch.knife.noise.head`: Noise above a third of the bits does not get better with a bigger memory.
+- `kanerva.pitch.knife.rec`: the crate's documentation
 - `kanerva.pitch.knife.small.body`: 128 hard-locations (32,768 bit-counters) hold 5 / 0 / 0 / 0 against 25 / 25 / 20 / 0 for a 256-unit Hopfield net with 32,640 pulls. The order reverses at a million hard-locations: 70,000 / 30,000 / 10,000 / 10 against 100 / 70 / 30 / 3.
 - `kanerva.pitch.knife.small.head`: A small memory loses to a Hopfield net.
 - `kanerva.pitch.knife.threads.body`: smap::Lazy memoises through RefCell, so one Lazy cannot be shared between threads. store::threads() reads the environment variable SDMSCALE_THREADS (default 8), a name from the SETTLE experiment that wrote it.
@@ -5997,6 +6570,8 @@
 - `kanerva.pitch.shape.get`: 1 · get it
 - `kanerva.pitch.shape.run`: 3 · run it
 - `kanerva.pitch.shape.test`: 2 · test it
+- `kanerva.pitch.src.quickstart`: the example output in the crate's documentation
+- `kanerva.pitch.src.tests`: the crate's own tests, counted when this site was built
 - `kanerva.pitch.step.get`: get it
 - `kanerva.pitch.step.get.note`: clone its own repository and step into it
 - `kanerva.pitch.step.run`: run it
@@ -6056,6 +6631,7 @@
 - `language.examples.label`: EXAMPLES · WITH THEIR REAL OUTPUT
 - `language.examples.title`: Every program in settle-rs/examples, run
 - `language.lede`: A SETTLE program has two kinds of block. A model block declares things and how they lean and pull. A run block holds some of them, shakes the rest, and asks. Every family below adds statements to one or both; the list is the settle binary's own help.
+- `language.rec.src`: each program run by the release build of SETTLE when the site was built
 - `language.statements.label`: STATEMENTS · BY FAMILY
 - `language.statements.title`: What you can say
 - `language.title`: The language
@@ -6083,8 +6659,8 @@
 - `lb2.fades.title`: One head for the last token, one that never forgets
 - `lb2.not.l1`: One run each, one seed. A gap of a few points between two models is inside what a second seed could move.
 - `lb2.not.l2`: Small models on puzzles with their own alphabet, where the noise is easy to tell apart from the keys. A model that wins here may still lose on real text.
-- `lb2.not.l3`: FULL has no puzzle runs yet, so its charts say no score yet.
 - `lb2.not.title`: What the puzzles do not show
+- `lb2.puzzles.before`: The puzzles were run before FULL was chosen, so FULL has no puzzle scores; the charts below are PARTIAL’s alone.
 - `lb2.puzzles.label`: THE PUZZLES
 - `lb2.puzzles.p1`: These puzzles test the memory alone, on small versions of the models: {w} wide and {l} layers, each trained for {s} steps on the puzzle itself. Each sequence holds {n} pairs of a key and a value, and then asks for some of the values back. Guessing gives about {c}% right.
 - `lb2.puzzles.title`: The memory puzzles, measured
@@ -6113,7 +6689,7 @@
 - `learning.confusion.port.btn`: check this browser against Rust on {n} test digits
 - `learning.confusion.port.intro`: Check the port: the browser repeats Rust’s readouts with the same random stream, digit for digit.
 - `learning.confusion.port.loading`: loading the port check …
-- `learning.confusion.port.missing`: The port check file is not built ({file}).
+- `learning.confusion.port.missing`: The port check did not load, so this check cannot run here.
 - `learning.confusion.port.result`: exact readout agrees on {ex} of {n} · settled vote counts identical on {votes} of {n} · settled answers agree on {ans} of {n}
 - `learning.confusion.run.btn`: settle all {n} shipped test digits
 - `learning.confusion.run.stop`: stop
@@ -6222,7 +6798,7 @@
 - `learning.hero.canvas.hidden`: {nh} HIDDEN THINGS · CLICK ONE
 - `learning.hero.canvas.pixels`: 784 PIXELS · HELD
 - `learning.hero.exact`: exact readout
-- `learning.hero.live`: machine {m}, trained in Rust; settled here
+- `learning.hero.live`: the 500-hidden machine (seed 1), trained in Rust; settled here
 - `learning.hero.meta.rate`: {rate} sweeps per second in this tab
 - `learning.hero.meta.sweep`: sweep {t} of {total} (burn-in {burn})
 - `learning.hero.meta.tally`: this visit: {right} right of {seen}
@@ -6306,7 +6882,8 @@
 - `learning.more.valleys.line`: true digit {d} · exact readout {x} ({p}%) · settled readout {s} after {n} sweeps
 - `learning.more.valleys.p`: The exact readout can be drawn as a landscape of ten valleys, one per label, each as deep as the machine finds that label likely with these pixels held. The settle never sees the landscape. It only tosses coins, and its label lights land most often in the deepest valley, which is why the two readouts agree.
 - `learning.next.p1`: This page taught a machine to read by changing its pulls, slowly, over many passes. A sparse distributed memory reads the same digits a different way: it writes each one into the hard-locations near its address, once, and reads by letting those locations vote.
-- `learning.next.p2`: LEARN SDM tells that memory and its cycle. LEARN SDM UNFOLD takes one write and one read apart, step by step. A vote of the memory is the cold end of a settle like the ones above, so the three pages are one story.
+- `learning.next.p2`: SDM tells that memory and its cycle. SDM-UNFOLD takes one write and one read apart, step by step. A vote of the memory is the cold end of a settle like the ones above, so the three pages are one story.
+- `learning.rec.mnist`: the MNIST experiment's report
 - `learning.sbs.caption`: MNIST test error (%), 10,000 test digits, lower is better
 - `learning.sbs.col.bar`: bar
 - `learning.sbs.col.error`: test error
@@ -6315,6 +6892,7 @@
 - `learning.sbs.col.source`: source
 - `learning.sbs.col.who`: who
 - `learning.sbs.note`: Ours see only binarised pixels (grey at least 128), no augmentation, no deskewing, one machine, 20 passes over the 60,000 training digits. Rows marked with augmentation, deskewing or a committee are not like-for-like; they are here because they are the well-known marks. The published numbers were read from each source on 2026-10-01 (hover a source for the exact words).
+- `learning.sbs.ours.src`: our MNIST report
 - `learning.sbs.show`: show
 - `learning.sbs.show.all`: every row
 - `learning.sbs.show.ours`: ours only
@@ -6350,7 +6928,7 @@
 - `learning.sec.scratch.title`: Learn MNIST from nothing, in this tab
 - `learning.sec.settle.label`: RECORDED · SETTLE TIME
 - `learning.sec.settle.title`: How many sweeps a digit needs
-- `learning.settle.chart.source`: {report} · settle time
+- `learning.settle.chart.src`: the MNIST experiment's report · settle time
 - `learning.settle.chart.title`: Test accuracy against settle sweeps: H = 500, 10,000 test digits
 - `learning.settle.chart.x`: settle sweeps per digit (after a burn-in of a tenth, at least 1)
 - `learning.settle.exact`: exact readout (no settling)
@@ -6362,10 +6940,10 @@
 - `learning.top.draw`: draw your own
 - `learning.top.go`: watch a digit settle
 - `learning.top.guide`: how it learns
-- `learning.top.here`: learn-settle
-- `learning.top.nodata`: the digits are not built yet
+- `learning.top.here`: settle-tour
+- `learning.top.nodata`: the digits did not load
 - `learning.top.sub`: How a settling machine learns to read handwritten digits: MNIST, live in your browser.
-- `learning.top.title`: LEARN SETTLE
+- `learning.top.title`: SETTLE-TOUR
 - `learning.trainer.chart.acc`: Test accuracy by epoch: exact readout, 1,000 test digits
 - `learning.trainer.chart.hint`: After each epoch the worker classifies 1,000 test digits with the exact readout and plots the accuracy here.
 - `learning.trainer.chart.recon`: Reconstruction error by epoch: pixels wrong after one step
@@ -6394,55 +6972,29 @@
 - `learnsdm.chat.label`: ASK SDM CHAT
 - `learnsdm.chat.more`: Chat with SDM in more detail
 - `learnsdm.map.label`: This page, in order
-- `learnsdm.page.here`: learn sdm
-- `learnsdm.page.title`: LEARN SDM
+- `learnsdm.page.here`: sdm
+- `learnsdm.page.title`: SDM
 
 ## legal
 
+- `legal.cat.feedback.b`: Your ratings of THE DJ’s sets and your WHAT IS THIS? notes, at most 200 of each, with any that are waiting to be sent. They stay in your browser until you clear this site’s data.
+- `legal.cat.feedback.t`: Your ratings and notes
+- `legal.cat.music.b`: The tracks you save with the bookmark beside the rate marks, kept for about a year or until you remove them, and a short memory of the last few sets THE DJ played, so the next set leans toward them and opens differently. They stay in your browser until you clear this site’s data.
+- `legal.cat.music.t`: Your saved tracks and THE DJ’s memory
+- `legal.cat.settings.b`: A few choices that hold from visit to visit, such as the language you picked, the keyboard shortcuts and whether all sound is muted. They stay in your browser until you clear this site’s data.
+- `legal.cat.settings.t`: Your settings
+- `legal.cat.signin.b`: If you open a members page, Clerk, the service that runs sign-in, sets a few cookies on this site that keep you signed in. They are renewed while you stay signed in and gone when you log out.
+- `legal.cat.signin.t`: Your sign-in, handled by Clerk
+- `legal.cat.visit.b`: Sound and display choices that hold from page to page while the tab is open, such as the volume, the sound mode and the backdrop, and the picture level measured on your device so the picture does not change halfway through. They are gone when you close the tab.
+- `legal.cat.visit.t`: Choices for this visit
+- `legal.cat.work.b`: Your conversation on the ASK page, gone when you close the tab, and the models you train in SDMSTUDIO with any text you paste to train them, kept in a database inside your browser until you delete them. A model leaves your browser only if you save it to your members account.
+- `legal.cat.work.t`: Your conversations and your models
+- `legal.cat.youtube.b`: If a YouTube video plays as one of the home hero’s slides, YouTube’s player keeps a few settings of its own in your browser, inside its frame and under YouTube’s address, where this site cannot read them. Measured with the player in YouTube’s privacy-enhanced mode, it set no cookies.
+- `legal.cat.youtube.t`: YouTube’s player
 - `legal.contact.label`: CONTACT
 - `legal.contact.p`: Write to us through the contact page. Questions about privacy and about these terms are welcome there.
 - `legal.contact.title`: Where to write
-- `legal.keep.clerk`: until you log out or clear this site’s data
-- `legal.keep.clerksession`: about a minute at a time, renewed while you are signed in; gone when you log out
-- `legal.keep.local`: until you clear this site’s data in your browser
-- `legal.keep.once`: until it is read, a moment later
-- `legal.keep.queue`: until each record is sent
-- `legal.keep.studio`: until you delete them in SDMSTUDIO or clear this site’s data
-- `legal.keep.tab`: until you close the tab
-- `legal.keep.track`: until you remove that track
-- `legal.keep.tracks`: about one year, or until you remove the tracks
-- `legal.keep.youtube`: until you clear YouTube’s data in your browser
-- `legal.st.ask`: Your conversation on the ASK page, the last 40 turns.
-- `legal.st.bg`: Your choice for the page backdrop: high, low or still.
-- `legal.st.clerkdev`: Only while the site runs on Clerk’s development setup: a token that links this browser to that setup.
-- `legal.st.clerksession`: Your members sign-in: a short signed token from Clerk that tells this site’s server who you are. Clerk renews it while you stay signed in.
-- `legal.st.clerkuat`: When this browser’s sign-in last changed, as a number, so a page can tell at once whether you are signed in.
-- `legal.st.fortyhz`: Whether the 40 Hz light is on, so a reload keeps it.
-- `legal.st.influence`: A short record of the last four sets THE DJ played (the key, the opening motif, the theme, the energy, the effects that sounded and your vote), so the next set leans toward them.
-- `legal.st.keys`: Whether the single-key shortcuts are on or off.
-- `legal.st.lang`: The language you chose with the language switch. Detecting your language writes nothing.
-- `legal.st.loops`: The loop hits of one saved track (the instrument, the beat position, the strength and the pitch of each hit), kept beside the cookie because a loop can run to a kilobyte.
-- `legal.st.mine`: Your ratings of THE DJ’s sets, at most 200.
-- `legal.st.muted`: Whether MUTE ALL is on.
-- `legal.st.notes`: Your WHAT IS THIS? notes, at most 200.
-- `legal.st.opener`: The choices behind the last opening sound, so the next opening differs from it.
-- `legal.st.pinned`: Whether you pinned the home hero.
-- `legal.st.queue`: Ratings and notes waiting to be sent. It stays empty unless the site is built with a feedback address, and no copy of the site has one today.
-- `legal.st.rl`: A switch that lets your own ratings choose the theme THE DJ starts on. It is off unless you set it by hand.
-- `legal.st.shake`: How much the sound moves the picture: off, calm or alive.
-- `legal.st.soundmode`: The sound mode you chose on the hero: MEDITATE MODE, DJ MODE or BINAURAL.
-- `legal.st.studio`: Your SDMSTUDIO runs: their records, their checkpoints and any texts you pasted to train on. They leave your browser only if you save a run to a members account.
-- `legal.st.tier`: The picture level measured on your device (high or low) and the reason, so the picture never changes in the middle of a visit.
-- `legal.st.tracks`: The tracks you saved with the bookmark beside the rate marks: at most 16 tracks and 3,800 bytes, each a short text of the sound’s settings.
-- `legal.st.use`: A one-time hand-off when SDMSTUDIO opens one of your runs in a chat page. It is read once and removed.
-- `legal.st.volume`: The hero’s volume, a number from 0 to 1, so the level stays the same from page to page.
-- `legal.st.youtube`: Written by YouTube’s player, inside its own frame and under www.youtube-nocookie.com, once a video slide has played. This site cannot read it. These are the names measured when this page was last updated; YouTube may change them.
 - `legal.updated`: Last updated {date}.
-- `legal.where.cookie`: a cookie
-- `legal.where.idb`: IndexedDB, a database in your browser
-- `legal.where.local`: local storage
-- `legal.where.server`: a cookie set by the server, which scripts on the page cannot read
-- `legal.where.session`: session storage (this tab only)
 
 ## legend
 
@@ -6470,7 +7022,6 @@
 - `llm2.next.cap`: Chat score: bits per byte on held-out chat turns, lower is better
 - `llm2.next.label`: WHAT REPLACES IT
 - `llm2.next.p1`: We are training FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, so the start of a chat stays within reach. Its full run is tuned for chat, and then it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
-- `llm2.next.title`: FULL, once it has a chat score
 - `llm2.next.tok`: The chat tune read {tok} tokens of chat.
 - `llm2.top.sub`: A chat with an SDM language model: no attention, no transformer, running live in this tab.
 - `llm2.which.history`: How this model was built and what it scored, beside every other shape we tried, is on the history page.
@@ -6560,7 +7111,7 @@
 
 ## lsdm2
 
-- `lsdm2.chat.lede`: The chat below runs an earlier SDM model in your browser. FULL will take its place once it has a chat score. Expect loosely on-topic text, not answers. Type in the box to open the full window.
+- `lsdm2.chat.lede`: The chat below runs an earlier SDM model in your browser. FULL, the model this page is about, has had its chat tune, and its score is in the table below; it does not run in this chat. Expect loosely on-topic text, not answers. Type in the box to open the full window.
 - `lsdm2.chat.title`: Talk to an SDM language model
 - `lsdm2.chip.full`: FULL: SDM in every part
 - `lsdm2.chip.noatt`: no attention
@@ -6575,7 +7126,7 @@
 - `lsdm2.not.label`: WHAT WE DO NOT CLAIM
 - `lsdm2.not.title`: What these pages do not say
 - `lsdm2.read.label`: HOW IT READS
-- `lsdm2.read.more`: The address itself, a grid searched from two short lists, is drawn on learn sdm unfold.
+- `lsdm2.read.more`: The address itself, a grid searched from two short lists, is drawn on sdm-unfold.
 - `lsdm2.read.p1`: Each token also makes a query. The query picks {k} slots the same way the key did, and the read is the weighted mean of what was written there. A slot nobody wrote reads as nothing. A token reads before it writes, so it only ever sees earlier tokens.
 - `lsdm2.read.p2`: Then comes the think step. In FULL, a second query picks {k} of the table’s {s} rows in each head, about {p}% of them, and blends those rows with a softmax. In PARTIAL, the MLP widens the vector to {n} numbers, gates it and narrows it back, and every weight takes part.
 - `lsdm2.read.title`: A query, a weighted mean, then the think step
@@ -6661,8 +7212,8 @@
 - `lsl.stream.now`: now →
 - `lsl.stream.row`: tokens
 - `lsl.stream.text`: THE TEXT SO FAR
-- `lsl.top.here`: learn-sdm-lookback
-- `lsl.top.title`: LEARN SDM LOOKBACK
+- `lsl.top.here`: sdm-lookback
+- `lsl.top.title`: SDM-LOOKBACK
 
 ## magic8
 
@@ -6756,12 +7307,12 @@
 - `magic8.path.x0`: x0: {d} numbers
 - `magic8.prov.boolq`: BoolQ (google/boolq at revision {rev}), {licence}; question text and answers only
 - `magic8.prov.label`: PROVENANCE
-- `magic8.prov.questions`: Questions: {file} ({rows}; train {train}, validation {val}, test {test})
-- `magic8.prov.sealed`: Predictions sealed before any measurement in {file}; scored in the report
-- `magic8.prov.teacher`: Teacher checkpoint {ckpt}, sha256 {sha}
+- `magic8.prov.questions`: The questions: {rows} in one file, split train {train}, validation {val}, test {test}
+- `magic8.prov.sealed`: The predictions: sealed in the ledger before any measurement, and scored against it in the report
+- `magic8.prov.teacher`: The teacher: {name}; its checkpoint has sha256 {sha}
 - `magic8.prov.title`: Where every part came from
-- `magic8.prov.training`: Training: {file} (the ridge, the penalty grid, the VAL rule)
-- `magic8.prov.weights`: magic-8-ball: {file}, sha256 {sha}, {space}
+- `magic8.prov.training`: The training: one script holds the ridge, the penalty grid and the VAL rule
+- `magic8.prov.weights`: magic-8-ball: its weights file has sha256 {sha}; {space}
 - `magic8.range`: {lo} to {hi}
 - `magic8.readout.agrees`: agrees
 - `magic8.readout.cooling`: twenty answers cooling...
@@ -6771,8 +7322,11 @@
 - `magic8.readout.settled`: {answer} ({w}, one of {n})
 - `magic8.readout.student`: the one-pass student lean {lean} in {ms} ms · decision {word}
 - `magic8.readout.teacher`: the slow teacher lean {lean} in {ms} ms · decision {word} {verdict}
+- `magic8.rec.report`: this experiment's report; its predictions were sealed in the ledger first
+- `magic8.rec.settle`: this experiment's settle record
+- `magic8.rec.train`: this experiment's training record
 - `magic8.samples.aria`: sample questions
-- `magic8.sdm.intro.lead`: Two of the arms in the training comparison are decision stores built this way.
+- `magic8.sdm.intro.lead`: Two of the arms in the training comparison are decision stores, each a sparse distributed memory.
 - `magic8.settle.aria`: the settle
 - `magic8.settle.h`: The settle: from three chances to one answer
 - `magic8.settle.k.held`: held sweeps on
@@ -6875,7 +7429,7 @@
 - `magic8.train.caveat`: The caveat. The teacher does not know the answers. On the templated questions with a known answer its YES or NO is right {tpl} of the time. On BoolQ it is right {bq} of the time, while always answering yes scores {always}. magic-8-ball copies that teacher closely, so it is a magic 8 ball, no oracle.
 - `magic8.train.choice`: The choice. Four one-pass students were fitted and compared on the validation split only. The rule: {rule}. The test split was used once, after the choice.
 - `magic8.train.data`: The data. {templated} questions were written from small fact tables (animals, capitals, numbers, colours, everyday facts, and Magic 8 Ball questions with no answer). {boolq} came from BoolQ. Each question was put in the prompt and run through the teacher once. The label is the teacher's lean, not the true answer.
-- `magic8.train.fit`: The fit. A ridge regression from x0 ({d} numbers) to the lean, on the {train} training questions. Each input is standardised first, and the penalty was chosen from {grid} by agreement on the validation split; {param} won. The result is {d} weights and a constant ({file}).
+- `magic8.train.fit`: The fit. A ridge regression from x0 ({d} numbers) to the lean, on the {train} training questions. Each input is standardised first, and the penalty was chosen from {grid} by agreement on the validation split; {param} won. The result is {d} weights and a constant, the whole of magic-8-ball.
 - `magic8.train.label`: HOW IT WAS TRAINED
 - `magic8.train.memories`: Why the memories lost. A memory can only separate questions that reach different locations. The teacher's own address reaches {locs} of its {m} locations across every question, and two questions share {overlap} of their 64. Every prompt ends {answer}, and the teacher addresses its memory mostly from the last words. Both memory students put every test question in UNSURE.
 - `magic8.train.result`: The result. On the {test} test questions magic-8-ball gives the teacher's class {agree} of the time (kappa {kappa}; rank correlation of the leans {rho}). When it disagrees it moves one band, to or from UNSURE: on the test questions where the teacher said YES or NO, it never said the opposite.
@@ -7006,6 +7560,7 @@
 - `mcp.top.flag`: --allow-git=root lets npm install this one package from GitHub. npm 12 refuses git packages unless told; an older npm ignores the flag.
 - `mcp.top.go`: set it up in your agent
 - `mcp.top.needs`: Needs Node 18 or newer. While the repository is private, your git must be able to read it.
+- `mcp.top.needs.public`: Needs Node 18 or newer.
 - `mcp.top.step`: the one command: add it to Claude Code
 
 ## mem
@@ -7109,7 +7664,7 @@
 - `mem.g.stuck`: The Google sign-in stopped half way. Try again.
 - `mem.h1`: Members
 - `mem.home.label`: MEMBERSHIP
-- `mem.home.title`: An account, and what it costs
+- `mem.home.title2`: An account, and what it gives you
 - `mem.lede2`: An account keeps the little guys and runs you train on this site, and opens ASK, a chat about SETTLE and KANERVA with $1 of free chat to start. Everything else here works without one.
 - `mem.loading`: Loading the sign-in…
 - `mem.models.label`: SAVED MODELS
@@ -7147,13 +7702,6 @@
 - `mem.top.studio`: train a little guy
 - `mem.top.sub`: An account keeps the models you train here.
 - `mem.unverified`: email not confirmed
-- `mem.what.ask`: Chat with ASK about SETTLE and KANERVA, answered from our own docs. Every member gets $1 of free chat, once.
-- `mem.what.charge`: We sell nothing.
-- `mem.what.free`: Everything on this site is free; only saving models and ASK need an account.
-- `mem.what.guy`: Meet WEIRD LITTLE SDM GUY and train your own.
-- `mem.what.label`: MEMBERSHIP
-- `mem.what.models`: Keep the little guys you train in SDMSTUDIO: save a run, download it, delete it.
-- `mem.what.title`: What a member gets
 - `mem.who`: Signed in as {email}
 - `mem.why.confirm`: Type your email exactly to delete.
 - `mem.why.crosssite`: This request did not come from this site.
@@ -7175,7 +7723,7 @@
 - `memory.dense.label`: MEASURED · DENSE MEMORY
 - `memory.dense.p1`: The Hopfield memory above sums its patterns' pulls in pairs. Krotov and Hopfield's dense memory raises each pattern's overlap to a higher power before it votes, which makes the valleys steeper and lets many more of them fit. We measured it on the CPU: at 48 units, recall from 10% noise held 6 patterns with pairs, 76 with the cube, 512 with the fourth power, and at least 8,192 with the exponential.
 - `memory.dense.p2`: With the exponential, one update is the read that attention does: the query weighs every stored pattern by a softmax and moves to their average. Its error falls as exp(-beta times separation); the measured slope was -1.018. Lower beta and memories that share parts settle together: twelve memories in three families gave one fixed point below beta 4.0, three family prototypes between 4.6 and 14.7, and all twelve from 24.8.
-- `memory.dense.p3`: These are memories of random or drawn patterns read by their own rules, so they show a mechanism, not a result about our SDM language model, whose trained reads add nothing yet at 20M tokens. The link is the sharpness: our soft read's cut-off plays the part that beta plays here.
+- `memory.dense.p3`: These are memories of random or drawn patterns read by their own rules, so they show a mechanism, not a result about our SDM language model, whose learned store, every time it trained stably, tied a model without it, up to 2.0 billion tokens. The link is the sharpness: our soft read's cut-off plays the part that beta plays here.
 - `memory.dense.pick.dream`: Forty random starts of a Hopfield net, before (left) and after (right) it dreams: a disc ends in a stored memory, a ring in a false one. Hopfield, Feinstein and Palmer let the net settle from noise and gently weaken whatever it settled into; false memories are the ones it falls into most, so they fade first. After 304 dreams 28 starts find a true memory, against 7 before.
 - `memory.dense.pick.family`: Twelve memories in three families, drawn on a plane: rings are the memories, discs are where each one settles. Each family shares a part, and the inverse temperature beta works like a zoom: at high beta every memory keeps itself, between 4.6 and 14.7 the members of a family settle together on what they share, and below that all twelve agree on one point. Nothing is lost by agreeing: turn beta up and every memory is back.
 - `memory.dense.pick.wells`: The energy of a modern Hopfield net holding two close memories, drawn as contour lines, while beta falls. Two wells become one at beta 6.067 in the run, and 6.014 from a line of algebra: at the midpoint the update has slope beta times sin squared of the half-angle, and the wells part when it reaches one. Two memories near each other can share one home without either being erased.
@@ -7233,12 +7781,13 @@
 - `memory.keys.title`: Store a note under a key
 - `memory.labscrate.line`: These two labs, the soft SDM above and the keyed notes below, run the KANERVA crate since 2026-10-06 (before that day they ran a JavaScript copy, whose curves and counts differ); the recorded results further down were measured with settle-rs, not with the copy.
 - `memory.lights.default`: a pattern of lights
+- `memory.lm.answer.full`: Our newest model, FULL, is built another way: its run-time memory is the only path from one token to the next, and it beats the same layers with the memory switched off by more than the noise. It is taken apart on SDM.
 - `memory.lm.answer.label`: THE SHORT ANSWER
 - `memory.lm.answer.links`: The full story, with every number, is further down. The four memories you can try come first.
 - `memory.lm.answer.p1`: Our SDM language model can carry two kinds of memory. The learned store is filled during training and read at every hop. The run-time memory is written while the model reads. We test each one the same way: train the model with it, train it again without it, and compare the test scores.
 - `memory.lm.answer.p2b`: On the web test, every time the learned store trained stably, it tied. After a chat tune it came out a hair worse. The run-time memory helped one small early model, then fell behind on every larger one. Our best guess at why: the model looks back only about {reach} tokens, and guessing the next word of web text rarely needs more.
-- `memory.lm.answer.p3`: The last big test has finished: the model we are building, with its store on, beside the same model with it off. Their scores are on the SDM model page.
-- `memory.lm.answer.title`: Memory has not helped our language model yet
+- `memory.lm.answer.p3`: The last big test has finished: this model at full scale, with its store on, beside the same model with it off. Their scores are on the SDM model page.
+- `memory.lm.answer.title`: Added memory has not helped our language model yet
 - `memory.lm.gap.aria`: Our best memory-off SDM against a transformer of the same width: {words}. The transformer leads at every point.
 - `memory.lm.gap.c0`: early runs
 - `memory.lm.gap.c1`: after the shape hunt
@@ -7290,7 +7839,7 @@
 - `memory.lm.next.addr.t`: Letting the address learn freely diverged. Untried: a small separate loss for the address, normalised queries, or a gradient scaled well below one.
 - `memory.lm.next.card`: A bigger card
 - `memory.lm.next.card.t`: A {big} card would fit memory on at width {w}, and at {h} hops or more. A {small} card fits neither.
-- `memory.lm.next.chat`: A small cousin of this model runs live in your browser on SDMCHAT, with the latest results drawn there too.
+- `memory.lm.next.chat`: A small cousin of this model runs live in your browser on SDMCHAT; every result so far is on the SDM model page.
 - `memory.lm.next.fair`: A fair long-context test
 - `memory.lm.next.fair.t`: Our model against a transformer that sees {w} tokens or more, on text that needs a long memory.
 - `memory.lm.next.label`: FUTURE · NOT IN ANY RUN YET
@@ -7344,7 +7893,7 @@
 - `memory.lm.run.chat`: One more pair has finished: the two {tok}B-token window-{win} models, tuned for chat. On the chat test, memory off went from {a} to {b} and memory on from {c} to {d}: memory on is {gap} worse, just outside the noise. On the web test they still tie ({e} on, {f} off). We had predicted a tie at chat; that missed by a hair.
 - `memory.lm.run.done`: Both have finished. Their scores, with every run before them, are on the SDM model page.
 - `memory.lm.run.label`: THE LAST BIG TEST
-- `memory.lm.run.p1`: The base run is the model we are building: memory on, width {w}, {h} hops, a hop block {mlp} wide, a {win}-token window, {tok}B tokens, on {g} GPUs. Its twin is the same model with memory off: same data, same order, same code.
+- `memory.lm.run.p1`: The base run is this model at full scale: memory on, width {w}, {h} hops, a hop block {mlp} wide, a {win}-token window, {tok}B tokens, on {g} GPUs. Its twin is the same model with memory off: same data, same order, same code.
 - `memory.lm.run.p3`: What we predicted before either finished: the store ties memory off at full scale, within {noise}; the longer window beats the window-{w} model; and the transformer stays ahead.
 - `memory.lm.run.p6`: Stopped with no score: a {tok}B-token run at width {w} that asked whether more data still helps the {h}-hop shape ended at step {s} of {n}, so that question is still open.
 - `memory.lm.run.title`: Memory on and memory off, at full scale
@@ -7418,7 +7967,7 @@
 - `memory.rkeys.label`: RECORDED · CAPACITY AND KEYS
 - `memory.rkeys.plain`: Both memories were filled with random patterns and read from noisy addresses. The tables count how often a read lands on the right pattern.
 - `memory.room.aria`: {M} hard locations; {n} are activated
-- `memory.rscale.eqsrc`: Equations: Bricken and Pehlevan 2021, Eq. 25, as given in the SDMSCALE experiment's report.
+- `memory.rscale.eqsrc`: Equations: Bricken and Pehlevan 2021, Eq. 25, as given in the report of SDMSCALE.
 - `memory.rscale.label`: RECORDED · SCALE
 - `memory.rscale.plain`: Capacity here is P90, the largest stored count at which 90% of reads recall. The chart follows it as the memory grows, and the equations are the prediction we tested it against.
 - `memory.rsoft.bars`: largest stored count with recall >= 50% at 10% address-noise (first number of each row)
@@ -7497,7 +8046,7 @@
 - `menu.folder.members.note`: membership: your account, ASK, SDMSTUDIO, WEIRD LITTLE SDM GUY and the models you saved
 - `menu.folder.misc.note`: pages the menu map does not place yet
 - `menu.folder.packages.note`: the five packages, the main destinations: the language, its memory crate, its MCP server, its React component library and its drawing library
-- `menu.folder.science.note`: the campaign and how the machines learn: results, the paper, the cool-down class, how a settling machine and a sparse memory learn, enfold and unfold
+- `menu.folder.science.note`: the research and how the machines learn: the results, the paper, the cool-down class, a settling machine learning to read, how a sparse memory learns, writes, reads and looks back, and the SDM chat model’s own story
 - `menu.folders`: Folders
 - `menu.here`: You are here
 - `menu.hint`: arrows move · enter opens · esc closes
@@ -7518,10 +8067,6 @@
 - `menu.peek.home`: The live room of lights, how to start, and every statement family on one page.
 - `menu.peek.kanerva`: The sparse distributed memory toolbox, live, with its equations and results.
 - `menu.peek.label`: Page preview
-- `menu.peek.learn-sdm`: Our two SDM language models, FULL and PARTIAL, taken apart: what each stores, writes, reads and predicts.
-- `menu.peek.learn-sdm-lookback`: How far back FULL and PARTIAL reach, what it costs them, and what the memory puzzles measured.
-- `menu.peek.learn-sdm-unfold`: How a word goes into FULL and PARTIAL, how it travels through them, and how a word comes out.
-- `menu.peek.learn-settle`: How a settling machine learns to read handwritten digits, with MNIST live.
 - `menu.peek.mcp`: The MCP server: docs, setup and tools for SETTLE and KANERVA, for an assistant.
 - `menu.peek.members`: Your account: the little guys and runs you saved, to download or delete.
 - `menu.peek.none`: A page the menu has no line for yet.
@@ -7533,14 +8078,18 @@
 - `menu.peek.relax`: A cool-down class: the lights settle with your breath.
 - `menu.peek.results`: Every experiment of the campaign: what it predicted and what it found.
 - `menu.peek.robot`: a little robot, arms up
-- `menu.peek.sdm-model`: The SDM language model: the two newest models and the one we take forward, then the history of every shape tried.
+- `menu.peek.sdm`: Our two SDM language models, FULL and PARTIAL, taken apart: what each stores, writes, reads and predicts.
+- `menu.peek.sdm-lookback`: How far back FULL and PARTIAL reach, what it costs them, and what the memory puzzles measured.
+- `menu.peek.sdm-unfold`: How a word goes into FULL and PARTIAL, how it travels through them, and how a word comes out.
 - `menu.peek.sdmchat`: SDMCHAT: a language model built on a sparse memory, as a live chat, and which model replaces it.
+- `menu.peek.sdmchat-model`: The SDM language model: the two newest models and the one we take forward, then the history of every shape tried.
 - `menu.peek.sdmexplore`: A small sparse memory drawn as a state diagram you operate.
 - `menu.peek.sdmjev`: One question, one pass, one answer settled into a ball.
 - `menu.peek.sdmmemory`: Store letters as valleys, add noise to one, and watch it come back.
 - `menu.peek.sdmpoem`: The same memory model writing verse, live.
 - `menu.peek.sdmstudio`: Post-train the SDM chat models in your browser: datasets, loss curves, samples, checkpoints, your runs.
 - `menu.peek.settle`: The language: every statement, with programs and their real output.
+- `menu.peek.settle-tour`: How a settling machine learns to read handwritten digits, with MNIST live.
 - `menu.peek.settlesee`: The drawing library: words, shapes, photos and films that settle out of noise as lights, in React or on any canvas.
 - `menu.peek.settletext`: The React component library: your text, images and vectors rendered as a settle of lights, no theory needed.
 - `menu.peek.six-layer-feedback`: The six layers of the neocortex and their feedback, the Purkinje cells, and Kanerva's cerebellum, settled live.
@@ -7550,6 +8099,48 @@
 - `menu.peek.what`: What SETTLE is, result first, in five live steps.
 - `menu.peek.who-you-are`: Who you are: a guide for programmers, one for visual artists, one for sound artists, and where each starts.
 - `menu.site`: Site
+
+## mi
+
+- `mi.kind.base`: web text
+- `mi.kind.chat`: chat
+- `mi.kind.epic`: epic verse
+- `mi.list.cap`: Every SDM language model on this site, with the postfix every picker shows
+- `mi.list.col.browser`: in your browser
+- `mi.list.col.kind`: last trained on
+- `mi.list.col.model`: model
+- `mi.list.col.score`: score, bits per byte
+- `mi.list.col.tokens`: tokens in all
+- `mi.list.notyet`: trained, not yet runnable in the browser
+- `mi.list.score`: {bpb} on {on}
+- `mi.list.yes`: runs here, in the chat picker
+- `mi.models.label`: EVERY MODEL
+- `mi.models.p1`: Each model is named with a postfix read from its training record: its kind, the tokens it trained on in all, what it was last trained on, and its score on that text. The models that run in your browser are the ones in the chat pickers; FULL base and FULL SDM CHAT are trained and scored, and wait for a browser port.
+- `mi.models.title`: Every SDM language model, what it trained on and what it scored
+- `mi.more.models`: every model, the ones that run here and the ones that do not yet
+- `mi.name.fullbase`: FULL base
+- `mi.name.fullchat`: FULL SDM CHAT
+- `mi.next.before`: the same model before the chat tune
+- `mi.next.notyet`: FULL SDM CHAT is trained, not yet runnable in the browser. The dropdown above lists only models that run here.
+- `mi.next.p1`: We trained FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, so the start of a chat stays within reach. Its full run was then tuned for chat as FULL SDM CHAT. It is trained and scored, but it does not run in a browser yet: its browser port is not built. Once it is, it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
+- `mi.next.title`: FULL SDM CHAT, once it runs in your browser
+- `mi.next.tok`: The chat tune read {tok} tokens, {pct}% of them chat turns and the rest web text.
+- `mi.next.vs.higher`: Its chat score is higher, so worse, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
+- `mi.next.vs.lower`: Its chat score is lower, so better, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
+- `mi.next.vs.same`: The model the chat opens on scores {run} on its held-out chat turns. Both held-out chat sets hold {b} bytes; the records do not say whether they are the same turns.
+- `mi.race.behind`: From the evals so far, FULL is somewhat behind: at step {step} it reads {full} bits per byte and the transformer {tf}, a gap of {gap}.
+- `mi.race.cap`: Quick evals at the same step, bits per byte on the same held-out tokens, lower is better
+- `mi.race.col.gap`: gap
+- `mi.race.col.step`: step
+- `mi.race.col.tf`: transformer
+- `mi.race.col.tokens`: tokens seen
+- `mi.race.final`: final TEST, the whole run
+- `mi.race.label`: THE TRANSFORMER COMPARISON
+- `mi.race.shape`: The two curves have different shapes. The transformer falls smoothly, a little less at each eval. FULL falls in a staircase: it sits on a shelf, then drops. So the gap narrows when FULL drops off a shelf and widens while it sits on one, and one quick eval is not a trend. The full TEST decides.
+- `mi.race.title`: FULL against a transformer of the same shape
+- `mi.race.what`: The comparison: a transformer of the same shape as FULL, {l} layers and {d} wide, trained on FULL’s exact {tok} tokens of web text, in the same order and with the same recipe. Both are scored by the same quick eval on {n} held-out tokens every {every} steps, and at the end by the full TEST.
+- `mi.top.models`: every model
+- `mi.which.postfix`: Each name ends in a postfix read from its training record: the kind of model, the tokens it trained on in all, what it was last trained on (base, chat or epic) and its score in bits per byte on that text. Every model, the ones that run here and the ones that do not yet, is listed on the models page.
 
 ## modelcard
 
@@ -7572,6 +8163,7 @@
 - `modelcard.kind.base`: base model, from scratch
 - `modelcard.machine.browser`: this browser
 - `modelcard.machine.gpu`: {count}x {gpu} ({where})
+- `modelcard.machine.gpuonly`: {count}x {gpu}
 - `modelcard.name.sdmwide512base`: SDM read, wide 512, at 300M tokens
 - `modelcard.notrecorded`: not recorded
 - `modelcard.on.chat`: chat turns
@@ -7588,7 +8180,7 @@
 - `modelcard.tip.derived`: Tokens: {how}.
 - `modelcard.tip.finetune`: A fine-tune: it started from {name}, which had trained {before} before it. Source: {src}.
 - `modelcard.tip.finetune.run`: A fine-tune: it started from {name}. Source: {src}.
-- `modelcard.tip.machine`: {detail}. Source: {src}.
+- `modelcard.tip.machine.stamp`: {detail}. Source: the run's own start stamp.
 - `modelcard.tip.restarts`: Wall-clock time from the run’s first start stamp ({from}) to its end stamp ({to}). It was interrupted and resumed at steps {steps}; the time lost in the gaps is not recorded. Source: {src}.
 - `modelcard.tip.score`: Bits per byte on held-out {on} the model never trained on. Lower is better. Source: {src}.
 - `modelcard.tip.seconds`: Wall-clock time the run recorded: {s} seconds, starting {from}. Source: {src}.
@@ -7596,7 +8188,6 @@
 - `modelcard.tip.why`: Not recorded: {why}.
 - `modelcard.trained`: {dur} · {steps} steps · {tokens} tokens
 - `modelcard.where.mps`: Apple MPS
-- `modelcard.where.spark`: DGX Spark
 - `modelcard.why.chip`: the run's stamps name the host and the MPS device, not the chip
 - `modelcard.why.nodata`: the run names no dataset
 - `modelcard.why.noeval`: no evaluation has run yet
@@ -7611,10 +8202,6 @@
 - `nav.hear`: HEAR
 - `nav.home`: HOME
 - `nav.kanerva`: KANERVA
-- `nav.learn-sdm`: LEARN SDM
-- `nav.learn-sdm-lookback`: LEARN SDM LOOKBACK
-- `nav.learn-sdm-unfold`: LEARN SDM UNFOLD
-- `nav.learn-settle`: LEARN SETTLE
 - `nav.mcp`: MCP
 - `nav.members`: MEMBERS
 - `nav.numbers`: NUMBERS
@@ -7622,14 +8209,18 @@
 - `nav.puzzles`: PUZZLES
 - `nav.relax`: RELAX
 - `nav.results`: RESULTS
-- `nav.sdm-model`: THE SDM MODEL
+- `nav.sdm`: SDM
+- `nav.sdm-lookback`: SDM-LOOKBACK
+- `nav.sdm-unfold`: SDM-UNFOLD
 - `nav.sdmchat`: SDMCHAT
+- `nav.sdmchat-model`: SDMCHAT-MODEL
 - `nav.sdmexplore`: SDM EXPLORE
 - `nav.sdmjev`: SDMJEV
 - `nav.sdmmemory`: SDMMEMORY
 - `nav.sdmpoem`: SDMPOEM
 - `nav.sdmstudio`: SDMSTUDIO
 - `nav.settle`: SETTLE
+- `nav.settle-tour`: SETTLE-TOUR
 - `nav.settlesee`: SETTLE SEE
 - `nav.settletext`: SETTLE TEXT
 - `nav.six-layer-feedback`: SIX-LAYER FEEDBACK
@@ -7661,6 +8252,16 @@
 - `neon.legend.title`: colour key
 - `neon.legend.yes.means`: a yes (+1), a lit light
 - `neon.legend.yes.name`: rose
+
+## notfound
+
+- `notfound.h`: Where to go from here
+- `notfound.here`: not found
+- `notfound.label`: NOT FOUND
+- `notfound.p1`: The address {addr} does not match any page on this site. It may be mistyped, or it may come from an old link.
+- `notfound.p2`: Start again from the home page, open the menu at the top to see every page, or look a word up in the glossary.
+- `notfound.sub`: There is no page at this address.
+- `notfound.title`: Page not found
 
 ## numbers
 
@@ -7801,7 +8402,7 @@
 - `paper.notes.h`: Notes
 - `paper.page.here`: paper
 - `paper.page.title`: The paper
-- `paper.ref11`: The SETTLE campaign's experiment reports, {reports}, and the settle-rs sampler, {sampler}.
+- `paper.ref11`: The SETTLE campaign's experiment reports, each on the results page, and SETTLE's sampler, in the settle-rs source.
 - `paper.ref9.manner`: for the manner, not the matter.
 - `paper.refs.h`: References
 - `paper.s1.h`: The coconut and the lime
@@ -7837,6 +8438,7 @@
 - `paper.table.eq`: eq.
 - `paper.table.result`: result
 - `paper.table.source`: source
+- `paper.table.src.report`: the experiment's report
 - `paper.table.what`: what was measured
 - `paper.title`: On the Lime and the Coconut
 - `paper.top.cap`: the lime and the coconut
@@ -8026,7 +8628,7 @@
 - `poem.film.next`: next
 - `poem.film.next.aria`: next verse
 - `poem.film.notice.howl`: This is a local dev build, so the film plays the full Howl by Allen Ginsberg (1956), read from a file on this machine. Howl is in copyright: its words are never committed and never reach a production build, which plays a public-domain poem in the same film.
-- `poem.film.notice.public`: The film plays {title} by {author}, which is in the public domain. Howl plays only in a local dev build, because it is in copyright.
+- `poem.film.notice.public`: The film plays {title} by {author}, which is in the public domain.
 - `poem.film.open.kicker`: THE MEMORY RECITES · a photoplay in settles
 - `poem.film.pause`: pause
 - `poem.film.picture.aria`: a black-and-white picture settling: {name}
@@ -8091,7 +8693,7 @@
 - `poem.page.recital.title`: A Kanerva memory learns a whole poem in this tab and says it back
 - `poem.page.rollout.label`: THE POEM LAB · THE ROLLOUT
 - `poem.page.rollout.title`: Given the first lines, how far does each model get?
-- `poem.page.sdmllm`: It is an SDM language model: it has no attention and no transformer layers, and each token comes from reading a sparse distributed memory. SDMCHAT draws it part by part, the way the transformer was drawn.
+- `poem.page.sdmllm`: It is an SDM language model: it has no attention and no transformer layers, and each token comes from reading a sparse distributed memory. The panel under the poem shows each part of the model at work as it writes; SDMCHAT has the same panel for a chat.
 - `poem.page.send`: write
 - `poem.page.source.public`: {edition}, {ref}, public domain
 - `poem.page.stanza`: stanza break every (lines)
@@ -8114,9 +8716,10 @@
 - `poem.poems.other.blake`: ten Blake songs
 - `poem.recital.again`: recite again
 - `poem.recital.cmp.caption`: Reciting this poem: this memory against language models
-- `poem.recital.cmp.chat`: SDMCHAT {model}, this tab
+- `poem.recital.cmp.chat`: SDMCHAT ({model}), this tab
 - `poem.recital.cmp.chat.below`: measured in the rollout
 - `poem.recital.cmp.chat.no`: no: {m} tokens match after the first lines; {p}% of next tokens right when re-synced
+- `poem.recital.cmp.chat.plain`: SDMCHAT, this tab
 - `poem.recital.cmp.chat.time`: {s} s for {n} tokens (computed)
 - `poem.recital.cmp.chat.tps`: {n} tokens/s
 - `poem.recital.cmp.chat.where`: measured in the rollout; trained on FineWeb-Edu, never on this poem
@@ -8125,8 +8728,8 @@
 - `poem.recital.cmp.ds4.size`: {gib} file · {params}
 - `poem.recital.cmp.ds4.time`: {s} s for {n} tokens (computed from the quoted rate)
 - `poem.recital.cmp.ds4.verbatim`: not measured
+- `poem.recital.cmp.ds4.where`: quoted from our own records: its speed at 2k context on a GB10 chip, measured on its preview release; the size of its model file; the publisher's parameter counts
 - `poem.recital.cmp.note`: A memory that has been written one poem and a language model that has read the web do different jobs; the table compares the cost of saying this text back, not intelligence. The token count is this poem in the DeepSeek V4 tokenizer, counted in this tab.
-- `poem.recital.cmp.quoted`: quoted:
 - `poem.recital.cmp.reciter`: reciter
 - `poem.recital.cmp.reciting`: reciting …
 - `poem.recital.cmp.sdm`: Kanerva SDM, this tab
@@ -8236,18 +8839,16 @@
 ## privacy
 
 - `privacy.browser.clear`: You can remove all of it at once by clearing this site’s data in your browser’s settings.
-- `privacy.browser.clerk`: If you open a page in the members folder, Clerk’s script, which runs the sign-in, sets these cookies on this site:
+- `privacy.browser.groups`: The site keeps a few small things in your browser so that your choices hold on the next page or the next visit. They fall into the groups below. None of them is used for advertising or to follow you across other sites, and none is sent anywhere by default.
 - `privacy.browser.label`: IN YOUR BROWSER
 - `privacy.browser.memory`: Some things live only in the page’s memory and are gone when you reload: your ADJUST choices on the home hero, the pointer and key timings the contact page records, and the random visit id a rating carries.
-- `privacy.browser.p1`: The site keeps a few small choices in your browser so that they hold on the next page or the next visit. None of them is sent anywhere by default. Each name the site writes is listed here, with where it lives, how long it stays and what it holds.
 - `privacy.browser.title`: What the site keeps in your browser
-- `privacy.browser.youtube`: If a YouTube video plays as one of the home hero’s slides, YouTube’s player keeps these in your browser, under YouTube’s own address rather than this site’s. Measured with the player in YouTube’s privacy-enhanced mode, it set no cookies:
 - `privacy.check.gate`: A score of 0.6 or more sends the message. A lower score does not end anything: a small puzzle opens, you slide a loose piece until it fits its cut-out, and then the message goes. The server draws the puzzle and keeps its answer. It also turns a message away when the hidden field is filled and the score is under 0.2.
 - `privacy.check.h`: How the check tells a hand from a script
 - `privacy.check.note`: Our own check, used on this contact page only. In the browser it records pointer positions with times and key timings (never which keys), in memory. Pointer: the trace is cut into strokes at pauses and each stroke is measured for straightness, a rise-and-fall speed profile, smooth speed changes, speed spread, sharp turns, hand tremor, the walk exponent (1 for a random walk, exactly 2 for a ruler line, a hand is neither), sample timing, pauses and slowing before clicks. Keyboard: spread of the gaps between keys, key hold times, corrections and Tab moves, so a keyboard or screen-reader user passes without a mouse. Each measure maps to 0..1 and a weighted mean gives the score; the larger of the two paths counts. A hidden field and a minimum time before sending are cheap extras. Only the score and these reasons are sent; the trace is dropped when the page closes.
 - `privacy.contact.intro`: The contact form sends a message only when you press send. A quick check that you are a person runs while you are on that page.
 - `privacy.contact.label`: THE CONTACT FORM
-- `privacy.contact.mail`: The email is delivered by Resend, a mail delivery service, which handles it under its own terms. Its reply address is yours, so an answer comes back to you. Until the site’s operator sets up a mail key, the form checks your message, sends nothing and says so.
+- `privacy.contact.mail`: The email is delivered by Resend, a mail delivery service, which handles it under its own terms. Its reply address is yours, so an answer comes back to you.
 - `privacy.contact.p1`: The pointer check runs in your browser. It keeps pointer positions with their times, and the time of each key press with its kind (a character, a correction, Tab), never which key.
 - `privacy.contact.p2`: Sending the form sends your name, your email, your message, the check score, its verdict and its reason lines. It does not send the pointer path or the key timings.
 - `privacy.contact.p3`: Nothing else is stored. The contact page sets no cookie and writes nothing to your browser storage, and the recorded movement is gone when you leave the page.
@@ -8258,21 +8859,23 @@
 - `privacy.feedback.holds`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load. A note holds your words in place of the rating. Nothing in either names you.
 - `privacy.feedback.label`: RATE THE DJ
 - `privacy.feedback.p1`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Both are anonymous and need no account.
-- `privacy.feedback.sent`: Both stay in this browser. They are sent only from a copy of the site built with a feedback address, and no copy has one today. A server for them would keep a salted hash of the sender’s network address, never the address itself.
+- `privacy.feedback.sentlive`: Both are sent to our ratings server, which keeps a salted hash of the sender’s network address, never the address itself.
+- `privacy.feedback.sentnone`: This copy of the site sends them nowhere: they stay in your browser.
 - `privacy.feedback.title`: Ratings and WHAT IS THIS? notes
 - `privacy.here`: privacy
-- `privacy.members.ask`: ASK answers questions about SETTLE and KANERVA. When the operator has set a model key, your question and the last six turns of the conversation go to DeepSeek V4.1 Flash through OpenRouter, a model service, which asks only for providers that keep no copy of them and handles them under its own terms. The server records the time of each answer and what it cost against your chat balance, never the question itself.
+- `privacy.members.ask`: ASK answers questions about SETTLE and KANERVA. Your question and the last six turns of the conversation go to DeepSeek V4.1 Flash through OpenRouter, a model service, which asks only for providers that keep no copy of them and handles them under its own terms. The server records the time of each answer and what it cost against your chat balance, never the question itself.
 - `privacy.members.label`: MEMBERS AND ASK
 - `privacy.members.limits`: To slow down abuse, the server counts recent requests from each network address and each account under a salted hash rather than the address itself: in memory, or in the members database where the site has one. Clerk applies its own limits to signing in.
-- `privacy.members.local`: Today all of this runs only on a developer’s computer and is kept in a local folder. Nothing is deployed, and no public store holds anyone’s account. When accounts open on the live site, the records and the chat balance will be kept in a Postgres database at Neon, and the weights of saved runs in Vercel Blob, private storage that only the site’s server can read or hand you a short link to.
 - `privacy.members.mail`: Clerk emails you the 6-digit codes that confirm your address, sign you in on a new device and reset a password.
 - `privacy.members.p1`: Sign-up and sign-in on the members page are run by Clerk (clerk.com), an account service. Clerk holds your email address, the name you give, your password (as a hash, never the password itself) and your sessions, under its own terms. Its script loads only once you open a page in the members folder. This site keeps your Clerk user id, the day it first saw you, your saved runs and your chat balance with what each answer cost.
-- `privacy.members.rights`: From your account page you can download what this site holds about you as one JSON file, change your email and your password, and delete your saved runs, your chat balance and your record here. Your Clerk sign-in is kept, because it may serve another site of ours; write to us and we will remove it.
+- `privacy.members.rights`: From your account page you can download what this site holds about you as one JSON file, change your email and your password, and delete your saved runs, your chat balance and your record here. Deleting your record deletes your Clerk sign-in too, unless that sign-in is shared with another site of ours; then the page tells you it was kept, and we remove it when you write to us.
 - `privacy.members.runs`: You can save the models you train in SDMSTUDIO to your account: up to 50 runs and 256 MiB in all. A saved run holds its name, its kind, its record and its weights.
+- `privacy.members.store`: The account records and the chat balance are kept in a Postgres database at Neon, and the weights of saved runs in Vercel Blob, private storage that only the site’s server can read or hand you a short link to.
 - `privacy.members.title`: Members accounts and the ASK page
 - `privacy.other.label`: OTHER PARTS
 - `privacy.other.mcp`: settle-mcp runs on your own computer when you install it, and talks only to the program that starts it. It sends nothing to us. Its setup step downloads SETTLE and KANERVA from a source you name, and only when you ask.
-- `privacy.other.radio`: On a developer’s computer the home hero can join a local live radio: it shares the state of its sound (THE DJ’s settings, the steering and your loops) with other open pages, and each listener shows as a coloured dot with a colour name. A public copy opens no such connection unless a radio address is set, and none is set.
+- `privacy.other.radiolive`: The home hero can join the live radio: it shares the state of its sound (THE DJ’s settings, the steering and your loops) with the other listeners, and each listener shows as a coloured dot with a colour name and nothing else.
+- `privacy.other.radionone`: The home hero’s live radio, which shares the state of its sound with other listeners, is a tool for the site’s makers; this copy of the site opens no such connection.
 - `privacy.other.title`: The live radio and settle-mcp
 - `privacy.rights.ask`: You can ask what we hold about you, ask us to correct it, and ask us to delete it. Most of what this site keeps sits in your own browser, where you can see it and clear it yourself.
 - `privacy.rights.changes`: If this policy changes, the change appears on this page with a new date.
@@ -8292,7 +8895,6 @@
 - `privacy.top.sub`: What this site keeps, where it keeps it, and what it sends.
 - `privacy.who.label`: WHO WE ARE
 - `privacy.who.p1`: SETTLE is a small language for settling machines. This site shows it: its documents, live demos that run in your browser, and the recorded results of the research behind it. The site is run by {operator}, in Australia. This page says what the site stores, where it stores it, and what it sends.
-- `privacy.who.p2`: Today the site runs only on its makers’ own computers. Nothing is deployed, so no server of ours receives anything from a public visitor yet. This page describes what the code does, so that it stays true when the site goes live.
 - `privacy.who.title`: Who runs this site and what this page covers
 
 ## puzzles
@@ -8326,6 +8928,10 @@
 - `puzzles.colouring.ok`: COLOURED: no edge joins two nodes of one colour
 - `puzzles.colouring.size.note`: a hidden 3-colouring, average degree 4
 - `puzzles.control`: control · {c}
+- `puzzles.example.nono`: every row and column reads back as its clue
+- `puzzles.example.note`: A still example answer: one anneal by this engine at {sweeps} sweeps, seed {seed}. Checked: {checked}. Press anneal to watch one settle live.
+- `puzzles.example.queens`: no two queens attack
+- `puzzles.example.sudoku`: every row, column and box keeps the rules, every given kept
 - `puzzles.factor.bench`: factoring
 - `puzzles.factor.best`: calmest arrangement passed: {verdict}
 - `puzzles.factor.caption1`: Column k of the long multiplication p x q, counted from the right, shows the bit products that land in it, the carry bits that leave it (rose when yes) and the carry bits that arrive. A column must equal N's bit plus twice what it carries on.
@@ -8548,6 +9154,7 @@
 - `puzzles.survey.sat3.enc`: an independent set on the clause graph: a thing per literal slot, a price inside each clause and between opposite literals
 - `puzzles.survey.sat3.name`: small 3-SAT
 - `puzzles.survey.sat3.size`: 20 variables, 80 clauses: 240 things
+- `puzzles.survey.src`: the survey's own runs on this site's engine, listed in the table above
 - `puzzles.survey.sudoku.enc`: a thing per (cell, digit); every cell and every digit in every row, column and box exactly one
 - `puzzles.survey.sudoku.name`: sudoku
 - `puzzles.survey.sudoku.recorded`: SETTLEZOO and ZOOHARD, below
@@ -8555,13 +9162,21 @@
 - `puzzles.survey.title`: Which puzzles fit a settling machine
 - `puzzles.title`: Puzzles
 - `puzzles.top.cap`: nonogram :n, rows: "1 1/5/5/3/1"
+- `puzzles.top.cap.attempt`: attempt {n}, live
 - `puzzles.top.cap.live`: annealing live
+- `puzzles.top.cap.paused`: paused
+- `puzzles.top.cap.retry`: {n, plural, one {# line} other {# lines}} wrong
+- `puzzles.top.cap.solved`: solved, checked
+- `puzzles.top.cap.still`: still, checked
 - `puzzles.top.go`: solve a sudoku
 - `puzzles.top.hint`: anneal, then every line read back against its clue
 - `puzzles.top.how`: how a puzzle is solved
 - `puzzles.top.label`: LIVE · FEATURED SOLVERS
+- `puzzles.top.ladder.aria`: {size} by {size} nonogram settling: {ok} of {all} lines read back as their clues
+- `puzzles.top.ladder.aria.solved`: {size} by {size} nonogram, solved and checked: all {all} lines read back as their clues, and the picture is a heart
 - `puzzles.top.nonogram`: nonogram
 - `puzzles.top.panel`: a 5 by 5 nonogram settling into its picture
+- `puzzles.top.rungs.aria`: the heart ladder: pick a size
 - `puzzles.top.sub`: Every broken rule costs energy, so the calmest arrangement is the answer.
 - `puzzles.top.sudoku`: sudoku
 - `puzzles.top.title`: Sudoku, and a nonogram whose picture appears as it settles
@@ -8586,7 +9201,7 @@
 - `puzzles.zoohard.final.row`: {case} · {sweeps} sweeps
 - `puzzles.zoohard.intro`: The hard cases are sudoku with few givens, colouring near the point where random graphs stop being colourable, and factoring written column by column with carry bits.
 - `puzzles.zoohard.label`: RECORDED · THE HARD CASES
-- `puzzles.zoohard.marks`: Most sealed items are scored as rows within 15 points. The results page marks only the items the ledger scored with a HIT or MISS word.
+- `puzzles.zoohard.marks`: Most sealed items are scored as rows within 15 points. The results page marks only the items scored with a plain HIT or MISS.
 - `puzzles.zoohard.sudoku.bars`: {band} · success % of 50 runs, by sweeps
 - `puzzles.zoohard.sudoku.cap`: Puzzles generated here: G30 stops removing givens at 30; the minimal puzzles (23 to 25 givens) remove until no cell can go, rated SINGLES when naked and hidden singles solve them and GUESS when they stall. Both minimal bands sit at 6% at 200k sweeps.
 - `puzzles.zoohard.sudoku.h`: Fewer givens, fewer solved sudokus
@@ -8625,7 +9240,7 @@
 - `relax.control.caption`: correlation with the pose {r} · with a shuffled pose {c}
 - `relax.control.head`: Correlation, with its control
 - `relax.dyn.label`: FALLING INTO STEP · MEASURED
-- `relax.dyn.lede`: A settle is many small parts, each following its own rule, ending in one shared state. Physics has studied this kind of agreement for a long time. We ran five small experiments on it and drew ten of them for the home page.
+- `relax.dyn.lede`: A settle is many small parts, each following its own rule, ending in one shared state. Physics has studied this kind of agreement for a long time. We ran five small experiments on it and made ten short films about it for the home page; three are below.
 - `relax.dyn.p1`: Oscillators with different natural rates stay apart until their coupling passes a critical value, then gather into one rhythm. Above that point the share in step follows a known law (Ott and Antonsen) to within {gap}.
 - `relax.dyn.p2`: A ring of cells that each see only a few neighbours never agrees under a plain majority vote ({maj} percent of rings): its borders freeze. The GKL rule moves the borders until they meet, and brings the whole ring to the right answer {gkl} percent of the time.
 - `relax.dyn.p3`: A network of oscillators that stores six patterns as phases recalled them {none} percent of the time on its own, and {pull} percent once each phase was gently pulled toward 0 or pi. That pull is what makes an oscillator network an Ising machine, and the machine found the calmest arrangement {fast} percent of the time when the pull rose fast and {slow} percent when it rose slowly, as a settle does when it cools slowly.
@@ -8664,6 +9279,7 @@
 - `relax.race.head`: Annealing: a slow cool-down against a quench
 - `relax.race.quench`: quench
 - `relax.race.slow`: slow anneal
+- `relax.rec.more`: the error-correcting-code experiment, SETTLE's sampler and its weather example
 - `relax.script.again.dhh.1`: Same four moves, new pose. That is a convention.
 - `relax.script.again.m.1`: The heat climbs from {from} back to {to} over {frames} sweeps, the hold is released, and the next pose is stored. The home room reheats from 0.45 to 3.0 over 20 frames the same way.
 - `relax.script.again.rich.1`: And when the song ends? We warm up and we do it AGAIN, with a new pose. Every class the same four moves: jiggle, work, cool, settle.
@@ -8749,6 +9365,13 @@
 - `relax.soft.body`: At temperature 1.2 the lights keep flickering. Here a light's brightness is its yes count since the count began, which is SETTLE's ask. The flicker averages out and the pose appears steadier than any single sweep.
 - `relax.soft.caption`: counted over {n} sweeps · correlation of one sweep with the pose {r}
 - `relax.soft.head`: The soft read: how often each light says yes
+- `relax.src.code`: the site's code
+- `relax.src.engine`: this page's engine
+- `relax.src.ldpc`: the error-correcting-code experiment
+- `relax.src.room`: the home page's room
+- `relax.src.sampler`: SETTLE's sampler
+- `relax.src.tests`: this page's tests
+- `relax.src.weather`: the weather example program
 - `relax.stage.aria`: Richard Simmons and DHH settling out of noise into their aerobics, {n} lights. Now: {pose}.
 - `relax.stage.harmony.aria`: harmony
 - `relax.stage.harmonyoff`: harmony off
@@ -8815,15 +9438,15 @@
 - `repo.settlesee.install`: test settle-see from its repository
 - `repo.settlesee.kicker`: SETTLE SEE · THE DRAWING LIBRARY
 - `repo.settlesee.line`: Words, shapes, photos and films as a grid of neon lights that settles out of noise. One function for a canvas, one component for React.
-- `repo.settlesee.note`: No dependencies, React 18 or newer as an optional peer, no licence chosen yet. Its home is the {label} .
+- `repo.settlesee.note`: No dependencies, React 18 or newer as an optional peer, MIT. Its home is the {label} .
 - `repo.settlesee.para`: settle-see draws every picture on this site. You give it something to settle into: a word, a shape, an SVG, a photo, a list of them, or a small film. It lays a grid of lights over the canvas, each one a p-bit that leans toward your picture and is pulled by its four neighbours, and it cools the grid from noise into the picture, then keeps it alive. Settle is the React component, settle() the same thing for any canvas. A film plays in true time, a new word morphs out of the old one, and every settle on a page shares one loop that pauses when nobody is looking.
 - `repo.settlesee.who`: the navigator, on settle-see
 - `repo.settletext.head`: Let people not give a whit about the theory and just render text, and render backgrounds, using this effect.
 - `repo.settletext.install`: test settle-text from its repository
 - `repo.settletext.kicker`: SETTLE TEXT · THE REACT COMPONENT LIBRARY
 - `repo.settletext.line`: React components that render text, images and vectors as a live settle of lights. You supply the words and the font.
-- `repo.settletext.note`: React 18 or newer as a peer, settle-see as its one dependency, no licence chosen yet. Its home is the {label} .
-- `repo.settletext.para`: settle-text is a set of React components. SettleText takes your words and your font and renders them as a grid of neon lights that comes out of noise, rests, and breathes now and then. SettleImage does the same for a picture, by brightness, with a dither for photos and the picture’s own colours per light if you want them. SettleVector takes an SVG, by ink. SettleBackground puts any of them behind your content, drawn once and then costing nothing. You choose the colour, size, resolution and glow. The physics is settle-see’s, and you never meet it.
+- `repo.settletext.note`: React 18 or newer as a peer, settle-see as its one dependency, MIT. Its home is the {label} .
+- `repo.settletext.para`: settle-text is a set of React components. SettleText takes your words and your font and renders them as a grid of neon lights that comes out of noise, keeps flickering, and shimmers on its own clock. SettleImage does the same for a picture, by brightness, with a dither for photos and the picture’s own colours per light if you want them. SettleVector takes an SVG, by ink. SettleBackground puts any of them behind your content, alive on a slower schedule, or drawn once and still. You choose the colour, size, resolution and glow. The physics is settle-see’s, and you never meet it.
 - `repo.settletext.sub`: This is a way in for the visual designers, or programmers who do not care about theory.
 - `repo.settletext.who`: the navigator, on settle-text
 
@@ -8852,21 +9475,25 @@
 - `results.lane.answer`: Answer.
 - `results.lane.board`: SCOREBOARD
 - `results.lane.chip.controls`: {n} controls
+- `results.lane.chip.report`: its report, in full below
 - `results.lane.control`: control · {c}
 - `results.lane.go`: read the report
 - `results.lane.question`: Question.
-- `results.lane.report`: THE REPORT · {file}
+- `results.lane.rec`: this experiment's report, below
+- `results.lane.report`: THE REPORT · {name}
+- `results.lane.report.lede`: The experiment's own report, word for word as it was written: its file names say where the work lives, and a nine-character code such as {sha} names the commit that sealed a prediction.
 - `results.lanes.label`: THE EXPERIMENTS
 - `results.lanes.lede`: Open a card for the experiment's numbers and its report.
 - `results.lanes.title`: One card per experiment
 - `results.ledger.append`: append only
 - `results.ledger.go`: read the ledger
 - `results.ledger.here`: the ledger
-- `results.ledger.label`: THE LEDGER · {file}
-- `results.ledger.lede`: {path}, as of the last data build.
+- `results.ledger.label`: THE EXPERIMENT LEDGER
+- `results.ledger.lede`: The campaign's experiment ledger, word for word: each prediction sealed before its measurement, then the result scored against it, kept append only as the week went. It names the machines the experiments ran on and the commits that sealed each prediction.
 - `results.ledger.name`: THE LEDGER
-- `results.ledger.q`: The campaign ledger: its rules, its experiments, and every prediction and result line in order ({window}).
-- `results.ledger.sub`: Every rule, experiment, prediction and result, in the order it was written.
+- `results.ledger.note`: This is the experiment ledger: only its experiment lines are shown here. The same notebook also logged the building of this site that week, and those lines are left out.
+- `results.ledger.q`: The experiment ledger: every prediction and result line, in the order it was written ({window}).
+- `results.ledger.sub`: Every prediction and result, in the order it was written.
 - `results.ledger.title`: The campaign ledger
 - `results.legend.hit`: a hit
 - `results.legend.miss`: a miss
@@ -8902,11 +9529,12 @@
 - `sdm2.chart.x.len`: length to copy
 - `sdm2.cmp.cap`: FULL and PARTIAL at the size we train them
 - `sdm2.cmp.col.part`: part
+- `sdm2.cmp.first`: first test, bits per byte, both trained on {tok} tokens (lower is better)
+- `sdm2.cmp.firstnotok`: first test, bits per byte (lower is better)
 - `sdm2.cmp.layers`: layers and width
 - `sdm2.cmp.layers.both`: {l} layers, {d} wide
 - `sdm2.cmp.mem`: between tokens
 - `sdm2.cmp.mem.both`: a run-time SDM: {h} heads of {s} slots, {k} woken a token
-- `sdm2.cmp.score`: TEST score, bits per byte (lower is better)
 - `sdm2.cmp.speed`: training speed, tokens a second, one GPU
 - `sdm2.cmp.state`: kept to go on writing
 - `sdm2.cmp.state.both`: {mb} MB, at any length
@@ -8970,6 +9598,7 @@
 - `sdm2.score.beatoff`: Both FULL and PARTIAL beat the memory-off control by more than the noise, so the memory between tokens does real work.
 - `sdm2.score.cap`: TEST bits per byte on held-out web text, lower is better
 - `sdm2.score.cap.tok`: TEST bits per byte on held-out web text, lower is better; the first test trains each model on {tok} tokens
+- `sdm2.score.chatnote`: The chat column is FULL after its chat tune, scored on held-out chat turns rather than web text.
 - `sdm2.score.col.base`: full run
 - `sdm2.score.col.chat`: chat
 - `sdm2.score.col.first`: first test
@@ -8978,7 +9607,7 @@
 - `sdm2.score.ruling`: FULL is the model we take forward: it goes on to the full run and then to chat, and PARTIAL stops after its first test. The transformer is a yardstick of the same size on the same tokens, not one of our models. A gap under {noise} between two scores is not called.
 - `sdm2.score.tf`: a transformer (the yardstick)
 - `sdm2.score.tfahead`: The transformer did better than both on the first test. FULL has ground to make up, and we measure it against a transformer at every step.
-- `sdm2.sources`: Every number about FULL and PARTIAL on this page is read from the run records by one script, and rebuilt by running it again:
+- `sdm2.sources`: Every number about FULL and PARTIAL on this page is read from the training records by one script, and is rebuilt whenever a new record lands.
 - `sdm2.stack.aria.full`: FULL: a token climbs {n} layers; in each, a few memory slots light, then a few table rows light; the scores for every word form at the top.
 - `sdm2.stack.aria.partial`: PARTIAL: a token climbs {n} layers; in each, a few memory slots light, then the whole MLP lights; the scores for every word form at the top.
 - `sdm2.stack.cap.full`: Each row is a layer. Left, the memory: {mh} heads, a few slots woken in each. Right, the table: a token reads {k} of {slots} rows in each of {h} heads, so only a few lights come on.
@@ -9133,7 +9762,7 @@
 - `sdmexplore.chat.dots.ringed`: ringed: SDM read, small, one of the models on SDMCHAT ({chat}, seed 2)
 - `sdmexplore.chat.dots.s0`: SDM model, S0 store
 - `sdmexplore.chat.dots.subtitle`: TEST bits per byte, one dot per seed; lower is better
-- `sdmexplore.chat.precise.from`: From {src} §4:
+- `sdmexplore.chat.precise.from`: From the report of {src}, section 4:
 - `sdmexplore.chat.precise.p`: n is RMS normalisation, BN a batch norm on the query, k_m_hat a unit-length key, v_m a value row, k = 32. The working vector x then passes a SwiGLU block, and the logits are n(x) against the tied embedding E, one row per token. Bits per byte is the summed negative log probability of each next token, in bits, divided by the bytes of text: it does not depend on the tokenizer. The vocabulary, from the model's own file: {vocab} The embedding table holds {embed}
 - `sdmexplore.chat.precise.tag`: THE PRECISE VERSION
 - `sdmexplore.chat.topk.aria`: The soft top-k read on 128 illustrative scores: the best 64 are kept and fire with weight sigmoid((s - theta) / {soft}).
@@ -9147,10 +9776,10 @@
 - `sdmexplore.chat.topk.title`: The soft top-k read
 - `sdmexplore.chat.topk.weight`: FIRING WEIGHT w_m = sigmoid((s_m - theta) / softness)
 - `sdmexplore.chat.v2.first`: The first rounds measured the first of those small models: 3,600 locations, 2 hops. There the store first cost 0.017 to 0.025 bits per byte against the same model without it. Once its query gradient was stopped, it tied.
-- `sdmexplore.chat.v2.flow`: The newest model, the base run, left to right. The memory read and the small dense step repeat once per hop.
-- `sdmexplore.chat.v2.how`: Our newest model works like this. Each step it sums up the text so far, turns that into a query, wakes the {k} best of the memory’s locations, and adds what they hold. It does that {h} times, then scores every token and picks one. The picked token joins the text and it runs again.
+- `sdmexplore.chat.v2.flow`: The hop model, left to right. The memory read and the small dense step repeat once per hop.
+- `sdmexplore.chat.v2.how`: Our hop model, the one the memory tests ran on, works like this. Each step it sums up the text so far, turns that into a query, wakes the {k} best of the memory’s locations, and adds what they hold. It does that {h} times, then scores every token and picks one. The picked token joins the text and it runs again. Our newest model, FULL, is taken apart on SDM.
 - `sdmexplore.chat.v2.lede`: SDM CHAT is a language model with no attention. Where a transformer would attend, it reads a learned Kanerva-style memory.
-- `sdmexplore.chat.v2.look`: It sees the last {b} tokens exactly and the rest as {a} fading averages: a short, blurry lookback, not a context window. LEARN SDM LOOKBACK shows what that means and how it matches Mamba.
+- `sdmexplore.chat.v2.look`: It sees the last {b} tokens exactly and the rest as {a} fading averages: a short, blurry lookback, not a context window. SDM-LOOKBACK shows what that means and how it matches Mamba.
 - `sdmexplore.chat.v2.result`: So far the memory ties. At {tok} billion tokens, memory on scored {on} and memory off {off}: inside the {noise} noise. The chat in your browser runs smaller models of the same family, each reading a 3,600-location store twice per token.
 - `sdmexplore.chip.exp`: six live experiments
 - `sdmexplore.chip.locations`: 64 hard locations
@@ -9158,8 +9787,11 @@
 - `sdmexplore.chip.words`: 32-bit words
 - `sdmexplore.ex.close.p`: Kanerva’s two comparisons. A computer’s random access memory: one address wakes one location; here one address wakes several, and the several share what they hold. And the cerebellum: he reads its granule cells as the hard locations and the synapses on its Purkinje cells as the bit-counters, a memory nature built.
 - `sdmexplore.ex.kicker`: the explainer · in Kanerva’s words
+- `sdmexplore.ex.lecture.neural`: his Neural Computation lecture
+- `sdmexplore.ex.lecture.redwood`: his lecture at the Redwood Center, Berkeley
+- `sdmexplore.ex.lecture.stanford`: his Stanford seminar, 2017
 - `sdmexplore.ex.lede`: Pentti Kanerva published this memory in 1988. {n}-bit words, {M} hard locations, three stored patterns, :cat :dog :owl.
-- `sdmexplore.ex.quote.ref`: Kanerva, lecture {id} at {time}
+- `sdmexplore.ex.quote.ref`: Kanerva, {lecture}, at {time}
 - `sdmexplore.ex.s1.p`: Everything the memory stores or reads is a pattern of bits, here the {n} bits of :cat, drawn as lights: lit for +1, dark for -1. Kanerva’s own examples use a thousand or ten thousand bits. A thousand-bit word has 2 to the power 1,000 possible values, far too many for a memory to keep one location for each.
 - `sdmexplore.ex.s1.title`: A word is a long row of bits
 - `sdmexplore.ex.s2.p`: An ordinary memory has one location for every address. This one has {M} hard locations. Each has a random {n}-bit address, chosen once and kept, and a row of {n} bit-counters that start at zero. The stars are the three stored patterns; each dot is one hard location, drawn near the patterns its address resembles.
@@ -9170,7 +9802,7 @@
 - `sdmexplore.ex.s4.title`: A read lets the nearby hard locations vote
 - `sdmexplore.ex.s5.p`: That copy of :cat had {flipped} of {n} bits flipped. It woke {shared} of the {k} hard locations :cat was written to, and their votes outweighed the rest: one read left {off} bits wrong, and reading again from each answer reached :cat in {rounds} reads and then stopped changing. The chart counts the bits that differ from :cat after each read. An address far from every stored word wakes hard locations that agree on nothing, and the answer is noise, which is the memory’s way of saying it does not know.
 - `sdmexplore.ex.s5.title`: A noisy address still finds the word, read by read
-- `sdmexplore.ex.src`: Each quote is a line of YouTube’s auto-caption, unpunctuated, with the lecture and the time it was said. The lecture notes, with every quote, are {doc}; the transcripts are not shipped.
+- `sdmexplore.ex.src`: Each quote is a line of YouTube’s auto-caption, unpunctuated, with the lecture and the time it was said; each one links to that moment of the lecture.
 - `sdmexplore.ex.title`: What a sparse distributed memory is
 - `sdmexplore.exp.capacity.busy`: writing and reading… {n} of {total} checkpoints
 - `sdmexplore.exp.capacity.cap`: S-map capacity {cap}
@@ -9181,7 +9813,6 @@
 - `sdmexplore.exp.capacity.one`: one memory, written as it goes
 - `sdmexplore.exp.capacity.p90`: recorded P90 {keys} and {scale}
 - `sdmexplore.exp.capacity.smap`: S-map: converges up to {cap}
-- `sdmexplore.exp.capacity.src`: {keys} §2 and {scale} §3
 - `sdmexplore.exp.capacity.x`: patterns stored
 - `sdmexplore.exp.capacity.y`: recall
 - `sdmexplore.exp.done`: done
@@ -9189,7 +9820,7 @@
 - `sdmexplore.exp.keys.before.legend`: length byte (amber) · the text's bits · padding, all +1 (ice): before the key turns it
 - `sdmexplore.exp.keys.before.subtitle`: a length byte, the text bits, and padding that is all +1
 - `sdmexplore.exp.keys.before.title`: The note before the key turns it
-- `sdmexplore.exp.keys.cap`: The program is {prog}; the test replays its five recorded lines. A key is not encryption: it is hashed to 64 bits.
+- `sdmexplore.exp.keys.cap`: The program is the one above; a test replays its five recorded lines. A key is not encryption: it is hashed to 64 bits.
 - `sdmexplore.exp.keys.dist`: the key's address is {d} bits from the stored note ({pad} padding bits agree by construction)
 - `sdmexplore.exp.keys.far.aria`: For each note length, how far the key's address sits from the stored note, and whether the read found it.
 - `sdmexplore.exp.keys.far.axis`: note length in bytes (lime: the key read the note back · red: nothing readable)
@@ -9201,7 +9832,7 @@
 - `sdmexplore.exp.keys.note`: the note ({n} of {cap} bytes)
 - `sdmexplore.exp.keys.read`: read with the key
 - `sdmexplore.exp.keys.saved`: saved under the key
-- `sdmexplore.exp.melt.cap`: dashed: the sealed measurement X8 ({ledger}).
+- `sdmexplore.exp.melt.cap`: dashed: the sealed measurement X8, recorded in {ledger}.
 - `sdmexplore.exp.melt.chains`: chains per temperature
 - `sdmexplore.exp.melt.chart`: share of reads 21 to 30 on the address's own pattern, starting 10% noisy
 - `sdmexplore.exp.melt.computing`: computing…
@@ -9212,7 +9843,7 @@
 - `sdmexplore.exp.melt.x`: temperature T
 - `sdmexplore.exp.melt.y`: share on the pattern
 - `sdmexplore.exp.pulls.aria`: 64 hard location p-bits above 32 data p-bits, joined by pulls equal to the bit-counters. {on} hard locations are on; the data are {pct}% like :{k}.
-- `sdmexplore.exp.pulls.cap`: the test X9 checks that at T = 0 this model gives the release binary's {via} line for the page program.
+- `sdmexplore.exp.pulls.cap`: a test checks that at T = 0 this model gives the release binary's {via} line for the page program.
 - `sdmexplore.exp.pulls.data`: 32 DATA THINGS · lean = the sum of their pulls
 - `sdmexplore.exp.pulls.energy`: energy {e}
 - `sdmexplore.exp.pulls.gibbs`: one round of Gibbs per frame: hard locations, then data
@@ -9272,7 +9903,7 @@
 - `sdmexplore.page.machine.line`: Each hard-location has a fixed random 32-bit address and 32 bit-counters. The three stars are the stored patterns, :cat :dog :owl, drawn at their distance from the address.
 - `sdmexplore.page.machine.p`: Pick a start on the left: a stored pattern with some of its bits flipped (a noisy address), a word that was never stored, or pure noise. The hard locations within 12 bits of the address wake and vote, and the answer appears on the right. Press RUN and the answer becomes the next address, until the read gives back what it was given. Press an address bit to flip it, or hold it.
 - `sdmexplore.page.machine.title`: Pick an address and watch it answer
-- `sdmexplore.page.output.line`: The machine in this tab prints the same six lines. Test X1 in {test} checks it, and re-runs the binary when it is there.
+- `sdmexplore.page.output.line`: The machine in this tab prints the same six lines. A test checks it, and runs the binary again whenever one is built.
 - `sdmexplore.page.output.p`: Look at the last two lines: an address that was never written (:zebra) and pure noise both come back as :cat. In a memory this small the basins cover most of the cube. Experiment 3 refuses such reads.
 - `sdmexplore.page.output.title`: What the binary prints
 - `sdmexplore.page.prog.label`: THE PROGRAM · SETTLE
@@ -9292,7 +9923,7 @@
 - `sdmexplore.sparse.l1`: Two random codes of 40 bits in 2,048 share 0.78 bits on average; in 200,000 draws none shared more than 7.
 - `sdmexplore.sparse.l2`: Keep 3 of the 40 bits and the fragment still shares more with its code than the best of 10,000 strangers does.
 - `sdmexplore.sparse.l3`: One union of codes held to one false match in a billion fits 3 codes at 4 active bits, 47 at 28 and 14 at 400: there is a best sparsity.
-- `sdmexplore.sparse.l4`: Read as a sparse code, our SDM language model's first read wakes 32 of 65,536 locations a token and a quarter of all wakes go to 32 locations. That describes the code; at 20M tokens the trained reads added nothing over a model with no reads, and the same test at 2.0 billion tokens is still training.
+- `sdmexplore.sparse.l4`: Read as a sparse code, our SDM language model's first read wakes 32 of 65,536 locations a token and a quarter of all wakes go to 32 locations. That describes the code, not its worth: every time the trained reads trained stably, they tied a model with no reads, up to 2.0 billion tokens.
 - `sdmexplore.sparse.label`: SPARSE CODES · WHAT MANY BITS AGREE ON
 - `sdmexplore.sparse.p`: The memory above reads with dense addresses. A sparse distributed representation uses very few active bits, 40 of 2,048 here, and two codes are alike when they share bits. Three small experiments, run in a few minutes on a laptop, show why so few bits are enough.
 - `sdmexplore.sparse.pick1.p`: Four columns each touch a different part of one object among 1,000. Alone, each keeps 322 to 350 objects that fit what it felt. They vote, and after two touches all four hold the same one. Pooled evidence settles a question no single column could settle so soon.
@@ -9302,6 +9933,7 @@
 - `sdmexplore.sparse.pick3.p`: A spatial pooler of 64 columns learns from random bars, 4 winners for each input. Boosting raises a quiet column and lowers a busy one, so the busiest wins 1.30 times its fair share instead of 2.32. Its fields sharpen into single bars, 53 of 64 clean, and all 16 bars are taken.
 - `sdmexplore.sparse.pick3.title`: Each finds its own part
 - `sdmexplore.sparse.title`: Sparse codes that agree
+- `sdmexplore.src.refuse`: the refusal experiment
 - `sdmexplore.top.cap`: $ settle 01_sdm_state.settle
 - `sdmexplore.top.cap.live`: settling live
 - `sdmexplore.top.docs`: the KANERVA docs
@@ -9323,7 +9955,6 @@
 - `sdmm.bar.twin`: twin, memory off
 - `sdmm.bars.axis`: TEST bits per byte · shorter bar is better
 - `sdmm.bars.best`: ← best
-- `sdmm.chip.asof`: as of {at}
 - `sdmm.chip.law`: all SDM, no transformer
 - `sdmm.chip.one`: one honest page
 - `sdmm.chip.scratch`: from scratch
@@ -9336,7 +9967,7 @@
 - `sdmm.flow.tokens.n`: last 8 + 5 averages
 - `sdmm.flow.vector`: the working vector
 - `sdmm.flow.write`: write
-- `sdmm.g.data.found`: More data helped: {tok} tokens scored {a} against {b} at {half}. The {big}-token run itself stopped at step {st} of {of} when its box closed, unscored, so the data curve stays open at the top.
+- `sdmm.g.data.found`: More data helped: {tok} tokens scored {a} against {b} at {half}. The {big}-token run itself stopped at step {st} of {of} when the machine it ran on shut down, before it was scored, so the data curve stays open at the top.
 - `sdmm.g.data.what`: The same shape trained on more web text.
 - `sdmm.g.hops.found`: More hops kept helping, each doubling by less: {a} hops scored {av}, {b} scored {bv}, {c} scored {cv}. The curve never turned, so its best sits at the edge we tried. The next step, {wall} hops, did not fit the card.
 - `sdmm.g.hops.what`: At width {w} with the memory off, from {lo} to {hi} hops.
@@ -9354,7 +9985,7 @@
 - `sdmm.g.window.what`: How long each training example is, memory off, {w} hops at width {d}.
 - `sdmm.g.yardstick.found`: It set the bar: {a} at {tok1}, {b} at {tok2}. Our best SDM model never beat it, but the race is short-context: the transformer trains at window {w} with {l} layers.
 - `sdmm.g.yardstick.what`: A small transformer, the yardstick only, at the same data.
-- `sdmm.here`: sdm-model
+- `sdmm.here`: sdmchat-model
 - `sdmm.law.label`: THE LAW
 - `sdmm.law.p1`: Every model on this page is built from one part: a sparse distributed memory, Kanerva’s store of hard locations read by an address. The only step that lets one position in the text affect another is an SDM read or write. There is no attention, no softmax over the window, no transformer anywhere in a model we score. The transformer below is a yardstick only, there to say how far the SDM trails.
 - `sdmm.law.title`: All SDM, no transformer, from scratch
@@ -9405,7 +10036,7 @@
 - `sdmm.tbl.tokens`: tokens
 - `sdmm.tbl.width`: width
 - `sdmm.tbl.window`: window
-- `sdmm.title`: THE SDM LANGUAGE MODEL
+- `sdmm.title`: SDMCHAT-MODEL
 - `sdmm.verdict.bracketed`: BRACKETED
 - `sdmm.verdict.tie`: TIE
 - `sdmm.verdict.unbracketed`: UNBRACKETED
@@ -9423,7 +10054,7 @@
 - `sdmm.where.twin`: its memory-off twin, the best SDM score
 - `sdmm.wip.line`: Small and early; we are building the next one.
 - `sdmm.wip.link`: What we tried and what we found
-- `sdmm.wip.tag`: WORK IN PROGRESS
+- `sdmm.wip.tag`: EARLY MODEL
 - `sdmm.worked.label`: WHAT WORKED, WHAT DIDN’T
 - `sdmm.worked.lede`: We swept one thing at a time, and each sweep gets one mark: BRACKETED when its best value lies inside the range tried, UNBRACKETED when the best is at the edge, TIE when nothing moved the score past the noise, and WORSE when every setting lost. Three things worked: more hops, more data, and a wider body. Nothing about the memory worked.
 - `sdmm.worked.title`: The sweeps, in plain words
@@ -9432,10 +10063,10 @@
 
 - `sdmm2.hist.banner`: From here down is the history: the shapes we tried before FULL and PARTIAL, what each one found, and the scores that sent us to the two models above. Every picture below is of an older shape and is marked HISTORY.
 - `sdmm2.hist.tag`: HISTORY
-- `sdmm2.law.p2`: They are trained from scratch, on web text, with next-token cross-entropy. Every score is TEST bits per byte on held-out text, lower is better, and a gap under {noise} between two runs is not called. Every number in the history is read from one file, {facts}, and re-checked against the training log and the model code by the site’s tests.
+- `sdmm2.law.p2`: They are trained from scratch, on web text, with next-token cross-entropy. Every score is TEST bits per byte on held-out text, lower is better, and a gap under {noise} between two runs is not called. Every number in the history is read from the training records, and the site’s tests check each one again against those records and the model code.
 - `sdmm2.lede`: We are exploring the shapes an SDM can take, and where it might fit in LLM land. The newest two are FULL and PARTIAL, and FULL is the one we take forward. Below them is the history of every shape that led there.
 - `sdmm2.now.label`: NOW · FULL AND PARTIAL
-- `sdmm2.now.more`: How each one stores, writes, reads and picks the next word: learn sdm.
+- `sdmm2.now.more`: How each one stores, writes, reads and picks the next word: sdm.
 - `sdmm2.now.p1`: Both models put a memory written while reading in every layer, the one part that passes anything between positions. After it, PARTIAL uses an ordinary MLP of {n} neurons. FULL uses a trained SDM table instead, of which each token reads {k} rows in each head. They are trained at {l} layers and a width of {d}.
 - `sdmm2.now.title`: The two newest models, and the one we take forward
 - `sdmm2.shape.mid.found`: On puzzles it does what no earlier shape could: its recall holds flat out to a gap of {gap} tokens, where the transformer falls to {tf}. It copies in range worse than the transformer does. It became PARTIAL, tested beside FULL in the section above.
@@ -9826,7 +10457,7 @@
 - `settletext.parts.image.note`: The second picture is a line drawing, Galileo’s moon of 1610, coarse on purpose, with its dark lights glowing faintly in a second neon.
 - `settletext.parts.image.say`: A picture by brightness. A dither keeps its tones as densities of dots, and colors="source" keeps each light’s own colour.
 - `settletext.parts.kicker`: THE COMPONENTS, ONE BY ONE
-- `settletext.parts.lead`: Each takes plain props and does the settling itself. All seven ship in settle-text 0.4.0, and all seven are alive by default.
+- `settletext.parts.lead`: Each takes plain props and does the settling itself. There are seven, and all seven are alive by default.
 - `settletext.parts.link.docs`: the docs
 - `settletext.parts.link.nav`: links drawn as lights
 - `settletext.parts.link.say`: A link whose words are lights. Point at one, or reach it with Tab, and its lights scatter and settle back.
@@ -10178,7 +10809,7 @@
 - `surprise.bits.p2`: A learner that reads the first 60,001 bytes of Pride and Prejudice once, paying -log2 p for each byte before counting it, shows the score in motion: a letter model of order 3 ends at 2.743 bits per byte, between gzip (2.970) and bz2 (2.481).
 - `surprise.bits.p3`: Settling can also take back surprise that noise put in. We sent a code through a channel that flips 10% of its bits and let p-bits running SETTLE’s own rule read it back. Held at the temperature that matches the noise, their averaged read left 0.0499 of the bits wrong (from 0.1032), as good as belief propagation (0.0490); the same machine cooled to one state left 0.0601.
 - `surprise.bits.p4`: A memory can be counted the same way. A Kanerva SDM that hands back each stored bit right or wrong is itself a noisy channel, and the bits it returns rise toward a ceiling as it fills: at most 0.327 bits a counter with 500 hard-locations. Written so that each pattern is its own address, the same memory reads an address it was never given back as itself, so its bits must be counted beside that control.
-- `surprise.bits.p5`: These are seeded simulations on a laptop. The decoder is not fast, the code is far from Shannon’s limit, and none of it is a claim about our language model’s store. The three pictures below are the experiment’s chosen hero items, live.
+- `surprise.bits.p5`: These are seeded simulations on a laptop. The decoder is not fast, the code is far from Shannon’s limit, and none of it is a claim about our language model’s store. The three pictures below come from that experiment, drawn live.
 - `surprise.bits.pick.decode`: Two linked rings arrive with 77 of their 1,344 bits flipped by a noisy channel. Each bit is a p-bit, coupled to the others by the code the rings were sent in; held at the temperature that matches the noise, their running average settles, and 15 wrong bits remain after 48 sweeps. The decoder is exactly as unsure as the channel was noisy, and it trusts the average of many gentle guesses over one cold verdict.
 - `surprise.bits.pick.perfect`: Sixteen flowers: each is a codeword of the Hamming(7,4) code at the centre, with the seven words one bit away as petals; beside them, the Fano plane, whose lines are the code’s words of weight 3. The sixteen balls of eight words cover all 128 words of seven bits with no overlap, so every word has exactly one home and any single flipped bit is forgiven.
 - `surprise.bits.pick.sdm`: A Kanerva memory of 2,000 hard-locations is given more pairs to hold, from 1 to 7,500, and one stored ring is read back each time. The ring blurs until 95 of its 256 bits are wrong, yet the information the memory returns climbs to about 96,000 bits. Each memory is held a little less sharply so that many more can be held at all.
@@ -10223,7 +10854,7 @@
 - `surprise.control.title`: The control runs on SETTLE
 - `surprise.controls.help.basics`: A new level is generated from the next seed. Switching the model or starting a new level resets the model to the comfort prior. Nothing here is saved; reloading starts again. The share of one core is the frame time times the frame rate plus the planning time times the step rate. The game stops while the view is off screen.
 - `surprise.controls.help.picture`: EVERY FRAME A SETTLE: every frame the raycaster draws a small picture, and a grid of p-bits takes a few sweeps of the SETTLE rule toward it. NEON BY CLASS: each light shines in a neon chosen by what its pixel shows (sky, sun, cloud, skyline, wall, neon trim, floor, enemy, rain), four tones per class from dark to bright. THE PIXEL'S OWN: each light shines in its pixel's colour. THREE: three grids (red, green, blue) settle each colour on its own. SOFT READ draws each light's running average; RAW BITS draws every light fully on or off. A DAY LASTS sets the length of the day; HOLD stops the sky at the time of day chosen. WEATHER: CYCLE brings rain and night sparks on their own clocks.
-- `surprise.controls.help.truetime`: TRUE TIME SETTLE: the game films a frame on a fixed grid and keeps the last {ring}; the settle works toward the frame it was given as fast as this machine allows, and once the lights that frame asked to change agree with it to the threshold, it takes the frame the game is at now. The strip under the view marks each filmed frame SHOWN, SKIPPED, NOW (being settled toward) or FILMED (not yet aimed at). MACHINE SPEED: 60 or 15 SWEEPS/S hold the settle to that rate, to show what a slower machine does; the game keeps its time either way.
+- `surprise.controls.help.truetime`: TRUE TIME SETTLE: the game films a frame on a fixed grid and keeps the last {ring}; the settle works toward the frame it was given as fast as this machine allows, and once the lights that frame asked to change agree with it to the threshold, it takes the frame the game is at now. The strip under the view marks each filmed frame SHOWN, SKIPPED, NOW (being settled toward) or FILMED (waiting its turn). MACHINE SPEED: 60 or 15 SWEEPS/S hold the settle to that rate, to show what a slower machine does; the game keeps its time either way.
 - `surprise.controls.label`: SURPRISE · CONTROLS
 - `surprise.ctl.choice`: action choice
 - `surprise.ctl.choice.best`: BEST PLAN
@@ -10309,8 +10940,8 @@
 - `surprise.measured.arms`: FIXED: the prior never changes. LEARNING: one Boltzmann step per observation at rate 0.02, body preferences held. LEARNING-ALL: the same, with the body preferences learning too. WANDER: the route every step, with no planning: the habit alone. UNTRAINED: the planner with an untrained model, whose every plan predicts the same surprise, so only the habit separates them. RANDOM: a uniformly random move of the nine each step. "enemies" counts every enemy that appeared, including the six present at the start; "seen" counts those the player saw.
 - `surprise.measured.bytype`: the mixed roster by enemy type, totals over all seeds
 - `surprise.measured.bytype.head`: {name}: appeared / seen / killed / hits on the player
-- `surprise.measured.classic`: the CLASSIC roster (three spikers, the first version’s world), the same engine and seeds: the comparison the new enemies are measured against
-- `surprise.measured.intro`: Measured headless in Node with the same engine: {n} seeds ({first} to {last}), each its own level, {steps} steps each, planning over {horizon} steps with {plans} plans, habit {habit} nats per route step and alarm tail {tail}. Every run is deterministic from its seed; the site's tests re-run seed 1 of FIXED and compare. Measured {date} UTC by {cmd} (file: {file}).
+- `surprise.measured.classic`: the CLASSIC roster (three spikers, a simpler world), the same engine and seeds: the comparison the mixed roster is measured against
+- `surprise.measured.intro`: Measured headless in Node with the same engine: {n} seeds ({first} to {last}), each its own level, {steps} steps each, planning over {horizon} steps with {plans} plans, habit {habit} nats per route step and alarm tail {tail}. Every run is deterministic from its seed; the site's tests re-run seed 1 of FIXED and compare. Measured {date} UTC.
 - `surprise.measured.label`: SURPRISE · RECORDED
 - `surprise.measured.mixed`: the MIXED roster (a spiker, a runner, a brute and three mites): totals over all seeds per arm; fractions are means over the runs
 - `surprise.measured.onsets`: the mixed roster: surprise at the first sight of the k-th enemy, mean over seeds (n = seeds that reached that enemy)
@@ -10341,13 +10972,13 @@
 - `surprise.raybit.wall`: near wall
 - `surprise.reading.asmany`: as many
 - `surprise.reading.classic`: {verdict} On the classic roster FIXED took {chpk} hits per 1,000 steps and died {cdeaths} times; on the mixed roster {hpk} and {deaths}, {ratio} times the rate. It still killed {kps} of the enemies it saw ({ckps} on the classic roster), and it took {wratio} times fewer hits than WANDER and {rratio} times fewer than RANDOM on the same levels.
-- `surprise.reading.cost`: The new enemies cost the agent.
+- `surprise.reading.cost`: The mixed roster costs the agent more.
 - `surprise.reading.fewer`: fewer
 - `surprise.reading.fixed`: FIXED spent {explore} of its steps on the route and visited {rooms} of each level's rooms. It saw {seen} enemies and killed {killed}, {tokill} steps after first sight on average, and took {hits} hits ({hpk} per 1,000 steps) with {deaths} deaths. WANDER, the same route with no planning, took {whits} hits and died {wdeaths} times; RANDOM took {rhits} and died {rdeaths} times.
 - `surprise.reading.learning`: LEARNING (preferences held) took {hits} hits ({more} than FIXED), killed {killed} and died {deaths} times. Its first sight of the first enemy measured {l1} nats against FIXED's {f1}, and of the fifth {l5} against {f5}; its mean surprise over the run was {ls} against {fs}.
 - `surprise.reading.learningall`: LEARNING-ALL (preferences learning too) had a mean surprise of {s} nats, took {hits} hits, killed {killed} and died {deaths} times. Low surprise is not good play: a model that learns to expect being hurt no longer prefers any outcome.
 - `surprise.reading.more`: more
-- `surprise.reading.nocost`: The new enemies did not cost the agent more hits.
+- `surprise.reading.nocost`: The mixed roster did not cost the agent more hits.
 - `surprise.reading.notsame`: did not match WANDER on every seed
 - `surprise.reading.same`: made exactly the same moves as WANDER on every seed (the per-seed counts are identical)
 - `surprise.reading.untrained`: UNTRAINED {verb}: with no model, active inference reduces to its habit. Its mean surprise is {s} nats, {n} times ln 2, the same for every observation.
@@ -10369,7 +11000,7 @@
 - `surprise.scope.darkroom`: The dark room problem is real here. Without the habit and the "closer" preference, this agent found the most typical views it could, which are open rooms seen from the middle, and rocked forward and back there instead of passing through doors and corridors, whose views are rarer. The habit and the preference make it wander; they do not remove the problem. Friston, Thornton and Clark (2012) discuss it.
 - `surprise.scope.forward`: The agent's forward model is the game's own rules, except that it holds only the enemies the agent knows of, where it believes they are, and runs each in the tactic it was last in. Real active inference agents have to learn how their actions change the world. Here that part is given.
 - `surprise.scope.hidden`: The agent has no inferred hidden states. The alarm and the believed enemy positions are set by fixed rules, so the free-energy bound is tight and free energy equals surprise. The meter shows surprise, exactly.
-- `surprise.scope.kinds`: The agent's senses do not tell the enemy kinds apart: an enemy is an enemy bit, whatever its kind. Its model and its comfort prior are exactly as before the new enemies; only its imagined copies of the world run the new rules.
+- `surprise.scope.kinds`: The agent's senses do not tell the enemy kinds apart: an enemy is an enemy bit, whatever its kind. Its model and its comfort prior are the same on either roster; only its imagined copies of the world run each kind's rules.
 - `surprise.scope.label`: SURPRISE · SCOPE
 - `surprise.scope.shows`: It shows an agent that chooses moves by predicted surprise and a habit, with no reward, wandering a level and dealing with enemies, and that its behaviour depends on what its model counts as comfortable.
 - `surprise.scope.title`: What it shows, and where it stops
@@ -10387,7 +11018,7 @@
 - `surprise.settle.title`: The agent's model is a settling machine
 - `surprise.sprite.aria`: The {name} sprite.
 - `surprise.strip.ago`: -{s} s
-- `surprise.strip.aria`: The game's last frames as it filmed them, oldest on the left, each marked shown, skipped, now (the frame the settle is working toward) or filmed (not yet aimed at).
+- `surprise.strip.aria`: The game's last frames as it filmed them, oldest on the left, each marked shown, skipped, now (the frame the settle is working toward) or filmed (waiting its turn).
 - `surprise.strip.filmed`: FILMED
 - `surprise.strip.latest`: latest
 - `surprise.strip.now`: NOW
@@ -10445,7 +11076,7 @@
 - `surprise.world.enemies`: Enemies and their tactics. Four kinds, six at a time; their rules are listed with the enemies. Every enemy sees across a 140 degree view; lost from sight, it goes to where it last saw the player and gives up after 80 steps. All of this is fixed rules, with no learning and no randomness inside a step, so the agent’s imagined copies of the world run exactly the same rules.
 - `surprise.world.label`: SURPRISE · THE WORLD
 - `surprise.world.level`: The level. A 44 by 32 grid. Up to nine rectangular rooms are placed at random; a minimum spanning tree over their centres, plus the two shortest extra edges, says which rooms are joined, so there are loops. Each joining corridor runs from a door on one room's wall to a door on the other's, carved by an A* search that may not cross a room, and is then widened to two cells. A level is rebuilt from the next seed until every floor cell can be reached. Doors are panels that slide open while anyone is within 1.6 cells.
-- `surprise.world.outside`: The outside. Every pixel above the horizon is painted from the time of day ({file}). Eight keyframes, from dawn through noon and dusk to midnight, hold the colours of the sky, the sun, the clouds, the skyline and the fog, and the sky blends between the two around the moment. The sun runs from east to west along an arc, with stripes cut across its lower half; at night a moon takes the same arc and stars come out. Clouds are a noise map seen on a plane above, drifting with the wind and drawn in three flat tones with a bright rim. A skyline of rolling hills and seven clusters of towers stands on the horizon in every direction; their windows are lit by a fixed hash, so they never flicker. The fog takes a colour near the horizon's, so the far floor fades into the haze. By day the rows near the horizon shimmer sideways with the heat, at under one cycle a second. Rain is a field of slanted streaks and sparks are rising embers; both are closed formulas in time, so a frame drawn twice at the same moment is identical. The light on walls and floors follows the day.
+- `surprise.world.outside`: The outside. Every pixel above the horizon is painted from the time of day. Eight keyframes, from dawn through noon and dusk to midnight, hold the colours of the sky, the sun, the clouds, the skyline and the fog, and the sky blends between the two around the moment. The sun runs from east to west along an arc, with stripes cut across its lower half; at night a moon takes the same arc and stars come out. Clouds are a noise map seen on a plane above, drifting with the wind and drawn in three flat tones with a bright rim. A skyline of rolling hills and seven clusters of towers stands on the horizon in every direction; their windows are lit by a fixed hash, so they never flicker. The fog takes a colour near the horizon's, so the far floor fades into the haze. By day the rows near the horizon shimmer sideways with the heat, at under one cycle a second. Rain is a field of slanted streaks and sparks are rising embers; both are closed formulas in time, so a frame drawn twice at the same moment is identical. The light on walls and floors follows the day.
 - `surprise.world.pathfinding`: Pathfinding. A* over the grid with eight neighbours, cost 1 for a straight step and √2 for a diagonal, the octile distance as its heuristic, and no corner cutting. The tests check its path length against an independent Dijkstra search on 63 levels, and check that it reports no path on a map split by a wall.
 - `surprise.world.picture`: The picture. A textured raycaster: one ray per picture column through the same grid the agent senses, walls and door panels with neon trim, the floor drawn row by row, light pooling under the lamps, distance fog that the neon shows through, and sprites sorted far to near. Beside each pixel's colour the renderer writes what the pixel shows (its class), which the settle can use to choose a light's colour. Every frame is written into one array of pixels and drawn at the chosen width. The figures under the view are this tab's own timings.
 - `surprise.world.roof`: The open roof. No room and no corridor has a ceiling. The roof was taken off without a draw from the level's random number generator, so no wall, door, lamp or pickup moved, and the comfort prior still fits these levels exactly. The sky is only a picture: nothing the agent senses changed, and the test that re-runs a recorded seed still matches the measured table.
@@ -10658,7 +11289,7 @@
 - `sxl.pass.live`: the one-way pass, live: best overlap by round
 - `sxl.pass.note`: mode: :settle lets the data things pull back on the hard locations, an arrow the anatomy lacks. The pass on the left runs in this tab; the settle on the right is the recorded run.
 - `sxl.pass.p1`: The cerebellar cortex computes in one pass: granule cells drive Purkinje cells, which project out, not back to the granule cells. Let the outputs pull back and the memory breaks. In settle mode two different cues, :{a} and :{b}, ended on one blend ({o}), while the pass returned :{g} closest at {go}. At softness 0 both modes recalled :{h}.
-- `sxl.pass.p2`: The measured counts: in E5b the pass recalled {p} of {pn} and the settle {s} of {sn}. In the softsdm report, the settle read recalled {rs} of {all} read-addresses where the pass recalled {rp}.
+- `sxl.pass.p2`: The measured counts: in E5b the pass recalled {p} of {pn} and the settle {s} of {sn}. In the SOFTSDM results, the settle read recalled {rs} of {all} read-addresses where the pass recalled {rp}.
 - `sxl.pass.rec`: the settle, recorded: best overlap by round
 - `sxl.pass.recfinal`: Recorded verdict: {v}.
 - `sxl.prog.cap`: THE PROGRAM
@@ -10851,8 +11482,8 @@
 - `sxl.wff.weak`: weak input, lean 0.1
 - `sxl.wiki.back`: back to the experiments
 - `sxl.wiki.err`: The page could not be loaded ({e}).
-- `sxl.wiki.label`: THE WIKI · WIKI_SIX_LAYER_FEEDBACK
-- `sxl.wiki.lang`: The wiki pages are English documents, shown as they are written.
+- `sxl.wiki.label`: THE WIKI
+- `sxl.wiki.lang`: The wiki pages are English documents. Here their file paths are named in words or linked to the page that holds them, and notes about unbuilt work are put in plain words.
 - `sxl.wiki.loading`: loading the page …
 - `sxl.wiki.nav`: the wiki pages
 - `sxl.wiki.none`: This wiki has no page by that name. Pick one from the list.
@@ -10870,7 +11501,6 @@
 - `sxl.wiki.t09`: Wide experiments
 - `sxl.wiki.t10`: Drawing it
 - `sxl.wiki.texp`: The experiments, their programs and outputs
-- `sxl.wiki.tplan`: The plan for this page
 - `sxl.wiki.unknown`: No such wiki page
 - `sxl.wikilist.label`: THE WIKI
 - `sxl.wikilist.title`: Every page behind these panels
@@ -10890,7 +11520,7 @@
 - `terms.changes.title`: Changes and ending things
 - `terms.here`: terms
 - `terms.law.label`: GOVERNING LAW
-- `terms.law.p1`: These terms are governed by the laws of the governing law, not set yet.
+- `terms.law.p1`: These terms are governed by the laws of Australia.
 - `terms.law.title`: Governing law
 - `terms.models.label`: THE MODELS
 - `terms.models.p1`: The language models on this site are small experimental models. Their output can be wrong, odd or nonsense. Do not trust it and do not rely on it for any decision: it is research and play, and it is not advice of any kind.
@@ -10900,12 +11530,11 @@
 - `terms.rights.art`: The brand picture is an artwork by Yayoi Kusama, and it is not ours. It is shown only on the credits page, with its credit. The room of lights on the home page is our own drawing, inspired by her infinity mirror rooms.
 - `terms.rights.films`: Eadweard Muybridge’s horse frames are in the public domain. Tears of Steel is by the Blender Foundation, under the Creative Commons Attribution 3.0 licence (CC BY 3.0). The works the site cites keep their own rights, and the credits page lists them.
 - `terms.rights.label`: OUR WORK AND OTHERS’
-- `terms.rights.licences`: settle-mcp is under the MIT licence, as its package.json and its LICENSE file state. The other packages’ manifests name no licence yet: their licences are not set yet.
-- `terms.rights.p1`: The site, its code and its design belong to its makers. A package carries the licence its own manifest states.
+- `terms.rights.licences`: Each repository says so in its LICENSE file and its manifest: SETTLE, KANERVA, settle-mcp, settle-text, settle-see, settle-hear, SDMCHAT and this site.
+- `terms.rights.p1`: The site and its design are made by its makers. Its code, and the code of every package, is under the MIT licence.
 - `terms.rights.title`: Who owns what
 - `terms.site.label`: THE SITE
-- `terms.site.p1`: The site is an experimental research and demonstration site for SETTLE, a small language for settling machines, and for its packages KANERVA, settle-mcp and settle-text. Its pages, demos and models change often, and any of them may change or disappear without notice.
-- `terms.site.p2`: Today the site runs only on its makers’ own computers. Nothing is deployed.
+- `terms.site.p1`: The site is an experimental research and demonstration site for SETTLE, a small language for settling machines, and for the packages built around it: KANERVA, settle-mcp, settle-text and settle-see. Its pages, demos and models change often, and any of them may change or disappear without notice.
 - `terms.site.title`: What the site is
 - `terms.title`: Terms
 - `terms.top.sub`: The rules for using this site, in plain words.
@@ -10947,8 +11576,13 @@
 - `ui.live.label`: live simulation in your browser
 - `ui.live.title`: Computed right now, in this browser tab, by the JavaScript port of the SETTLE sampler. Not a recorded result.
 - `ui.missing`: {what} is not built yet. Run {cmd} (it runs {tool}) and reload.
+- `ui.missing.live`: This part of the page did not load. Reload the page to try again.
+- `ui.recorded.card`: this experiment's card on the results page
 - `ui.recorded.label`: recorded result
+- `ui.recorded.ledger`: the campaign ledger
+- `ui.recorded.records`: the experiment's own records
 - `ui.recorded.title`: Copied from the experiment's report; the site's tests check each number is there verbatim.
+- `ui.recorded.where`: Recorded in:
 - `ui.table.aria`: table
 
 ## unf2
@@ -11061,7 +11695,7 @@
 - `what.dis.hold.word`: a hold
 - `what.dis.intro`: Every {settle} program is built from these words.
 - `what.dis.lean.cap`: the whole one-thing program, from
-- `what.dis.lean.p`: The light was on in 88.0% of 40,000 samples. For a lean of 1 the exact answer is (1 + tanh 1) / 2 = 88.08%, so the count is right to within the noise of counting. Move the slider to see the rule for any lean.
+- `what.dis.lean.p`: The light was on in {pct}% of 40,000 samples. For a lean of 1 the exact answer is (1 + tanh 1) / 2 = 88.08%, so the count is right to within the noise of counting. Move the slider to see the rule for any lean.
 - `what.dis.lean.say`: A lean tilts the coin. A thing that leans toward yes by 1 comes up yes about 88% of the time; by 3, nearly always. A lean toward no works the same way down.
 - `what.dis.lean.word`: a lean
 - `what.dis.pull.cap`: three pulls, one of them a push, from
@@ -11126,7 +11760,7 @@
 - `what.part.kanerva.line`: sparse distributed memory, Pentti Kanerva, and how it meets SETTLE
 - `what.part.settle.line`: the language, and settling: six words, four mechanisms, and what they do
 - `what.parts.label`: the two halves of this page
-- `what.pic.files`: The Rust run wrote both pictures. One sample scores 7.27 dB; forty score 22.39 dB.
+- `what.pic.files`: The Rust run wrote both pictures. One sample scores {one} dB; forty score {forty} dB.
 - `what.pic.forty`: {file}, written by the Rust run: the yes-rate over 40 samples
 - `what.pic.one`: {file}, written by the Rust run: one sample, black and white
 - `what.pic.p`: A picture is a grid of things, one per pixel. Each pixel leans toward the brightness of the photograph (a light pixel leans yes, a dark one no) and pulls gently on its four neighbours so that nearby pixels agree. One sample is a speckled black-and-white picture. Counting how often each pixel was on over many samples gives back the greys.
@@ -12063,7 +12697,7 @@
 - `wlg.chat.status`: live in your browser · dev build · the template is {tpl}
 - `wlg.chat.status.run`: your own post-trained run {name} · live in your browser · the template is {tpl}
 - `wlg.chat.title`: Talk to him
-- `wlg.chip.dev`: dev only
+- `wlg.chip.local`: talks in our local copy only
 - `wlg.chip.mem`: 3,600 memory locations
 - `wlg.chip.net`: the SDMCHAT network
 - `wlg.chip.noatt`: an SDM-LLM, no attention
@@ -12074,7 +12708,7 @@
 - `wlg.credits.lectures.meta`: ({channel}, uploaded {date})
 - `wlg.credits.lectures.summary`: the {n} lectures and talks, by title
 - `wlg.credits.searle`: John Searle, the style source. These {n} recorded talks were read as subtitles for research and are not stored in this repository:
-- `wlg.devonly.note`: He runs in the local build only. His training text was written in the style of John Searle’s lectures, so his weights stay on the machine that made them. Run the site with {run} after {exp} and he will talk to you here.
+- `wlg.devonly.note2`: He does not talk on this copy of the site. His training text was written in the style of John Searle’s lectures, so his weights stay on the machine that made them. You can still train a strange little guy of your own in the studio below; a run you train talks here, in your browser. His tiny paper is at the end of the page.
 - `wlg.face.aria`: WEIRD LITTLE SDM GUY's face, drawn in ASCII
 - `wlg.head.title`: WEIRD LITTLE SDM GUY
 - `wlg.here`: weirdlittlesdmguy
@@ -12083,7 +12717,7 @@
 - `wlg.info.training`: web text, then our small corpus on how anybody knows anything
 - `wlg.paper.abstract.h`: Abstract
 - `wlg.paper.abstract.now`: He is an SDMCHAT language model, whose next token comes from reading a sparse distributed memory, trained on a small corpus of our own writing: about three quarters plain-worded epistemics in the style of John Searle’s lectures, about one quarter WEIRD LITTLE SDM GUY material with a lot of ASCII drawings. He answers almost anything with a question about evidence, the difference between what exists and what we know, or a drawing of a snail. He is a bad model with a character, and the character is the point.
-- `wlg.paper.by.now`: the SETTLE campaign · numbers from {report}
+- `wlg.paper.by.front`: the SETTLE campaign · numbers from its own measurement records
 - `wlg.paper.kicker`: HIS TINY PAPER
 - `wlg.paper.limits.background`: Searle himself warned against a philosopher who treats life as a constant knowledge problem; most of what we do rests on a Background we take for granted. The guy cannot take anything for granted. That is the joke, and it is also his flaw.
 - `wlg.paper.limits.context`: The network reads only the last 256 tokens and has no attention, so long conversations drift.
@@ -12108,7 +12742,7 @@
 - `wlg.top.cap.listening`: listening
 - `wlg.top.cap.writing`: writing
 - `wlg.top.go`: talk to him
-- `wlg.top.lede`: He is the SDMCHAT network, reading a sparse distributed memory of 3,600 locations, trained on our own writing about evidence. Ask him anything and he asks how you know it. He runs in a dev build only; a run you train yourself talks here in every build.
+- `wlg.top.lede2`: He is the SDMCHAT network, reading a sparse distributed memory of 3,600 locations, trained on our own writing about evidence. Ask him anything and he asks how you know it. He talks only in our own local copy of the site; a run you train yourself talks here on every copy.
 - `wlg.top.sub`: A small SDM language model with one obsession: how we know things.
 - `wlg.top.train`: train your own
 
@@ -12145,7 +12779,7 @@
 - `wtf.none`: No term matches that. Try a shorter word, or clear the filter.
 - `wtf.related`: related
 - `wtf.search.label`: SEARCH
-- `wtf.search.placeholder`: a word, in English or Japanese
+- `wtf.search.placeholder`: a word, in English or in this page’s language
 - `wtf.source`: source
 - `wtf.term.access-circle.meaning`: The hard locations within the activation radius of an address: the ones a read or a write touches.
 - `wtf.term.access-circle.usage`: Kanerva's 1988 book calls the set the access circle; his 1993 chapter draws it as "the set activated by x". SDM EXPLORE draws it as the dashed circle.
@@ -12210,7 +12844,7 @@
 - `wtf.term.boltzmann-distribution.meaning`: Each arrangement s turns up with probability proportional to e^(-E(s)/T): the distribution settling samples.
 - `wtf.term.boltzmann-distribution.usage`: Named for Ludwig Boltzmann. It is the target of every settle; ask estimates it by counting.
 - `wtf.term.boltzmann-machine.meaning`: A settling machine that learns: its leans and pulls are fitted so its settles reproduce a set of examples.
-- `wtf.term.boltzmann-machine.usage`: The learn family and the LEARN SETTLE page. Learning compares how often pairs agree in the data and in the machine, and nudges the pulls.
+- `wtf.term.boltzmann-machine.usage`: The learn family and the SETTLE-TOUR page. Learning compares how often pairs agree in the data and in the machine, and nudges the pulls.
 - `wtf.term.brownian-motion.meaning`: The jitter of a small particle struck at random by the molecules around it.
 - `wtf.term.brownian-motion.usage`: A hero word.
 - `wtf.term.bundling.meaning`: Adding hypervectors bit by bit and keeping the majority: a vector that resembles each one added.
@@ -12232,7 +12866,7 @@
 - `wtf.term.cl1.meaning`: Cortical Labs' CL1: a computer built on living human neurons, which 2026 news reports describe running DOOM.
 - `wtf.term.cl1.usage`: Cited on the SURPRISE page as reports, not as results: the demo has not yet appeared in a peer-reviewed paper.
 - `wtf.term.classify.meaning`: Scores a learned machine: hold an example's pixels and settle the label things.
-- `wtf.term.classify.usage`: shuffle swaps labels between rows to give a chance baseline. The LEARN SETTLE page reads handwritten digits this way.
+- `wtf.term.classify.usage`: shuffle swaps labels between rows to give a chance baseline. The SETTLE-TOUR page reads handwritten digits this way.
 - `wtf.term.clean-up.meaning`: The last step of a hyperdimensional answer: compare the noisy result with every word in the item memory and take the word it looks most like.
 - `wtf.term.clean-up.usage`: On the KANERVA page the answer to the dollar of Mexico is a noisy copy until the clean-up names it.
 - `wtf.term.climbing-fibre.meaning`: In Kanerva's model of the cerebellum, the line that brings a Purkinje cell the word to be stored.
@@ -12370,7 +13004,7 @@
 - `wtf.term.free-energy.meaning`: Energy minus temperature times entropy; in Friston's free-energy principle, a bound on surprise an agent keeps low.
 - `wtf.term.free-energy.usage`: SURPRISE is a game whose agent acts to keep its observations unsurprising, the free-energy principle in toy form.
 - `wtf.term.full-sdm.meaning`: Our SDM language model built from sparse distributed memories in every part: each layer writes and reads a run-time SDM, then reads a few rows of a trained SDM table where a transformer has its MLP. No attention and no MLP.
-- `wtf.term.full-sdm.usage`: The model we take forward: it becomes the base of the next SDM CHAT. LEARN SDM and its two sibling pages draw every step of it beside PARTIAL.
+- `wtf.term.full-sdm.usage`: The model we take forward: it becomes the base of the next SDM CHAT. The SDM page and its two sibling pages draw every step of it beside PARTIAL.
 - `wtf.term.gain.meaning`: The data input one clean stored pattern gives in a soft memory.
 - `wtf.term.gain.usage`: The default is 64.
 - `wtf.term.gibbs-sampling.meaning`: Re-tossing one variable at a time from its probability given all the others; for a p-bit that is the tanh rule.
@@ -12558,7 +13192,7 @@
 - `wtf.term.mixture-of-experts.meaning`: A layer of many expert networks with a router that sends each token to only a few of them, so most weights rest on any one token.
 - `wtf.term.mixture-of-experts.usage`: A hero word.
 - `wtf.term.mnist.meaning`: A standard set of handwritten digits, 28 by 28 pixels, used to test a learning machine.
-- `wtf.term.mnist.usage`: The LEARN SETTLE page reads MNIST digits live with a settling machine, then shows the recorded experiments.
+- `wtf.term.mnist.usage`: The SETTLE-TOUR page reads MNIST digits live with a settling machine, then shows the recorded experiments.
 - `wtf.term.mode.meaning`: A soft read's mode: a one-way pass, or a joint settle with feedback.
 - `wtf.term.mode.usage`: `mode: :pass` is the default.
 - `wtf.term.model-block.meaning`: The block that declares a machine: its things, leans, pulls and any larger structure such as a grid or a memory.
@@ -12582,7 +13216,7 @@
 - `wtf.term.number.meaning`: Declares a real-valued thing, a number, for the springs family.
 - `wtf.term.number.usage`: Numbers sit on springs instead of being yes or no.
 - `wtf.term.oakenfold.meaning`: Our name (yes, after Paul Oakenfold, the DJ), from our research notes, for a generator built of sparse distributed memories: it enfolds a fact into the Complicate, the sum of every write, unfolds it out to the Explicate, the answer, and fold-back writes the verdict in again.
-- `wtf.term.oakenfold.usage`: Our names, not established terms; OAKENFOLD itself is a research aim. LEARN SDM uses them for Kanerva's write and read.
+- `wtf.term.oakenfold.usage`: Our names, not established terms; OAKENFOLD itself is a research aim. The SDM page uses them for Kanerva's write and read.
 - `wtf.term.p-bit.meaning`: A probabilistic bit: a coin that comes up +1 or -1, biased by its input through the tanh rule.
 - `wtf.term.p-bit.usage`: Every thing in a settle is a p-bit. Hardware p-bits exist as tiny magnets and transistors; on this site every p-bit is drawn as a light.
 - `wtf.term.packages.meaning`: The five package pages, SETTLE, KANERVA, MCP, SETTLE TEXT and SETTLE SEE: the main destinations, each in its own neon, first in every menu.
@@ -12599,14 +13233,6 @@
 - `wtf.term.page-hear.usage`: In the language folder.
 - `wtf.term.page-home.meaning`: The home page: the hero, GETTING STARTED, the statement families and the campaign summary.
 - `wtf.term.page-home.usage`: Its path in the menu is /settle itself. It shows a four-line program running live under its code.
-- `wtf.term.page-learn-sdm-lookback.meaning`: How far back FULL and PARTIAL reach: no window of past tokens, only a memory of fixed size that the text writes into, heads that each forget at their own rate, the same cost at any length, and what the memory puzzles measured.
-- `wtf.term.page-learn-sdm-lookback.usage`: In the science folder after LEARN SDM UNFOLD; every picture and chart is drawn for FULL and for PARTIAL, and a model with no score yet says so.
-- `wtf.term.page-learn-sdm-unfold.meaning`: How a word goes into our SDM language models and how a word comes out: enfold turns a token into a vector, every layer adds to it, and unfold scores every word against the same word table. It also draws the address that finds a few slots among thousands.
-- `wtf.term.page-learn-sdm-unfold.usage`: In the science folder after LEARN SDM; every picture is drawn for FULL and for PARTIAL. The old address #/enfold leads here.
-- `wtf.term.page-learn-sdm.meaning`: A guide to our two SDM language models, FULL and PARTIAL: what each stores, how it writes and reads, how it picks the next word, how the two differ, and why FULL is the one we take forward.
-- `wtf.term.page-learn-sdm.usage`: In the science folder, between LEARN SETTLE and LEARN SDM UNFOLD. SDM CHAT sits folded at the top; every step below has a FULL picture and a PARTIAL picture, and every number comes from the run records.
-- `wtf.term.page-learn-settle.meaning`: How a settling machine learns to read handwritten digits: a guide, MNIST live, then the 8x8 experiments as recorded.
-- `wtf.term.page-learn-settle.usage`: Boltzmann machine learning in the browser, in the science folder. The old address #/learning leads here.
 - `wtf.term.page-members.meaning`: Your account, signed in through Clerk: sign up with an emailed code, log in, the little guys and runs you saved from the studio, the ASK chat and your chat balance.
 - `wtf.term.page-members.usage`: In the members folder, which lists only this page until you log in. The saved models come first, then ASK, the balance, and your email, password, data export and account deletion. Without Clerk keys the page says members are not configured.
 - `wtf.term.page-numbers.meaning`: Springs that solve A x = b live: the cloud's centre finds the answer, its spread gives the inverse.
@@ -12619,14 +13245,22 @@
 - `wtf.term.page-relax.usage`: In the science folder.
 - `wtf.term.page-results.meaning`: Every experiment's scoreboard, headline numbers and tables; one experiment's full report; the campaign ledger.
 - `wtf.term.page-results.usage`: An experiment is one named piece of work in the SETTLE campaign. Each wrote its predictions before measuring, then scored them HIT, SPLIT or MISS.
-- `wtf.term.page-sdm-model.meaning`: The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
-- `wtf.term.page-sdm-model.usage`: In the science folder after LEARN SDM LOOKBACK. Every SDM chat page carries a WORK IN PROGRESS note linking here; each older picture on it is framed and marked HISTORY.
+- `wtf.term.page-sdm-lookback.meaning`: How far back FULL and PARTIAL reach: no window of past tokens, only a memory of fixed size that the text writes into, heads that each forget at their own rate, the same cost at any length, and what the memory puzzles measured.
+- `wtf.term.page-sdm-lookback.usage`: In the science folder after SDM-UNFOLD; every picture and chart is drawn for FULL and for PARTIAL, and a model with no score yet says so.
+- `wtf.term.page-sdm-unfold.meaning`: How a word goes into our SDM language models and how a word comes out: enfold turns a token into a vector, every layer adds to it, and unfold scores every word against the same word table. It also draws the address that finds a few slots among thousands.
+- `wtf.term.page-sdm-unfold.usage`: In the science folder after the SDM page; every picture is drawn for FULL and for PARTIAL. The old address #/enfold leads here.
+- `wtf.term.page-sdm.meaning`: A guide to our two SDM language models, FULL and PARTIAL: what each stores, how it writes and reads, how it picks the next word, how the two differ, and why FULL is the one we take forward.
+- `wtf.term.page-sdm.usage`: In the science folder, between SETTLE-TOUR and SDM-UNFOLD. SDM CHAT sits folded at the top; every step below has a FULL picture and a PARTIAL picture, and every number comes from the run records.
+- `wtf.term.page-sdmchat-model.meaning`: The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
+- `wtf.term.page-sdmchat-model.usage`: In the science folder after SDM-LOOKBACK. Every SDM chat page carries an EARLY MODEL note linking here; each older picture on it is framed and marked HISTORY.
 - `wtf.term.page-sdmexplore.meaning`: An SDM drawn as a state diagram you operate, how SDMCHAT works, and six SETTLE x KANERVA experiments.
 - `wtf.term.page-sdmexplore.usage`: One idea per section: the machine, the address, the vote, the warm read, the program and what the binary printed.
 - `wtf.term.page-sdmmemory.meaning`: Live Hopfield recall, an SDM room of lights, the softness dial and keyed notes, then the record.
 - `wtf.term.page-sdmmemory.usage`: In the demos folder. The old address #/memory leads here.
 - `wtf.term.page-sdmpoem.meaning`: The SDM language model writing verse live, then THE POEM LAB: an SDM that learns a whole poem in the tab and recites it.
 - `wtf.term.page-sdmpoem.usage`: In the demos folder. The old address #/poem leads here.
+- `wtf.term.page-settle-tour.meaning`: How a settling machine learns to read handwritten digits: a guide, MNIST live, then the 8x8 experiments as recorded.
+- `wtf.term.page-settle-tour.usage`: Boltzmann machine learning in the browser, in the science folder. The old address #/learning leads here.
 - `wtf.term.page-six-layer-feedback.meaning`: A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
 - `wtf.term.page-six-layer-feedback.usage`: In the demos folder after the SDM pages. Its rule: a SETTLE pull works both ways, so a settle shows recurrence and cannot show a one-way arrow. The wiki behind it reads in the site at #/six-layer-feedback/wiki.
 - `wtf.term.page-surprise.meaning`: A first-person game whose settling agent acts to keep its surprise low: Friston's free-energy principle in toy form.
@@ -12638,7 +13272,7 @@
 - `wtf.term.parallel-tempering.meaning`: Copies of a system run at several temperatures and swap states now and then, so the cold copy escapes its traps.
 - `wtf.term.parallel-tempering.usage`: A hero word.
 - `wtf.term.partial-sdm.meaning`: Our SDM language model with one ordinary part: each layer writes and reads a run-time SDM, then runs a regular MLP. No attention.
-- `wtf.term.partial-sdm.usage`: Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. LEARN SDM draws every step of it beside FULL.
+- `wtf.term.partial-sdm.usage`: Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. The SDM page draws every step of it beside FULL.
 - `wtf.term.partition-function.meaning`: Z, the sum of e^(−E/T) over every state: the number that turns Boltzmann weights into probabilities.
 - `wtf.term.partition-function.usage`: A hero word, followed by its equation. Its log gives the free energy: F = −kT ln Z.
 - `wtf.term.pentti-kanerva.meaning`: Pentti Kanerva, who invented sparse distributed memory and wrote the hyperdimensional computing papers this site leans on.
@@ -12814,7 +13448,7 @@
 - `wtf.term.two-panels.meaning`: The two kinds of panel around a block of text. The purple panel holds SETTLE and KANERVA code and stays stock standard, because it stands for a standard library. The orange notation panel, a chamfered frame around a paragraph of our own notation, is ours.
 - `wtf.term.two-panels.usage`: The two sentences on Settling on the home page wear the orange notation panel; every program block and install box wears the purple one.
 - `wtf.term.uci-digits.meaning`: The small set of 8x8 handwritten digits bundled with scikit-learn.
-- `wtf.term.uci-digits.usage`: BOLTZLEARN learned from these digits; the LEARN SETTLE page reads MNIST live and shows the 8x8 experiments as recorded.
+- `wtf.term.uci-digits.usage`: BOLTZLEARN learned from these digits; the SETTLE-TOUR page reads MNIST live and shows the 8x8 experiments as recorded.
 - `wtf.term.unbinding.meaning`: Bind a bundled record with a role again (XOR), or convolve it with the role's involution (HRR), and a noisy copy of its filler comes back out.
 - `wtf.term.unbinding.usage`: A hero word.
 - `wtf.term.valleys-stmt.meaning`: Lists the calm arrangements of a small machine exactly; survey samples them in a larger one.
@@ -12869,6 +13503,7 @@
 
 - `wya.carry.kicker`: guide
 - `wya.carry.label`: Switch guide
+- `wya.chip.langs`: in {n} languages
 - `wya.chip.mcp`: served by settle-mcp
 - `wya.chip.three`: 3 guides
 - `wya.door.open`: open this guide

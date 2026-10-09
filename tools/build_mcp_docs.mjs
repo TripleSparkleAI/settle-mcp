@@ -546,7 +546,7 @@ export function agentsMd(D, who, docs, examples, gloss) {
     '## The rules',
     '',
     '- `setup` is a dry run until you pass `dry_run` false with the plan id it returned as `confirm`, so the person sees every command before anything runs. It never uses sudo.',
-    '- Nothing is published to npm and the repositories are private: never invent a URL. For setup, use the folder or git URL the person gives you.',
+    '- Nothing is published to npm. The repositories are public, under github.com/triplesparkle: never invent another URL. For setup, use the folder or git URL the person gives you.',
     '- When a program fails, hand `explain_error` the whole printed error: the `settle: line N:` line and the excerpt and caret lines under it. It names the marked word and the suggested fix.',
     '- `.kanerva` programs hold only the sdm family and run on the kanerva command (`run_kanerva`); `via: :pulls` is the one read only SETTLE runs.',
     '- Quote a number with the document or the program output it came from; the guides name their sources.',

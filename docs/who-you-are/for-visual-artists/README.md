@@ -12,17 +12,17 @@ so you can ask for a program instead of writing one.
 
 The visual work done with these tools so far:
 
-- The film player, `#/film`, takes a film frame by frame and lets the field settle toward each frame. It shows every
+- [The film player](#/film) takes a film frame by frame and lets the field settle toward each frame. It shows every
   stage: the target, the leans, the live coins, the bits read, the soft read, the error map. Under TRUE TIME RENDER
   the film keeps its own pace and the field in front catches up as fast as the machine allows, skipping frames when
   it must, so the picture on screen is always close to the frame the clock is at.
 - The footer of every page is two layers of the brain drawn as lights, the cortex in six layers above the
   cerebellum below, with spikes running along the wires. A click rides into the Purkinje forest with a game's
   camera.
-- The SDMMEMORY page, `#/sdmmemory`, stores letters as valleys in a Hopfield net, adds noise to one, and watches it come
+- [The SDMMEMORY page](#/sdmmemory) stores letters as valleys in a Hopfield net, adds noise to one, and watches it come
   back; the same page shows a room of Kanerva hard locations and a dial from a hard memory to attention.
 
-The drawing library is settle-see. It has no dependencies, draws on a canvas,
+The drawing library is [settle-see](#/settlesee). It has no dependencies, draws on a canvas,
 colours every light by the SETTLE neon code (ten neons, each meaning one thing in the physics), and settles into a
 word, a registered shape, an SVG path, your own canvas drawing, a picture read by brightness, or a raw bit array.
 Its README lists the shapes: a physics family (`purkinje`, `landscape`, `tanh`, `spins`, `boltzmann`, `hopfield`,
@@ -44,7 +44,7 @@ A 256-bit pattern is a 16 by 16 tile. KANERVA stores thousands of such tiles in 
 hard location, and brings one back from a copy with a fifth of its bits flipped. A memory like that is an
 instrument for an installation: show it a scrawl, get back the stored image it is nearest to, or get back `nothing
 clear` when the scrawl is too far from anything it knows. The memory can also refuse: it says "I never stored that"
-when a read-address travels too far (`#/kanerva`).
+when a read-address travels too far ([KANERVA](#/kanerva)).
 
 ### SETTLE and KANERVA together
 
@@ -58,7 +58,7 @@ and cooled until it returns, all in one program and one field of lights. The sit
 The picture program from the tutorial, run on 2026-10-02 with the release binary on the horse frame (150 by 100
 pixels, 15,000 things).
 
-```settle file=SETTLE/settle-site/src/how/03_picture.settle
+```settle file=picture.settle
 model :picture do
   grid :img, width: 150, height: 100, smooth: 0.2
   img.lean_from "horse.pgm", by: 1, correct: :yes
@@ -82,12 +82,12 @@ show_as :img -> forty_samples.pgm (rate), PSNR 24.46 dB against the leans' pictu
 One sample is a snow of coins at 7.95 dB; the rate over forty samples is the horse at 24.46 dB. The whole run took
 0.02 s. The film player's curve has the same shape: on the Muybridge horse at 150 by 100, the soft read
 at smooth 0.2 reaches 22.73 dB at 5 sweeps per frame and 28.79 dB at 80, and the player ran at 454.7 frames per
-second at 10 sweeps on a loaded laptop, one thread (`#/results/gridplayer`).
+second at 10 sweeps on a loaded laptop, one thread ([the GRIDPLAYER result](#/results/gridplayer)).
 
 ## Getting started
 
-1. Look first. Open `#/film` and move the sweeps slider; open `#/sdmmemory` and damage a letter; open `#/what` and read
-   the picture step, where the horse frame settles under TRUE TIME RENDER in the middle of the page.
+1. Look first. Open [the film player](#/film) and move the sweeps slider; open [SDMMEMORY](#/sdmmemory) and damage a
+   letter; open [WHAT?](#/what) and read the picture step, where the horse frame settles under TRUE TIME RENDER in the middle of the page.
 2. Draw your own field. settle-see is plain JavaScript with no build step. Clone it
    beside your page (`git clone https://github.com/triplesparkle/settle-see`) and write:
 
@@ -118,8 +118,8 @@ handle.show(bits);   // settle into a new target now
 - KANERVA: [what a sparse distributed memory is, in plain words](#/kanerva/docs/what-a-sparse-distributed-memory-is-in-plain-words),
   [using it](#/kanerva/docs/using-it), and [refuse and track](#/kanerva/docs/refuse-and-track-say-i-never-stored-that).
 - settle-mcp: [how to add it to your agent, and where its full docs are](#/mcp).
-- The drawing library's own README, in the settle-see repository (the shapes, the colours, the
-  pointer, TRACES, films, live items, THE DECK).
+- [settle-see](#/settlesee): the drawing library's own page and README (the shapes, the colours, the pointer, TRACES,
+  films, live items, THE DECK).
 - The pages: [the film player](#/film), [SDMMEMORY](#/sdmmemory), [the puzzles](#/puzzles) (a board half solved, drawn as
   lights), and [credits](#/credits) for the brand picture and the films' licences.
 

@@ -76,10 +76,10 @@ Written after `leans:` on thing and after the other thing on pulls and pushes: `
 
 Scores a learned machine: hold an example's pixels and settle the label things.
 
-shuffle swaps labels between rows to give a chance baseline. The LEARN SETTLE page reads handwritten digits this way.
+shuffle swaps labels between rows to give a chance baseline. The SETTLE-TOUR page reads handwritten digits this way.
 
 - also: shuffle
-- where: #/settle/05-statements/learn#classify, #/settle/05-statements/learn#shuffle, #/learn-settle
+- where: #/settle/05-statements/learn#classify, #/settle/05-statements/learn#shuffle, #/settle-tour
 - source: SETTLE/settle-rs/docs/05-statements/learn.md
 - link: #/glossary#classify
 
@@ -371,7 +371,7 @@ Fits the leans and pulls to an example set: Boltzmann machine learning.
 
 Each round compares how often pairs agree in the examples and in the machine's own settles, and moves the pulls toward the examples.
 
-- where: #/settle/05-statements/learn#learn, #/learn-settle
+- where: #/settle/05-statements/learn#learn, #/settle-tour
 - source: SETTLE/settle-rs/docs/05-statements/learn.md
 - link: #/glossary#learn
 
@@ -1529,7 +1529,7 @@ The experiment whose question was: Can a settled machine learn a small classific
 
 Its answer: Yes: a machine with 64 hidden things reaches 93.8% on binarised digits against logistic regression at 91.2; shuffled labels give chance. Its scoreboard and tables are on RESULTS.
 
-- where: #/results, #/learn-settle
+- where: #/results, #/settle-tour
 - source: SETTLE/settle-site/src/data/results.js, SETTLE/SETTLE_CAMPAIGN_2026-09-30.md
 - link: #/glossary#lane-boltzlearn
 
@@ -1633,10 +1633,10 @@ Its answer: Fitted leans hold the horse to J 0.44, where TAP falls below 15 dB b
 
 Our SDM language model built from sparse distributed memories in every part: each layer writes and reads a run-time SDM, then reads a few rows of a trained SDM table where a transformer has its MLP. No attention and no MLP.
 
-The model we take forward: it becomes the base of the next SDM CHAT. LEARN SDM and its two sibling pages draw every step of it beside PARTIAL.
+The model we take forward: it becomes the base of the next SDM CHAT. The SDM page and its two sibling pages draw every step of it beside PARTIAL.
 
-- also: the FULL model, FULL SDM
-- where: #/learn-sdm, #/learn-sdm-unfold, #/learn-sdm-lookback, #/sdm-model
+- also: the FULL model, FULL SDM, FULL base, FULL SDM CHAT
+- where: #/sdm, #/sdm-unfold, #/sdm-lookback, #/sdmchat-model
 - source: SETTLE/settle-site/src/sdmforward/Pictures.jsx, experiments/track4/sdmllm/track4_onesdm_models.py
 - link: #/glossary#full-sdm
 
@@ -1770,50 +1770,6 @@ Each page declares its own neons.
 - source: SETTLE/settle-site/src/neon.js
 - link: #/glossary#key-legend
 
-### LEARN SDM
-
-A guide to our two SDM language models, FULL and PARTIAL: what each stores, how it writes and reads, how it picks the next word, how the two differ, and why FULL is the one we take forward.
-
-In the science folder, between LEARN SETTLE and LEARN SDM UNFOLD. SDM CHAT sits folded at the top; every step below has a FULL picture and a PARTIAL picture, and every number comes from the run records.
-
-- also: learn-sdm
-- where: #/learn-sdm
-- source: SETTLE/settle-site/src/pages/LearnSdm.jsx, SETTLE/settle-site/src/sdmforward/Pictures.jsx
-- link: #/glossary#page-learn-sdm
-
-### LEARN SDM LOOKBACK
-
-How far back FULL and PARTIAL reach: no window of past tokens, only a memory of fixed size that the text writes into, heads that each forget at their own rate, the same cost at any length, and what the memory puzzles measured.
-
-In the science folder after LEARN SDM UNFOLD; every picture and chart is drawn for FULL and for PARTIAL, and a model with no score yet says so.
-
-- also: learn-sdm-lookback, the lookback
-- where: #/learn-sdm-lookback
-- source: SETTLE/settle-site/src/pages/LearnSdmLookback.jsx, SETTLE/settle-site/src/sdmforward/facts.js
-- link: #/glossary#page-learn-sdm-lookback
-
-### LEARN SDM UNFOLD
-
-How a word goes into our SDM language models and how a word comes out: enfold turns a token into a vector, every layer adds to it, and unfold scores every word against the same word table. It also draws the address that finds a few slots among thousands.
-
-In the science folder after LEARN SDM; every picture is drawn for FULL and for PARTIAL. The old address #/enfold leads here.
-
-- also: ENFOLD, UNFOLD, Enfold and unfold, learn-sdm-unfold
-- where: #/learn-sdm-unfold
-- source: SETTLE/settle-site/src/pages/LearnSdmUnfold.jsx
-- link: #/glossary#page-learn-sdm-unfold
-
-### LEARN SETTLE
-
-How a settling machine learns to read handwritten digits: a guide, MNIST live, then the 8x8 experiments as recorded.
-
-Boltzmann machine learning in the browser, in the science folder. The old address #/learning leads here.
-
-- also: LEARNING, learn-settle
-- where: #/learn-settle
-- source: SETTLE/settle-site/src/pages/LearnSettle.jsx
-- link: #/glossary#page-learn-settle
-
 ### light
 
 A p-bit drawn as a dot of light: lit for yes, dim for no.
@@ -1940,10 +1896,10 @@ The numbers family, drawn.
 
 Our name (yes, after Paul Oakenfold, the DJ), from our research notes, for a generator built of sparse distributed memories: it enfolds a fact into the Complicate, the sum of every write, unfolds it out to the Explicate, the answer, and fold-back writes the verdict in again.
 
-Our names, not established terms; OAKENFOLD itself is a research aim. LEARN SDM uses them for Kanerva's write and read.
+Our names, not established terms; OAKENFOLD itself is a research aim. The SDM page uses them for Kanerva's write and read.
 
 - also: THE COMPLICATE, Complicate, THE EXPLICATE, Explicate, FOLD-BACK
-- where: #/learn-sdm
+- where: #/sdm
 - source: SETTLE/settle-site/src/pages/LearnSdm.jsx
 - link: #/glossary#oakenfold
 
@@ -1962,10 +1918,10 @@ The menu groups them in the packages folder. Each wears a small [pkg] tag and it
 
 Our SDM language model with one ordinary part: each layer writes and reads a run-time SDM, then runs a regular MLP. No attention.
 
-Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. LEARN SDM draws every step of it beside FULL.
+Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. The SDM page draws every step of it beside FULL.
 
 - also: the PARTIAL model, PARTIAL SDM
-- where: #/learn-sdm, #/learn-sdm-unfold, #/learn-sdm-lookback, #/sdm-model
+- where: #/sdm, #/sdm-unfold, #/sdm-lookback, #/sdmchat-model
 - source: SETTLE/settle-site/src/sdmforward/Pictures.jsx, experiments/track4/sdmllm/track4_onesdm_models.py
 - link: #/glossary#partial-sdm
 
@@ -2029,9 +1985,20 @@ A Kanerva memory written and read while a model reads its text: each token write
 The one part of FULL and PARTIAL that passes anything between positions; it keeps one size at any length.
 
 - also: THE RUN-TIME SDM, run-time memory, the memory between tokens
-- where: #/learn-sdm, #/learn-sdm-lookback, #/sdm-model
+- where: #/sdm, #/sdm-lookback, #/sdmchat-model
 - source: SETTLE/settle-site/src/sdmforward/Pictures.jsx, experiments/track4/sdmllm/ONESDM_README.md
 - link: #/glossary#run-time-sdm
+
+### SDM
+
+A guide to our two SDM language models, FULL and PARTIAL: what each stores, how it writes and reads, how it picks the next word, how the two differ, and why FULL is the one we take forward.
+
+In the science folder, between SETTLE-TOUR and SDM-UNFOLD. SDM CHAT sits folded at the top; every step below has a FULL picture and a PARTIAL picture, and every number comes from the run records.
+
+- also: LEARN SDM, the SDM page
+- where: #/sdm
+- source: SETTLE/settle-site/src/pages/LearnSdm.jsx, SETTLE/settle-site/src/sdmforward/Pictures.jsx
+- link: #/glossary#page-sdm
 
 ### SDM EXPLORE
 
@@ -2043,6 +2010,28 @@ One idea per section: the machine, the address, the vote, the warm read, the pro
 - source: SETTLE/settle-site/src/pages/SdmExplore.jsx
 - link: #/glossary#page-sdmexplore
 
+### SDM-LOOKBACK
+
+How far back FULL and PARTIAL reach: no window of past tokens, only a memory of fixed size that the text writes into, heads that each forget at their own rate, the same cost at any length, and what the memory puzzles measured.
+
+In the science folder after SDM-UNFOLD; every picture and chart is drawn for FULL and for PARTIAL, and a model with no score yet says so.
+
+- also: LEARN SDM LOOKBACK, sdm-lookback, the lookback
+- where: #/sdm-lookback
+- source: SETTLE/settle-site/src/pages/LearnSdmLookback.jsx, SETTLE/settle-site/src/sdmforward/facts.js
+- link: #/glossary#page-sdm-lookback
+
+### SDM-UNFOLD
+
+How a word goes into our SDM language models and how a word comes out: enfold turns a token into a vector, every layer adds to it, and unfold scores every word against the same word table. It also draws the address that finds a few slots among thousands.
+
+In the science folder after the SDM page; every picture is drawn for FULL and for PARTIAL. The old address #/enfold leads here.
+
+- also: ENFOLD, UNFOLD, Enfold and unfold, LEARN SDM UNFOLD, sdm-unfold
+- where: #/sdm-unfold
+- source: SETTLE/settle-site/src/pages/LearnSdmUnfold.jsx
+- link: #/glossary#page-sdm-unfold
+
 ### SDMCHAT
 
 An SDM used as a language model, running as a live chat in the browser.
@@ -2053,6 +2042,17 @@ It reads the context as a read-address and votes on the next token, at the DeepS
 - where: #/sdmchat, #/sdmexplore
 - source: SETTLE/settle-site/src/pages/SdmChat.jsx
 - link: #/glossary#sdmchat
+
+### SDMCHAT-MODEL
+
+The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
+
+In the science folder after SDM-LOOKBACK. Every SDM chat page carries an EARLY MODEL note linking here; each older picture on it is framed and marked HISTORY.
+
+- also: THE SDM MODEL, sdmchat-model, THE SDM LANGUAGE MODEL, the one honest page
+- where: #/sdmchat-model
+- source: SETTLE/settle-site/src/pages/SdmModel.jsx, SETTLE/settle-site/src/sdmmodel/facts.js
+- link: #/glossary#page-sdmchat-model
 
 ### SDMCHATS
 
@@ -2178,6 +2178,17 @@ The WEIRD LITTLE SDM GUY page is its prime use; SDMCHAT and SDMPOEM mount the sa
 - where: #/sdmstudio, #/weirdlittlesdmguy, #/sdmchat, #/sdmpoem
 - source: SETTLE/settle-site/src/studio/README.md, SETTLE/settle-site/src/pages/SdmStudio.jsx
 - link: #/glossary#sdmstudio
+
+### SETTLE-TOUR
+
+How a settling machine learns to read handwritten digits: a guide, MNIST live, then the 8x8 experiments as recorded.
+
+Boltzmann machine learning in the browser, in the science folder. The old address #/learning leads here.
+
+- also: LEARNING, LEARN SETTLE, settle-tour
+- where: #/settle-tour
+- source: SETTLE/settle-site/src/pages/LearnSettle.jsx
+- link: #/glossary#page-settle-tour
 
 ### SETTLEBACKENDS
 
@@ -2426,17 +2437,6 @@ Headings are HYPER PINK, action buttons HOT PINK, SETTLE and KANERVA code bright
 - where: #/
 - source: SETTLE/settle-site/src/neon.js, sites/CLAUDE.md
 - link: #/glossary#red-light-rule
-
-### THE SDM MODEL
-
-The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
-
-In the science folder after LEARN SDM LOOKBACK. Every SDM chat page carries a WORK IN PROGRESS note linking here; each older picture on it is framed and marked HISTORY.
-
-- also: sdm-model, THE SDM LANGUAGE MODEL, the one honest page
-- where: #/sdm-model
-- source: SETTLE/settle-site/src/pages/SdmModel.jsx, SETTLE/settle-site/src/sdmmodel/facts.js
-- link: #/glossary#page-sdm-model
 
 ### THE SOUND MODES
 
@@ -2751,11 +2751,11 @@ Named for Ludwig Boltzmann. It is the target of every settle; ask estimates it b
 
 A settling machine that learns: its leans and pulls are fitted so its settles reproduce a set of examples.
 
-The learn family and the LEARN SETTLE page. Learning compares how often pairs agree in the data and in the machine, and nudges the pulls.
+The learn family and the SETTLE-TOUR page. Learning compares how often pairs agree in the data and in the machine, and nudges the pulls.
 
 - also: boltzmannMachine, Boltzmann machine learning
 - Japanese: ボルツマンマシン
-- where: #/learn-settle, #/settle/10-the-science#boltzmann-machine-learning
+- where: #/settle-tour, #/settle/10-the-science#boltzmann-machine-learning
 - source: SETTLE/settle-rs/docs/10-the-science.md, SETTLE/settle-rs/docs/05-statements/learn.md
 - link: #/glossary#boltzmann-machine
 
@@ -2859,7 +2859,7 @@ A cheap way to train a Boltzmann machine: compare the data with a few settling s
 The denoiser chain trains each machine this way.
 
 - Japanese: コントラスティブ・ダイバージェンス
-- where: #/settle/05-statements/denoise, #/learn-settle
+- where: #/settle/05-statements/denoise, #/settle-tour
 - source: SETTLE/settle-rs/docs/05-statements/denoise.md
 - link: #/glossary#contrastive-divergence
 
@@ -3292,7 +3292,7 @@ FULL and PARTIAL have none: between tokens they keep only their memory, one size
 
 - also: KV, key-value cache
 - Japanese: KVキャッシュ
-- where: #/learn-sdm-lookback
+- where: #/sdm-lookback
 - source: SETTLE/settle-site/src/sdmforward/Pictures.jsx
 - link: #/glossary#kv-cache
 
@@ -3464,10 +3464,10 @@ A hero word.
 
 A standard set of handwritten digits, 28 by 28 pixels, used to test a learning machine.
 
-The LEARN SETTLE page reads MNIST digits live with a settling machine, then shows the recorded experiments.
+The SETTLE-TOUR page reads MNIST digits live with a settling machine, then shows the recorded experiments.
 
 - also: handwritten digits
-- where: #/learn-settle
+- where: #/settle-tour
 - source: SETTLE/settle-site/src/pages/LearnSettle.jsx
 - link: #/glossary#mnist
 
@@ -3848,10 +3848,10 @@ A hero word.
 
 The small set of 8x8 handwritten digits bundled with scikit-learn.
 
-BOLTZLEARN learned from these digits; the LEARN SETTLE page reads MNIST live and shows the 8x8 experiments as recorded.
+BOLTZLEARN learned from these digits; the SETTLE-TOUR page reads MNIST live and shows the 8x8 experiments as recorded.
 
 - also: UCI
-- where: #/learn-settle, #/credits
+- where: #/settle-tour, #/credits
 - source: SETTLE/settle-site/src/pages/Credits.jsx, SETTLE/settle-site/src/pages/LearnSettle.jsx
 - link: #/glossary#uci-digits
 

@@ -24,21 +24,20 @@ claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
 
 This adds settle-mcp to Claude Code, straight from its GitHub repository. `npx` fetches the repository, installs its two dependencies and starts the server; you clone and build nothing yourself.
 
-It needs Node 18 or newer. While the repository is private, your git must be able to read `github.com/triplesparkle/settle-mcp` (the same access a `git clone` needs).
+It needs Node 18 or newer. The repository, `github.com/triplesparkle/settle-mcp`, is public, so no access or credentials are needed.
 
 `--allow-git=root` lets npm fetch this one package from git: npm 12 and newer refuse a git package unless told, and an older npm takes the flag and changes nothing.
 
 | when | the server command | |
 |---|---|---|
-| Today, while the repository is private | `npx -y --allow-git=root github:triplesparkle/settle-mcp` | Works for anyone whose git can read the repository. |
-| Once the repository is public | `npx -y --allow-git=root github:triplesparkle/settle-mcp` | The same command, for everyone, with no access needed. |
+| From its public GitHub repository | `npx -y --allow-git=root github:triplesparkle/settle-mcp` | Works for everyone, with no access needed. |
 | If it is published to npm | `npx -y settle-mcp` | Shorter, and versioned by npm. Nothing is published yet. |
 | From a clone, in any state | `node /path/to/settle-mcp/src/bin.js` | Clone it, run `npm install` in it, and point your agent at this file. |
 
 ## What it needs
 
 - Node 18 or newer, to run settle-mcp. `node --version` says which you have; nodejs.org has the installers.
-- git, and read access to `github.com/triplesparkle/settle-mcp` while it is private.
+- git, which npx uses to fetch `github.com/triplesparkle/settle-mcp` (a public repository).
 - Rust (`rustc` and `cargo`), only for setup, which builds SETTLE and KANERVA. rustup.rs installs it. Help and the docs need nothing but Node.
 
 Built on `@modelcontextprotocol/sdk` 1.32.0 over standard input and output (stdio). Version 0.1.0. MIT. The LICENSE file in the repository holds the text.
@@ -401,7 +400,7 @@ claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
 
 ### 3. Or run it from a clone
 
-Clone its repository, `github.com/triplesparkle/settle-mcp`. It is private for now, so a clone needs access. Then install its two dependencies, the MCP SDK and zod, and give your agent the command `node` with the path of `src/bin.js`:
+Clone its public repository, `github.com/triplesparkle/settle-mcp`. Then install its two dependencies, the MCP SDK and zod, and give your agent the command `node` with the path of `src/bin.js`:
 
 ```sh
 git clone https://github.com/triplesparkle/settle-mcp
@@ -461,7 +460,7 @@ MIT. The LICENSE file in the repository holds the text.
 
 ## Problems
 
-Report a problem at `github.com/triplesparkle/settle-mcp/issues` (it needs access while the repository is private). Say which tool you called, with its arguments, and paste the reply.
+Report a problem at `github.com/triplesparkle/settle-mcp/issues`. Say which tool you called, with its arguments, and paste the reply.
 
 ## More
 

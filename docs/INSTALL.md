@@ -9,12 +9,11 @@ claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
 
 This adds settle-mcp to Claude Code, straight from its GitHub repository. `npx` fetches the repository, installs its two dependencies and starts the server; you clone and build nothing yourself.
 
-It needs Node 18 or newer. While the repository is private, your git must be able to read `github.com/triplesparkle/settle-mcp` (the same access a `git clone` needs).
+It needs Node 18 or newer. The repository, `github.com/triplesparkle/settle-mcp`, is public, so no access or credentials are needed.
 
 `--allow-git=root` lets npm fetch this one package from git: npm 12 and newer refuse a git package unless told, and an older npm takes the flag and changes nothing.
 
-- Today, while the repository is private: `npx -y --allow-git=root github:triplesparkle/settle-mcp`. Works for anyone whose git can read the repository.
-- Once the repository is public: `npx -y --allow-git=root github:triplesparkle/settle-mcp`. The same command, for everyone, with no access needed.
+- From its public GitHub repository: `npx -y --allow-git=root github:triplesparkle/settle-mcp`. Works for everyone, with no access needed.
 - If it is published to npm: `npx -y settle-mcp`. Shorter, and versioned by npm. Nothing is published yet.
 - From a clone, in any state: `node /path/to/settle-mcp/src/bin.js`. Clone it, run `npm install` in it, and point your agent at this file.
 

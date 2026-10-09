@@ -43,7 +43,7 @@ a thing was yes: a thing leaning yes by 1 comes up yes 88.2% of 40,000 samples.
 Read that as the probability a step fires, and a model of
 leans and pulls becomes a step sequencer whose steps lean on each other: hold one step on and the steps it pulls
 light up with it. `anneal` and `best` turn the same model into a chord finder: pulls say which notes want to sound
-together, pushes which do not, and the calmest arrangement is the voicing. The seating example on `#/what` is
+together, pushes which do not, and the calmest arrangement is the voicing. The seating example on [WHAT?](#/what) is
 that shape with guests for notes: six things, rivals pushing apart, friends pulling together, settled to
 energy -11.000.
 
@@ -65,7 +65,7 @@ a note of text and give it back only to the right key, which is a lock on a samp
 
 THE DJ is the example: a settling machine chooses what the music does next, once a bar, from the live state of a
 picture that is itself settling. In your own piece the picture can be the thing the audience touches, its stats can
-feed a hearing, and a Kanerva memory can hold the phrases the hearing chooses between. The site's `#/hear` page is a
+feed a hearing, and a Kanerva memory can hold the phrases the hearing chooses between. The site's [HEAR](#/hear) page is a
 mixing desk on one live settle: a slider per voice, reverb, delay, tone, master, with the setups as cards.
 
 ## An example
@@ -97,8 +97,8 @@ the direction the README states.
 
 ## Getting started
 
-1. Listen first. Open the home page, click once (sound waits for a gesture), and let the hero play. Open `#/hear`,
-   move the sliders, press a setup card. MUTE ALL is in the header.
+1. Listen first. Open the home page, click once (sound waits for a gesture), and let the hero play. Open
+   [HEAR](#/hear), move the sliders, press a setup card. MUTE ALL is in the header.
 2. Give a settle a sound. settle-hear sits beside settle-see and imports nothing from it. Clone both beside your
    page (`git clone https://github.com/triplesparkle/settle-see` and
    `git clone https://github.com/triplesparkle/settle-hear`):
