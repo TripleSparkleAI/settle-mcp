@@ -1,1157 +1,1225 @@
 {
- "hash": "d00b3032a2c4ad43de2a2c66e7144370255a6c7945af3a8c453e4d6c536baa22",
+ "hash": "2229c03ce9489c3ea02da8b7c122a2dac8c5abf863ad6b581b70da411570391f",
  "inputs": [
   {
-   "path": "sites/settle-site/src/data/mcpDocs.js",
-   "sha256": "7ce4be2551db0e8a9a7e1bb15a124a4e80d000da77b1fc8b4b95758446197daa"
+   "path": "SETTLE/settle-site/src/data/mcpDocs.js",
+   "sha256": "902d717e869c115e03fb12c6f186bd0d28af21a643f94e8371ebaeb001f06f47"
   },
   {
-   "path": "sites/settle-site/i18n/en.json",
-   "sha256": "4f4b860016b17bf831d029ebec70b3b1f2ef03f2973a6899d31b72bb13f60c7b"
+   "path": "SETTLE/settle-site/i18n/en.json",
+   "sha256": "b05dc2a39a80e6dcb5688b585d496d23201ea801b74b7fc608edcc06853a7e7c"
   },
   {
-   "path": "sites/settle-site/i18n/GLOSSARY.md",
+   "path": "SETTLE/settle-site/i18n/GLOSSARY.md",
    "sha256": "4757407392479d4b47fded9bbc3c103968fd908eadd949ac9883b6682601a7d6"
   },
   {
-   "path": "sites/settle-site/src/pages/What.jsx",
-   "sha256": "75c27ea606366056cb79d5b890a8e2347c6f457ca4cc82c1b97014a426cd2299"
+   "path": "SETTLE/settle-site/src/pages/What.jsx",
+   "sha256": "b173e61f9fee1a335df333dc3d6530ec525610e05eedfd17608a9a8ae5412d6a"
   },
   {
-   "path": "sites/settle-site/src/pages/Language.jsx",
+   "path": "SETTLE/settle-site/src/pages/Language.jsx",
    "sha256": "0e3cc7da73f94f1b0a30d3c5dd591cb2d4e167d43321f0263155b615fc737c37"
   },
   {
-   "path": "sites/settle-site/src/pages/Kanerva.jsx",
-   "sha256": "61603b156828d54217f1f38439a49ec571eb288f1144300b7669a410718b6b82"
+   "path": "SETTLE/settle-site/src/pages/Kanerva.jsx",
+   "sha256": "acf195f939ead713e5228af6547924e87478fd4d811b4281ee8bb22b52a43e79"
   },
   {
-   "path": "sites/settle-site/src/pages/kanerva/FirstSteps.jsx",
-   "sha256": "0b7c9473420837b7df0d61edf9df2cff1a1e031b23c732bfa12f4d0755da2b44"
+   "path": "SETTLE/settle-site/src/pages/kanerva/FirstSteps.jsx",
+   "sha256": "2432a20f310ba34423098ede2a1f3169bdcc2a2f3ce4f70324b2c0c3db0ee0de"
   },
   {
-   "path": "sites/settle-site/src/pages/kanerva/Analogies.jsx",
-   "sha256": "11aa967233c44732f206c43074fa440f05ace1962b5e79adffd2d5049c2703de"
+   "path": "SETTLE/settle-site/src/pages/kanerva/Analogies.jsx",
+   "sha256": "302da4304053e08746135f7aeda1a5958340e3695117d9067390ff624ead889e"
   },
   {
-   "path": "sites/settle-site/src/pages/SdmMemory.jsx",
-   "sha256": "ea9cadc3ca6a87b56ac143644a16ff5c43283ba0a3a6d489ad708caf59be1854"
+   "path": "SETTLE/settle-site/src/pages/SdmMemory.jsx",
+   "sha256": "bb8e84770fb010f08ec0c3d824758bf1ed22900f0b60910f32d9f3be03055cd4"
   },
   {
-   "path": "sites/settle-site/src/pages/SdmExplore.jsx",
-   "sha256": "a29ce95dbe2bf46e86d72da2b0203b1ed3dd135977141d820e1b91d61dc27809"
+   "path": "SETTLE/settle-site/src/pages/SdmExplore.jsx",
+   "sha256": "5b26853959ef25e794583729e0607f3ec03585d765e0f60dbe1e5953f9da6a72"
   },
   {
-   "path": "sites/settle-site/src/pages/Mcp.jsx",
-   "sha256": "2c3dfeefa00b371d726841d34086ae4843583abe19159459cfe08b27cc0d1a07"
+   "path": "SETTLE/settle-site/src/pages/Mcp.jsx",
+   "sha256": "50a0bd1f64b36d4c50b5b54f4b9b81bca967c8e0822107bbfaf66bb124053f6d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/01-install-and-run.md",
-   "sha256": "811745816286154375e936e158daa19abea3300471c559e05dbc938675a5407e"
+   "path": "SETTLE/settle-rs/docs/01-install-and-run.md",
+   "sha256": "f58bfd664a6d4e3dca9a17643e92909a62336a30056b73cd095c6176d339d83a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/02-tour.md",
-   "sha256": "a62f779ee63eb7c881d0408fe6024fad9d61f8ca990bb58a413bd09141eebc5f"
+   "path": "SETTLE/settle-rs/docs/02-tour.md",
+   "sha256": "9d3065187c99c09ac5ba3325d45cc6a649050a49271d6150fc31512c72163d72"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/03-syntax.md",
-   "sha256": "9c602229ad1dd154e47a162c88d16d43a60c3795cfad6348c4662da8ffa128bf"
+   "path": "SETTLE/settle-rs/docs/03-syntax.md",
+   "sha256": "7b73dd95e35439d3e914cd3b23a427808f737f9ac061f7f8c55e91e4e872f7a3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/04-semantics.md",
-   "sha256": "cbd3071e9270467234de97dfce7946798102eb86028b68c07041249510789f8e"
+   "path": "SETTLE/settle-rs/docs/04-semantics.md",
+   "sha256": "80e1e2460f2645048ae2531fdc05ea2bfa51dfde972d1d02ffa14a475395cb8c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/coded.md",
-   "sha256": "ab4d7d6f8d86c4e92eea1d9d29108a0f5a6c0221e04e4fe14b9ee3a1d5122bec"
+   "path": "SETTLE/settle-rs/docs/05-statements/coded.md",
+   "sha256": "a1a204f004e1fa4c7fa0b0513109d4356e2d9ad548a2aeb085c1f66b805677ba"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/colour.md",
-   "sha256": "9777dbe10a29bd5b29b4c89fe624e292c46693ff882085835dea6a238842d532"
+   "path": "SETTLE/settle-rs/docs/05-statements/colour.md",
+   "sha256": "829f9bab437a2186e689f10a738c78ffd7ba70c8b53f68dad41fe43cead19a23"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/core.md",
-   "sha256": "10d004401fe54a5b7d62b8f3334075968e6c0745e2bcdf4390b6e95fe07a3efb"
+   "path": "SETTLE/settle-rs/docs/05-statements/core.md",
+   "sha256": "7a9c8e0becc2402ff2484acca29bc17dce6080d4603bd142bee7df59d87ebb26"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/denoise.md",
-   "sha256": "fd1c899dead90c43b1c62673d309748ecda2bdde31160db81f80660f488a71ca"
+   "path": "SETTLE/settle-rs/docs/05-statements/denoise.md",
+   "sha256": "89efd96c1a604d5a71c61d2edcac43ca4446658fba24952bb360452c58ed2266"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/descend.md",
-   "sha256": "d97de73d2c9f816331921d25f890f4dae39b1b2f80c94212afa0a3786d794ad5"
+   "path": "SETTLE/settle-rs/docs/05-statements/descend.md",
+   "sha256": "8491a534db452cab50c4e89019683b9272a4d7fc5228d3711b3b6152ac7c05d2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/export.md",
-   "sha256": "94e11e8b637a9181a1b95a5497ee46d07cd5c993d79ef49a86d1a4c97f415488"
+   "path": "SETTLE/settle-rs/docs/05-statements/export.md",
+   "sha256": "8f7e4fbc8969ab2d22b682507730cc725b659a86ea38a583b6012ec76e4becd3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/grid.md",
-   "sha256": "7fb652fc48be653e1f00098d576a280dcc1b4d18eb62809724ab80781976d0a0"
+   "path": "SETTLE/settle-rs/docs/05-statements/grid.md",
+   "sha256": "ed6c1761cbca0579dc18ace41f81611d82e5b232b17341a7ecdb6a45e226edfd"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/ldpcmoves.md",
-   "sha256": "dddb4bae6f716966cf1b981110a14497c08a3bd644dbe491408f66bc81ed47e7"
+   "path": "SETTLE/settle-rs/docs/05-statements/ldpcmoves.md",
+   "sha256": "65d1dd525d463ea3affebf83562d26370cd9d6100fe41a51653cd8b05fa153ff"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/ldpcsettle.md",
-   "sha256": "b7137907285b7e001c318609726a413ffcc3ee846aff73634d3e9a254bd3cc78"
+   "path": "SETTLE/settle-rs/docs/05-statements/ldpcsettle.md",
+   "sha256": "7cb36cc24b8265e2000ab11ca19c0cce2bc0cb75de5b41f5371e1499a2087a4b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/learn.md",
-   "sha256": "187fe8e350db6b4695bae1412fa532147df95f480ef178d72b8662145a985ea1"
+   "path": "SETTLE/settle-rs/docs/05-statements/learn.md",
+   "sha256": "3ac0664adb3e0bba406b122dc21401f0c81e513ea8fa804a827f23005a4a30f0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/memory.md",
-   "sha256": "68e6c3853107b050c10050e3588e04037a9a2f3bb951b561850117f05887fa00"
+   "path": "SETTLE/settle-rs/docs/05-statements/memory.md",
+   "sha256": "711dc0dd0c042b85d7028b602024e07bda655fe68957fba952037ea74702034e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/numbers.md",
-   "sha256": "a7afa50f8b3405c0c6853dae99da9d17358ea599b193d12bdf1e59df4e3a4134"
+   "path": "SETTLE/settle-rs/docs/05-statements/numbers.md",
+   "sha256": "43560ab58b44a769386c9672a6eb3feb640e32d562df675973a44b8c731d0d76"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/README.md",
-   "sha256": "ef0b264549cc40a212fb5aece41523b65b167f981a11f37cedebc81d4195a01f"
+   "path": "SETTLE/settle-rs/docs/05-statements/README.md",
+   "sha256": "3f31835ce286f84b766c86d151b9f0407caa46ea536edc670ad630aa675d8490"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/sdm.md",
-   "sha256": "d0baf8c2359a057d85152a3c9595b60f588be505449a96bb8faf45f5f1ecd9b9"
+   "path": "SETTLE/settle-rs/docs/05-statements/sdm.md",
+   "sha256": "62b77158f548d61ed432df6d6f13b83335f46c61ea01c8c40c0613c853161f59"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/sdmrefuse.md",
-   "sha256": "d4b26d414d9224d98e531195d27436207ab63769c79267ecd235d5ceb6a8d22a"
+   "path": "SETTLE/settle-rs/docs/05-statements/sdmrefuse.md",
+   "sha256": "f7c308c0514bc375faae822408dad17f73e4281f6bce4e862efcc31dee4f5843"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/sdmscale.md",
-   "sha256": "76b560b863abe3d936ffa7b004c0e75af0141e027c07ee65c7fe11085923afe3"
+   "path": "SETTLE/settle-rs/docs/05-statements/sdmscale.md",
+   "sha256": "d39b9df09c36d63d9f9cb38e9e79837fd2f7deb8b9902d12a50787a8600f4d13"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/sdmtrack.md",
-   "sha256": "79c1dfa8190a6b145eac346294b8d7fa9f88d3305abd4d0faa3e38bfaaec06e9"
+   "path": "SETTLE/settle-rs/docs/05-statements/sdmtrack.md",
+   "sha256": "009e7ae2f61cac55a110207af2e243e62480d77ff3df14527542d4e9858f04e4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/softsdm.md",
-   "sha256": "e2ca37dabcb287f74f7d87d4a42c375a95c93533458ef4a9976b12f0d012d92b"
+   "path": "SETTLE/settle-rs/docs/05-statements/softsdm.md",
+   "sha256": "774fa7e20f053eec811cb23fe0a8b6faaaa75e1b095340ce00085abddbdc964d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/valleys.md",
-   "sha256": "5620f8aaad46b0fa1095af0e346725e2d0e8385b4a8ac9a600c6753c6426f938"
+   "path": "SETTLE/settle-rs/docs/05-statements/valleys.md",
+   "sha256": "41d198fcefa8de5fdc9561bf7396d1a7463b27d89bb7fb20762e218fc84b0f49"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/zoo.md",
-   "sha256": "7fbe376827b70955c476d2c03a49e2568dbeba9867c8d58939ad7200a1bb93d2"
+   "path": "SETTLE/settle-rs/docs/05-statements/zoo.md",
+   "sha256": "5cc331d86d38c32d62497a0d1c1401b5ef801b91f018fd085ced929a756de786"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/05-statements/zootemp.md",
-   "sha256": "654440353ac7934a24912a697018a9da000ff476de9de503867953d01b24fe72"
+   "path": "SETTLE/settle-rs/docs/05-statements/zootemp.md",
+   "sha256": "584a06227544260a9b4dd924273e0fabcce0fef3d8a8dfae158ded87aec279b4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/06-errors.md",
-   "sha256": "986d933c2f5431992eff811bacfabb57f9edd07f06941914217d8e23d0ed45a7"
+   "path": "SETTLE/settle-rs/docs/06-errors.md",
+   "sha256": "988da5c585d73b2e643f94a865059d0918745c3225982cef014fb08036eb98ec"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/07-extending.md",
-   "sha256": "b002c2830a60017be6f83eef28f64075f2314fa7dcc423d766b88c0942c9208f"
+   "path": "SETTLE/settle-rs/docs/07-extending.md",
+   "sha256": "3a411f96b0091711756fe371163ba89f400c7d6497f385bba9539af27a77310e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/08-cookbook.md",
-   "sha256": "fd51cc4cf7bd6af076db14092d285a8eabce9dfeb9e20365568f0a0854bd55ea"
+   "path": "SETTLE/settle-rs/docs/08-cookbook.md",
+   "sha256": "5b549640be481d58b36b4f168fcc263eb2334b66a7f3a117c283897841ff4e45"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/09-examples.md",
-   "sha256": "e628c315f705c63ab6f2e85078b3d9b19513aaa354047b350c97bb6d1ca1f72d"
+   "path": "SETTLE/settle-rs/docs/09-examples.md",
+   "sha256": "87b422fbf7e113137ec73ee3c40874d005993fd11c10b68a8670485444f08ff0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/10-the-science.md",
-   "sha256": "818d88b8b5ed4c470d6b454cb1856df6e9fd7f5aa893fb29412b430c6cced815"
+   "path": "SETTLE/settle-rs/docs/10-the-science.md",
+   "sha256": "c143ab9f751e6b3033d927fc05c43f64f0f989ce2428013c4df14f85bfe4e640"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/CHANGELOG.md",
-   "sha256": "3d667871ffb171fd7b3f823fd73fac893a5676e16df95babfd45740fc87da1eb"
+   "path": "SETTLE/settle-rs/docs/CHANGELOG.md",
+   "sha256": "03ba17be8405d82e07967799ed1388ea2f8624169a644d28c281a82af021c083"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/README.md",
-   "sha256": "bec2f9eb54272e58c691e1c484bfb9f7ee02807426d07294284fb7113868fdd8"
+   "path": "SETTLE/settle-rs/docs/README.md",
+   "sha256": "ca64d68c65620209337d166f1131ff59d3c89aed43ec6ab5f890524b5ecea5b0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-choices.out",
+   "path": "SETTLE/settle-rs/docs/examples/coded-choices.out",
    "sha256": "a5064ad52e396fae824183cfb33230d7bf9c3e79704f8a6a5a97f7619a626f2b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-choices.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-choices.settle",
    "sha256": "25dd3866378bba9093701ff24f471e8c01ea33d1829fdd12393dde4ffc944d15"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-controls.out",
+   "path": "SETTLE/settle-rs/docs/examples/coded-controls.out",
    "sha256": "4f4cc8e176ecf6d76d832bccfe53d58361bca878ab83b3abf9842539ebebe820"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-controls.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-controls.settle",
    "sha256": "c655f66f79470862326e87e8cf04ad7f1cd7202ebb74fb1fe2d0934fda136173"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-does-not-fit.err",
+   "path": "SETTLE/settle-rs/docs/examples/coded-does-not-fit.err",
    "sha256": "46535229f6c4ee52bfe24701b58c2f8f5a7431f259f2026ecfb9c1c077669a69"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-does-not-fit.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-does-not-fit.settle",
    "sha256": "0a0a924936ffe97d7df588ad47e7278a327fb18f72001a1bc6638bc4b8481129"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-options.out",
+   "path": "SETTLE/settle-rs/docs/examples/coded-options.out",
    "sha256": "9adeb7e2920da076a27fbe77e057a40d015a674b39345b6d162b55941937c807"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-options.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-options.settle",
    "sha256": "40ee9ae6d87b53643217cb8cd1e81999541ac20d4f51fb09a9f107e2ab69d685"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-save-recall.out",
+   "path": "SETTLE/settle-rs/docs/examples/coded-save-recall.out",
    "sha256": "c57d8731e84484ba1a48d86343872c1e3c6963f30919cd1634e9085643157176"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-save-recall.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-save-recall.settle",
    "sha256": "646e495bcebf628529b2ddd6244c3827b8908d211038b0f817346704072bd392"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-sdm.out",
+   "path": "SETTLE/settle-rs/docs/examples/coded-sdm.out",
    "sha256": "cf087d01cad3c0169f571cc206d07cf6ad8ba0bd2414f672cad027512154cd1c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/coded-sdm.settle",
+   "path": "SETTLE/settle-rs/docs/examples/coded-sdm.settle",
    "sha256": "50fcecc8b5892606542cfd9645642e3bbfc8425b463fe91d2b304a03996550db"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-channels.out",
-   "sha256": "4f41c62d2510c3013db2d8ccf007cc06633a7ea545321022dded24e730331550"
+   "path": "SETTLE/settle-rs/docs/examples/colour-channels.out",
+   "sha256": "c9301908a235e722018369d8d03b3e8da6872a9f33a4c54300f14519abc0b435"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-channels.settle",
+   "path": "SETTLE/settle-rs/docs/examples/colour-channels.settle",
    "sha256": "0dafe2d3a4ece392d0dd2c760841947a41aa0f0fc87b8d2c12849416acc17e72"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-no-warm-fit.err",
-   "sha256": "cc17aef788aa49ed3a62fbf64f1955859debf5b6d0bdfbb055ded6492dd444ea"
+   "path": "SETTLE/settle-rs/docs/examples/colour-no-warm-fit.err",
+   "sha256": "c1f30c05406d396f6811185013e53107678bd09ace03d1a93fc0830a099560e5"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-no-warm-fit.settle",
+   "path": "SETTLE/settle-rs/docs/examples/colour-no-warm-fit.settle",
    "sha256": "22defaf986ceef15f9304b4b19d422ace9e2ad6de676846bce7c95b3fa1f21d8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-options.out",
-   "sha256": "1befecc3624684495f5ac132b37a884b88ddb5e85a55a7da38015f79832958a0"
+   "path": "SETTLE/settle-rs/docs/examples/colour-options.out",
+   "sha256": "12fbb05c8cf7a84c17a5fc4b78e1051153a1733d3fecb57879a83aba08ce2d78"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-options.settle",
+   "path": "SETTLE/settle-rs/docs/examples/colour-options.settle",
    "sha256": "34740c9f825db76eaa000866a8b3a4c6456609e87b002a5aceb5d228273a32ed"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-play.out",
-   "sha256": "df9e17f27d0674924b1bad38d90f1599468bcb67c5c7d68230da9a1b417d3f61"
+   "path": "SETTLE/settle-rs/docs/examples/colour-play.out",
+   "sha256": "b3c9e6567d3ed7168791caf6ab3b6879aca94526058961846cc4133cb2db5413"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-play.settle",
+   "path": "SETTLE/settle-rs/docs/examples/colour-play.settle",
    "sha256": "4f0ea7ff13ea6970bdf6c04e993e81822dc7eb216ed5ad768170cb798e2f48c4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-soft.out",
-   "sha256": "d17e58f35c18809477b31b7f52210a2dbb19ff6a7485ba7a003e337cd3e1ba9c"
+   "path": "SETTLE/settle-rs/docs/examples/colour-soft.out",
+   "sha256": "242d32320d7e2aacf6f9d011f838840700eb5dba93ab85d3b58284b1b49f0d3f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/colour-soft.settle",
+   "path": "SETTLE/settle-rs/docs/examples/colour-soft.settle",
    "sha256": "6bcd092de8bdfbd443bc300ae5151b029447f4deaaca6fe7388a6dfc8a6fcd1b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-explaining-away-short.out",
+   "path": "SETTLE/settle-rs/docs/examples/cook-explaining-away-short.out",
    "sha256": "e68417ab9666a88e229610235408976fb973ff2408974aec6f9bd3a96d0e1a60"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-explaining-away-short.settle",
+   "path": "SETTLE/settle-rs/docs/examples/cook-explaining-away-short.settle",
    "sha256": "b908ba8a019b6e6c4bdb291c1d65b676ef33cc922d8d2dade6d7999be64edb7e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-explaining-away.out",
-   "sha256": "4583e153218cc7b72b2080e121722a976afc890a207d0a073ab016a7a0a49f73"
+   "path": "SETTLE/settle-rs/docs/examples/cook-explaining-away.out",
+   "sha256": "1bf04c161f0bf015377d29e5bd5055eecf380c66077a5480422da31d7c84a3d1"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-explaining-away.settle",
+   "path": "SETTLE/settle-rs/docs/examples/cook-explaining-away.settle",
    "sha256": "b028de682f45aea43bb9cd0f100726ce403cb6c196b0d75de291861035d8ba1a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-seating.out",
+   "path": "SETTLE/settle-rs/docs/examples/cook-seating.out",
    "sha256": "effaba4a0e0ae43ea90db91b6e53f9a302582712e6abe3fa7dd5bf774c43c9e4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-seating.settle",
+   "path": "SETTLE/settle-rs/docs/examples/cook-seating.settle",
    "sha256": "24db6818541697bc25df7dc75b158aaa0f745c24a6c4fda46d708907ebe71c7a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-several-questions.out",
-   "sha256": "41a945bf579c473fb7384e6471d3e5d0a27bbb5f92652a8c629920f8cb0eb720"
+   "path": "SETTLE/settle-rs/docs/examples/cook-several-questions.out",
+   "sha256": "5a857b07c7426f5cab602df5088ac35c6c80f6bc9ac373193d32efb25e9e33fe"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-several-questions.settle",
+   "path": "SETTLE/settle-rs/docs/examples/cook-several-questions.settle",
    "sha256": "e8030c6ea60527b0bd96485972ea0aabd3c96272640b39af4462519c51bac9e8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-temperature-sweep.out",
-   "sha256": "c1dfcd41df01cdadcbf2bc605888af752d3c78f6396ed0bdbe3d767fad060993"
+   "path": "SETTLE/settle-rs/docs/examples/cook-temperature-sweep.out",
+   "sha256": "11b8a7eadb763e067c30f8d38fe777bb7f995235ae670ff33fa0d2f2a2c656da"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/cook-temperature-sweep.settle",
+   "path": "SETTLE/settle-rs/docs/examples/cook-temperature-sweep.settle",
    "sha256": "c362cbf77c0eed2f19041b31226121137c76c930876d432069b8f8fcb0128488"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-anneal.out",
-   "sha256": "f3a86e2cd2e868e22eb181ab80c2e6aae440cafb7799634d77e242831380884b"
+   "path": "SETTLE/settle-rs/docs/examples/core-anneal.out",
+   "sha256": "e3b5dd450fa1792f2db7adbd214352fe9af02eae268876bc8ef74f4fba1c5cb2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-anneal.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-anneal.settle",
    "sha256": "fdeb695d9da8bbbf8ffd581ec760dece9050361261bf4d385405c7f76cfc161f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-ask.out",
-   "sha256": "9678a4e7ebdaf89891d881477a48494cabfed6301306c03befe4b925c96f1710"
+   "path": "SETTLE/settle-rs/docs/examples/core-ask.out",
+   "sha256": "c9943de2f1539b7167ad72e1ca20812d746a6f7f43fa41772238fddee9ee0cac"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-ask.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-ask.settle",
    "sha256": "370985d3c23e868d4a5566412a1bfc9bdc4543ea9f772d4374212a23e86261de"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-lean-needs-by.err",
+   "path": "SETTLE/settle-rs/docs/examples/core-lean-needs-by.err",
    "sha256": "77469570517d8673fef2d2abb32ac5f6f204027d45a82e323fcf304f7255ee75"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-lean-needs-by.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-lean-needs-by.settle",
    "sha256": "e96dcb4c61c7f848a58bad29ed9153fa7daacbe2d918a80ca31c55ed0b756602"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-leans-and-pulls.out",
-   "sha256": "f7f3797739fa602c4d99b6d5dfc5cc64a883f9f5b42eed6c277016231d152b0d"
+   "path": "SETTLE/settle-rs/docs/examples/core-leans-and-pulls.out",
+   "sha256": "94c77fada3a34ec6d56273d8634036295a49be6f9b711b56ce2cec40d0d9361a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-leans-and-pulls.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-leans-and-pulls.settle",
    "sha256": "45dce61ddbac42b6d0926271d6d1d51b4d81e885fed0d0fa1e252592f9de2b66"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-seed.out",
-   "sha256": "ae03a4928178b08720bbd110abe688b09ce71b733fef606191b4bc189c9e834f"
+   "path": "SETTLE/settle-rs/docs/examples/core-seed.out",
+   "sha256": "6745c1fc3620a83ec5025c8f711490add4244d3187aa6720768de89236e0cde2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-seed.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-seed.settle",
    "sha256": "a1f8cbacd3d0cc2266161da005911fb3a118a761943ae338022362215a1556bf"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-show-before-settle.err",
+   "path": "SETTLE/settle-rs/docs/examples/core-show-before-settle.err",
    "sha256": "8a1121f68123c835c553cbbe2eb23e011837849f158d7afca13a095e2e777446"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-show-before-settle.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-show-before-settle.settle",
    "sha256": "0bd3c065e24d042351204a51194f2f2ee6a56d95cf93645bbbc6c4d180cd6008"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-weather.out",
-   "sha256": "c517bc2f0a9c68e4dfdd0fa6c49e98be8622afbb302d068f2a5728a07fcf96d2"
+   "path": "SETTLE/settle-rs/docs/examples/core-update.out",
+   "sha256": "f1c4487ca629b51e56705862793be88c087d5194146994c6749efec85077d0dc"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/core-weather.settle",
+   "path": "SETTLE/settle-rs/docs/examples/core-update.settle",
+   "sha256": "a993292e7f697462f2cc288b29d8f422ea74ad033b8bbef7b8e1fc3022b6791b"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/core-weather.out",
+   "sha256": "b07a655698055376f22d917841f58acf0cb4b950dbbb19c3e8a88fef19fe3e42"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/core-weather.settle",
    "sha256": "97bfc26fea22832652d9fe81c4520da2501b3f90e5abbc5fddb5c5df9e4c14ee"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-baselines.out",
-   "sha256": "1724d2505c1daa26edc8bb0d5bb2691c99de0fce6316027375913aecbc0d1577"
+   "path": "SETTLE/settle-rs/docs/examples/denoise-baselines.out",
+   "sha256": "9e8a66186829dc01487dde201a08c8a0292d64083a572a5e5b77f061fe5d6345"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-baselines.settle",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-baselines.settle",
    "sha256": "e6677386fae76ca12c8aa525e5eb332cb13beeee9d0b8eafad299d4db7c0f184"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-chain.out",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-chain.out",
    "sha256": "b82902fbbd63313c034cbd04f5f984640c2683e13417029a56baeb706f605c3c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-chain.settle",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-chain.settle",
    "sha256": "b48e8d3e5349fa9ca8a031b3334b8e9e5b77ffca2f9091205f6f0d6bc1adad9e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-rows.out",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-rows.out",
    "sha256": "240b7d70b7953ca7bb053ec2cac415fce4231618257ae85d3a89cc335adc3ac6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-rows.settle",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-rows.settle",
    "sha256": "2ef186a94d4207207da7ecbb54bf9f1b669d7d50144d82337f5d00e94318667c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-untrained.err",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-untrained.err",
    "sha256": "a6397e8fe76ccfe801f0e1d61b54b64f244f8e82add4f3fcdbd40aa161cd4495"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/denoise-untrained.settle",
+   "path": "SETTLE/settle-rs/docs/examples/denoise-untrained.settle",
    "sha256": "d744f81a1c313b654054079a70c1d8f3d4b2e9ed95b314eb6ebbf6033d52001f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-adam-hot.err",
+   "path": "SETTLE/settle-rs/docs/examples/descend-adam-hot.err",
    "sha256": "1277ce19838f7d98078184ca93cccc21bd01ab66e861f424b9ff9df2c673d8d8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-adam-hot.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-adam-hot.settle",
    "sha256": "3420788baaf01fe719d8fa809c41e40a8bed1ec2e4aeeab15f919071b439221b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-adam.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-adam.out",
    "sha256": "6e7df1dd95646f73a2b5aa0025e8edbdaa580eda83755bd3fddbca8650545c7f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-adam.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-adam.settle",
    "sha256": "a94ad8ea106176f22d208493112c4c2641d1eaed2afebd9b5786fe095813669f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-cloud.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-cloud.out",
    "sha256": "dd740be43002dc64706f416d946297ce2e9da0d30bc815c91143058d4474497a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-cloud.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-cloud.settle",
    "sha256": "5ed662de409ca385da9354d9b101b736caa62b04908abd464a66aeadce863d14"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-gd.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-gd.out",
    "sha256": "cc3a8989dcbdfd17e64a4f3a0aa52b18770f97897cf9977652d69e44d6191101"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-gd.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-gd.settle",
    "sha256": "34e60243ab29728f01042b296fa98138c0ed768cb462b0587111e156d0e363ae"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-line.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-line.out",
    "sha256": "94f38f6a592ae4648bea7deba95ee9c36e74b3df7827b3b0b77b7f8125df86f6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-line.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-line.settle",
    "sha256": "329758c80d45cf240519655d757a7c601b64a1eb30e348307d6378775fd34c76"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-no-data.err",
+   "path": "SETTLE/settle-rs/docs/examples/descend-no-data.err",
    "sha256": "25319919b04c8759ba9ac8329155e016ed45b2541e3fa65c48bb9dd0ab661c26"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-no-data.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-no-data.settle",
    "sha256": "794d03a9c6511ff12d838fd240aedd05f36e634deffa652b60269fd2edf3b9df"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-rings.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-rings.out",
    "sha256": "66e8f8ff074aa4b82754bca97f7383d0b8fcc3cb11a5047a07aa8c203abc9781"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-rings.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-rings.settle",
    "sha256": "6ff6cf5aacf266cbd7843f076b21ce5c702b5f9aa3e9ca8d85e55b2b77fdd1ca"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-springs.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-springs.out",
    "sha256": "b5aed1fcd6114864ef28a583ffcae51446ca2ef520df654c965a0127acee6031"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-springs.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-springs.settle",
    "sha256": "2a5a46d807494fa721065fc4561611575673d847237f3fccb29ccbbb734e4f19"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-temperature.out",
+   "path": "SETTLE/settle-rs/docs/examples/descend-temperature.out",
    "sha256": "1faa40d444a27af37e2273c169f23d1ee6020a209382dd0801a425b7b978c8ca"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/descend-temperature.settle",
+   "path": "SETTLE/settle-rs/docs/examples/descend-temperature.settle",
    "sha256": "b8371e703014edccd6a2883c6a1eacd2b17b325eb323397705aa0dd4d8f9ffb9"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-ask-before-settle.err",
+   "path": "SETTLE/settle-rs/docs/examples/err-ask-before-settle.err",
    "sha256": "fcc5373d61e16d7119c44bfe95fe5c53c003e625ed6f6f4ffcddf614e8853dac"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-ask-before-settle.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-ask-before-settle.settle",
    "sha256": "3c095f770a8f65eff026541ee594abba87cf249e31f2680f1ce35e4819675c21"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-bad-keyword.err",
-   "sha256": "8d2a2341f2b57913be7e60a19916a462ef2df75e51ae63fe789cdd34d794df4b"
+   "path": "SETTLE/settle-rs/docs/examples/err-bad-keyword.err",
+   "sha256": "d79552718c9bd2b8f90bae75de7a1fcb3618b3d5d7e19a35531f7dc106abc2cf"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-bad-keyword.settle",
-   "sha256": "ad82d157f4e59d7604c276983c64cf3f7cedc353c9040a4ba0a087eee8a0715b"
+   "path": "SETTLE/settle-rs/docs/examples/err-bad-keyword.settle",
+   "sha256": "0ef57fb03d8b9914cce86443bd95bf1f1545527441994010c096f2965057f581"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-nested.err",
+   "path": "SETTLE/settle-rs/docs/examples/err-nested.err",
    "sha256": "c2734c8bc14eacc4d596a77eb09ce2119a9216069705642e2fa8c879898fa10d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-nested.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-nested.settle",
    "sha256": "13b66ceb2ae27f113c23838ad4c985a22d50887f90134593ee53c0a63abfe121"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-string.err",
+   "path": "SETTLE/settle-rs/docs/examples/err-string.err",
    "sha256": "078889853fa3aff7fbacd6ec82dd803df41d2a807b8e46355d460e53978a6487"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-string.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-string.settle",
    "sha256": "6f38df7fbc5050aaa6fd26a13d83cdc6332098875ab2821356a3eed2e70474b6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unclosed.err",
+   "path": "SETTLE/settle-rs/docs/examples/err-unclosed.err",
    "sha256": "6b0ec869955c123f237125a81f4730455e2518902ca79369c1104a87cab77205"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unclosed.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-unclosed.settle",
    "sha256": "9e4c7234b8eb64a8a2f52e2c032ca38da6c68ddc8ddaeeb1c44691a196fa970b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unknown-statement.err",
-   "sha256": "567c016fbbdf173489ed437efd208d27ec672902984f9078fdc3ee734cb3969b"
+   "path": "SETTLE/settle-rs/docs/examples/err-unknown-statement.err",
+   "sha256": "7bf0e4937d9fa052d3a289d45ccf5b103cfa88c963eed4b42837f419010a559f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unknown-statement.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-unknown-statement.settle",
    "sha256": "f2e620f932a6e479b41d7ac0b094c6ca0df1abde82836f19b3f3e80689fb7eed"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unknown-thing.err",
+   "path": "SETTLE/settle-rs/docs/examples/err-unknown-thing.err",
    "sha256": "312a099936dd677b390303edfc795b2d80330ddef26238e4f1f4a0db5dc03bd8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/err-unknown-thing.settle",
+   "path": "SETTLE/settle-rs/docs/examples/err-unknown-thing.settle",
    "sha256": "5259a1b2abe4f729397bad1a75296a2ba7974b8344967ccc3c8b84ed2397d117"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-different-model.err",
+   "path": "SETTLE/settle-rs/docs/examples/export-different-model.err",
    "sha256": "331490217232d40dc553304f7ba25af0aeb158a221f334c70c156b0cd9a6e2c3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-different-model.settle",
+   "path": "SETTLE/settle-rs/docs/examples/export-different-model.settle",
    "sha256": "00b25dd8a520fec93d73bb69ef71f92d10a7a776fb8e70511fed0a1d1a34525e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-forms.out",
+   "path": "SETTLE/settle-rs/docs/examples/export-forms.out",
    "sha256": "5a06bb88dc740d552f738e515feba0202ce4b271423a5d070431a65e87989292"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-forms.settle",
+   "path": "SETTLE/settle-rs/docs/examples/export-forms.settle",
    "sha256": "d09bfdfe3ad70b631dcff339e51e21b86906751f788fc8a000f3c50b49869474"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-maxcut.out",
+   "path": "SETTLE/settle-rs/docs/examples/export-maxcut.out",
    "sha256": "6104854f17dc3bb9b503ec316a15228f138e02fc6e7f2b033bdff6daef03a41a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-maxcut.settle",
+   "path": "SETTLE/settle-rs/docs/examples/export-maxcut.settle",
    "sha256": "beb100a767d7ec50d922c7199a6f9179b6df450d6634ec644e6b0101e2a32c1e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-run.out",
-   "sha256": "554e30b2398990346cd7ea71c23429c845535ffe2cd03d2cce02dbaaad380711"
+   "path": "SETTLE/settle-rs/docs/examples/export-run.out",
+   "sha256": "dcbd43c68191ff74fe7dcac69b5e05ab8aba20a8fde879aeaa933f620d118b2b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/export-run.settle",
+   "path": "SETTLE/settle-rs/docs/examples/export-run.settle",
    "sha256": "789edd849083cca49acb126e465285255a952612ebc28d4a2a7918855ac3f176"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ext_chain.program.out",
-   "sha256": "b7ffe30aeb7123033f611ff8b18f443637e56534bb8f63c1d254fa074f5c831d"
+   "path": "SETTLE/settle-rs/docs/examples/ext_chain.program.out",
+   "sha256": "c2424080554ad812b9de2c6f6130fd8b7f43e3788575e8a8b1b4486316580f44"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-against.out",
-   "sha256": "d37ca1bb7afeb522dd490673f2dc04ee55a669035b8b0c6944b580b9dcb44ccc"
+   "path": "SETTLE/settle-rs/docs/examples/grid-against.out",
+   "sha256": "ca64aea60814bd3bd3861e8f586389065548e4151b8031963b7469eda31a58a8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-against.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-against.settle",
    "sha256": "41e755042aa22ccbea4cdca2d0fa3b11e3b40c772eaef5bfa89f96c7d7d7783a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-fit.out",
-   "sha256": "8ad0329d71845c4f2bc4b66cea39fe17b1aff7ab68f9ce17e61653ce209d9454"
+   "path": "SETTLE/settle-rs/docs/examples/grid-fit.out",
+   "sha256": "2268eeee25f9611cfbeff6863fe71ba41a753414294f180567ea14c875de8975"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-fit.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-fit.settle",
    "sha256": "8a3a9b0b1935bdc5e3dd1f9541a0c874faab0cff7711eddfde9191908be3580e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-lean-run.out",
-   "sha256": "eaf4d142209d3b4afda97b2695e4c870ad91aec5ba86b978688a1ee6717873d4"
+   "path": "SETTLE/settle-rs/docs/examples/grid-lean-run.out",
+   "sha256": "c0fbfa11137faa3470a29d5d685c7adaae71fada16a9daf5b2cc816cb3c33aec"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-lean-run.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-lean-run.settle",
    "sha256": "8715735bc8901afc5b2b6e58d380fe315482ed54df26e60f35c7b208302eb2fe"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-options.out",
-   "sha256": "dbc3666fa4b98bfd937d63d2b610967964b8a42b960be801bbdc5365b14b66d2"
+   "path": "SETTLE/settle-rs/docs/examples/grid-options.out",
+   "sha256": "64cbad9c1b8d5c3949c50fee1be96215487f682c095b21848707240bcb4e1aa3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-options.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-options.settle",
    "sha256": "6ec94ea455dd6665e8eccb4430aade750e9e7ddfc23605d378fcbb2f78e670ed"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-play.out",
-   "sha256": "6bb1d19dfadbbf0a2c259ec09375ef958a11fd2293e7a05137eb7526fa7a72c5"
+   "path": "SETTLE/settle-rs/docs/examples/grid-play.out",
+   "sha256": "c88638a5ca29b2c8d927b28cf224bdd919b6d0a0f145729b703f1348941fe642"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-play.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-play.settle",
    "sha256": "727fd9aa84d41a4c2915b864f53ef104082ced6de74b513d0df06bd137ba0c7d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-read.out",
-   "sha256": "d6a95dea8a1bf87a2bd7fa97b7d257d79b4bf54f4cead18b4dd594d7fd67e0f1"
+   "path": "SETTLE/settle-rs/docs/examples/grid-read.out",
+   "sha256": "41456e4611934bcfb87eaf828124381fb52b0b5e15b7cfaec9a586d7141ce428"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-read.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-read.settle",
    "sha256": "521bc77f6be0df38c0baa1648809887d263fc55ce1522dd77405156a94f667f2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-still.out",
-   "sha256": "5255cdb12fd00eeb6f9f9c232cd88982be2581160e6d4792e29f0087cb4fbc10"
+   "path": "SETTLE/settle-rs/docs/examples/grid-still.out",
+   "sha256": "43f63a62b2c49a5f0035c8026ed074ad4c002d3b6562261ee00e4ae5377d3add"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-still.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-still.settle",
    "sha256": "51fe184465d0f4bf487cae46c65f16011027cff0b6f4af61604e5f0250041ccd"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-temperature.out",
-   "sha256": "9717442303ca48cc89a47e37c6c1b4236c01f5141a87ffcdce81ce65579e2e8d"
+   "path": "SETTLE/settle-rs/docs/examples/grid-temperature.out",
+   "sha256": "0d25e7bcf806c8e1ca3c75e0a484cff683e32bd734db24a02ddbaf11c3ce3297"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-temperature.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-temperature.settle",
    "sha256": "afc249a35d376b5e455ba6bd5025282d88a79923824186847626475c559ba32c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-warm-fit.out",
-   "sha256": "6514a2547d3945ce0a639b356b5a589ec416f180b92c98c8411df273e5054f4c"
+   "path": "SETTLE/settle-rs/docs/examples/grid-warm-fit.out",
+   "sha256": "f34eba85ef7ca9c1ad08bc8fc7120df2dcd360a059d914309a56012725df9ee3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-warm-fit.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-warm-fit.settle",
    "sha256": "004410b49e615c1f42822475c23456575b25c19b11fa76ad618af738b082b3c6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-wrong-size.err",
+   "path": "SETTLE/settle-rs/docs/examples/grid-wrong-size.err",
    "sha256": "f0b14c7bfb5eb37f0295f488114ca9577837bdad5050ceb138326eebddb7c0d5"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/grid-wrong-size.settle",
+   "path": "SETTLE/settle-rs/docs/examples/grid-wrong-size.settle",
    "sha256": "759cefee696cffeeb9fcaf4febd29801a7d80c7693bb4404b1185cfaf31d6180"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcmoves-movers.out",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcmoves-movers.out",
    "sha256": "9681c8a9a7ed1d14726fe4504108f94aed769c57c6b0490f0f29fc1ed3098ea8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcmoves-movers.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcmoves-movers.settle",
    "sha256": "745a37b943579e83314238684b9de7992697a53ce503231751f25e8463475513"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcmoves-soft-checks.out",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcmoves-soft-checks.out",
    "sha256": "3a8c56f4de2edd011f3db50020c2bf9934802c2c052b1d55168befcfd9a1db8c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcmoves-soft-checks.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcmoves-soft-checks.settle",
    "sha256": "3cbf8d79d0d066922fa18ba68a6ac3affd414bf06a01bca72c17acc06d673d54"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-decode.out",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-decode.out",
    "sha256": "19f0465ad63bba115a60de0e812f35c7c9db2578e72fb6b17aacf9e276480394"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-decode.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-decode.settle",
    "sha256": "73a39695d67a2fe57d82714dcd2eb00aaffb17de4973caaabd1d6174858d7d57"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-options.out",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-options.out",
    "sha256": "4ba0a3c74fb1af9800c0d09ce9a1af343bce6061e254b02581f3bd574304796a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-options.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-options.settle",
    "sha256": "db41d21f72626f57895b1669cd2edcf1159f3fad68239026f474965cd2de0986"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-springs.out",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-springs.out",
    "sha256": "a394730af437d909d9a0abdc84e809da3564681360256ab20fa573fccf253df3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-springs.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-springs.settle",
    "sha256": "af0ccfa55cb51dd46921b27a9bf70b153f771b1915913c293685a4df733178a8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-transmit-first.err",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-transmit-first.err",
    "sha256": "039537dcdbe21aa424569e4e9097db53de10a37f491190af69b95cf8a7370612"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/ldpcsettle-transmit-first.settle",
+   "path": "SETTLE/settle-rs/docs/examples/ldpcsettle-transmit-first.settle",
    "sha256": "2679a26794821cfaa422ab424386c9ea86ac353f6c22defd0063cd5958d3d033"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-bad-row.err",
+   "path": "SETTLE/settle-rs/docs/examples/learn-bad-row.err",
    "sha256": "84ae330449023ed62afea9febeade4a84230be6d80b57ef62942ff07b1fe0842"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-bad-row.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-bad-row.settle",
    "sha256": "118326beb45474ed2777b410a299c0545c104beb63cfaf27868986a95b498785"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-classify.out",
-   "sha256": "d12f1480c866ba5cc0b1c1d2c29fdba250ced24c589a8c463b8b96646c8a13c7"
+   "path": "SETTLE/settle-rs/docs/examples/learn-classify.out",
+   "sha256": "1418971a7f9080b4f1f323e669d9028f92eb38a4361e9313d26f8dd752dfd36e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-classify.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-classify.settle",
    "sha256": "18d83b5df95376748681e93193cc648713a52e1e4606a1ec33f908be4804d65f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-file.out",
-   "sha256": "c0bb08ace5e8a33fd3f90ee94b83708157dd80cd00e3c587a55f3e09aa25aaf3"
+   "path": "SETTLE/settle-rs/docs/examples/learn-file.out",
+   "sha256": "fa4d0347c82930f1145b40c58a46e1ab18cc78859294d37d7b0bce03180b82e0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-file.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-file.settle",
    "sha256": "d94ca0e825399db0d33e64a8d2fc6e18bb8a7b27a7a521aead187e8bb93e221f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-inline.out",
+   "path": "SETTLE/settle-rs/docs/examples/learn-inline.out",
    "sha256": "d45c27615a5d46aab29e1f428229252c0cdcc7aa34b09169937e80b87e83d6ab"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-inline.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-inline.settle",
    "sha256": "06c93ffdb6309c620319f8c8f308abe8197fb0ec2e518b053d4bf1f11042a46b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-methods.out",
+   "path": "SETTLE/settle-rs/docs/examples/learn-methods.out",
    "sha256": "03f4015efd7852223aab38ec1386db63c43865a678fad6b33db4df5a68746b2f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-methods.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-methods.settle",
    "sha256": "b5391839eacf13f398afde0ea833976c700a4890edd8fdd3d121c01261f0c962"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-shuffle.out",
+   "path": "SETTLE/settle-rs/docs/examples/learn-shuffle.out",
    "sha256": "e89bff3cefd257f9377ce17368e94cb081920f39e05b4654cbd09172a6a12218"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/learn-shuffle.settle",
+   "path": "SETTLE/settle-rs/docs/examples/learn-shuffle.settle",
    "sha256": "c3fb756907c7682545453db81c7fb9e41905efc5be522a6af2f00a39d976d8cf"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-fade.out",
+   "path": "SETTLE/settle-rs/docs/examples/memory-fade.out",
    "sha256": "4d79322242ee64f4717e619d3d9cc2e7463b4f57439cc139a457580901304a14"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-fade.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-fade.settle",
    "sha256": "664fcd0c0687d83956f04766e7511cdd491b7ec8f6d666da9c01b45be5c1d37f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-keyed.out",
+   "path": "SETTLE/settle-rs/docs/examples/memory-keyed.out",
    "sha256": "688217fabeba16a9c178a48bc2cbdb21eee199e6769bf238c23ec2cb16e1c654"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-keyed.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-keyed.settle",
    "sha256": "b8e9904593199b22ce3af381ddf8ba31ea798d29559a9373b9be7f4bc93896ba"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-options.out",
-   "sha256": "ca26393f0001e6dda1e55b202b538a2e83c1afb20897426522ddef55e1a8e44a"
+   "path": "SETTLE/settle-rs/docs/examples/memory-options.out",
+   "sha256": "3cde2ca601cf7a1180b97f1853876f14ba119eac83848b7a847f7a3a9cbc45d3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-options.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-options.settle",
    "sha256": "dc53798fb3d27262dd9356a26fe42e1dc607aefc9b60c75f9b5ba66c0222db8f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-recall.out",
-   "sha256": "80f75f3567d3ec32a234fb1accfe02f3ecf3dc687d3a5c6122b4c623deb6d208"
+   "path": "SETTLE/settle-rs/docs/examples/memory-recall.out",
+   "sha256": "d95dfc46c370dbb85ddad9e18976a49d565b7388362c8ab03d6b558c729b00a6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-recall.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-recall.settle",
    "sha256": "93dfcc23cc61f82e2c2c5a710b39c3701c29b8d880e89858c8fdb50730e72f04"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-text-too-long.err",
+   "path": "SETTLE/settle-rs/docs/examples/memory-text-too-long.err",
    "sha256": "8bd8e822619ca70ad3b9b9061863184d01ca238c0bbd85bd85dc2d542b5835c1"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-text-too-long.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-text-too-long.settle",
    "sha256": "98dbc31b0ccd08326cdac24f1d16d57330422c67d1d0d3686daf8b1b643d8ceb"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-text.out",
+   "path": "SETTLE/settle-rs/docs/examples/memory-text.out",
    "sha256": "7e7516a435965c1a86abd69ff126a05a75a8be98761a437efbeb0e7a720e78ef"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/memory-text.settle",
+   "path": "SETTLE/settle-rs/docs/examples/memory-text.settle",
    "sha256": "9ba4c068342edf61ea8b96982734ec68f77b2a713968ee7c03a047d1429bddd7"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-cut.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-cut.out",
    "sha256": "d173b17bccbcbd821853ca5d9fda4caab46ae2af2ae69816a5e01d2c78484dd6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-cut.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-cut.settle",
    "sha256": "dcf8cff8e6c09c91353f16d1e4509506176626c67721c273fbfb9d2f68da2269"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-drift.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-drift.out",
    "sha256": "4b8a236c464ad257f89df54b87cd300bf01ab8e75dd4ecbf321ca6ede710a3e2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-drift.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-drift.settle",
    "sha256": "99a46219f7fb27f9c7747a120581aa6b871d5033912156b932a0fcfc5d8e01be"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-no-valley.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-no-valley.out",
    "sha256": "c3ee5483849e3127e6325028a3b030dff4943a90d8f8545c743956b865d6dd6d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-no-valley.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-no-valley.settle",
    "sha256": "fdd2a8824e67224122476e969bfacef65f3c0fc495a1a4ed72f77ea5ef110a8c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-opposes.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-opposes.out",
    "sha256": "39e75d2ae6bd06a28723a91123b0b73d038dab08c6e37c3fdcf63b1afddf33a4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-opposes.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-opposes.settle",
    "sha256": "c847d2c21b2aa6c0ffc296e993a4bf633f65c22fb10fe79fd35bad895581ada9"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-refused.err",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-refused.err",
    "sha256": "41839b225f0595a83333d353852757e3e5b2fb6163ce8c87fa5cdd8272f05294"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-refused.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-refused.settle",
    "sha256": "422de0fd563ead7548703ad72356e688bf85ae8282859e3af4cd9baa8f36c98a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-solve.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-solve.out",
    "sha256": "2109a1e321c70fb83b2c83230b19217a2a06610154d2b804005b41dbea008517"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-solve.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-solve.settle",
    "sha256": "a6fbd43192d947c735383bd2118015ec8d2c4436446cfdd42f3600e10799b475"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-step.out",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-step.out",
    "sha256": "3a5c58989bc7ca13be0c7d1388d4d9a8d070671cfba1643c3301af37007e924d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/numbers-step.settle",
+   "path": "SETTLE/settle-rs/docs/examples/numbers-step.settle",
    "sha256": "72ab9be8af9a0236d741db867b39c507b7d4356213753f187d181d22769e7607"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-already-written.err",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-already-written.err",
    "sha256": "421fa13bdec50e931c796d7ed1f482e5c29fe49b955e00f6f1b1c3f349a1eaba"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-already-written.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-already-written.settle",
    "sha256": "5ad85fd94133f0bd61ec081e54611aba64c49209c73ff7aaaf59b090b8303267"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-fade.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-fade.out",
    "sha256": "367999f4a95660a237da31494f675dc0f21d7b6960e2546b238b91f61c6da18a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-fade.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-fade.settle",
    "sha256": "c6e4ac14cb107c20df8048c3142820dc25651a95c9bdd039b96068097b466bc8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-read.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-read.out",
    "sha256": "cdc6f5c344a4878a4f7f63881cbaae3a376e7a6b4aee1b11d8f88ce3993dbc9b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-read.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-read.settle",
    "sha256": "b5af13bb3f376766c644c9cc1f44e894963bc81d0aff68dab010f1ac6171af8a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-text.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-text.out",
    "sha256": "d822f6e153a4c9aeb461cb9f7a98c25c685f63434220841f5790af1ac44a5929"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdm-text.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdm-text.settle",
    "sha256": "2ea2c994db305aa12006a2754a2df567011f3ff93ea0be0ecf32cc6cdd8aeaad"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmrefuse-refusal.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdmrefuse-refusal.out",
    "sha256": "94d43eb215a18e7f45ec643f567a479383081497471c9a68dcd10052d9376970"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmrefuse-refusal.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmrefuse-refusal.settle",
    "sha256": "06e832a2cd3cfc853d062d240671f32a574781ccd39c91371e94dbf64c0912e5"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-read.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-read.out",
    "sha256": "3a934f5efccc8e327cea0149908105c7b03fd635bee60f604e28b26d05f4c687"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-read.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-read.settle",
    "sha256": "6b706559e20acb16b8d4314747b0750b3d7bb45aaffdef82cd073c27a93c6585"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-tolerate.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-tolerate.out",
    "sha256": "c0df36f5a9e1cd2ef53a72706f8e5b621be66c2f8b5846b663eeb71b7bbabe03"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-tolerate.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-tolerate.settle",
    "sha256": "a7753bdf2ee4605d571894a7e444764a1ad16771f890dcc0cc13cb7a6879195c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-wake-needs-pulls.err",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-wake-needs-pulls.err",
    "sha256": "369aea2db37c438ee19d4fb61d338217384fb81621bfa869f8bf10bef76644fa"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-wake-needs-pulls.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-wake-needs-pulls.settle",
    "sha256": "0084cea4304ba0eef1eb328729270cef240b52327005d9794976dbf83c9b2fa0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-wake.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-wake.out",
    "sha256": "4c1722906300463295336da4954722aa0bbfd24bfbbf6c49a4403107a6e19a4b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmscale-wake.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmscale-wake.settle",
    "sha256": "ebf909371f4a8b4b355c43ab0a15f0830fe6ccf0d6b7f160a6ea2e22ba0b7c2e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmtrack-predict.out",
+   "path": "SETTLE/settle-rs/docs/examples/sdmtrack-predict.out",
    "sha256": "8cbe505b073d5b0f183154feb47efbbc573eaef4527d5abe8713ca29ab7a03b8"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sdmtrack-predict.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sdmtrack-predict.settle",
    "sha256": "a22b4634ae6a179a85993388da04e8987235c06ea3edff0e95877f002066a8c1"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-reopen.out",
+   "path": "SETTLE/settle-rs/docs/examples/sem-reopen.out",
    "sha256": "99793a6ec30a113d79fc77b341293e3b2c5d13207634703b9de753eeee31486e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-reopen.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sem-reopen.settle",
    "sha256": "77dbfa2e9ef920eabefc94cc7e71fdc02118d60e5660e7953d088c9ef9606423"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-seed.out",
-   "sha256": "d3b9483586580633d51d1c45b07a21bd0daca001eb60aa9f235e0fb4bd4ef676"
+   "path": "SETTLE/settle-rs/docs/examples/sem-seed.out",
+   "sha256": "7844faed761294f49b33b5d38645e59f839334d4ce7ffb65396db8962b0c81bc"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-seed.settle",
-   "sha256": "0c64e51d17f9a0dba94924bc7bd41720ced27ef7983a74e6bee94d0dc5ef2f1c"
+   "path": "SETTLE/settle-rs/docs/examples/sem-seed.settle",
+   "sha256": "994295498d254b6cd08d6c5a96f9cf03b62cb8c763b3ad753f508392ca01d2d4"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-temperature.out",
-   "sha256": "7e8b3df275eb74dce924a7e644808929be7783e36d4ea18eedb0157f4ba6e6ee"
+   "path": "SETTLE/settle-rs/docs/examples/sem-temperature.out",
+   "sha256": "9cc01b744978a83d1eaff6624248dd3f37fb1809ba9b4e4a601ef64f067ec354"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/sem-temperature.settle",
+   "path": "SETTLE/settle-rs/docs/examples/sem-temperature.settle",
    "sha256": "ae3b52ea797993b035ed9051ddd5ef4455104bc6d89ea52f3f17a912517d5272"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-attend.out",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-attend.out",
    "sha256": "23880cbc1782b17f62729c6f70994c3737512d0253ac70820d5cdaadec52eb45"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-attend.settle",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-attend.settle",
    "sha256": "1329ba34eaf8209b69b16e69ea94acb77da2b34bfdb874bb325b42496ef3f1c6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-hard.out",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-hard.out",
    "sha256": "2cc2fab09fd4f8774e83128391568121e6a7d04700678372c1214806de8b5895"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-hard.settle",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-hard.settle",
    "sha256": "ca6a25f99a6061adfc6bbc99d6ca255a667e09e18893951a57ec4871f420874f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-no-key.err",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-no-key.err",
    "sha256": "d265e4a0a38ac74d1234150801426d00c86f4a3d22e6c2e7951d49efa13fb02a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-no-key.settle",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-no-key.settle",
    "sha256": "f0db1ea60de2deba049046937867fbc4f8b9c2ef0e9c5334195308ae8f910f31"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-read.out",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-read.out",
    "sha256": "e3d9d46997beedae30587c7264c84abbc80afa8ff2224fd7c4189c996c362fd2"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/softsdm-read.settle",
+   "path": "SETTLE/settle-rs/docs/examples/softsdm-read.settle",
    "sha256": "9f7e7c5b38bd9fe3bc4b6755215a34991a1003df6eb05a85390647a833813576"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/syntax-lexical.out",
-   "sha256": "181c143f2f28b34f08663026b732dd7a0bdc95f31ef1bad7aff6190eccc84152"
+   "path": "SETTLE/settle-rs/docs/examples/syntax-lexical.out",
+   "sha256": "fbd133e21cac306d800b7adfe2e36144f0879bd3836bdb9a88c3193011f49275"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/syntax-lexical.settle",
+   "path": "SETTLE/settle-rs/docs/examples/syntax-lexical.settle",
    "sha256": "6300b17e9f69b64b444b03341eec3b44e64e6ef8ff478e2fd87184169e38a20f"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-anneal.out",
-   "sha256": "8171d842cf87d4067b33ffa4efbcef39e4462294ba2307be3f4b7dd37eebc841"
+   "path": "SETTLE/settle-rs/docs/examples/tour-anneal.out",
+   "sha256": "67f1811716f24f277becd8873e36b410515b4896021cc7713b23f39ed4c48720"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-anneal.settle",
+   "path": "SETTLE/settle-rs/docs/examples/tour-anneal.settle",
    "sha256": "6f15b92d26540a9dc199c25b865153745f6be638dfed78a6bdc59c0849f252f3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-first.out",
-   "sha256": "4ac298505fbb174b0f8125be678f98bae868bd34ed95137af8a6ff4c9a5b368a"
+   "path": "SETTLE/settle-rs/docs/examples/tour-first.out",
+   "sha256": "24b2024b9b5e0495ac35eaffe06270557924231880767bc00f470e2ce69e19ef"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-first.settle",
+   "path": "SETTLE/settle-rs/docs/examples/tour-first.settle",
    "sha256": "372c0880fd63233bd2b3dc85642c2e5790c7dd5fd6a453842bbf018b4c2e04a1"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-hold.out",
-   "sha256": "99eab48023cf5fa19ca2963d961d793e4331603b7ba5085c37f7b4b61b2a57af"
+   "path": "SETTLE/settle-rs/docs/examples/tour-hold.out",
+   "sha256": "17f0dda6208798890c5b6d761a4c10580384189068483b52ea0d0625f879bf14"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/tour-hold.settle",
+   "path": "SETTLE/settle-rs/docs/examples/tour-hold.settle",
    "sha256": "b443d1822e18c8ef12f671610519d715823b127e1b5ba3a4970db98509b13758"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-code.out",
+   "path": "SETTLE/settle-rs/docs/examples/tour-remember.out",
+   "sha256": "59c2e0e0fcb8d133ad2917d1f2740cc4cddc26d5a0aaeb88745dd30924de2f5d"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/tour-remember.settle",
+   "sha256": "1fe9c0e46a971621b7a37e692b9a1056e1eac4e4bee126dbbdac29595d14e8eb"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/valleys-code.out",
    "sha256": "6bb0882d1d7df160ec6c6a41d3f535f20dcdb3a324f90cdabd252ebcf1409296"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-code.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-code.settle",
    "sha256": "9bb329bcfe4778c6ef23db215ab9b1aaaa99fda5db0bcee4cdfc905ebe30ce0d"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-grid.out",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-grid.out",
    "sha256": "3d7f6ea9a593a9a80e67fdb3699c51d3cf9ac436f964bbf4ede71b9e851b5cb6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-grid.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-grid.settle",
    "sha256": "ad56edd3605cd903c263fdea01c2841b756a0d87a036a33c97db3550ce1356d3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-held.out",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-held.out",
    "sha256": "200c75ac557ae057e19010664d239f1046ec3274303575228f71b66604da8744"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-held.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-held.settle",
    "sha256": "8a4ee6a42a71eb6357a2f1679a97db32f64434fd0e974d0f482bd211d049ed88"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-memory.out",
-   "sha256": "fe4285f3fbecc6f43aca26cf53907851ebdc4f8f9018516e3827ee7b7f6ee6d7"
+   "path": "SETTLE/settle-rs/docs/examples/valleys-memory.out",
+   "sha256": "c2a175af54547ccaa11a1c861c1287b71ba324c8e5824c9ec7496eb38a087ff0"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-memory.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-memory.settle",
    "sha256": "7df4fd39a939ee347f9fae4a6c249904037e4521ab566806c0d84bc5b53d5163"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-random.out",
-   "sha256": "115f4e2480886136cfcc76f30b70fd512d9cb8623fb61c70f171053e32498ec8"
+   "path": "SETTLE/settle-rs/docs/examples/valleys-random.out",
+   "sha256": "64fe4b5f7e5a7a6492b1a583aabbdcbf9fbc4832771f60a823c4502fb369fac7"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-random.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-random.settle",
    "sha256": "72e17ed7c025f2eef072a6c5839e999b2d8c98c1ca4a03f45e002c116a11750e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-ring.out",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-ring.out",
    "sha256": "32e10c55231cdab8bfc5124eac30db8147fef5204793226c2d5c0eba26f96702"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-ring.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-ring.settle",
    "sha256": "f9725106b0d748a7facde3091bc83deee74c964196f451a32c25d4fca0b9a0a6"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-too-large.err",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-too-large.err",
    "sha256": "e25d5f8d8802be992af7945a4f9b601c6f12e25d9df1b10d9f8b3aac05780363"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/valleys-too-large.settle",
+   "path": "SETTLE/settle-rs/docs/examples/valleys-too-large.settle",
    "sha256": "3ed225a3048e5065e1d1ad708661c35a06a55e4b1ad10dca928ca787bc2a126a"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-colouring.out",
-   "sha256": "142f948751d802ed394350d7f9e1669d206b46bf95330ed2f3d1840091319a86"
+   "path": "SETTLE/settle-rs/docs/examples/zoo-colouring.out",
+   "sha256": "b97cc949198526b7466a991a57cd752427b71164a0a090744753f8cce18b8ead"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-colouring.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zoo-colouring.settle",
    "sha256": "85e5b0fb97847ed48ff2e9a54a8b399ece45d04c01e57caaed5638b6ad633e31"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-factor.out",
-   "sha256": "163857e77281a2041a5b15a03139b59b91532eae8820f68cb0e188df68d2955b"
+   "path": "SETTLE/settle-rs/docs/examples/zoo-factor.out",
+   "sha256": "bd050b3b4df8e002ffe3e0f18a695c1697eaece9a776ff55c66b0ca8f48564e9"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-factor.settle",
-   "sha256": "60464cad0819c305a9b05744358058dc6bdda97e6a5e3dd9f68098093adc4d5e"
+   "path": "SETTLE/settle-rs/docs/examples/zoo-factor.settle",
+   "sha256": "644cf15b40eeafe7ec1402e13c4b6701eefe2b72318d6fc423aebe966c6b0e8c"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-maxcut.out",
-   "sha256": "39568bedd9a305b1fcab6f1da0ea7ac0ee617f8b7f69e382581246c0033f19c8"
+   "path": "SETTLE/settle-rs/docs/examples/zoo-maxcut.out",
+   "sha256": "7007577677f99ad688e057bbc3e117024dfb3ba419cbc5ccea82349fdeeeba98"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-maxcut.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zoo-maxcut.settle",
    "sha256": "d2c0e2fe3e60f7a710f8f5094f39721543ebb595aace94502543c51699a109ea"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-solution-first.err",
+   "path": "SETTLE/settle-rs/docs/examples/zoo-nonogram.out",
+   "sha256": "3f925b07421750580d4c6f91c5e118ff167e6f7ac535f2b30884b6a3dfe8b642"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/zoo-nonogram.settle",
+   "sha256": "346cee54d502a4df911018c30c64710b29ad161413421505e1b31f0c60fd7dde"
+  },
+  {
+   "path": "SETTLE/settle-rs/docs/examples/zoo-solution-first.err",
    "sha256": "f6ee25ce11fe681d34d06641f3a7dd0324c1e41af2ef46096064a890f2b47d2b"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-solution-first.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zoo-solution-first.settle",
    "sha256": "8335d57b77c82e784f15b7bbe2d6442765361c7581cbe54cb6996b8180e30354"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-sudoku.out",
-   "sha256": "812aebc3a798da30d864c3ee5b8cc8630d3c940ad8ac9180382025d4c1dbf0ed"
+   "path": "SETTLE/settle-rs/docs/examples/zoo-sudoku.out",
+   "sha256": "756ebd0d22912125290fd06e082e71606c39e8eb59b30c04757e8869fe6eb6fc"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zoo-sudoku.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zoo-sudoku.settle",
    "sha256": "b49608f2a53fecc4ba92b997ba90fe5fe6956fd2ccf63ad6619f5492110704fd"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-final-first.err",
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-final-first.err",
    "sha256": "e4657c218a55217fa6cc3f56ddd0dd829813a4b2e5908082402dfa470db52417"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-final-first.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-final-first.settle",
    "sha256": "c12b6de6e87a684ceeafcb60bb55cd1ab8ad5bf1ab60b39fae0f8843a9ee797e"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-restarts.out",
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-restarts.out",
    "sha256": "28c87558c5078955baf204cb2d25846e1f66b1a8f1ee47b1822238cef44157e3"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-restarts.settle",
-   "sha256": "cb5cb7a381615b03dbf2ce2e0d771836d593dd439eaf02150c8242b880cf52d6"
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-restarts.settle",
+   "sha256": "8bc84a28b3c7cb44147e6bff02bc767d14b2e8df5ca27eee146186cd59de4780"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-schedule.out",
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-schedule.out",
    "sha256": "3df1e69678325b9bab4f25b861b6cdf3220b5d9f8634aa8d6abc5dde53d01ebb"
   },
   {
-   "path": "experiments/thermosim/settle-rs/docs/examples/zootemp-schedule.settle",
+   "path": "SETTLE/settle-rs/docs/examples/zootemp-schedule.settle",
    "sha256": "55abbda4f04ef40cd213eb2d12ef62f46abe096c2a0e6eda7dea974e67fe42cd"
   },
   {
-   "path": "experiments/thermosim/settle-rs/README.md",
-   "sha256": "84c80700353fe746bcd3f9a3165539bab88be5e96d2886ce202cc0cbeebf7555"
+   "path": "SETTLE/settle-rs/README.md",
+   "sha256": "e06878a893d980ad3cb20ba83f94615adf55b2644b583457478f834cb33b1e4e"
   },
   {
-   "path": "experiments/thermosim/kanerva/README.md",
-   "sha256": "70fba4c4ed1aebbb563416048119e56a462024c77076cc54624caceb84d36d84"
+   "path": "SETTLE/kanerva/README.md",
+   "sha256": "63301600f846413c00affd6d85905fcf90a0b69c297fc738e735f476b157e803"
   },
   {
-   "path": "experiments/thermosim/kanerva/KANERVA_TERMS.md",
-   "sha256": "f5f800827c6c2dcb847621a9314f6955b319432dfe829a0849aa4469a68957cb"
+   "path": "SETTLE/kanerva/KANERVA_TERMS.md",
+   "sha256": "f805218616d2158c9e10acce7af88a4c6803d127ac21943b5fbc34205d2fa731"
   },
   {
-   "path": "sites/settle-site/src/wtf/terms.js",
-   "sha256": "1840aaa9e2a3aaeecd46ac6afbd89a3ff4b5c16fbe357647c8d9bad040ccec1e"
+   "path": "SETTLE/kanerva/programs/hello.kanerva",
+   "sha256": "d8934efedaf2dd3eddf55abaabdc1b565b53b3f3c524ddca4f3382819edd7dde"
   },
   {
-   "path": "sites/settle-site/docs/who-you-are/README.md",
-   "sha256": "88489edd5fb65072a8d23ca0c2b29743580b481de059f784a63cddd1ba6ff1c8"
+   "path": "SETTLE/kanerva/programs/hello.out",
+   "sha256": "bb8be1ba8e9130b4172827370810ca99d666ad83ef92219ee2eb11269e215f52"
   },
   {
-   "path": "sites/settle-site/docs/who-you-are/for-programmers/README.md",
-   "sha256": "f3794135d1e5bf98a8af5b922af3d7d890824e3ca447cd08b42dc55ba9ad701a"
+   "path": "SETTLE/kanerva/programs/sdm.kanerva",
+   "sha256": "586459a0e4fc272936ebaa20517e8a3ed2964992c30890f86369c0c5b71b6512"
   },
   {
-   "path": "sites/settle-site/docs/who-you-are/for-visual-artists/README.md",
-   "sha256": "c024d129c546e03d403cd77884560cc60605343e251964d04d7393c96c7b5984"
+   "path": "SETTLE/kanerva/programs/sdm.out",
+   "sha256": "f0e4bd4df17d1f394fd25c6edfb30e302bcb6accab0ccddf37f8e3d421f4e160"
   },
   {
-   "path": "sites/settle-site/docs/who-you-are/for-sound-artists/README.md",
-   "sha256": "a9dcd056e46b4dfbcc1c2954226f1932f2c4db01183e9c8422c089f383a1a8eb"
+   "path": "SETTLE/kanerva/programs/sdmscale.kanerva",
+   "sha256": "61fb317b93a592eec9998bba1a3547e5afd374e9657f30ed6a95f4328c2276f5"
+  },
+  {
+   "path": "SETTLE/kanerva/programs/sdmscale.out",
+   "sha256": "e430124b57a52bcfc954456a5a4b4558740214ef12b9b5719bcff44869bdf750"
+  },
+  {
+   "path": "SETTLE/kanerva/programs/softsdm.kanerva",
+   "sha256": "4b84eeb23b2e31f00aa209c31eb947e11833da32e2c8eedf1475f79c781da0f5"
+  },
+  {
+   "path": "SETTLE/kanerva/programs/softsdm.out",
+   "sha256": "1b5b0ac52c1adffb10b08c5e14a710cb80c759cf8b0979759d8702864dfa177a"
+  },
+  {
+   "path": "SETTLE/kanerva/programs/theory.kanerva",
+   "sha256": "d8865e081f8c6e94265dd72cb5ce7ba93de782e6c05099f6a18b41d9326a507e"
+  },
+  {
+   "path": "SETTLE/kanerva/programs/theory.out",
+   "sha256": "b105a29c24c1a31968aeaf75cfac504560048af3e040c330f23888ce0d1e747a"
+  },
+  {
+   "path": "SETTLE/settle-site/src/wtf/terms.js",
+   "sha256": "f38dddb268910fd1e64f404f89166d4550fb2bb1d9fe492df1ac0290126da201"
+  },
+  {
+   "path": "SETTLE/settle-site/docs/who-you-are/README.md",
+   "sha256": "88eb2379994ee1309411a0cc71c1e90842936a1a1edd04856778296499d76d11"
+  },
+  {
+   "path": "SETTLE/settle-site/docs/who-you-are/for-programmers/README.md",
+   "sha256": "2b766f5c5380d026ee01ecc3d825110be1fc50b2be6a3b618a51ba48e7f6c94d"
+  },
+  {
+   "path": "SETTLE/settle-site/docs/who-you-are/for-visual-artists/README.md",
+   "sha256": "bcabf20128ceec3159031157c9f8f518337c285b2c312aab018b40fd3177898c"
+  },
+  {
+   "path": "SETTLE/settle-site/docs/who-you-are/for-sound-artists/README.md",
+   "sha256": "6ef4a7eb357ef6d042ee13ed6c826410dd09759dcef1cbd019563d4cd32ec1cc"
+  },
+  {
+   "path": "SETTLE/tools/readme_banner.mjs",
+   "sha256": "ab9091a6d95141bc326924da6ca1091f678e1e09047b10e80aa2f3923d9d1e79"
   }
  ]
 }

@@ -1,13 +1,46 @@
 {
   "name": "settle-mcp",
   "version": "0.1.0",
+  "private": true,
   "description": "SETTLE MCP: a Model Context Protocol server that explains SETTLE and KANERVA, sets them up on your machine, and runs them.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "settle",
+    "kanerva",
+    "sparse-distributed-memory",
+    "mcp-server",
+    "claude",
+    "stdio"
+  ],
   "type": "module",
   "license": "MIT",
-  "bin": { "settle-mcp": "src/bin.js" },
+  "author": "TripleSparkle",
+  "homepage": "https://github.com/triplesparkle/settle-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triplesparkle/settle-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/triplesparkle/settle-mcp/issues"
+  },
+  "bin": {
+    "settle-mcp": "src/bin.js"
+  },
   "main": "src/server.js",
-  "files": ["src", "content", "docs", "tools", "README.md", "LICENSE"],
-  "engines": { "node": ">=18" },
+  "files": [
+    "src",
+    "content",
+    "docs",
+    "tools/build_mcp_docs.mjs",
+    "AGENTS.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build-docs": "node tools/build_mcp_docs.mjs",
     "check-docs": "node tools/build_mcp_docs.mjs --check",
@@ -16,7 +49,7 @@
     "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.31.0",
-    "zod": "^3.25.76"
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "zod": "4.6.5"
   }
 }

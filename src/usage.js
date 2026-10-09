@@ -6,13 +6,22 @@
 // resolveSettle(explicit)        - the settle binary: argument, SETTLE_BIN, SETTLE_MCP_HOME, the setup state, then
 //                                  `settle` on PATH; returns { bin, how } or { bin: null, tried }
 // resolveKanerva(explicit)       - the kanerva crate folder: argument, SETTLE_MCP_HOME, the setup state
-// runProgram({ path, source, settle, timeout_ms }) - run one program file or program text; returns stdout,
-//                                  stderr, exit code and the command shown
+// runProgram({ path, source, settle, timeout_ms }) - run one program file or program text with `settle --json`;
+//                                  returns stdout, stderr, exit code, the command shown and, on an error, its line
+//                                  and column as data (error_at); a binary with no --json runs the plain path
+// parseSettleJson(stdout)        - settle's --json object, or null when stdout is not one
+// caretLines(file, at)           - the CLI's two excerpt lines under an error, from the JSON's line and column
 // sdmKeywords(helpText)          - the sdm family's statement words as the installed binary prints them
+// settleString(text)            - a stored text as one SETTLE string (no double quote, no line break)
 // sdmProgram(opts, kw)           - a SETTLE program that writes patterns into an sdm and reads one back from a
-//                                  noisy read-address
+//                                  noisy read-address (word_size, hard_locations, address_noise, seed, reads)
 // isSymbol(name)                 - a valid SETTLE symbol word
-// kanervaQuickstart({ kanerva, dry_run }) - KANERVA's own example program, built by setup
+// resolveKanervaBin(explicit)    - the kanerva command: argument, KANERVA_BIN, SETTLE_MCP_HOME, the setup state, PATH
+// runKanerva({ path, source, program, kanerva_bin }) - run a .kanerva program with the kanerva command; a named
+//                                  program of the crate's own is compared with its recorded .out
+// binVersion(bin)                - a binary's --version line
+// kanervaQuickstart({ kanerva, example, dry_run }) - one of KANERVA's own examples (quickstart by default), run with
+//                                  cargo in the kanerva folder setup made, compared with its recorded examples/<name>.out
 //
 // ** Technical Review **
 // - THE SDM TOOL SPEAKS THROUGH SETTLE: SETTLE's sdm statements are KANERVA's address module behind an
@@ -60,7 +69,33 @@ export function resolveSettle(explicit) {
 
 export function resolveKanerva(explicit) {
   const cands = [explicit, process.env.SETTLE_MCP_HOME && path.join(process.env.SETTLE_MCP_HOME, 'kanerva'), readState()?.kanerva_dir];
-  return cands.find((p) => p && fs.existsSync(path.join(p, 'Cargo.toml'))) || null;
+  const hit = cands.find((p) => p && fs.existsSync(path.join(p, 'Cargo.toml')));
+  return hit ? path.resolve(hit) : null;
+}
+
+// the kanerva command (KANERVA's src/bin/kanerva.rs): argument, KANERVA_BIN, SETTLE_MCP_HOME, the setup state (its
+// binary, or target/release under its kanerva folder), then `kanerva` on PATH
+export function resolveKanervaBin(explicit) {
+  const tried = [];
+  const st = readState();
+  const candidates = [
+    [explicit, 'the kanerva_bin argument'],
+    [process.env.KANERVA_BIN, 'KANERVA_BIN'],
+    [process.env.SETTLE_MCP_HOME && path.join(process.env.SETTLE_MCP_HOME, 'kanerva', 'target', 'release', `kanerva${exe}`), 'SETTLE_MCP_HOME'],
+    [st?.kanerva_bin, 'the setup state file'],
+    [st?.kanerva_dir && path.join(st.kanerva_dir, 'target', 'release', `kanerva${exe}`), 'the setup state file (its kanerva folder)'],
+  ];
+  for (const [p, how] of candidates) {
+    if (!p) continue;
+    if (fs.existsSync(p)) return { bin: p, how };
+    tried.push(`${how}: ${p} (not found)`);
+  }
+  for (const dir of (process.env.PATH || '').split(path.delimiter)) {
+    const p = path.join(dir, `kanerva${exe}`);
+    if (dir && fs.existsSync(p)) return { bin: p, how: 'PATH' };
+  }
+  tried.push('PATH: no kanerva');
+  return { bin: null, tried };
 }
 
 export const NOT_SET_UP = 'SETTLE is not built on this machine yet. Run the `setup` tool (dry run first), or pass `settle` with the path of a built binary.';
@@ -76,11 +111,52 @@ export async function runProgram({ path: file, source, settle, timeout_ms = 60_0
     prog = path.join(cwd, 'program.settle');
     fs.writeFileSync(prog, source);
   } else if (!fs.existsSync(prog)) return { ok: false, error: `no file at ${prog}` };
+  const binary = `${found.bin} (from ${found.how})`;
+  // THE JSON DOOR FIRST (settle-rs `settle --json`): the lines, or the error's message, line, column and width, as data
+  const j = await run(found.bin, ['--json', prog], { cwd, timeoutMs: timeout_ms });
+  const parsed = j.timedOut ? null : parseSettleJson(j.stdout);
+  if (parsed) {
+    const stdout = parsed.ok ? (parsed.lines || []).map((l) => `${l}\n`).join('') : '';
+    const at = parsed.ok ? null : parsed.error || null;
+    const stderr = at ? `settle: ${at.message}\n${caretLines(prog, at)}` : j.stderr;
+    return { ok: parsed.ok && j.code === 0, exit: j.code, timedOut: false, stdout, stderr, ms: j.ms, ran: j.shown, binary, json: true, lines: parsed.ok ? parsed.lines || [] : undefined, error_at: at || undefined };
+  }
+  if (j.timedOut) return { ok: false, exit: j.code, timedOut: true, stdout: j.stdout, stderr: j.stderr, ms: j.ms, ran: j.shown, binary, json: true };
+  // THE PLAIN PATH, the fallback: a settle built before --json refuses the option, so the program runs as before
   const r = await run(found.bin, [prog], { cwd, timeoutMs: timeout_ms });
-  return { ok: r.code === 0 && !r.timedOut, exit: r.code, timedOut: r.timedOut, stdout: r.stdout, stderr: r.stderr, ms: r.ms, ran: r.shown, binary: `${found.bin} (from ${found.how})` };
+  return { ok: r.code === 0 && !r.timedOut, exit: r.code, timedOut: r.timedOut, stdout: r.stdout, stderr: r.stderr, ms: r.ms, ran: r.shown, binary, json: false };
 }
 
-// Kanerva's terms (experiments/thermosim/kanerva/KANERVA_TERMS.md); the words a keyword may be spelt with include a hyphen.
+// settle's one JSON object ({"settle": version, "ok": true, "lines": [...]} or {"ok": false, "error": {...}}), or null
+// when stdout is not one (a binary without --json prints its usage error instead)
+export function parseSettleJson(stdout) {
+  try {
+    const o = JSON.parse(String(stdout ?? '').trim());
+    return o && typeof o === 'object' && typeof o.settle === 'string' && typeof o.ok === 'boolean' ? o : null;
+  } catch {
+    return null;
+  }
+}
+
+// the two excerpt lines the CLI prints under an error, drawn from the JSON's line, column and width and the program
+// file itself (the same shape explain_error reads: "   N | <line>" and "     | ^^^ column C"); '' when the error names
+// no line or the file cannot be read
+export function caretLines(file, at) {
+  if (!at || !Number.isInteger(at.line) || !Number.isInteger(at.column)) return '';
+  let text;
+  try {
+    text = fs.readFileSync(file, 'utf8').split('\n')[at.line - 1];
+  } catch {
+    return '';
+  }
+  if (text == null) return '';
+  const n = String(at.line);
+  const pad = ' '.repeat(n.length + 3);
+  const width = Math.max(1, Number.isInteger(at.width) ? at.width : 1);
+  return `${' '.repeat(Math.max(0, 4 - n.length))}${n} | ${text}\n${pad.slice(0, Math.max(0, 4 - n.length) + n.length)} | ${' '.repeat(at.column - 1)}${'^'.repeat(width)} column ${at.column}\n`;
+}
+
+// Kanerva's terms (SETTLE/kanerva/KANERVA_TERMS.md); the words a keyword may be spelt with include a hyphen.
 export const DEFAULT_SDM_WORDS = { declare: 'sdm', size: 'word-size', locations: 'hard-locations', seed: 'seed', address: 'read-address', noise: 'address-noise', iterations: 'iterated-reads' };
 
 export function sdmKeywords(helpText) {
@@ -110,11 +186,15 @@ export function sdmKeywords(helpText) {
 
 export const isSymbol = (n) => /^[A-Za-z_][A-Za-z0-9_]*$/.test(String(n));
 
-export function sdmProgram({ patterns, read, noise = 0.2, size = 256, locations = 2000, seed = 1, reads = 1 }, w) {
-  const lines = ['# written by settle-mcp: store patterns in a sparse distributed memory, then read one back', 'model :mind do', `  ${w.declare} :s, ${w.size}: ${size}, ${w.locations}: ${locations}`];
-  for (const p of patterns) lines.push(p.text != null ? `  s.write :${p.name}, "${String(p.text).replace(/"/g, "'")}"` : `  s.write :${p.name}`);
+// a stored text is one SETTLE string: a double quote becomes a single one and a line break a space, because a SETTLE
+// string has no escape and ends at its line (the reply shows the program, so the change is visible)
+export const settleString = (t) => String(t).replace(/"/g, "'").replace(/\r?\n|\r/g, ' ');
+
+export function sdmProgram({ patterns, read, address_noise = 0.2, word_size = 256, hard_locations = 2000, seed = 1, reads = 1 }, w) {
+  const lines = ['# written by settle-mcp: store patterns in a sparse distributed memory, then read one back', 'model :mind do', `  ${w.declare} :s, ${w.size}: ${word_size}, ${w.locations}: ${hard_locations}`];
+  for (const p of patterns) lines.push(p.text != null ? `  s.write :${p.name}, "${settleString(p.text)}"` : `  s.write :${p.name}`);
   lines.push('end', '', 'run :mind do');
-  for (let k = 0; k < reads; k++) lines.push(`  s.read ${w.address}: :${read}, ${w.noise}: ${noise}, seed: ${seed + k}`);
+  for (let k = 0; k < reads; k++) lines.push(`  s.read ${w.address}: :${read}, ${w.noise}: ${address_noise}, seed: ${seed + k}`);
   lines.push('end', '');
   return lines.join('\n');
 }
@@ -123,7 +203,7 @@ export async function sdmStoreRecall(opts) {
   const found = resolveSettle(opts.settle);
   if (!found.bin) return { ok: false, error: NOT_SET_UP, tried: found.tried };
   const bad = [...opts.patterns.map((p) => p.name), opts.read].filter((n) => !isSymbol(n));
-  if (bad.length) return { ok: false, error: `names must be plain words (letters, digits, _): ${bad.join(', ')}` };
+  if (bad.length) return { ok: false, error: `names must be plain words: letters, digits and _, starting with a letter or _ (these are not: ${bad.join(', ')})` };
   const help = await run(found.bin, ['--help'], { timeoutMs: 15_000 });
   const { words, fromHelp } = sdmKeywords(help.stdout);
   const source = sdmProgram(opts, words);
@@ -131,12 +211,59 @@ export async function sdmStoreRecall(opts) {
   return { ...r, program: source, keywords: words, keywordsFrom: fromHelp ? `\`${showCommand(found.bin, ['--help'])}\`` : 'the built-in defaults (the --help text could not be parsed)' };
 }
 
-export async function kanervaQuickstart({ kanerva, dry_run = false, timeout_ms = 300_000 } = {}) {
+export const NO_KANERVA = 'The kanerva command is not built on this machine yet. Run the `setup` tool (it builds it with `cargo build --release --bins` in the kanerva folder), or pass `kanerva_bin` with the path of a built binary.';
+
+// a .kanerva program (SETTLE's syntax, the sdm family only) run by the kanerva command, from a file, from program text,
+// or by the name of one of the crate's own programs (programs/<name>.kanerva in the kanerva folder setup made)
+export async function runKanerva({ path: file, source, program, kanerva_bin, kanerva, timeout_ms = 60_000 } = {}) {
+  const found = resolveKanervaBin(kanerva_bin);
+  if (!found.bin) return { ok: false, error: NO_KANERVA, tried: found.tried };
+  let prog = file && path.resolve(file);
+  let cwd = prog && path.dirname(prog);
+  let expected = null;
+  if (!prog && program) {
+    const dir = resolveKanerva(kanerva);
+    const name = String(program).replace(/\.kanerva$/, '');
+    if (!dir || !fs.existsSync(path.join(dir, 'programs', `${name}.kanerva`))) {
+      const have = dir && fs.existsSync(path.join(dir, 'programs')) ? fs.readdirSync(path.join(dir, 'programs')).filter((f) => f.endsWith('.kanerva')).map((f) => f.slice(0, -8)) : [];
+      return { ok: false, error: `No program named "${name}" in ${dir ? path.join(dir, 'programs') : 'a kanerva folder (none found; run setup or pass kanerva)'}.${have.length ? ` These exist: ${have.join(', ')}.` : ''}` };
+    }
+    cwd = dir;
+    prog = path.join(dir, 'programs', `${name}.kanerva`);
+    const out = path.join(dir, 'programs', `${name}.out`);
+    if (fs.existsSync(out)) expected = fs.readFileSync(out, 'utf8');
+  }
+  if (!prog) {
+    if (!source) return { ok: false, error: 'give one of path (a .kanerva file), source (the program text) or program (the name of one of the crate\'s programs, for example sdm)' };
+    cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'settle-mcp-'));
+    prog = path.join(cwd, 'program.kanerva');
+    fs.writeFileSync(prog, source);
+  } else if (!fs.existsSync(prog)) return { ok: false, error: `no file at ${prog}` };
+  const r = await run(found.bin, [prog], { cwd, timeoutMs: timeout_ms });
+  return { ok: r.code === 0 && !r.timedOut, exit: r.code, timedOut: r.timedOut, stdout: r.stdout, stderr: r.stderr, ms: r.ms, ran: r.shown, binary: `${found.bin} (from ${found.how})`, ...(expected != null ? { matches_recorded_output: r.stdout === expected, recorded: `programs/${path.basename(prog, '.kanerva')}.out` } : {}) };
+}
+
+// the version line of a built binary (settle --version, kanerva --version), or null
+export async function binVersion(bin) {
+  if (!bin) return null;
+  const r = await run(bin, ['--version'], { timeoutMs: 15_000 });
+  return r.code === 0 ? r.stdout.trim().split('\n')[0] : null;
+}
+
+export async function kanervaQuickstart({ kanerva, example = 'quickstart', dry_run = false, timeout_ms = 300_000 } = {}) {
   const dir = resolveKanerva(kanerva);
   if (!dir) return { ok: false, error: 'No kanerva crate found. Run `setup`, or pass kanerva with the folder that holds its Cargo.toml.' };
-  const args = ['run', '--release', '--example', 'quickstart'];
+  const name = String(example).replace(/\.rs$/, '');
+  const exdir = path.join(dir, 'examples');
+  if (!/^[A-Za-z0-9_]+$/.test(name) || !fs.existsSync(path.join(exdir, `${name}.rs`))) {
+    const have = fs.existsSync(exdir) ? fs.readdirSync(exdir).filter((f) => f.endsWith('.rs')).map((f) => f.slice(0, -3)).sort() : [];
+    return { ok: false, error: `No example named "${name}" in ${exdir}.${have.length ? ` These exist: ${have.join(', ')}.` : ''}` };
+  }
+  const args = ['run', '--release', '--example', name];
   const shown = showCommand('cargo', args, dir);
   if (dry_run) return { ok: true, dry_run: true, would_run: shown };
   const r = await run('cargo', args, { cwd: dir, timeoutMs: timeout_ms });
-  return { ok: r.code === 0, exit: r.code, stdout: r.stdout, stderr: r.code === 0 ? '' : r.stderr, ran: shown, ms: r.ms };
+  const rec = path.join(exdir, `${name}.out`);
+  const recorded = fs.existsSync(rec) ? fs.readFileSync(rec, 'utf8') : null;
+  return { ok: r.code === 0, exit: r.code, stdout: r.stdout, stderr: r.code === 0 ? '' : r.stderr, ran: shown, ms: r.ms, example: name, ...(recorded != null && r.code === 0 ? { matches_recorded_output: r.stdout === recorded } : {}) };
 }

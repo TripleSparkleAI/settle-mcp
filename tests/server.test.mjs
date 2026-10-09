@@ -7,6 +7,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +15,7 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 import { staleFiles, termsTables, boldDefinitions, statementRows, jsxProse, vocabularyRows } from '../tools/build_mcp_docs.mjs';
 import { sdmKeywords, sdmProgram, DEFAULT_SDM_WORDS } from '../src/usage.js';
+import { parseErrorText, documentedErrors, loadContent } from '../src/content.js';
 import { planSetup, planId } from '../src/setup.js';
 import { refuseSudo, showCommand } from '../src/exec.js';
 import { TOOLS, TOOL_NAMES, SDK_VERSION } from '../src/server.js';
@@ -23,6 +25,9 @@ const PKG = path.resolve(HERE, '..');
 const SETTLE_RS = process.env.SETTLE_TEST_SOURCE || path.resolve(PKG, '..', 'settle-rs'); // SETTLE_TEST_SOURCE: settle-rs elsewhere
 const BUILT = process.env.SETTLE_TEST_BIN || path.join(SETTLE_RS, 'target', 'release', 'settle'); // SETTLE_TEST_BIN: a build kept outside the tree
 const HAVE_BUILD = fs.existsSync(BUILT);
+const KANERVA_DIR = path.resolve(SETTLE_RS, '..', 'kanerva');
+const KBUILT = process.env.KANERVA_TEST_BIN || path.join(KANERVA_DIR, 'target', 'release', 'kanerva'); // KANERVA_TEST_BIN: a kanerva command kept outside the tree
+const HAVE_KBUILD = fs.existsSync(KBUILT) && fs.existsSync(path.join(KANERVA_DIR, 'programs'));
 const HAVE_SOURCE = fs.existsSync(path.join(SETTLE_RS, 'Cargo.toml'));
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'settle-mcp-test-'));
 
@@ -96,7 +101,7 @@ test('every generated doc matches a fresh build from the site (no drift)', async
   assert.deepEqual(await staleFiles(), [], 'run `npm run build-docs` in settle-mcp');
 });
 
-const SITE_DOCS = path.resolve(PKG, '..', '..', '..', 'sites', 'settle-site', 'src', 'data', 'mcpDocs.js');
+const SITE_DOCS = path.resolve(PKG, '..', '..', 'SETTLE', 'settle-site', 'src', 'data', 'mcpDocs.js');
 test("the tool descriptions are the site's words, and the server registers exactly the site's tools", { skip: !fs.existsSync(SITE_DOCS) && 'a standalone copy: no site beside the package' }, () => {
   const site = fs.readFileSync(SITE_DOCS, 'utf8');
   for (const t of TOOLS) assert.ok(site.includes(t.description), t.name);
@@ -168,6 +173,100 @@ test('explain_error finds the documented cause and a tested program that makes i
   assert.ok(r.data.matches.some((m) => /closing quote/.test(m.message)), JSON.stringify(r.data.matches));
 });
 
+test('explain_error reads an error as the command prints it: the caret line, the column, the suggestion', async () => {
+  const printed = 'settle: line 2: thing does not take `leens:`; did you mean `leans:`?\n   2 |   thing :rain, leens: :no\n     |                ^^^^^^ column 16';
+  const p = parseErrorText(printed);
+  assert.deepEqual([p.program, p.line, p.column, p.marked, p.suggestion], ['settle', 2, 16, 'leens:', 'leans:']);
+  assert.equal(p.message, 'thing does not take `leens:`; did you mean `leans:`?', 'the caret lines are not part of the message');
+  const r = await call('explain_error', { message: printed });
+  assert.ok(r.data.matches.some((m) => m.message.includes('does not take')), JSON.stringify(r.data.matches));
+  assert.match(r.text, /The caret marks `leens:`/);
+  assert.match(r.text, /The interpreter suggests `leans:` in place of `leens:`/);
+  assert.ok(r.data.matches.every((m) => !/\s"|"\s*,/.test(m.cause.replace(/"[^"]*"/g, ''))), 'a double-backtick span becomes one quoted phrase');
+  assert.match(r.data.matches.find((m) => m.message.includes('does not take')).cause, /The hint is "did you mean <key>:\?"/);
+  // negative control: the first line alone still matches, and has no caret to report
+  const bare = parseErrorText(printed.split('\n')[0]);
+  assert.equal(bare.column, null);
+  assert.equal(bare.marked, null);
+  // the double-backtick rows of the error tables are read (the keyword error is one)
+  assert.ok(documentedErrors(loadContent()).some((d) => d.message.startsWith('<statement> does not take')));
+  const k = parseErrorText('kanerva: line 3: sdm word-size must be between 16 and 4096');
+  assert.deepEqual([k.program, k.line], ['kanerva', 3]);
+});
+
+test('run_kanerva and the kanerva command: plain refusal before setup, a program by name, an error marked', async () => {
+  const none = await call('run_kanerva', { program: 'sdm' });
+  assert.equal(none.isError, true);
+  assert.match(none.text, /kanerva command is not built/);
+  const { tools } = await client.listTools();
+  const rk = tools.find((t) => t.name === 'run_kanerva').inputSchema.properties;
+  assert.deepEqual(Object.keys(rk).sort(), ['kanerva', 'kanerva_bin', 'path', 'program', 'source', 'timeout_ms']);
+  assert.ok(tools.find((t) => t.name === 'kanerva_quickstart').inputSchema.properties.example, 'kanerva_quickstart takes example');
+});
+
+test('run_kanerva runs a crate program and checks it against its recorded output', { skip: !HAVE_KBUILD && 'no kanerva command built beside the package' }, async () => {
+  const r = await call('run_kanerva', { program: 'sdm', kanerva_bin: KBUILT, kanerva: KANERVA_DIR });
+  assert.equal(r.data.exit, 0, r.text);
+  assert.equal(r.data.matches_recorded_output, true, r.text);
+  assert.equal(r.data.stdout, fs.readFileSync(path.join(KANERVA_DIR, 'programs', 'sdm.out'), 'utf8'));
+  const bad = await call('run_kanerva', { source: 'model :m do\n  sdm :s, word-size: 8\nend\n', kanerva_bin: KBUILT });
+  assert.equal(bad.isError, true);
+  assert.match(bad.data.stderr, /^kanerva: line 2:/);
+  const unknown = await call('run_kanerva', { program: 'no-such-program', kanerva_bin: KBUILT, kanerva: KANERVA_DIR });
+  assert.equal(unknown.isError, true);
+  assert.match(unknown.text, /These exist: .*sdm/);
+});
+
+test('setup builds the kanerva command and verifies it on one of its programs', { skip: !HAVE_SOURCE && 'no settle-rs beside the package' }, () => {
+  const plan = planSetup({ folder: path.join(TMP, 'k'), settle_source: SETTLE_RS });
+  assert.ok(plan.steps.some((s) => s.shown.includes('cargo build --release --bins --example quickstart')), plan.steps.map((s) => s.shown).join('\n'));
+  assert.ok(plan.steps.some((s) => s.kind === 'verify-kanerva'));
+  assert.match(plan.kanerva_bin, /kanerva[\\/]target[\\/]release[\\/]kanerva(\.exe)?$/);
+  const noq = planSetup({ folder: path.join(TMP, 'k'), settle_source: SETTLE_RS, build_quickstart: false });
+  assert.ok(noq.steps.some((s) => s.shown.endsWith('cargo build --release --bins)')), 'without the quickstart, the command is still built');
+});
+
+test('the README a stranger reads: the one command first, every agent in order, every tool with an example', () => {
+  const readme = fs.readFileSync(path.join(PKG, 'README.md'), 'utf8');
+  const body = readme.replace(/^<!--[\s\S]*?-->\s*/, '');
+  const firstFence = body.match(/```sh\n([^\n]+)\n```/);
+  assert.equal(firstFence[1], 'claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp', 'the first command in the README is the one command');
+  const order = ['Hermes', 'Claude Code', 'Claude Desktop', 'Codex', 'Cursor', 'Windsurf', 'Cline', 'Gemini CLI', 'Zed', 'VS Code (GitHub Copilot)', 'Continue'];
+  const at = order.map((n) => body.indexOf(`### ${n}\n`));
+  assert.ok(at.every((i) => i > 0), `every agent has a section: ${order.filter((n, i) => at[i] < 0).join(', ')}`);
+  assert.deepEqual([...at].sort((a, b) => a - b), at, 'the agents come in the navigator\'s order, Hermes first');
+  for (const t of TOOLS) assert.ok(new RegExp(`- \`${t.name}\`: [\\s\\S]*?Example: \``).test(body), `${t.name} has an example`);
+  for (const t of TOOLS) assert.doesNotThrow(() => JSON.parse(t.example), `${t.name}'s example is JSON`);
+  for (const w of ['Node 18', 'Rust', 'MIT', 'sudo', 'issues', 'dry run']) assert.ok(body.includes(w), `the README says ${w}`);
+  assert.ok(fs.existsSync(path.join(PKG, 'docs', 'INSTALL.md')));
+});
+
+test('the README opens with the repository banner, and the READMEs served to agents carry none', () => {
+  const readme = fs.readFileSync(path.join(PKG, 'README.md'), 'utf8');
+  const m = /^<!-- settle-banner -->\n```text\n([\s\S]*?)\n```\n\n<!-- GENERATED /.exec(readme);
+  assert.ok(m, 'the banner block is the first thing in the README, then the generated marker');
+  const lines = m[1].split('\n');
+  assert.equal(lines.length, 7, 'seven banner lines');
+  assert.equal(lines[5], '↑↓↓↑↓↑↑↑↑↑ ●●●●●●●●', 'the p-bit strip');
+  assert.match(lines[6], /^✦ an MCP server/, 'the description line');
+  // the documents the server hands an agent go without the banner (the build strips it)
+  const docs = JSON.parse(fs.readFileSync(path.join(PKG, 'content', 'docs.json'), 'utf8')).docs;
+  const readmes = docs.filter((d) => /:\/\/readme$/.test(d.uri));
+  assert.ok(readmes.length >= 2, 'the SETTLE and KANERVA READMEs are served');
+  for (const d of readmes) assert.ok(!d.text.includes('<!-- settle-banner -->'), `${d.uri} carries no banner`);
+});
+
+test('package.json points at the repository, the issues and the licence, and stays unpublishable by accident', () => {
+  const pkg = JSON.parse(fs.readFileSync(path.join(PKG, 'package.json'), 'utf8'));
+  assert.equal(pkg.repository.url, 'git+https://github.com/triplesparkle/settle-mcp.git');
+  assert.equal(pkg.bugs.url, 'https://github.com/triplesparkle/settle-mcp/issues');
+  assert.equal(pkg.homepage, 'https://github.com/triplesparkle/settle-mcp#readme');
+  assert.equal(pkg.license, 'MIT');
+  assert.equal(pkg.private, true, 'private: true blocks npm publish; npx github: still runs it');
+  assert.deepEqual(Object.keys(pkg.bin), ['settle-mcp'], 'one bin, so npx picks it');
+  assert.match(fs.readFileSync(path.join(PKG, pkg.bin['settle-mcp']), 'utf8'), /^#!\/usr\/bin\/env node\n/);
+});
+
 test('setup dry run lists every command and runs none of them', { skip: !HAVE_SOURCE && 'no settle-rs beside the package (set SETTLE_TEST_SOURCE)' }, async () => {
   const folder = path.join(TMP, 'dry');
   const r = await call('setup', { folder, settle_source: SETTLE_RS });
@@ -220,9 +319,38 @@ test('the sdm keywords are read from the help text, so a rename reaches the prog
   assert.equal(DEFAULT_SDM_WORDS.address, 'read-address');
 });
 
-test('usage tools say plainly when SETTLE is not built', async () => {
+test('usage tools say plainly when SETTLE is not built, and mark the reply as an error', async () => {
   const r = await call('run_program', { source: 'model :m do\nend\n' });
   assert.match(r.text, /not built on this machine yet/);
+  assert.equal(r.isError, true);
+});
+
+test('a refusal or a missing name is marked isError; a good answer is not', async () => {
+  assert.equal((await call('get_example', { name: 'no-such-example' })).isError, true);
+  assert.equal((await call('read_doc', { name: 'no-such-doc-zq' })).isError, true);
+  assert.equal((await call('setup', { folder: path.join(TMP, 'm'), settle_source: SETTLE_RS, dry_run: false, confirm: 'wrong' })).isError, true);
+  assert.notEqual((await call('get_example', { name: 'core-ask' })).isError, true, 'negative control: a found example is no error');
+});
+
+test('the tool schemas speak Kanerva\'s terms and keep a setup call under a 60 s client timeout', async () => {
+  const { tools } = await client.listTools();
+  const sdm = tools.find((t) => t.name === 'sdm_store_recall').inputSchema.properties;
+  assert.deepEqual(['address_noise', 'word_size', 'hard_locations'].filter((k) => !sdm[k]), []);
+  assert.deepEqual(['noise', 'size', 'locations'].filter((k) => sdm[k]), [], 'the old argument names are gone');
+  const wait = tools.find((t) => t.name === 'setup').inputSchema.properties.wait_seconds;
+  assert.ok(wait.maximum < 60, `wait_seconds maximum ${wait.maximum}`);
+  for (const t of tools) for (const [k, v] of Object.entries(t.inputSchema.properties || {})) assert.ok(v.description || k === 'patterns', `${t.name}.${k} has no description`);
+});
+
+test('the package ships every file the server reads, and no machine path', () => {
+  const out = execFileSync('npm', ['pack', '--dry-run', '--json', '--ignore-scripts'], { cwd: PKG, encoding: 'utf8' });
+  const files = JSON.parse(out)[0].files.map((f) => f.path);
+  for (const need of ['src/bin.js', 'src/server.js', 'tools/build_mcp_docs.mjs', 'content/docs.json', 'AGENTS.md', 'docs/USAGE.md', 'docs/SETUP.md', 'docs/INSTALL.md', 'docs/GLOSSARY.md', 'README.md', 'CHANGELOG.md', 'LICENSE']) assert.ok(files.includes(need), `${need} is not in the package`);
+  assert.deepEqual(files.filter((f) => /^(tests|node_modules)\/|RELEASE_CHECKLIST|export_|record-showcase/.test(f)), [], 'nothing for the repository only');
+  for (const f of files) {
+    const text = fs.readFileSync(path.join(PKG, f), 'utf8');
+    assert.ok(!/\/Users\/|\/home\/[a-z]|\/private\/var|\/var\/folders/.test(text), `${f} carries a machine path`);
+  }
 });
 
 test('run_program on a known program matches its stored output', { skip: !HAVE_BUILD && 'no settle-rs build beside the package' }, async () => {
@@ -236,17 +364,22 @@ test('run_program on a known program matches its stored output', { skip: !HAVE_B
 });
 
 test('sdm_store_recall writes, reads back and shows its program', { skip: !HAVE_BUILD && 'no settle-rs build beside the package' }, async () => {
-  const r = await call('sdm_store_recall', { patterns: [{ name: 'cat' }, { name: 'dog' }, { name: 'note', text: 'meet at nine' }], read: 'note', noise: 0.15, settle: BUILT });
+  const r = await call('sdm_store_recall', { patterns: [{ name: 'cat' }, { name: 'dog' }, { name: 'note', text: 'meet at nine' }], read: 'note', address_noise: 0.15, settle: BUILT });
   assert.equal(r.data.exit, 0, r.text);
   assert.match(r.data.stdout, /-> :note/);
   assert.match(r.data.stdout, /meet at nine/);
   assert.match(r.data.keywordsFrom, /--help/);
+  assert.match(r.data.program, /address-noise: 0\.15/, 'address_noise reached the program');
+  const multi = await call('sdm_store_recall', { patterns: [{ name: 'note', text: 'two "quoted"\nlines' }], read: 'note', settle: BUILT });
+  assert.equal(multi.data.exit, 0, multi.text);
+  assert.match(multi.data.program, /s\.write :note, "two 'quoted' lines"/);
 });
 
 test('a full setup from a local folder builds and verifies', { skip: process.env.SETTLE_MCP_E2E_BUILD !== '1' && 'set SETTLE_MCP_E2E_BUILD=1', timeout: 1_200_000 }, async () => {
   const folder = path.join(TMP, 'real');
   const dry = await call('setup', { folder, settle_source: SETTLE_RS });
-  let r = await call('setup', { folder, settle_source: SETTLE_RS, dry_run: false, confirm: dry.data.plan_id, wait_seconds: 600 });
+  // the default wait (50 s) stays under the SDK client's 60 s request timeout; the build goes on and is polled
+  let r = await call('setup', { folder, settle_source: SETTLE_RS, dry_run: false, confirm: dry.data.plan_id });
   while (r.data.state === 'running') {
     await new Promise((res) => setTimeout(res, 5000));
     r = await call('setup_status', { job: r.data.job });
@@ -257,5 +390,9 @@ test('a full setup from a local folder builds and verifies', { skip: process.env
   assert.equal(run.data.exit, 0, run.text);
   const q = await call('kanerva_quickstart', {});
   assert.equal(q.data.exit, 0, q.text);
-  assert.match(q.data.stdout, /memory: 50000 locations/);
+  // the crate's own recorded output is the reference, so a KANERVA rewording cannot leave this test behind
+  assert.equal(q.data.matches_recorded_output, true, q.text);
+  assert.match(q.data.stdout, /^memory: 50000 hard-locations/);
+  const k = await call('run_kanerva', { program: 'sdm' });
+  assert.equal(k.data.matches_recorded_output, true, k.text);
 });

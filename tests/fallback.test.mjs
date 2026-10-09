@@ -53,7 +53,7 @@ test('no settle-mcp source names cue: or damage: as a word the tool writes today
   }
 });
 
-const BIN = [process.env.SETTLE_TEST_BIN, path.resolve(PKG, '..', 'settle-rs', 'target', 'release', 'settle'), path.resolve(PKG, '..', '..', '..', '..', '..', 'experiments', 'thermosim', 'settle-rs', 'target', 'release', 'settle')].find((p) => p && fs.existsSync(p));
+const BIN = [process.env.SETTLE_TEST_BIN, path.resolve(PKG, '..', 'settle-rs', 'target', 'release', 'settle'), path.resolve(PKG, '..', '..', '..', '..', 'SETTLE', 'settle-rs', 'target', 'release', 'settle')].find((p) => p && fs.existsSync(p));
 
 test('the fallback program runs on a real settle build', { skip: BIN ? false : 'no settle build found' }, async () => {
   const r = await runProgram({ source: program(fallback().words), settle: BIN, timeout_ms: 60_000 });

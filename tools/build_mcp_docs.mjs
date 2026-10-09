@@ -11,13 +11,19 @@
 // docsFrom(...) / examplesFrom(...) - the SETTLE docs and their tested examples
 // statementRows / familyRows / tokenRows / boldDefinitions / moduleRows / termsTables / vocabularyRows - glossary
 //                                  readers, one per kind of source
+// loadBanner(root)               - SETTLE/tools/readme_banner.mjs, the repository banner tool, or null when absent
 // loadWtf(root) / wtfRows(w) / wtfMd(w) - the site's glossary (src/wtf/terms.js, #/glossary), imported as a module:
 //                                  one glossary row per term, and the whole index as docs/site/glossary.md
 // buildAll({ root, override })   - { files: { relPath: text }, hash, inputs } : every generated file, in memory
 // inputsHash({ root, override }) - the content hash of what the build reads (cheap; the server checks it on start)
 // agentsMd(...) / instructionsText(...) - AGENTS.md (the main agent document) and the server's initialize instructions,
 //                                  both from the WHO YOU ARE guides and the MCP's own words
-// writeAll(build)                - writes the files under this package
+// siteAgentFiles(D, files, docs) - the site's files for agents: /llms.txt (also at /.well-known/llms.txt), /llms-full.txt,
+//                               /llms/** and /robots.txt
+// llmsPath(uri)                  - where a document's Markdown mirror sits under the site's public/llms/
+// readmeMd / installMd / agentMd - the README, docs/INSTALL.md and one agent's install guide
+// kanervaProgramDocs(files)      - the kanerva command's programs/*.kanerva, each with its recorded output, as documents
+// writeAll(build)                - writes the files under this package and the site's agent files
 // isStale({ root })              - true when the generated files on disk differ from a fresh build
 // ensureFresh()                  - rebuild when the inputs exist and their hash differs from content/inputs.json
 // main                           - `node tools/build_mcp_docs.mjs` writes; `--check` exits 1 when stale
@@ -26,7 +32,7 @@
 // - THE WEBSITE IS THE SOURCE OF TRUTH (the navigator, 2026-10-01). README.md, AGENTS.md, docs/*.md, docs/site/*.md,
 //   docs/who-you-are/**/*.md (the three audience guides, lane WHOYOUARE),
 //   content/docs.json (the search index the help tool serves) and content/inputs.json (the hashes) are all written
-//   here and never by hand. The MCP's own words live in sites/settle-site/src/data/mcpDocs.js, which the #/mcp page
+//   here and never by hand. The MCP's own words live in SETTLE/settle-site/src/data/mcpDocs.js, which the #/mcp page
 //   renders; the tool descriptions the server registers come from there too.
 // - THE HASH is over what the build EXTRACTS from each input (a page's prose, a catalogue's text), not the file
 //   bytes, so a code change in a page that moves no prose does not mark the docs stale. inputs.json keeps one sha256
@@ -37,6 +43,12 @@
 //   drops any other {expression}. A paragraph left with markup in it is skipped rather than half-shown.
 // - Outputs carry no timestamp, so two builds of the same site are byte-identical.
 // - In a standalone copy of the package (no site beside it) nothing is rebuilt; the committed files are served.
+// - THE BANNER (lane REPOBANNERS, 2026-10-09): the README opens with the settle banner every exported repository wears,
+//   written here through SETTLE/tools/readme_banner.mjs (withBanner, the same block its --write puts on the other
+//   seven READMEs), never by hand. The SETTLE and KANERVA READMEs this build serves to agents have their banner
+//   stripped, and so does this package's own README where the site mirrors it for agents (llms/settle-mcp, llms-full):
+//   it decorates a repository's front page and carries nothing an agent needs. The banner's text is one of
+//   the hashed inputs, so a changed description re-stales the docs.
 // </claudes_code_comments>
 
 import fs from 'node:fs';
@@ -49,11 +61,11 @@ export const PKG = path.resolve(HERE, '..');
 const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
 
 export function repoRoot() {
-  return process.env.SETTLE_MCP_REPO_ROOT || path.resolve(PKG, '..', '..', '..');
+  return process.env.SETTLE_MCP_REPO_ROOT || path.resolve(PKG, '..', '..');
 }
 
-const SITE = 'sites/settle-site';
-const TR = 'experiments/thermosim';
+const SITE = 'SETTLE/settle-site';
+const TR = 'SETTLE';
 export const INPUTS = {
   mcp: `${SITE}/src/data/mcpDocs.js`,
   strings: `${SITE}/i18n/en.json`,
@@ -72,7 +84,9 @@ export const INPUTS = {
   settleReadme: `${TR}/settle-rs/README.md`,
   kanervaReadme: `${TR}/kanerva/README.md`,
   kanervaTerms: `${TR}/kanerva/KANERVA_TERMS.md`,
+  kanervaPrograms: `${TR}/kanerva/programs`,
   wtf: `${SITE}/src/wtf/terms.js`,
+  banner: `${TR}/tools/readme_banner.mjs`,
   whoYouAre: `${SITE}/docs/who-you-are`,
 };
 // WHO YOU ARE (lane WHOYOUARE, 2026-10-02): the three audience guides, in the order the site shows them
@@ -104,6 +118,7 @@ export function readInputs(root = repoRoot(), override = {}) {
     settleReadme: rd(INPUTS.settleReadme),
     kanervaReadme: rd(INPUTS.kanervaReadme),
     kanervaTerms: rd(INPUTS.kanervaTerms),
+    kanervaPrograms: walk(path.join(root, INPUTS.kanervaPrograms), (n) => /\.(kanerva|out)$/.test(n)).map(rel).map((p) => ({ path: p, text: rd(p) })),
     whoYouAre: {
       index: rd(`${INPUTS.whoYouAre}/README.md`),
       guides: AUDIENCES.map((f) => ({ folder: f, path: `${INPUTS.whoYouAre}/${f}/README.md`, text: rd(`${INPUTS.whoYouAre}/${f}/README.md`) })).filter((g) => g.text != null),
@@ -341,34 +356,114 @@ const GEN = (from) => `<!-- GENERATED by tools/build_mcp_docs.mjs from ${from}. 
 const fence = (code, lang = '') => `\`\`\`${lang}\n${code}\n\`\`\``;
 const sectionMd = (s, level = '##') => [`${level} ${s.h}`, '', ...s.paras.flatMap((p) => [p, '']), ...(s.code ? [fence(s.code, s.lang), ''] : [])].join('\n');
 
-function readmeMd(D, sdk) {
+// one agent's install guide: where it keeps servers, how, the command or config, the other form, the page it came from
+export const agentMd = (a, level = '###') =>
+  [`${level} ${a.name}`, '', `Where: ${a.where}.`, '', ...a.how.flatMap((h) => [h, '']), ...(a.install ? [`One-click install (${{ cursor: 'Add to Cursor', vscode: 'Install in VS Code' }[a.install.kind]}), the agent's documented link format (${a.install.format}):`, '', fence(a.install.href, 'text'), ''] : []), fence(a.code, a.lang), '', ...(a.also ? ['Or the same entry by hand:', '', fence(a.also, a.alsoLang), ''] : []), `Source: ${a.source}`, ''].join('\n');
+
+const toolLine = (t) => `- \`${t.name}\`: ${t.description}${t.example ? `\n  Example: \`${t.example.replace(/\n/g, '\\n')}\`` : ''}`;
+
+export function readmeMd(D, sdk, pkg) {
+  const O = D.oneCommand;
   return [
-    GEN('sites/settle-site/src/data/mcpDocs.js'),
+    GEN('SETTLE/settle-site/src/data/mcpDocs.js'),
     `# ${D.name}`,
     '',
     D.line,
     '',
-    `> ${D.rule}`,
+    `## ${O.h}`,
     '',
-    `Built on \`@modelcontextprotocol/sdk\` ${sdk}, stdio transport. MIT licence.`,
+    fence(O.code, O.lang),
     '',
-    '## The three parts',
+    ...O.paras.flatMap((p) => [p, '']),
+    '| when | the server command | |',
+    '|---|---|---|',
+    ...O.states.map((st) => `| ${st.when} | \`${st.code}\` | ${st.note} |`),
     '',
-    ...D.parts.flatMap((p) => [`### PART ${['ONE', 'TWO', 'THREE'][p.n - 1]} · ${p.title}`, '', p.line, '', ...D.tools.filter((t) => t.part === p.n).map((t) => `- \`${t.name}\`: ${t.description}`), '']),
+    '## What it needs',
+    '',
+    ...D.needs.map((n) => `- ${n}`),
+    '',
+    `Built on \`@modelcontextprotocol/sdk\` ${sdk} over standard input and output (stdio). Version ${pkg.version}. ${D.support.licence}`,
+    '',
+    '## Get it going in your agent',
+    '',
+    `Every agent below starts the same server: the command \`npx\` with the arguments \`-y --allow-git=root github:triplesparkle/settle-mcp\`. From a clone, use the command \`node\` with the path of \`src/bin.js\` instead. The agents come in this order: ${D.agents.map((a) => a.name).join(', ')}.`,
+    '',
+    ...D.agents.map((a) => agentMd(a)),
+    '## The tools, in three parts',
+    '',
+    ...D.parts.flatMap((p) => [`### PART ${['ONE', 'TWO', 'THREE'][p.n - 1]} · ${p.title}`, '', p.line, '', ...D.tools.filter((t) => t.part === p.n).map(toolLine), '']),
+    '## Resources',
+    '',
+    ...D.resources.map((r) => `- \`${r.uri}\`: ${r.what}`),
+    '',
+    '## Prompts',
+    '',
+    ...D.prompts.map((p) => `- \`${p.name}\`: ${p.description}`),
+    '',
+    '## Setting SETTLE up: a dry run, then confirm',
+    '',
+    ...D.setup.filter((x) => /plan|setup does/i.test(x.h)).flatMap((x) => [`### ${x.h}`, '', ...x.paras.flatMap((q) => [q, ''])]),
     '## From scratch',
     '',
-    ...D.walkthrough.map((s, i) => sectionMd({ ...s, h: `${i + 1}. ${s.h}` }, '###')),
+    ...D.walkthrough.map((st, i) => sectionMd({ ...st, h: `${i + 1}. ${st.h}` }, '###')),
+    '## What it never does',
+    '',
+    ...D.never.map((n) => `- ${n}`),
+    '',
+    '## Licence',
+    '',
+    D.support.licence,
+    '',
+    '## Problems',
+    '',
+    D.support.issues,
+    '',
     '## More',
     '',
+    `> ${D.rule}`,
+    '',
+    '- `docs/INSTALL.md`: the install guide for every agent, the same as above.',
     '- `docs/SETUP.md`: setting SETTLE and KANERVA up.',
-    '- `docs/USAGE.md`: the usage tools.',
+    '- `docs/USAGE.md`: the usage tools, `.kanerva` programs, error carets, the Rails builder and calibrated refusal.',
     '- `docs/GLOSSARY.md`: every name, with the doc it comes from.',
     '- `AGENTS.md`: the main agent document: who you are, what this is, where each reader starts, the tools, the docs.',
     '- `docs/who-you-are/`: the three guides, one per reader (programmers, visual artists, sound artists), from the site.',
     '- `docs/site/`: the site pages these docs are built from, as text.',
+    '- `CHANGELOG.md`: what each version changed.',
+    '- `RELEASE_CHECKLIST.md` (in the repository, not in the npm package): what was checked for a release and what is still to decide.',
     '- `npm run build-docs` rebuilds everything from the site; `npm test` runs the tests.',
     '',
   ].join('\n');
+}
+
+export function installMd(D) {
+  const O = D.oneCommand;
+  return [
+    GEN('SETTLE/settle-site/src/data/mcpDocs.js (oneCommand, agents)'),
+    '# Installing settle-mcp in your agent',
+    '',
+    fence(O.code, O.lang),
+    '',
+    ...O.paras.flatMap((p) => [p, '']),
+    ...O.states.map((st) => `- ${st.when}: \`${st.code}\`. ${st.note}`),
+    '',
+    ...D.agents.map((a) => agentMd(a, '##')),
+  ].join('\n');
+}
+
+// the kanerva command's own programs (kanerva/programs/<name>.kanerva and its recorded .out) as documents
+export function kanervaProgramDocs(files) {
+  const by = new Map(files.map((f) => [f.path.split('/').pop(), f]));
+  return [...by.keys()]
+    .filter((n) => n.endsWith('.kanerva'))
+    .map((n) => {
+      const name = n.replace(/\.kanerva$/, '');
+      const prog = by.get(n);
+      const out = by.get(`${name}.out`);
+      const text = [`# ${n}`, '', `A program for the kanerva command: \`kanerva programs/${n}\` (or \`run_kanerva {"program": "${name}"}\`).`, '', '```settle', prog.text.trimEnd(), '```', '', ...(out ? [`Its recorded output, \`programs/${name}.out\`:`, '', '```', out.text.trimEnd(), '```', ''] : [])].join('\n');
+      return { uri: `kanerva://programs/${name}`, name: `kanerva-programs/${name}`, title: `KANERVA program ${n}`, path: prog.path, text };
+    });
 }
 
 function glossaryMd(entries) {
@@ -407,10 +502,14 @@ const readerOf = (folder) => ({ 'for-programmers': 'a programmer or computer sci
 export function agentsMd(D, who, docs, examples, gloss) {
   const byPart = (n) => D.tools.filter((t) => t.part === n).map((t) => `- \`${t.name}\`: ${t.description}`);
   return [
-    GEN('sites/settle-site/docs/who-you-are and sites/settle-site/src/data/mcpDocs.js'),
+    GEN('SETTLE/settle-site/docs/who-you-are and SETTLE/settle-site/src/data/mcpDocs.js'),
     '# AGENTS.md: settle-mcp, for the assistant reading this',
     '',
     `You are connected to ${D.name}: ${lowerFirst(D.line)} Read this document first, then the guide for the person you are helping, then call tools.`,
+    '',
+    '## If you are installing it rather than using it',
+    '',
+    `Add it to the agent you run in with one command, \`${D.oneCommand.code}\`, or the config for your agent in \`docs/INSTALL.md\` (${D.agents.map((a) => a.name).join(', ')}). ${D.needs[0]}`,
     '',
     '## Who you are helping',
     '',
@@ -428,7 +527,7 @@ export function agentsMd(D, who, docs, examples, gloss) {
     '',
     '## Where each reader starts',
     '',
-    '- A programmer: `help` with a topic, `list_examples`, `get_example`, then `check_system` and `setup` (a dry run until confirmed), then `run_program` and `sdm_store_recall`.',
+    '- A programmer: `help` with a topic, `list_examples`, `get_example`, then `check_system` and `setup` (a dry run until confirmed), then `run_program` and `sdm_store_recall`, then `run_kanerva` with `{"program": "sdm"}` to run KANERVA alone.',
     '- A visual artist: the guide first; then `sdm_store_recall` with their own patterns, and `run_program` on the picture program in the guide. The drawing library, settle-see, is a folder of plain JavaScript named in the guide.',
     '- A sound artist: the guide first; then `run_program` on a model that chooses a chord voicing by annealing. The hearing library, settle-hear, and its voices table are named in the guide.',
     '',
@@ -439,6 +538,7 @@ export function agentsMd(D, who, docs, examples, gloss) {
     '',
     `- ${docs.length} documents as resources: the three guides and their index (\`site://who-you-are/...\`), the SETTLE docs (\`settle://docs/...\`, \`settle://readme\`), the KANERVA README (\`kanerva://readme\`${docs.some((d) => d.uri === 'kanerva://terms') ? ' and `kanerva://terms`' : ''}), and the site pages (\`site://...\`). \`read_doc\` with no name lists them.`,
     `- ${examples.length} tested example programs as \`settle://examples/{name}\`; \`list_examples\` and \`get_example\` read them.`,
+    `- ${docs.filter((d) => d.uri.startsWith('kanerva://programs/')).length} programs for the kanerva command as \`kanerva://programs/{name}\` (${docs.filter((d) => d.uri.startsWith('kanerva://programs/')).map((d) => d.uri.split('/').pop()).join(', ')}), each with its recorded output; \`run_kanerva\` runs them.`,
     `- The glossary of ${gloss.length} names as \`settle-mcp://glossary\`; \`help\` with a topic looks one up.`,
     '- `settle-mcp://help` (the three parts and where to start), `settle-mcp://usage`, `settle-mcp://setup`, and this document as `settle-mcp://agents`.',
     '- Prompts: `explain-settling`, `write-settle-program`, `sdm-store-recall`.',
@@ -446,7 +546,9 @@ export function agentsMd(D, who, docs, examples, gloss) {
     '## The rules',
     '',
     '- `setup` is a dry run until you pass `dry_run` false with the plan id it returned as `confirm`, so the person sees every command before anything runs. It never uses sudo.',
-    '- Nothing is published yet: no public package, no public URL. Use the folder or git URL the person gives you.',
+    '- Nothing is published to npm and the repositories are private: never invent a URL. For setup, use the folder or git URL the person gives you.',
+    '- When a program fails, hand `explain_error` the whole printed error: the `settle: line N:` line and the excerpt and caret lines under it. It names the marked word and the suggested fix.',
+    '- `.kanerva` programs hold only the sdm family and run on the kanerva command (`run_kanerva`); `via: :pulls` is the one read only SETTLE runs.',
     '- Quote a number with the document or the program output it came from; the guides name their sources.',
     '- The website is the source of truth: these files are generated from the SETTLE site, and a change belongs there.',
     '',
@@ -458,7 +560,95 @@ export function instructionsText(D, who) {
   return `${D.name}: ${lowerFirst(D.line)} Read the resource settle-mcp://agents (AGENTS.md) first, then the guide for the person you are helping: ${guides}. Then help with a topic, list_examples and get_example, check_system, setup (a dry run until you pass dry_run false with the plan id it returned as confirm), run_program and sdm_store_recall.`;
 }
 
+// ── THE SITE FOR AGENTS (lane MCPREADY, 2026-10-06; the navigator: "make the site good for AGENTS too, so an AI agent can
+// just be pointed at the site and get going"). The site is a single-page app, so an agent that fetches it reads no words.
+// This build also writes, into the site's public/ folder: /llms.txt (llmstxt.org: an H1, a summary, H2 lists of links
+// to Markdown), /llms-full.txt (every doc in one file, Mintlify's convention), /llms/** (a Markdown mirror of every doc
+// the MCP serves, by path) and /robots.txt (everyone allowed, pointing at /llms.txt). They are generated here, from the
+// same inputs, so they can never drift from the MCP's docs; the site's tests fail while they are stale.
+export const SITE_PUBLIC = `${SITE}/public`;
+const WHAT_THIS_IS = [
+  'SETTLE is a small language for settling machines: name yes-or-no things, give them leans and pulls, hold what you know, let the machine settle, and ask it questions. The interpreter is settle-rs, a Rust binary.',
+  'KANERVA is the Rust crate for sparse distributed memory SETTLE uses: write long bit patterns, read one back from a noisy read-address, refuse one that was never stored. Its `kanerva` command runs `.kanerva` programs on KANERVA alone.',
+];
+export function llmsPath(uri) {
+  const [scheme, rest] = uri.split('://');
+  if (scheme === 'site') return rest === 'who-you-are' ? 'llms/who-you-are/README.md' : rest.startsWith('who-you-are/') ? `llms/${rest}.md` : `llms/site/${rest}.md`;
+  if (scheme === 'settle') return rest === 'readme' ? 'llms/settle/README.md' : `llms/settle/${rest}`;
+  if (scheme === 'kanerva') return rest === 'readme' ? 'llms/kanerva/README.md' : rest === 'terms' ? 'llms/kanerva/KANERVA_TERMS.md' : `llms/kanerva/${rest}.md`;
+  return null;
+}
+const MCP_MIRROR = [
+  ['README.md', 'README.md', 'what settle-mcp is, the one command, every agent, the tools with an example each'],
+  ['docs/INSTALL.md', 'INSTALL.md', 'the install guide for each agent: Hermes, Claude Code, Claude Desktop, Codex, Cursor and the rest'],
+  ['AGENTS.md', 'AGENTS.md', 'the document an assistant reads first: who it is helping, the tools, the rules'],
+  ['docs/SETUP.md', 'SETUP.md', 'building SETTLE and KANERVA on a machine: a dry run, then confirm'],
+  ['docs/USAGE.md', 'USAGE.md', 'running programs, .kanerva programs, error carets, the Rails builder, calibrated refusal'],
+];
+
+export function siteAgentFiles(D, files, docs) {
+  const out = {};
+  const pub = (rel) => `${SITE_PUBLIC}/${rel}`;
+  const mirrored = docs.filter((d) => d.uri !== 'site://strings' && llmsPath(d.uri));
+  for (const [from, to] of MCP_MIRROR) out[pub(`llms/settle-mcp/${to}`)] = files[from];
+  for (const d of mirrored) out[pub(llmsPath(d.uri))] = d.text.endsWith('\n') ? d.text : `${d.text}\n`;
+  const link = (rel, title, note) => `- [${title}](/${rel})${note ? `: ${note}` : ''}`;
+  const group = (pred) => mirrored.filter(pred).map((d) => link(llmsPath(d.uri), d.title));
+  out[pub('llms.txt')] = [
+    '# SETTLE',
+    '',
+    `> ${WHAT_THIS_IS[0]} ${WHAT_THIS_IS[1]} ${D.name} is ${lowerFirst(D.line)}`,
+    '',
+    'This site is a single-page app, so its words for agents are here as Markdown, one file per document, generated from the same sources as the site and the MCP server. `/llms-full.txt` holds them all in one file.',
+    '',
+    `To give an assistant SETTLE and KANERVA as tools, add ${D.name} to it: \`${D.oneCommand.code}\`. ${D.oneCommand.paras[1]}`,
+    '',
+    `## ${D.name}`,
+    '',
+    ...MCP_MIRROR.map(([, to, note]) => link(`llms/settle-mcp/${to}`, to, note)),
+    '',
+    '## Who you are',
+    '',
+    ...group((d) => d.uri.startsWith('site://who-you-are')),
+    '',
+    '## SETTLE',
+    '',
+    ...group((d) => d.uri.startsWith('settle://')),
+    '',
+    '## KANERVA',
+    '',
+    ...group((d) => d.uri.startsWith('kanerva://')),
+    '',
+    '## Optional',
+    '',
+    ...group((d) => d.uri.startsWith('site://') && !d.uri.startsWith('site://who-you-are')),
+    link('llms-full.txt', 'llms-full.txt', 'every document above, in one file'),
+    '',
+  ].join('\n');
+  const full = [
+    ['README.md', files['README.md']],
+    ['docs/INSTALL.md', files['docs/INSTALL.md']],
+    ['AGENTS.md', files['AGENTS.md']],
+    ['docs/SETUP.md', files['docs/SETUP.md']],
+    ['docs/USAGE.md', files['docs/USAGE.md']],
+    ...mirrored.filter((d) => !d.uri.startsWith('site://') || d.uri.startsWith('site://who-you-are')).map((d) => [d.path, d.text]),
+  ];
+  out[pub('llms-full.txt')] = `# SETTLE: every document, in one file\n\n> ${WHAT_THIS_IS[0]} ${WHAT_THIS_IS[1]}\n\n${full.map(([src, t]) => `---\n\nSource: ${src}\n\n${t.trim()}\n`).join('\n')}`;
+  out[pub('robots.txt')] = ['# SETTLE: people, crawlers and agents are all welcome. For agents, start at /llms.txt.', 'User-agent: *', 'Allow: /', ''].join('\n');
+  // the same index at /.well-known/llms.txt, for agents that look there first (lane SITEPASS); its links are rooted at
+  // the site, so they resolve from either address
+  out[pub('.well-known/llms.txt')] = out[pub('llms.txt')];
+  return out;
+}
+
 // ── the build ───────────────────────────────────────────────────────────────────────────────────
+// the repository banner tool, imported from disk like the glossary; null in a standalone copy of the package
+export async function loadBanner(root = repoRoot()) {
+  const p = path.join(root, INPUTS.banner);
+  if (!fs.existsSync(p)) return null;
+  return import(pathToFileURL(p).href);
+}
+
 async function loadMcpDocs(src) {
   // the module is plain data; importing it from a data: URL lets an override (a test) change it in memory
   const mod = await import(`data:text/javascript;base64,${Buffer.from(src).toString('base64')}`);
@@ -502,7 +692,15 @@ export async function buildAll({ root = repoRoot(), override = {} } = {}) {
   if (!I.mcpSrc || !I.settleDocs.length) return null;
   const W = await loadWtf(root);
   const D = await loadMcpDocs(I.mcpSrc);
-  const sdk = JSON.parse(fs.readFileSync(path.join(PKG, 'package.json'), 'utf8')).dependencies['@modelcontextprotocol/sdk'];
+  // the banner decorates a repository's front page; the READMEs served to agents go without it
+  const B = await loadBanner(root);
+  if (B) {
+    if (I.settleReadme) I.settleReadme = B.stripBanner(I.settleReadme);
+    if (I.kanervaReadme) I.kanervaReadme = B.stripBanner(I.kanervaReadme);
+  }
+  const bannerBlock = B ? B.bannerFor('settle-mcp') : null;
+  const pkgJson = JSON.parse(fs.readFileSync(path.join(PKG, 'package.json'), 'utf8'));
+  const sdk = pkgJson.dependencies['@modelcontextprotocol/sdk'];
 
   // what each input contributes, the thing the hash is over
   const pages = I.pages.map((p) => ({ ...p, prose: jsxProse(p.text) }));
@@ -516,9 +714,11 @@ export async function buildAll({ root = repoRoot(), override = {} } = {}) {
     ...(I.settleReadme ? [{ path: INPUTS.settleReadme, text: I.settleReadme }] : []),
     ...(I.kanervaReadme ? [{ path: INPUTS.kanervaReadme, text: I.kanervaReadme }] : []),
     ...(I.kanervaTerms ? [{ path: INPUTS.kanervaTerms, text: I.kanervaTerms }] : []),
+    ...I.kanervaPrograms,
     ...(W ? [{ path: INPUTS.wtf, text: JSON.stringify(W) }] : []),
     ...(I.whoYouAre.index ? [{ path: `${INPUTS.whoYouAre}/README.md`, text: I.whoYouAre.index }] : []),
     ...I.whoYouAre.guides,
+    ...(bannerBlock ? [{ path: INPUTS.banner, text: bannerBlock }] : []),
   ];
   const inputs = contrib.map((c) => ({ path: c.path, sha256: sha(c.text) }));
   const hash = sha(JSON.stringify(inputs));
@@ -535,6 +735,7 @@ export async function buildAll({ root = repoRoot(), override = {} } = {}) {
     ...I.settleDocs.map((d) => ({ uri: `settle://docs/${docName(d.path)}`, name: docName(d.path), title: titleOf(d.text, docName(d.path)), path: d.path, text: d.text })),
     ...(I.kanervaReadme ? [{ uri: 'kanerva://readme', name: 'README.md', title: 'KANERVA README', path: INPUTS.kanervaReadme, text: I.kanervaReadme }] : []),
     ...(I.kanervaTerms ? [{ uri: 'kanerva://terms', name: 'KANERVA_TERMS.md', title: 'KANERVA terms', path: INPUTS.kanervaTerms, text: I.kanervaTerms }] : []),
+    ...kanervaProgramDocs(I.kanervaPrograms),
     ...pages.map((p) => ({ uri: `site://${p.key}`, name: p.key, title: `Site: ${p.title}`, path: p.path, text: `# ${p.title}\n\n${p.prose}` })),
     ...(I.strings ? [{ uri: 'site://strings', name: 'strings', title: "Site: every English string (the i18n catalogue)", path: INPUTS.strings, text: `# The site's English strings\n\n${stringsMd(I.strings)}` }] : []),
     ...(W ? [{ uri: 'site://glossary', name: 'glossary', title: 'Site: the glossary, the index of every term', path: INPUTS.wtf, text: `# glossary\n\n${wtfMd(W)}` }] : []),
@@ -568,13 +769,15 @@ export async function buildAll({ root = repoRoot(), override = {} } = {}) {
 
   const agents = agentsMd(D, who, docs, examples, gloss);
   const content = { hash, mcp: { name: D.name, line: D.line, rule: D.rule, parts: D.parts, tools: D.tools, instructions: instructionsText(D, who) }, docs, examples, glossary: gloss };
+  const readme = readmeMd(D, sdk, pkgJson);
   const files = {
-    'README.md': readmeMd(D, sdk),
+    'README.md': B ? B.withBanner(readme, 'settle-mcp', B.repoOf('settle-mcp').description) : readme,
+    'docs/INSTALL.md': installMd(D),
     'AGENTS.md': agents,
     ...(I.whoYouAre.index ? { 'docs/who-you-are/README.md': `${GEN(`${INPUTS.whoYouAre}/README.md`)}${I.whoYouAre.index}` } : {}),
     ...Object.fromEntries(I.whoYouAre.guides.map((g) => [`docs/who-you-are/${g.folder}/README.md`, `${GEN(g.path)}${g.text}`])),
-    'docs/SETUP.md': [GEN('sites/settle-site/src/data/mcpDocs.js (setup)'), '# Setting SETTLE and KANERVA up', '', ...D.setup.map((s) => sectionMd(s))].join('\n'),
-    'docs/USAGE.md': [GEN('sites/settle-site/src/data/mcpDocs.js (usage)'), '# Using SETTLE and KANERVA through settle-mcp', '', ...D.usage.map((s) => sectionMd(s))].join('\n'),
+    'docs/SETUP.md': [GEN('SETTLE/settle-site/src/data/mcpDocs.js (setup)'), '# Setting SETTLE and KANERVA up', '', ...D.setup.map((s) => sectionMd(s))].join('\n'),
+    'docs/USAGE.md': [GEN('SETTLE/settle-site/src/data/mcpDocs.js (usage)'), '# Using SETTLE and KANERVA through settle-mcp', '', ...D.usage.map((s) => sectionMd(s))].join('\n'),
     'docs/GLOSSARY.md': `${GEN('the site and the docs it shows')}# Glossary (${gloss.length} names)\n\n${glossaryMd(gloss)}`,
     ...Object.fromEntries(pages.map((p) => [`docs/site/${p.key}.md`, `${GEN(p.path)}# ${p.title}\n\n${p.prose}\n`])),
     ...(I.strings ? { 'docs/site/strings.md': `${GEN(INPUTS.strings)}# The site's English strings\n\n${stringsMd(I.strings)}` } : {}),
@@ -582,7 +785,9 @@ export async function buildAll({ root = repoRoot(), override = {} } = {}) {
     'content/docs.json': JSON.stringify(content, null, 1) + '\n',
     'content/inputs.json': JSON.stringify({ hash, inputs }, null, 1) + '\n',
   };
-  return { files, hash, inputs };
+  // the site's agent mirrors carry the README without its banner, like the SETTLE and KANERVA READMEs above
+  const siteFiles = siteAgentFiles(D, { ...files, 'README.md': readme }, docs);
+  return { files, siteFiles, root, hash, inputs };
 }
 
 export async function inputsHash(opts) {
@@ -606,16 +811,29 @@ export function writeAll(build) {
     fs.mkdirSync(path.dirname(path.join(PKG, rel)), { recursive: true });
     fs.writeFileSync(path.join(PKG, rel), text);
   }
+  // the site's agent files: a mirror file no longer generated is removed, one file at a time
+  const root = build.root ?? repoRoot();
+  const keepSite = new Set(Object.keys(build.siteFiles ?? {}));
+  for (const f of walk(path.join(root, SITE_PUBLIC, 'llms'), () => true)) {
+    const rel = path.relative(root, f).split(path.sep).join('/');
+    if (!keepSite.has(rel)) fs.rmSync(f);
+  }
+  for (const [rel, text] of Object.entries(build.siteFiles ?? {})) {
+    fs.mkdirSync(path.dirname(path.join(root, rel)), { recursive: true });
+    fs.writeFileSync(path.join(root, rel), text);
+  }
 }
 
 // the paths of the generated files whose disk content differs from a fresh build ([] when fresh)
 export async function staleFiles(opts) {
   const b = await buildAll(opts);
   if (!b) return [];
-  return Object.entries(b.files).filter(([rel, text]) => {
-    const p = path.join(PKG, rel);
-    return !fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text;
-  }).map(([rel]) => rel);
+  const differs = (abs, text) => !fs.existsSync(abs) || fs.readFileSync(abs, 'utf8') !== text;
+  const pkgStale = Object.entries(b.files).filter(([rel, text]) => differs(path.join(PKG, rel), text)).map(([rel]) => rel);
+  const siteStale = Object.entries(b.siteFiles).filter(([rel, text]) => differs(path.join(b.root, rel), text)).map(([rel]) => rel);
+  // a mirror file on disk that the build no longer makes is stale too
+  const extra = walk(path.join(b.root, SITE_PUBLIC, 'llms'), () => true).map((f) => path.relative(b.root, f).split(path.sep).join('/')).filter((rel) => !(rel in b.siteFiles));
+  return [...pkgStale, ...siteStale, ...extra];
 }
 
 export async function ensureFresh(log = () => {}) {
@@ -636,7 +854,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (process.argv.includes('--check')) {
     const stale = await staleFiles();
     if (stale.length) {
-      console.error(`build_mcp_docs: stale (${stale.join(', ')}); run node experiments/thermosim/settle-mcp/tools/build_mcp_docs.mjs`);
+      console.error(`build_mcp_docs: stale (${stale.join(', ')}); run node SETTLE/settle-mcp/tools/build_mcp_docs.mjs`);
       process.exit(1);
     }
     console.log(`build_mcp_docs: fresh (inputs ${b.hash.slice(0, 12)})`);

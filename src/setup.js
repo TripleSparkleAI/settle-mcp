@@ -19,14 +19,16 @@
 //   AND confirm equal to that id, so the commands a person approved are the commands that run. A changed
 //   argument changes the id and the old confirm no longer matches.
 // - NO INVENTED URL: nothing is published yet, so a source is always the user's own: a local folder (the
-//   dwarfstar checkout's experiments/thermosim/settle-rs, or a clone) or a git URL they were given. A private
+//   dwarfstar checkout's SETTLE/settle-rs, or a clone) or a git URL they were given. A private
 //   repository asks for access at the clone step, and the step reports git's own words.
 // - THE LAYOUT: <folder>/settle-rs and <folder>/kanerva side by side, because settle-rs depends on
 //   kanerva = { path = "../kanerva" }. Local sources are copied without target/ and .git; a git source is
 //   cloned into <folder>/sources/<name> and the crates are copied out of it. Copies run in this process
 //   (fs.cpSync); their plan line says so instead of pretending to be a shell command.
 // - VERIFY: after cargo build --release, the built settle runs two tested examples from its own docs (a core
-//   program and an sdm program, which reaches KANERVA) and compares stdout with the stored .out byte for byte.
+//   program and an sdm program, which reaches KANERVA) and compares stdout with the stored .out byte for byte; then
+//   the kanerva command (cargo build --release --bins) runs one of KANERVA's own programs/*.kanerva the same way.
+//   A KANERVA older than its file face has neither, and that step says so and passes.
 // - No step uses sudo; exec.js refuses one if it ever appears. Missing rust or git is reported with the
 //   official install page; this server never runs an installer.
 // </claudes_code_comments>
@@ -38,6 +40,8 @@ import crypto from 'node:crypto';
 import { run, showCommand, tail } from './exec.js';
 
 export const VERIFY_EXAMPLES = { core: ['core-ask', 'core-seed', 'core-leans-and-pulls'], sdm: ['sdm-read', 'sdm-text', 'sdm-fade'] };
+// the kanerva command's own programs (kanerva/programs/<name>.kanerva with its .out), tried in order
+export const VERIFY_KANERVA = ['sdm', 'theory', 'softsdm', 'sdmscale'];
 export const INSTALL_PAGES = { rust: 'https://rustup.rs', git: 'https://git-scm.com/downloads', node: 'https://nodejs.org' };
 
 export function statePath() {
@@ -165,13 +169,18 @@ export function planSetup({ folder, settle_source, kanerva_source, build_quickst
   }
 
   steps.push(cmdStep('build SETTLE (and KANERVA with it)', 'cargo', ['build', '--release'], settleOut, { timeoutMs: 900_000 }));
-  if (build_quickstart) steps.push(cmdStep('build the KANERVA quickstart example', 'cargo', ['build', '--release', '--example', 'quickstart'], kanervaOut, { timeoutMs: 900_000 }));
-  const bin = path.join(settleOut, 'target', 'release', process.platform === 'win32' ? 'settle.exe' : 'settle');
+  // the kanerva command (src/bin/kanerva.rs, which runs .kanerva programs) and, unless asked not to, the quickstart
+  // example; --bins builds every binary the crate has, so a KANERVA from before the command still builds
+  steps.push(cmdStep(build_quickstart ? 'build the kanerva command and the KANERVA quickstart example' : 'build the kanerva command', 'cargo', ['build', '--release', '--bins', ...(build_quickstart ? ['--example', 'quickstart'] : [])], kanervaOut, { timeoutMs: 900_000 }));
+  const exe = process.platform === 'win32' ? '.exe' : '';
+  const bin = path.join(settleOut, 'target', 'release', `settle${exe}`);
+  const kanervaBin = path.join(kanervaOut, 'target', 'release', `kanerva${exe}`);
   for (const [family, names] of Object.entries(VERIFY_EXAMPLES)) {
     steps.push({ kind: 'verify', label: `verify: run a tested ${family} example and compare its output`, family, names, bin, cwd: settleOut, shown: `${bin} docs/examples/<${names.join('|')}>.settle, compared with the stored .out (the first of these that exists)` });
   }
-  steps.push({ kind: 'state', label: 'remember this setup', to: statePath(), shown: `write ${statePath()} with the folder and the binary path` });
-  return { folder: dest, settle_bin: bin, kanerva_dir: kanervaOut, steps, notes, id: planId(steps) };
+  steps.push({ kind: 'verify-kanerva', label: 'verify: run a .kanerva program with the kanerva command and compare its output', bin: kanervaBin, cwd: kanervaOut, names: VERIFY_KANERVA, shown: `${kanervaBin} programs/<${VERIFY_KANERVA.join('|')}>.kanerva, compared with the stored .out (the first of these that exists)` });
+  steps.push({ kind: 'state', label: 'remember this setup', to: statePath(), shown: `write ${statePath()} with the folder and the binary paths` });
+  return { folder: dest, settle_bin: bin, kanerva_dir: kanervaOut, kanerva_bin: kanervaBin, steps, notes, id: planId(steps) };
 }
 
 function copyTree(from, to) {
@@ -216,6 +225,16 @@ async function doStep(s) {
     const ok = r.code === 0 && r.stdout === want;
     return { ok, detail: ok ? `${name}: output matches docs/examples/${name}.out` : `${name}: output differs from the stored .out (exit ${r.code})\n${tail(r.stderr || r.stdout, 8)}`, ran: r.shown };
   }
+  if (s.kind === 'verify-kanerva') {
+    const pdir = path.join(s.cwd, 'programs');
+    const name = s.names.find((n) => fs.existsSync(path.join(pdir, `${n}.kanerva`)) && fs.existsSync(path.join(pdir, `${n}.out`)));
+    // a KANERVA from before the file face (2026-10-06) has no command and no programs: say so, and go on
+    if (!name || !fs.existsSync(s.bin)) return { ok: true, detail: 'skipped: this KANERVA has no kanerva command or no programs/*.kanerva (it is older than the file face); run_kanerva will not be available' };
+    const want = fs.readFileSync(path.join(pdir, `${name}.out`), 'utf8');
+    const r = await run(s.bin, [path.join('programs', `${name}.kanerva`)], { cwd: s.cwd, timeoutMs: 120_000 });
+    const ok = r.code === 0 && r.stdout === want;
+    return { ok, detail: ok ? `${name}.kanerva: output matches programs/${name}.out` : `${name}.kanerva: output differs from the stored .out (exit ${r.code})\n${tail(r.stderr || r.stdout, 8)}`, ran: r.shown };
+  }
   if (s.kind === 'state') return { ok: true, detail: `wrote ${s.to}` };
   return { ok: false, detail: `unknown step kind ${s.kind}` };
 }
@@ -226,7 +245,7 @@ export async function runSetup(plan, { onStep } = {}) {
     onStep?.({ index: i, step: s, status: 'running' });
     let res;
     try {
-      if (s.kind === 'state') writeState({ folder: plan.folder, settle_bin: plan.settle_bin, kanerva_dir: plan.kanerva_dir, set_up: new Date().toISOString() });
+      if (s.kind === 'state') writeState({ folder: plan.folder, settle_bin: plan.settle_bin, kanerva_dir: plan.kanerva_dir, kanerva_bin: plan.kanerva_bin, set_up: new Date().toISOString() });
       res = await doStep(s);
     } catch (e) {
       res = { ok: false, detail: e.message };
