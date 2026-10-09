@@ -4679,6 +4679,7 @@
 - `hero.ctp.aria`: Click to start the sound
 - `hero.ctp.info`: Click to play this wonderful settle thing! You will have marvellous adventures, sonically and otherwise.
 - `hero.ctp.tag`: CLICK TO START
+- `hero.djfold`: the DJ's controls
 - `hero.eq.eq-actprob.note`: the activation-probability for n = 1000 and H = 447, Kanerva's example, computed here
 - `hero.eq.eq-attention.note`: attention: queries matched to keys, a softmax, and a weighted sum of the values
 - `hero.eq.eq-bind.note`: binding by XOR: the same key undoes it
@@ -10488,9 +10489,9 @@
 - `settletext.access.p2`: Ask your system for less motion and every settle is drawn once, still. On a slow machine this page draws its prose with fewer lights.
 - `settletext.access.title`: Who it serves
 - `settletext.claim`: Your words, your font, as a settle of lights. One line of React.
-- `settletext.code.note`: That is the whole call. The words come out of noise in about a second and a half, keep flickering, shimmer every few seconds, and now and then settle again.
+- `settletext.code.note`: That is the whole call, in Inter, the package's own default face. The words come out of noise in about a second and a half, keep flickering, shimmer every few seconds, and every eight to fifteen seconds heat into a haze and settle back.
 - `settletext.code.words`: What?
-- `settletext.contents.alive`: And every one of them is alive. Its lights flicker, and every few seconds it shimmers on its own clock: a glint, a few lights blinking, a soft breath. About one shimmer in ten is a full re-settle. One example near the end holds still on purpose.
+- `settletext.contents.alive`: And every one of them is alive. Its lights flicker, it shimmers every few seconds, and every eight to fifteen seconds it heats into a haze and settles back. One example near the end holds still on purpose.
 - `settletext.contents.label`: ON THIS PAGE
 - `settletext.contents.lead`: Every heading, sentence and link below this line is settle-text. The plain parts are the package itself: its install, its steps and its docs.
 - `settletext.contents.title2`: A page drawn in its own lights
@@ -10512,9 +10513,10 @@
 - `settletext.opt.fast`: Settles again every two seconds.
 - `settletext.opt.glow`: More bloom, for a sign.
 - `settletext.opt.gradient`: A gradient across the words: sunset, aurora, neon, ice, fire, or a list of your own.
+- `settletext.opt.haze`: The active haze on a faster rotation: the word heats into a haze and settles back about every five seconds.
 - `settletext.opt.intro`: No noise at the start: the words are there at once, then alive.
 - `settletext.opt.kicker`: THE OPTIONS, ONE EACH
-- `settletext.opt.lead`: Each card sets one prop on the same word. Leave them all out and you get the alive default: a warm simmer, a small shimmer every few seconds, and a full re-settle about one time in ten. A card that sets the re-settle's own clock keeps that clock.
+- `settletext.opt.lead`: Each card sets one prop on the same word. Leave them all out and you get the alive default: a warm simmer, a shimmer every few seconds, and the active haze every eight to fifteen seconds. A card that sets its own clock keeps it.
 - `settletext.opt.meaning`: The hero’s own colour code: a light that fights its lean flares orange while it settles.
 - `settletext.opt.none`: No re-settles. It simmers and shimmers, and never scatters.
 - `settletext.opt.rate`: A slower flicker: four sweeps a second between re-settles. fps sets the rate while it settles.
@@ -10561,9 +10563,12 @@
 - `settletext.play.copy`: copy the line
 - `settletext.play.default`: Settle me
 - `settletext.play.empty`: type something
-- `settletext.play.every`: settles again every
 - `settletext.play.face`: the face
+- `settletext.play.face.clean`: clean
+- `settletext.play.face.scifi`: sci-fi
 - `settletext.play.glow`: the glow
+- `settletext.play.haze`: the active haze
+- `settletext.play.haze.every`: re-settles about every
 - `settletext.play.p.aurora`: aurora
 - `settletext.play.p.meaning`: the hero code
 - `settletext.play.p.single`: one colour
@@ -10581,8 +10586,6 @@
 - `settletext.play.shimmer.every`: shimmers about every
 - `settletext.play.shimmer.off`: off
 - `settletext.play.shimmer.on`: on
-- `settletext.play.shimmer.percent`: {n} percent
-- `settletext.play.shimmer.share`: full re-settles, of all shimmers
 - `settletext.play.size`: the size
 - `settletext.play.temp2`: the flicker
 - `settletext.play.words`: your words
@@ -10602,7 +10605,7 @@
 - `settletext.recipe.photo.alt`: a hot landscape, as lights
 - `settletext.recipe.photo.alt2`: Galileo’s drawing of the moon at first quarter, 1610
 - `settletext.recipe.sign`: A neon sign
-- `settletext.recipe.sign.note`: A serif face, a neon word for the colour, more glow, a warmer simmer so the tube hums, and a re-settle every four seconds.
+- `settletext.recipe.sign.note`: A sci-fi face, a neon word for the colour, more glow, a warmer simmer so the tube hums, and the haze every four seconds.
 - `settletext.recipe.sign.words`: OPEN ALL NIGHT
 - `settletext.recipe.tiles`: Words that answer the pointer
 - `settletext.recipe.tiles.note`: Each word is a button. Point at it or Tab to it, and its lights scatter and settle back into the word.
@@ -10631,8 +10634,8 @@
 - `settletext.shimmer.fx.word`: One word scatters and settles back while the rest hold.
 - `settletext.shimmer.how`: One prop chooses the range: a preset, one effect by name, or a list. Each effect is drawn by the settle itself, never by a CSS animation, and at most six run on a page at once.
 - `settletext.shimmer.kicker`: THE AMBIENT SHIMMER
-- `settletext.shimmer.lead`: Every piece of text on this page shimmers on its own clock, at its own moment. Most shimmers are small: a glint, a few lights blinking, a soft breath. About one in ten is a full re-settle.
-- `settletext.shimmer.preset.gentle`: The default: nine small effects about every three and a half seconds, a full re-settle one time in ten.
+- `settletext.shimmer.lead`: Every piece of text on this page shimmers on its own clock, at its own moment. Most shimmers are small: a glint, a few lights blinking, a soft breath. The full re-settle has its own rotation, the active haze, every eight to fifteen seconds.
+- `settletext.shimmer.preset.gentle`: The default: nine small effects about every three and a half seconds. With the active haze off, a full re-settle one time in ten.
 - `settletext.shimmer.preset.lively`: All twelve small effects, closer together and a little stronger.
 - `settletext.shimmer.preset.whisper`: The quietest four: twinkles, a glint, a ripple, a breath, about every five seconds.
 - `settletext.shimmer.presets`: Three presets
