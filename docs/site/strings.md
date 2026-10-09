@@ -16,6 +16,14 @@
 - `a11y.toggle.word.play`: play sound
 - `a11y.toggle.word.sound`: sound
 
+## acct
+
+- `acct.aria`: Account menu, signed in as {name}
+- `acct.logout`: Log out
+- `acct.pages`: Members pages
+- `acct.user`: user
+- `acct.who`: Signed in as {name}
+
 ## app
 
 - `app.loading`: loading the page …
@@ -6994,6 +7002,7 @@
 - `legal.cat.settings.b`: A few choices that hold from visit to visit, such as the language you picked, the keyboard shortcuts and whether all sound is muted. They stay in your browser until you clear this site’s data.
 - `legal.cat.settings.t`: Your settings
 - `legal.cat.signin.b`: If you open a members page, Clerk, the service that runs sign-in, sets a few cookies on this site that keep you signed in. They are renewed while you stay signed in and gone when you log out.
+- `legal.cat.signin.name`: This site also remembers the name you signed in with, so the top of every page can show it. It is removed when you log out.
 - `legal.cat.signin.t`: Your sign-in, handled by Clerk
 - `legal.cat.visit.b`: Sound and display choices that hold from page to page while the tab is open, such as the volume, the sound mode and the backdrop, and the picture level measured on your device so the picture does not change halfway through. They are gone when you close the tab.
 - `legal.cat.visit.t`: Choices for this visit
