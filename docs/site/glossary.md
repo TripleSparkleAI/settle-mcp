@@ -1860,6 +1860,17 @@ Sound only starts after a click or a key, and MUTE ALL wins over all of it.
 - source: SETTLE/settle-hear/README.md, sites/CLAUDE.md
 - link: #/glossary#mute-all
 
+### NEOCORTEX-FEEDBACK
+
+A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
+
+In the demos folder after the SDM pages. Its rule: a SETTLE pull works both ways, so a settle shows recurrence and cannot show a one-way arrow. The wiki behind it reads in the site at #/neocortex-feedback/wiki. It was once named SIX-LAYER FEEDBACK, and the old address still opens it.
+
+- also: neocortex-feedback, SIX-LAYER FEEDBACK, THE TWO CORTICES
+- where: #/neocortex-feedback
+- source: SETTLE/settle-site/src/pages/SixLayerFeedback.jsx, wikis/WIKI_SIX_LAYER_FEEDBACK/00-INDEX.md
+- link: #/glossary#page-neocortex-feedback
+
 ### nonogram
 
 A picture puzzle whose rows and columns give run lengths; as leans and pulls, the hidden picture appears as it settles.
@@ -2199,17 +2210,6 @@ Its answer: Annealing finds exact answers where random guessing finds none: ever
 - where: #/results, #/puzzles
 - source: SETTLE/settle-site/src/data/results.js, SETTLE/SETTLE_CAMPAIGN_2026-09-30.md
 - link: #/glossary#lane-settlezoo
-
-### SIX-LAYER FEEDBACK
-
-A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
-
-In the demos folder after the SDM pages. Its rule: a SETTLE pull works both ways, so a settle shows recurrence and cannot show a one-way arrow. The wiki behind it reads in the site at #/six-layer-feedback/wiki.
-
-- also: six-layer-feedback, THE TWO CORTICES
-- where: #/six-layer-feedback
-- source: SETTLE/settle-site/src/pages/SixLayerFeedback.jsx, wikis/WIKI_SIX_LAYER_FEEDBACK/00-INDEX.md
-- link: #/glossary#page-six-layer-feedback
 
 ### SMOOTHNUMBERS
 

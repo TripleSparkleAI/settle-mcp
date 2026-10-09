@@ -1,5 +1,5 @@
 {
- "hash": "0c827a4c1535b27c4a6b97f3fc7cf13d2c7ed30977aea8dfdf45954e4ff4c20c",
+ "hash": "2d6278e59bde7ca95b85c418d91a7a3c2ba959c27e4d44a7a8f2826db8e0b643",
  "inputs": [
   {
    "path": "SETTLE/settle-site/src/data/mcpDocs.js",
@@ -7,7 +7,7 @@
   },
   {
    "path": "SETTLE/settle-site/i18n/en.json",
-   "sha256": "ccb7c50dc8200277bf6e6383797e5971f90c7209a567570087013bb71b0252d3"
+   "sha256": "ce3993f5c126be5cd81cdcd81212d138afce7485c66cd70e92877e5dbeaf722c"
   },
   {
    "path": "SETTLE/settle-site/i18n/GLOSSARY.md",
@@ -1199,7 +1199,7 @@
   },
   {
    "path": "SETTLE/settle-site/src/wtf/terms.js",
-   "sha256": "beda921a476b03928541725801e628a01b4cbeb6d17c4d4e01aa5a3017ea5346"
+   "sha256": "972c1c49663def23789b6497f6fb4a0a5a2540698b1e83f8eceb94e34bb66fe4"
   },
   {
    "path": "SETTLE/settle-site/docs/who-you-are/README.md",

@@ -367,7 +367,6 @@
 - `contact.send.rejected`: Nothing was sent: the message was not accepted.
 - `contact.send.sending`: Sending.
 - `contact.send.sent`: Sent. Thank you. We will read it.
-- `contact.sent.summary`: what the check sent with this message
 - `contact.top.cap`: $ settle --say hello
 - `contact.top.cap.live`: settling live
 - `contact.top.go`: write to us
@@ -8084,6 +8083,7 @@
 - `menu.peek.label`: Page preview
 - `menu.peek.mcp`: The MCP server: docs, setup and tools for SETTLE and KANERVA, for an assistant.
 - `menu.peek.members`: Your account: the little guys and runs you saved, to download or delete.
+- `menu.peek.neocortex-feedback`: The six layers of the neocortex and their feedback, the Purkinje cells, and Kanerva's cerebellum, settled live.
 - `menu.peek.none`: A page the menu has no line for yet.
 - `menu.peek.numbers`: Arithmetic and factoring done by settling.
 - `menu.peek.package`: PACKAGE
@@ -8107,7 +8107,6 @@
 - `menu.peek.settle-tour`: How a settling machine learns to read handwritten digits, with MNIST live.
 - `menu.peek.settlesee`: The drawing library: words, shapes, photos and films that settle out of noise as lights, in React or on any canvas.
 - `menu.peek.settletext`: The React component library: your text, images and vectors rendered as a settle of lights, no theory needed.
-- `menu.peek.six-layer-feedback`: The six layers of the neocortex and their feedback, the Purkinje cells, and Kanerva's cerebellum, settled live.
 - `menu.peek.style`: The design tokens, fonts and sigils (dev builds only).
 - `menu.peek.surprise`: A first-person game whose agent acts to stay unsurprised.
 - `menu.peek.weirdlittlesdmguy`: A small memory model with one obsession, how we know things, chatting live.
@@ -8219,6 +8218,7 @@
 - `nav.kanerva`: KANERVA
 - `nav.mcp`: MCP
 - `nav.members`: MEMBERS
+- `nav.neocortex-feedback`: NEOCORTEX-FEEDBACK
 - `nav.numbers`: NUMBERS
 - `nav.paper`: THE PAPER
 - `nav.puzzles`: PUZZLES
@@ -8238,7 +8238,6 @@
 - `nav.settle-tour`: SETTLE-TOUR
 - `nav.settlesee`: SETTLE SEE
 - `nav.settletext`: SETTLE TEXT
-- `nav.six-layer-feedback`: SIX-LAYER FEEDBACK
 - `nav.surprise`: SURPRISE
 - `nav.weirdlittlesdmguy`: WEIRD LITTLE SDM GUY
 - `nav.what`: WHAT
@@ -8480,6 +8479,8 @@
 - `pkg.chip.rust`: Rust, edition {edition}
 - `pkg.chip.wasm`: runs in your browser as WebAssembly, {kb} kB
 - `pkg.family5`: SETTLE is the language. KANERVA is the memory it reads and writes. The MCP is the door to both from an editor. SETTLE TEXT is the look, for React, with no theory needed. SETTLE SEE draws every picture, for anyone who wants the physics too.
+- `pkg.github.label`: View {repo} on GitHub (opens in a new tab)
+- `pkg.github.view`: VIEW ON GITHUB
 - `pkg.ref.download.private`: works once the repository is public, or now for a signed-in collaborator
 - `pkg.ref.private`: private repository
 - `pkg.role.kanerva`: the memory it reads and writes
@@ -11313,6 +11314,7 @@
 - `sxl.guess.top`: the guess layer, settling
 - `sxl.guess.truth`: the truth
 - `sxl.guess.wrong`: a wrong guess (a ring)
+- `sxl.here`: neocortex-feedback
 - `sxl.hier.c1`: Toy areas and labels, not the 305 reported pathways; integer levels where real SLN is fitted on a continuous scale.
 - `sxl.hier.c2`: The weak-input effect comes from a flat sigmoid near its ceiling, not from the circuit of V1.
 - `sxl.hier.contra`: distances that disagree
@@ -11489,7 +11491,7 @@
 - `sxl.things.rec`: recorded
 - `sxl.things.thing`: thing
 - `sxl.things.yes`: yes
-- `sxl.title`: Six-layer feedback
+- `sxl.title`: NEOCORTEX-FEEDBACK
 - `sxl.top.cap`: $ settle --shape brainbands
 - `sxl.top.cap.live`: settling live
 - `sxl.top.hint`: the cerebral cortex above, the cerebellar cortex below
@@ -13300,6 +13302,8 @@
 - `wtf.term.page-home.usage`: Its path in the menu is /settle itself. It shows a four-line program running live under its code.
 - `wtf.term.page-members.meaning`: Your account, signed in through Clerk: sign up with an emailed code, log in, the little guys and runs you saved from the studio, the ASK chat and your chat balance.
 - `wtf.term.page-members.usage`: In the members folder, which lists only this page until you log in. The saved models come first, then ASK, the balance, and your email, password, data export and account deletion. Without Clerk keys the page says members are not configured.
+- `wtf.term.page-neocortex-feedback.meaning`: A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
+- `wtf.term.page-neocortex-feedback.usage`: In the demos folder after the SDM pages. Its rule: a SETTLE pull works both ways, so a settle shows recurrence and cannot show a one-way arrow. The wiki behind it reads in the site at #/neocortex-feedback/wiki. It was once named SIX-LAYER FEEDBACK, and the old address still opens it.
 - `wtf.term.page-numbers.meaning`: Springs that solve A x = b live: the cloud's centre finds the answer, its spread gives the inverse.
 - `wtf.term.page-numbers.usage`: The numbers family, drawn.
 - `wtf.term.page-paper.meaning`: "On the Lime and the Coconut": SETTLE's whole mathematics as one very short paper.
@@ -13326,8 +13330,6 @@
 - `wtf.term.page-sdmpoem.usage`: In the demos folder. The old address #/poem leads here.
 - `wtf.term.page-settle-tour.meaning`: How a settling machine learns to read handwritten digits: a guide, MNIST live, then the 8x8 experiments as recorded.
 - `wtf.term.page-settle-tour.usage`: Boltzmann machine learning in the browser, in the science folder. The old address #/learning leads here.
-- `wtf.term.page-six-layer-feedback.meaning`: A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
-- `wtf.term.page-six-layer-feedback.usage`: In the demos folder after the SDM pages. Its rule: a SETTLE pull works both ways, so a settle shows recurrence and cannot show a one-way arrow. The wiki behind it reads in the site at #/six-layer-feedback/wiki.
 - `wtf.term.page-surprise.meaning`: A first-person game whose settling agent acts to keep its surprise low: Friston's free-energy principle in toy form.
 - `wtf.term.page-surprise.usage`: With the explanation, the measured runs and the sources.
 - `wtf.term.page-what.meaning`: What SETTLE is, step by step, in two halves: SETTLE, then KANERVA.
