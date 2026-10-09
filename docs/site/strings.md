@@ -1053,9 +1053,9 @@
 - `data.heroradio.7290824c`: noise, annealing to a word
 - `data.heroradio.76b9a5b2`: stars streaming past
 - `data.heroradio.7ef0b8c0`: a sine wave, travelling right
+- `data.heroradio.8443b2c8`: the scrolling sign
 - `data.heroradio.88144868`: radial pulses
 - `data.heroradio.92fa0370`: a horse, galloping right
-- `data.heroradio.99db47b5`: the car radio
 - `data.heroradio.9e631e6b`: the word, glitching
 - `data.heroradio.a018043b`: p-bits counting in binary
 - `data.heroradio.b7e28c81`: a double helix
@@ -1308,7 +1308,6 @@
 - `data.neon.28faa9a7`: something went wrong: an error or a miss
 - `data.neon.2d2680bf`: the drawing library: words, shapes, pictures and films that settle out of noise as lights
 - `data.neon.325056cd`: text on a prime red fill
-- `data.neon.37fa202e`: the fill of every main button in the members area, and the members headings (5.60:1 on bark; heartwood on it 5.53:1)
 - `data.neon.3c69914a`: sawdust
 - `data.neon.3cbf1858`: tooth white
 - `data.neon.3fc3d770`: sunk bark
@@ -1346,7 +1345,6 @@
 - `data.neon.859dcd52`: HOT PINK NEON: the fill of every action button (.btn--action): run, settle, anneal, send, recall, cue, generate, retrain, play
 - `data.neon.875550d8`: the prime red under the pointer
 - `data.neon.8a8422b9`: the dark rooms the lights live in
-- `data.neon.8a8cc89f`: a main button under the pointer or the keyboard focus (heartwood on it 7.43:1)
 - `data.neon.8c0610e5`: a measured number from a real run
 - `data.neon.8cf39074`: memory: a stored pattern, SDM and Hopfield
 - `data.neon.9560744c`: grain
@@ -1363,10 +1361,12 @@
 - `data.neon.bddea4a3`: willow
 - `data.neon.bf3a7a13`: labels, meta, the deadpan line
 - `data.neon.c09222f9`: hyper neon yellow
+- `data.neon.c2c980a7`: a main button under the pointer or the keyboard focus (heartwood on it 7.65:1)
 - `data.neon.c425201b`: Sparse Distributed Memory as a Rust crate
 - `data.neon.c596ab37`: secondary text and labels, a quieter red
 - `data.neon.c6b24c2c`: the members neon: every panel border, the ASK window border, every button edge, the focus ring (16.12:1 on bark)
 - `data.neon.cbcce942`: a React component library: text, images and vectors rendered as a settle of lights
+- `data.neon.cc832e4b`: the fill of every main button in the members area, and the members headings (6.24:1 on bark; heartwood on it 6.16:1)
 - `data.neon.d04f8a22`: pale honey
 - `data.neon.d2fdb353`: the chosen tab, a hovered row, the person's turns in the chat
 - `data.neon.dcd0cf49`: the panel plate, the cards, the table head
@@ -5779,7 +5779,7 @@
 - `hero.plate.young-two-source-interference.label`: Young's interference
 - `hero.plate.young-two-source-interference.note`: Young's interference of waves from two sources A and B (Course of Lectures on Natural Philosophy, 1807)
 - `hero.play`: ▶ play
-- `hero.radio.track`: THE RADIO
+- `hero.radio.track`: THE SHIMMER
 - `hero.readout.energy`: energy {e} ({per}/light)
 - `hero.readout.flips`: flips {n}
 - `hero.readout.lean`: lean {v}
@@ -5879,12 +5879,15 @@
 - `hero.welcome.captain.kicker`: a word from the captain
 - `hero.welcome.close`: Close the introduction
 - `hero.welcome.count`: {n} of {total}
+- `hero.welcome.done`: done
 - `hero.welcome.exits.body`: Up there, top right: {sound} is MUTE ALL, and one press silences every sound on the site. {off} appears whenever the flashing 40 Hz light is on, and one press stops it.
 - `hero.welcome.exits.kicker`: your nearest exits
 - `hero.welcome.exits.on`: The 40 Hz light is on right now.
 - `hero.welcome.lights.body`: There are flashing lights here (off by default).
 - `hero.welcome.lights.kicker`: cabin lighting
 - `hero.welcome.motto`: be awares!
+- `hero.welcome.next`: next
+- `hero.welcome.next.aria`: Show the next part of the introduction
 - `hero.welcome.terms.body`: Agreement: by looking at this site with your eyes, you agree to learning about sparse distributed memory and thermodynamic computing. Escape clause: if you do not agree, look away now! Ahh! Flee!
 - `hero.welcome.terms.cta`: Agreed? Start with WHAT
 - `hero.welcome.terms.kicker`: terms of carriage
