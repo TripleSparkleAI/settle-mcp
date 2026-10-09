@@ -942,6 +942,7 @@
 - `data.herocontrols.29da111e`: who is that on the bike?
 - `data.herocontrols.2b52c4f9`: ABSTRACTS only · the pictures drawn in code, on shuffle
 - `data.herocontrols.2e48d9ed`: lean
+- `data.herocontrols.31d6fa1b`: rain and waterfalls of light, falling in hyper blue and hyper pink
 - `data.herocontrols.32b1687c`: two neons
 - `data.herocontrols.339dd666`: 1 = cool over 170 frames, hold 90
 - `data.herocontrols.37002578`: live equations
@@ -964,6 +965,7 @@
 - `data.herocontrols.69147919`: SONIQUE RING · 32 rays all the way round, low notes at the top, the ring turning slowly
 - `data.herocontrols.6babc810`: SHAPES only · the pictures, on shuffle
 - `data.herocontrols.6c6ff0eb`: PAPER FIGURES only · figures from papers, credited, on shuffle
+- `data.herocontrols.6edc669e`: RAIN only · the rain and the waterfalls, on shuffle
 - `data.herocontrols.6f0c4fa8`: 6 Hz on a 528 / 534 Hz pair: the one carrier outside the 432 family, high and bright; a glassy pad.
 - `data.herocontrols.6f63efd5`: 14 Hz on a 288 / 302 Hz pair: a quick, even flutter; the brightest pad.
 - `data.herocontrols.70327058`: hot T
@@ -979,6 +981,7 @@
 - `data.herocontrols.812d107e`: pull
 - `data.herocontrols.8170409b`: old plates
 - `data.herocontrols.8998fba4`: width and tokens
+- `data.herocontrols.89a3b5d3`: rain
 - `data.herocontrols.91832181`: measured and still to come
 - `data.herocontrols.91bd38e9`: cool to cold T and stay
 - `data.herocontrols.947b93a6`: FILMS only · the small films, on shuffle
@@ -1136,43 +1139,300 @@
 - `data.kanerva.aba349fa`: A read that moves a random read-address a long way is refused (rule R: travel above a threshold set by how many patterns are stored); where random read-addresses settle onto stored patterns, this refusal matches a memory that sees every pattern, at no cost to recall up to 30% address-noise.
 - `data.kanerva.c540b8fd`: Built from p-bits with a soft cut-off, the memory reads like a softmax attention over its stored patterns, agreeing on 93 to 96% of reads where recall works, but holding fewer patterns than the ideal kernel or softmax.
 - `data.marks.00a6f15d`: a bar chart
+- `data.marks.0236599d`: a scroll: one memory for each epic
+- `data.marks.023a2a92`: a seedling: every model trained from scratch
+- `data.marks.0385e263`: three wavy lines of Quenya
+- `data.marks.048e4dc7`: a crown: the queens
+- `data.marks.05001d6d`: a ring beside a stack of blocks: SDM against a transformer
+- `data.marks.059e8299`: a cloud and its rain: the weather
+- `data.marks.0725b659`: a lifebuoy: ask it what anything is
+- `data.marks.07310b59`: a thermometer and a falling arrow: cooling
+- `data.marks.0743eb3d`: angle brackets and a slash: the programmer
+- `data.marks.08306d87`: a send arrow: ask the question
+- `data.marks.086b631f`: a key: your password
 - `data.marks.08fe204a`: a board half solved
 - `data.marks.0a06661d`: a question mark in a ring: what does this word mean
+- `data.marks.0b03a0d9`: angle brackets in a window: how the site is built
+- `data.marks.0d0cb120`: a funnel: the whole past poured into one memory
+- `data.marks.0e48c509`: scattered hard locations: his 3,600 memory locations
+- `data.marks.0f198284`: a clock face: when you liked it
+- `data.marks.0fbbe8d9`: a stopwatch: measure the speed on this machine
+- `data.marks.1010cf94`: two bars on one axis: the transformer comparison
+- `data.marks.102b8db3`: two circles overlapping: the shared activation
+- `data.marks.10e5b6d8`: a coin marked zero: ASK is free
+- `data.marks.11d04be0`: a row and a column crossing at the best slot
 - `data.marks.13a440f8`: the Hamming ball round a read-address
+- `data.marks.158c7979`: a play mark over an output line: run a program
 - `data.marks.1627724e`: a page with its corner folded
+- `data.marks.17228af7`: a block melting: the memory melts as it warms
+- `data.marks.188b7c66`: a row of tabs, the first one open: a guide for each agent
 - `data.marks.18b6b66e`: a crescent moon and a star
+- `data.marks.190ad615`: a pencil: or he draws you something
+- `data.marks.1a451fd2`: a figure with its trail of fading frames
+- `data.marks.1b133bcf`: a fan from the last vector to the score of every word
+- `data.marks.1b23cbd8`: a slider set part way: the pull J and the leans
+- `data.marks.1c92bc17`: an open book: how the new models work
+- `data.marks.1cc62974`: a tuning fork: the drone pitch
+- `data.marks.1db4997f`: three bands with a carpet of grains: the cerebellum
+- `data.marks.205aa0f2`: a band crossed out: silence layer 4
+- `data.marks.2064b8bf`: five different shapes: the runs behind every model
+- `data.marks.2082487e`: a switch thrown open: the disinhibitory switch
+- `data.marks.23556241`: walkers scattered round a cross: the answer
+- `data.marks.237fb430`: an eye struck through: an SDM-LLM with no attention
+- `data.marks.2493f6c3`: a book struck through: not a knowledge source
+- `data.marks.250b7ed3`: an exclamation mark in a ring: answers can be wrong
+- `data.marks.2715206c`: a paper plane: send the message
+- `data.marks.27a60836`: an arrow into a folder: clone and build
+- `data.marks.291fe179`: five measurements sitting on the line of the coin law
+- `data.marks.2aa74a5c`: a brick wall: what did not fit
+- `data.marks.2c0d7323`: two valleys and a ball rolling into one: a recall
+- `data.marks.2c479fc0`: a cog: the builder in Rust
+- `data.marks.2c7e5da9`: three books on a shelf: the scientific credits
+- `data.marks.2d48ce33`: bars up and down from a line: the vector it read
 - `data.marks.2db083dd`: a ring with fading bars: what the model sees of the past
 - `data.marks.2fb89aaf`: a plug: the server an assistant connects to
+- `data.marks.301b6d44`: a big letter H over two lines of text: a heading
 - `data.marks.31120cfb`: an eye with a lit pupil
+- `data.marks.313d739f`: three tally bars: hits, splits and misses
+- `data.marks.32ada848`: a key: the note only its key can find
+- `data.marks.344fb8f7`: a house with rooms: memory and its size
+- `data.marks.34f33763`: a funnel to a point: gather, then commit
+- `data.marks.36890d4a`: a ledger that only grows at the foot
+- `data.marks.36c7f4b2`: a clipboard with every box ticked: check the system
+- `data.marks.385b5d34`: a record with one groove: a set of THE DJ
+- `data.marks.3886e2d9`: a ghost: one of the four enemies
+- `data.marks.38bd9f30`: an arrow forward: the model we take forward
+- `data.marks.38fbb531`: three squares and a ring for the fourth: A is to B as C is to what
+- `data.marks.3904dd7d`: a flask: try the memory yourself
+- `data.marks.39274633`: a sealed envelope: a prediction written before measuring
+- `data.marks.397557c0`: a light half lit: how often it says yes
+- `data.marks.39cfad93`: a square, an arrow, a circle: the morph
 - `data.marks.3a1e84a8`: a speech bubble
 - `data.marks.3a52171e`: a question in a ring
+- `data.marks.3bd1da9e`: an hourglass: the horse in true time
+- `data.marks.3c599f69`: a card with a row of verdict dots
+- `data.marks.40549143`: a wrench: set it up
+- `data.marks.4059ab95`: an arrow coming round: reset to coin flips
 - `data.marks.419478b0`: a folder
+- `data.marks.426fe888`: a stem splitting into roots: where each word came from
 - `data.marks.4326d879`: a stack of hops reading a memory: the SDM language model
+- `data.marks.434d2d68`: a query drawing a weighted mean from three slots
 - `data.marks.4444ecd2`: a loss curve falling in a frame: the little ML studio
+- `data.marks.45ba37a4`: a calendar page with a 7: the 7-day cap
+- `data.marks.4739b970`: a noisy digit cleaned up, left to right
+- `data.marks.47f601c6`: a square of polka dots: the picture, by Yayoi Kusama
+- `data.marks.49290f76`: a star: a set you rated 4 or 5
+- `data.marks.49aa2ff6`: a field of six dots: the 6-digit code from the email
+- `data.marks.4ad6d4c4`: a tick and a cross: ask it yes or no
+- `data.marks.4b044d1e`: a signpost pointing two ways: a decision
+- `data.marks.4e2bdd64`: a key with a blurred edge: recall from a blurred key
+- `data.marks.4e4a74a3`: a gauge with its needle low: what it costs
+- `data.marks.4f2c7198`: an underlined word and an arrow out: a link
+- `data.marks.50b2d0a5`: rays round a lit point: the radial pulse
+- `data.marks.528c9fc7`: two arrows chasing round: sense, then act
+- `data.marks.539daf45`: two valleys, the lime tilting one lower
+- `data.marks.53cff17d`: a confusion matrix with its diagonal lit
+- `data.marks.542be3ef`: a coin on its edge: a bit become a p-bit
+- `data.marks.54f83825`: a U-shaped curve with its lowest point lit: the best shape
+- `data.marks.55993156`: an arrow down into a tray: download a model
+- `data.marks.56e7f5e5`: a pinned word in a line of tokens
+- `data.marks.57a01216`: a globe: the word in this page’s language
+- `data.marks.58663b35`: a padlock: what we keep, the privacy page
+- `data.marks.5a1a2441`: a field of lights: a background
+- `data.marks.5a565390`: a gear: the run trains in a Web Worker
+- `data.marks.5a966ec8`: a balance tipped to one side: the bit lean
+- `data.marks.5b403f3c`: a word table with one row picked out
+- `data.marks.5b6d75a2`: bars under a curve: how many patterns fit
 - `data.marks.5bb1d722`: three doors: one for each kind of reader
+- `data.marks.5cee1673`: two arrows apart: the guide before and the guide after
+- `data.marks.5d4562f2`: a postmark with wavy lines: where to find us
+- `data.marks.5d90ba09`: two pulls on one read, the rival heavier
+- `data.marks.5da9a41a`: a clipboard: train on your own pasted text
 - `data.marks.5daf86d7`: a line that climbs
+- `data.marks.5dd9e18e`: a bell: the loop that rings
+- `data.marks.5eac1c19`: two linked rings: tie and untie
+- `data.marks.5edeec2e`: a triangle in a window: the ball’s answer
+- `data.marks.5fba4dd5`: a stop square in a ring: stop an answer before the end
+- `data.marks.605e0093`: a circular arrow: play the set again
+- `data.marks.62603f14`: a slow cool-down beside a quench
 - `data.marks.6329c17c`: a page without a mark of its own
+- `data.marks.6507d57a`: a mortarboard: post-train it on poems
+- `data.marks.6a7235fb`: three clusters: twenty answers in three groups
 - `data.marks.6c7deeb1`: a grid of stored lights
+- `data.marks.6df1ccf8`: a die showing three: example questions dealt at random
+- `data.marks.6df809d0`: a bin with its lid: delete a model or the account
+- `data.marks.6e584925`: a handwritten seven
+- `data.marks.6e66ae40`: a light bulb with a lean in it: one light, one lean
+- `data.marks.6e7078ae`: a spiral: the psych guitars
 - `data.marks.6eef50f2`: a store with two facts folding in
+- `data.marks.6f88536e`: a branching line: fork a run at a step
+- `data.marks.71cd7194`: the chances of the next word, one bar standing tall
+- `data.marks.71f6f694`: a slow wave in a ring: the breath the lights follow
 - `data.marks.72a3434a`: a number sign
+- `data.marks.72de94e2`: a spring: the noisy springs
+- `data.marks.72f66d46`: a paintbrush: the visual artist
+- `data.marks.73450dbb`: a grid with three givens on its diagonal: sudoku
+- `data.marks.73ea5c0e`: curly braces on a page: your data as one JSON file
 - `data.marks.744bc796`: an envelope with its flap up: how to reach us
+- `data.marks.74dec858`: a list with a play mark: the sets you liked, in a table
+- `data.marks.74f5423b`: two fades: one short, one that never forgets
+- `data.marks.7604a32f`: a caret under a wavy word: explain an error
+- `data.marks.7735e0ca`: a pointer pressing a button: the one-click install
+- `data.marks.78ba2b7c`: a pyramidal cell: the tuft above, the soma below
+- `data.marks.78fd28df`: two notes on a beam: the music and THE DJ
+- `data.marks.795bcdc8`: a thermometer: the heat that shakes it all about
+- `data.marks.7a5083a0`: a podium: our score among the published ones
+- `data.marks.7afe0cde`: an atom: the quantum roads
 - `data.marks.7c566835`: a terminal: prompt and cursor
+- `data.marks.7d907632`: a microphone: the lectures and talks he learned from
 - `data.marks.7da9b2a5`: a column on its plinth: what the language stands on
+- `data.marks.7ddcb769`: a flat line beside a rising one: the same cost at any length
+- `data.marks.7e57ea09`: a heart with a minus: remove a like
+- `data.marks.80b23a4f`: a banknote with a dollar sign: the dollar of Mexico
+- `data.marks.81f1fc95`: a thermometer: the anneal from 2.5 to 0.12
 - `data.marks.83d6a605`: a quill
+- `data.marks.85ecc22b`: a curve falling with distance: the chance a location wakes
 - `data.marks.86161dd3`: a palette
+- `data.marks.873dd628`: a shield with a mark: the trust warning
+- `data.marks.87faf95f`: three faders on their tracks: the mixing desk
+- `data.marks.894831f1`: a luggage tag: the kind a term belongs to
+- `data.marks.8b974850`: an easel holding a canvas: any canvas
+- `data.marks.8c588dc3`: a magnifying glass: search the terms
+- `data.marks.8d7fd08e`: a name tag: :cat, :dog and :owl
+- `data.marks.8e102c85`: a battery nine tenths full: the capacity
+- `data.marks.8e53e4b8`: a tilted ellipse round a point: the spread is the inverse
+- `data.marks.8f2ad605`: a window over a tape: he reads only the last 256 tokens
+- `data.marks.8f8a7ee1`: headphones: playing the set on THE DJ
 - `data.marks.90142ba8`: a film strip
+- `data.marks.923e9a98`: a heart in pixels: the nonogram ladder
 - `data.marks.93349f22`: an eight ball
+- `data.marks.936d9ce3`: a ball tumbling down a slope to a stop
+- `data.marks.93cbe070`: three swatches beside their words: the colour key
+- `data.marks.9435cf48`: hills and a sun in a frame: an image in lights
 - `data.marks.95264716`: a state diagram: three states, three moves
+- `data.marks.9874ba57`: a loop: the memory carried from token to token
+- `data.marks.988669ee`: a lens finding a few slots among thousands
+- `data.marks.98a476b7`: a crosshair: the game in first person
+- `data.marks.99625931`: an arched door and an arrow up: back to the doors
+- `data.marks.99b9498e`: a funnel: show one kind of term
+- `data.marks.9a121759`: a mouse pointer: a machine you operate
+- `data.marks.9b208a16`: a sealed envelope: the sealed guesses
+- `data.marks.9b937849`: a pair of quotation marks: the recital, word for word
+- `data.marks.9c15149f`: a query cut in two halves: rows and columns
+- `data.marks.9eb94b74`: a disc half lit: the time of day
+- `data.marks.9fdbb453`: a dashed box and the pointer that drew it: the drag box
+- `data.marks.a018ab28`: a trace with one spike: surprise over 300 steps
+- `data.marks.a0407842`: two chain links: every term has its own link
+- `data.marks.a05ea25a`: a tiny paper with a title bar: his tiny paper
+- `data.marks.a3095a16`: a hexagon cut six ways: sparse distributed memory, drawn six ways
+- `data.marks.a34e0b98`: two marks with a long gap between them: recall after a gap
+- `data.marks.a3c2c2fd`: a thought cloud with a question: how does anybody know anything
+- `data.marks.a3da3d15`: two bands of cortex, one above the other
+- `data.marks.a52d906b`: a knife: where the language breaks
+- `data.marks.a6551aed`: an hourglass: time for depth
+- `data.marks.a6ebe207`: a switch with two halves: SETTLE and KANERVA
+- `data.marks.a8e4bddc`: a frame with four hot pixels: the error map
+- `data.marks.aba88e37`: a gate half open: how much of the value is written
+- `data.marks.acb65bc7`: headphones: the sound artist
+- `data.marks.ad3760ab`: a button with a chevron: more detail, opened in place
+- `data.marks.ad77be37`: a flag planted at the last scores
+- `data.marks.af38989f`: a ball resting in a valley: the energy, precisely
+- `data.marks.b1c75871`: a straight fall on log-log axes: the error against steps
 - `data.marks.b27956b8`: a house
+- `data.marks.b3d65117`: a dropdown: the model picker
+- `data.marks.b5446c5f`: a full disc, a half disc and a ring: the three reads
+- `data.marks.b5606d63`: a drum with its rods: the house bases
+- `data.marks.b57ea7a6`: a guitar: the echo guitar
+- `data.marks.b5f9298f`: a cylinder of records: the datasets
+- `data.marks.b6aeac26`: a coconut and a lime
+- `data.marks.b83bf594`: a column with one cell lit: the error column
+- `data.marks.b8d50c81`: a ruler with a bar run part way: the rollout
 - `data.marks.b9fb1330`: a letter A as a grid of lights
+- `data.marks.bb84a8bb`: a play mark against a bar: step one frame
 - `data.marks.bc2589b9`: a warning sign
+- `data.marks.bc30cddc`: a postage stamp: the letter as it settles
+- `data.marks.bd01f904`: a puzzle piece: the small check that you are a person
+- `data.marks.bd246fc9`: a reel: the clip
 - `data.marks.bdd597d1`: a person beside a saved file: your account and your models
+- `data.marks.c04f3bbd`: two stanzas with a break between
+- `data.marks.c0f6e1a4`: a branching cell: the Purkinje shape
+- `data.marks.c109690d`: a matrix in brackets: the system A x = b
+- `data.marks.c1b7a909`: an hourglass: the sweeps a digit needs
+- `data.marks.c1f3ab7e`: a wheel in three parts: the colour run
+- `data.marks.c22a041d`: scattered lights and a letter S: a word settling
 - `data.marks.c381954c`: two speech bubbles: a question and its answer
+- `data.marks.c3dfcbaf`: three frames fanned out: a sequence
+- `data.marks.c4bfac56`: three coins stacked: your savings balance
+- `data.marks.c696da42`: a pair of quotation marks: a quote in a guide
+- `data.marks.c724e396`: a table of every model and its score
+- `data.marks.c72d8cac`: four tiles of what the hidden things learned
+- `data.marks.c7fb74a1`: four frames on a sheet: the contact sheets
+- `data.marks.c800a309`: one stream climbing the layers, each adding to it
+- `data.marks.c9c91f08`: a page with a contents column: the guide and its sidebar
+- `data.marks.cc1186b3`: an at sign: the email address to copy
+- `data.marks.cca16eee`: an open book: the docs it reads before it answers
+- `data.marks.ccc9d3a1`: a ring of hard locations, the near ones lit
+- `data.marks.cd665238`: a name badge: not John Searle
+- `data.marks.cdd4ddb3`: a chat window with two lines typed
 - `data.marks.ce46f75a`: six layers of cortex and a loop up their side: feedback
 - `data.marks.d1004c14`: a speaker and its waves
+- `data.marks.d11d07f8`: a stack of blocks struck through: no transformer inside
+- `data.marks.d18ef6af`: three overlapping circles: three colour modes
+- `data.marks.d3fef3bb`: a level from above: rooms and doors
+- `data.marks.d4005371`: a pencil drawing a digit
 - `data.marks.d4218530`: a little robot
 - `data.marks.d471dc9d`: a memory ring with a climbing line: a sparse memory learning
+- `data.marks.d4f766fb`: a jigsaw piece: a puzzle settled
+- `data.marks.d657b7d4`: two sheets, one over the other: copy the address
+- `data.marks.d6d07c5d`: a cookie struck through: no cookies
+- `data.marks.d7400f43`: two models side by side: FULL and PARTIAL
+- `data.marks.d74fdb8b`: a podium of three: Settling beside SGD and Adam
+- `data.marks.d7ba70fd`: a four-point sparkle: the ambient shimmer
+- `data.marks.d7ebb5ae`: a balance: the same weights, spent two ways
+- `data.marks.d827db5c`: a flame: the Blake primer
+- `data.marks.d977fc1e`: curly braces round a dot: the --json face
+- `data.marks.da70476f`: a level meter lit to its middle: the master fader
+- `data.marks.dad9d3d2`: a pilcrow: the line-break nudge
+- `data.marks.dd6b4fc3`: a teacher and a student: the slow teacher, the one-pass student
+- `data.marks.de1ab0c6`: a curve with its two handles: a vector
+- `data.marks.defaa621`: four nodes and five edges: graph colouring
+- `data.marks.e14426c6`: a step from minus to plus: keep the sign
+- `data.marks.e177502d`: three stops on a rail, the middle one lit: the carry-along
+- `data.marks.e1c627da`: two memories side by side, one full and one partial
+- `data.marks.e28a2dbb`: two figures meeting in a high five
+- `data.marks.e2ae641d`: an open book: the reference
+- `data.marks.e4602f26`: two sheets, one over the other: the copy button
+- `data.marks.e47e9650`: a key: the address a token writes under
+- `data.marks.e4f6083a`: a times sign: factoring a number
+- `data.marks.e5784d50`: a switch: memory on, memory off
 - `data.marks.e64f12a0`: a heart with a play mark: the sets you liked
+- `data.marks.e74cc00a`: a chest of two drawers: inside the model
+- `data.marks.e9462c62`: a letter S coming back out of noise
+- `data.marks.e9d67acc`: a clapperboard: a film in true time
+- `data.marks.ea8281a8`: a bell: the fifty page chimes
+- `data.marks.ed3f13f5`: a stopwatch: how fast the one pass is
+- `data.marks.edc233e2`: two cards joined at a corner: related terms
+- `data.marks.eeb0f305`: a coin spinning in the air: the coin rule
+- `data.marks.ef60715b`: a record with its label: the sets played this visit
+- `data.marks.efc64828`: a dial from gentle to bold: the learning rate
+- `data.marks.f167430e`: a ballot box with a slip going in: the vote
+- `data.marks.f1c6d1f4`: an hourglass: the 4-hour allowance
+- `data.marks.f3ab4b0e`: a cut across two edges: max-cut
+- `data.marks.f40a08c9`: a dial with five ticks: the five measured defaults
+- `data.marks.f60a09f4`: counters above and below a line: the bit-counters
+- `data.marks.f62765ad`: a crown: king and queen
+- `data.marks.f94d1a68`: a bulleted list: the tested examples
+- `data.marks.fa2e2fe8`: a tick beside a cross: a hit and a miss
+- `data.marks.faadb4a6`: a ball on a slope: gradient descent is settling
+- `data.marks.fb229f06`: a door ajar: sign up or log in
+- `data.marks.fb6df01a`: a film reel: the films, Muybridge and Tears of Steel
+- `data.marks.fccca32c`: a flag on its pole: a checkpoint
+- `data.marks.fe4e9173`: a stopwatch: the live meter
+- `data.marks.fe858666`: a padlock: one figure held, the other free
+- `data.marks.fecac57a`: a door with a no-entry sign: an address never stored
+- `data.marks.ff12416a`: a diamond of lights: your saved models
+- `data.marks.ff450247`: a run of symbols copied below itself
+- `data.marks.ff68b990`: a balance scale: the samplers SETTLE was checked against
 - `data.mcp.2908a356`: its `mcp_config.json`, which the MCP settings open (the current docs, now under the name Devin Desktop, give `~/.config/devin/mcp_config.json`)
 - `data.mcp.4c4023ab`: `~/.codex/config.toml`, or `.codex/config.toml` in a trusted project
 - `data.mcp.509c71f4`: `.vscode/mcp.json` in a workspace, or the user configuration (MCP: Open User Configuration)
@@ -1392,12 +1652,15 @@
 - `data.paper.07fe45e2`: In a small place one house stands; a pair of them, not so.
 - `data.paper.0c6175c1`: little
 - `data.paper.0f64bd0f`: 300 starts, 100 per seed over 3 seeds
+- `data.paper.132598f8`: Star-spray: a Sindarin name, kept in its Sindarin form
+- `data.paper.1a48c545`: to find; future hiruva, will find
 - `data.paper.1dd11e97`: to fall; past lantane
 - `data.paper.2172fd99`: dual ending: a pair
 - `data.paper.29938b98`: one; er for a unique thing (er oron tare, one mountain stands)
 - `data.paper.31e3ac21`: median of 15 frames, 150x100
 - `data.paper.337aff92`: 33.0% stored, 44.7% mirror
 - `data.paper.349cecfb`: 84.3% stored, 0 mirror
+- `data.paper.45fd19b2`: May you find the true valley.
 - `data.paper.4b5345de`: in (Namárië: mi oromardi, in lofty halls)
 - `data.paper.4bfe9350`: deep vale, valley
 - `data.paper.4e0cd7ec`: inverted, lit. under-turned
@@ -1411,8 +1674,11 @@
 - `data.paper.7f1042dd`: the soft end of the memory against attention: agreement, and recall of either
 - `data.paper.84ae5e1e`: 200,000 samples
 - `data.paper.8bdf1dd4`: median of 15 frames
+- `data.paper.940845df`: you (polite), the subject ending: hiruvalyë, thou shalt find
 - `data.paper.97d0514a`: the coin law with no pulls, peak signal-to-noise in dB at K = 5, 10, 20, 40, 80
+- `data.paper.9824d6b0`: Elwing, a star shines.
 - `data.paper.9b7ce276`: not, it is not so
+- `data.paper.a797f7a6`: may it be that, be it that, maybe
 - `data.paper.ab3d40c8`: to stray, *wander (root RAN)
 - `data.paper.bc4641e6`: house, hut, shed; dual cöat
 - `data.paper.c8d632fc`: place
@@ -1421,9 +1687,12 @@
 - `data.paper.d0813d07`: recalling, memory (Cirion’s Oath: enyalien)
 - `data.paper.d42c88a9`: She wandered astray, she turned head over heels, she fell into the true valley.
 - `data.paper.e006d621`: existing, actual (true)
+- `data.paper.e15722fd`: Namárië: maybe thou shalt find Valimar; the closing line puts the true valley in place of Valimar
+- `data.paper.e3020487`: to shine; present síla, shines (elen síla lúmenn’ omentielvo, a star shines on the hour of our meeting)
 - `data.paper.e8dde470`: 20 stored, 20% damage
 - `data.paper.ee7438d2`: 99.2% agreement, 0% recall
 - `data.paper.f05e90b1`: binarised digits: 64 hidden things by contrastive divergence, logistic regression, shuffled labels
+- `data.paper.f06fed02`: star (The Silmarillion, ch. 24: “upon her breast there shone as a star the Silmaril”)
 - `data.paper.f5dcb8e3`: rest, repose, peace
 - `data.puzzlesurvey.0ed8e533`: latin square 7x7, 40% givens
 - `data.puzzlesurvey.1fa2dcc8`: exact cover, 30 elements, 10 planted triples + 30 decoys
@@ -5795,6 +6064,26 @@
 - `hero.plate.young-two-source-interference.note`: Young's interference of waves from two sources A and B (Course of Lectures on Natural Philosophy, 1807)
 - `hero.play`: ▶ play
 - `hero.radio.track`: THE SHIMMER
+- `hero.rain.rain-anneal.label`: rain cools into streams
+- `hero.rain.rain-anneal.note`: the column p-bits anneal from temperature 6 to 0.35: hot, rain everywhere; cold, only the five streams
+- `hero.rain.rain-beat.label`: rain on the beat
+- `hero.rain.rain-beat.note`: on every 500 ms beat of the master clock the column p-bits are heated for one tick: a band of drops
+- `hero.rain.rain-city.label`: a city of light in the rain
+- `hero.rain.rain-city.note`: rain from the column p-bits over a city whose every window is a p-bit of its own
+- `hero.rain.rain-hyper.label`: hyper rain
+- `hero.rain.rain-hyper.note`: every column of lights holds a p-bit drawn each tick by the tanh rule; a +1 starts a drop
+- `hero.rain.rain-sdm.label`: rain on a memory
+- `hero.rain.rain-sdm.note`: each drop is an address: the hard locations within its activation radius wake, as in Kanerva's SDM
+- `hero.rain.rain-word.label`: the rain writes SETTLE
+- `hero.rain.rain-word.note`: rain from the column p-bits falls on hidden letters; each light a drop crosses keeps a little water
+- `hero.rain.waterfall-column.label`: one column of falling light
+- `hero.rain.waterfall-column.note`: the column p-bits lean hard into one stream: a drop almost every tick, spray at its edges, mist at its pool
+- `hero.rain.waterfall-curtain.label`: a curtain of streams
+- `hero.rain.waterfall-curtain.note`: six streams in the field of the column p-bits, three falling pink and three blue, with stochastic spray
+- `hero.rain.waterfall-kanji.label`: a waterfall settles into 定
+- `hero.rain.waterfall-kanji.note`: a waterfall of p-bit rain sweeps over the SETTLE kanji; each light fills as drops cross it
+- `hero.rain.waterfall-pool.label`: falling light and its ripples
+- `hero.rain.waterfall-pool.note`: two streams of p-bit rain fall into a pool; each drop that lands sends a ring across the water
 - `hero.readout.energy`: energy {e} ({per}/light)
 - `hero.readout.flips`: flips {n}
 - `hero.readout.lean`: lean {v}
@@ -5890,8 +6179,6 @@
 - `hero.welcome.aboard.body`: Have fun! This is a friendly website, and it may confuse you a little. Our destination today: you must learn about thermodynamic computing and sparse distributed memory.
 - `hero.welcome.aboard.kicker`: welcome aboard
 - `hero.welcome.aria`: A short introduction to this site
-- `hero.welcome.captain.body`: After one day of using this site, the navigator began to flash. It was very nice, and it was not a problem. But be forewarned, traveller: this site may have properties unusual to websites.
-- `hero.welcome.captain.kicker`: a word from the captain
 - `hero.welcome.close`: Close the introduction
 - `hero.welcome.count`: {n} of {total}
 - `hero.welcome.done`: done
@@ -5900,11 +6187,11 @@
 - `hero.welcome.exits.on`: The 40 Hz light is on right now.
 - `hero.welcome.lights.body`: There are flashing lights here (off by default).
 - `hero.welcome.lights.kicker`: cabin lighting
-- `hero.welcome.motto`: be awares!
+- `hero.welcome.navigator.body`: After one day of using this site, I began to flash. It was very nice, and it was not a problem. But be forewarned, traveller: this site may have properties unusual to websites.
+- `hero.welcome.navigator.kicker`: a word from the navigator
 - `hero.welcome.next`: next
 - `hero.welcome.next.aria`: Show the next part of the introduction
 - `hero.welcome.terms.body`: Agreement: by looking at this site with your eyes, you agree to learning about sparse distributed memory and thermodynamic computing. Escape clause: if you do not agree, look away now! Ahh! Flee!
-- `hero.welcome.terms.cta`: Agreed? Start with WHAT
 - `hero.welcome.terms.kicker`: terms of carriage
 - `hero.what.abstract`: abstract
 - `hero.what.equation`: equation
@@ -5915,6 +6202,7 @@
 - `hero.what.paper`: paper figure
 - `hero.what.picture`: picture
 - `hero.what.plate`: old plate
+- `hero.what.rain`: rain
 - `hero.what.video`: video
 - `hero.what.visualiser`: visualiser
 - `hero.what.word`: word
@@ -8541,11 +8829,12 @@
 - `paper.fig2.cap`: Fig. 2. Equation (7) with no pulls. Line: the law, 3.01 dB for each doubling of K. Dots: the machine, median of 15 frames of the Muybridge horse at 150x100. Numbers in Table 1.
 - `paper.fn.aria`: note {n}
 - `paper.kicker`: Proceedings of the SETTLE campaign · vol. 1 · no. 1 · 1 October 2026
-- `paper.lex.h`: Lexicon of the three Quenya lines
+- `paper.lex.h`: Lexicon of the five Quenya lines
 - `paper.note1`: Every number comes from a campaign report, with its sample size. No coconut was harmed.
 - `paper.note2`: After Whitehead [9], who said it of civilisation: it advances by extending the number of operations we can perform without thinking about them. A coin, which never thinks, is the limiting case.
 - `paper.note3`: In Quenya, {nuquerna}, “inverted”, literally “under-turned”: the global flip s ↦ −s. The head epigraph's {quernes}, “she turned”, is the same verb.
-- `paper.note4`: The three Quenya lines are this campaign's own compositions, not Tolkien's. The words are taken from the Eldamo lexicon [10], below; the joined forms {ranyanes}, {lantanes} and {tumbunna} are formed by the composer on the regular patterns and are not attested.
+- `paper.note4`: The five Quenya lines are this campaign's own compositions, not Tolkien's, though the closing two borrow his own forms: {nai} adapts Namárië's {valimar}, and {elensila} comes from Frodo's greeting, {greeting}. The words are taken from the Eldamo lexicon [10], below; the joined forms {ranyanes}, {lantanes} and {tumbunna} are formed by the composer on the regular patterns and are not attested.
+- `paper.note5`: The paper closes on two lines. {find}, “may you find the true valley”, is Galadriel's farewell in Namárië, {valimar}, with the true valley in place of Valimar; it answers the opening epigraph, in which she falls into the true valley. {star}, “Elwing, a star shines”, names Elwing, on whose breast the Silmaril shone as a star (The Silmarillion, ch. 24); {elensila} is Frodo's greeting, {greeting}.
 - `paper.notes.h`: Notes
 - `paper.page.here`: paper
 - `paper.page.title`: The paper
