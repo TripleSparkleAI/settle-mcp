@@ -2384,7 +2384,7 @@ settle-see's global.js. A ripple travels at 900 px a second and weakens with dis
 
 ### the kanji mark
 
-The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the prime red with a touch of neon.
+The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the hyper blue with small hyper pink marks.
 
 One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint.
 
@@ -3762,6 +3762,18 @@ A hero word.
 - where: #/
 - source: SETTLE/settle-site/src/heroWords.js, https://doi.org/10.1088/0305-4608/5/5/017
 - link: #/glossary#spin-glass
+
+### STDP
+
+Spike-timing-dependent plasticity: a synapse strengthens when the spike before it arrives just before the spike after it, and weakens when it arrives just after; the change shrinks as the gap grows.
+
+The hero film "spike timing": one synapse under pair-based STDP with A+ 0.05, A- 0.055 and tau 20 ms, 40 spike pairs tracing the timing window.
+
+- also: spike-timing-dependent plasticity
+- Japanese: スパイクタイミング依存可塑性
+- where: #/
+- source: SETTLE/settle-site/src/heroArt/films_deephebb_draw.js
+- link: #/glossary#stdp
 
 ### stochastic computing
 

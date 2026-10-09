@@ -65,7 +65,7 @@ Run SETTLE programs and .kanerva programs, store and recall with a sparse distri
 - 54 documents as resources: the three guides and their index (`site://who-you-are/...`), the SETTLE docs (`settle://docs/...`, `settle://readme`), the KANERVA README (`kanerva://readme` and `kanerva://terms`), and the site pages (`site://...`). `read_doc` with no name lists them.
 - 121 tested example programs as `settle://examples/{name}`; `list_examples` and `get_example` read them.
 - 5 programs for the kanerva command as `kanerva://programs/{name}` (hello, sdm, sdmscale, softsdm, theory), each with its recorded output; `run_kanerva` runs them.
-- The glossary of 667 names as `settle-mcp://glossary`; `help` with a topic looks one up.
+- The glossary of 668 names as `settle-mcp://glossary`; `help` with a topic looks one up.
 - `settle-mcp://help` (the three parts and where to start), `settle-mcp://usage`, `settle-mcp://setup`, and this document as `settle-mcp://agents`.
 - Prompts: `explain-settling`, `write-settle-program`, `sdm-store-recall`.
 

@@ -2414,6 +2414,7 @@
 - `data.wtfsource.4356b644`: heroRotation.js
 - `data.wtfsource.435792e9`: pages/Paper.jsx
 - `data.wtfsource.43c56b39`: whoYouAre.js
+- `data.wtfsource.4504e16e`: heroArt/films_deephebb_draw.js (the spike timing film)
 - `data.wtfsource.45ab3efc`: the SETTLE campaign ledger
 - `data.wtfsource.47b76ae7`: heroControls.js (MINI_H / STRIP_H)
 - `data.wtfsource.48109c1a`: heroControls.js (glyphWords)
@@ -5271,8 +5272,12 @@
 - `hero.film.fwrite-store-fills.note`: a real SDM of 480 hard-locations in 64 bits written three words a frame: each location lights at its first write; after 60 words 84.2% have one, against 83.9% from 1 - (1 - p)^T (tick)
 - `hero.film.fwrite-willshaw-fills.label`: a Willshaw memory fills
 - `hero.film.fwrite-willshaw-fills.note`: a Willshaw memory takes sparse pairs, each write setting bits with a logical or: after 120 pairs 77.6% of the matrix is set, as 1 - (1 - a^2)^M says (tick), and a read gives 6.8 false bits
+- `hero.film.hebb-fire-wire.label`: fire together, wire together
+- `hero.film.hebb-fire-wire.note`: 12 units, Hebb's rule dw = 0.1 x_i x_j: six fire together 16 times and their links grow solid, the rest stay faint; then a cue of three fires all six
 - `hero.film.hebb-learns.label`: cells that fire together
 - `hero.film.hebb-learns.note`: the Hebb rule builds a weight matrix one pattern at a time; then the first pattern with three bits wrong is recalled whole
+- `hero.film.hebb-spike-timing.label`: spike timing
+- `hero.film.hebb-spike-timing.note`: STDP, A+ 0.05, A- 0.055, tau 20 ms: a pre spike just before the post spike raises the synapse's weight, just after lowers it; 40 pairs trace the timing window
 - `hero.film.hopfield-basins.label`: two basins
 - `hero.film.hopfield-basins.note`: a Hopfield net storing a ring and a plus: six mixed probes each fall into the memory they started nearer
 - `hero.film.hopfield-complete.label`: a memory completes a letter
@@ -10949,7 +10954,7 @@
 - `style.mark.chosen`: THE MARK
 - `style.mark.label`: THE MARK
 - `style.mark.lights`: {n} lights
-- `style.mark.p`: The SETTLE mark is a kanji drawn as a dot matrix of p-bit lights, in the prime red with a touch of three neons ({touch}: the first, the middle and the last light). One constant, {name} in {file}, is the source for the header, the favicon and this page. The five candidates below are drawn the same way at 64, 32 and 16 px; the chosen one is {glyph} ({reading}: {meaning}).
+- `style.mark.p`: The SETTLE mark is a kanji drawn as a dot matrix of p-bit lights. In the header and the favicon it wears the hyper blue with small hyper pink marks; the candidates below keep the prime red with a touch of three neons ({touch}: the first, the middle and the last light). One constant, {name} in {file}, is the source for the header, the favicon and this page. The five candidates below are drawn the same way at 64, 32 and 16 px; the chosen one is {glyph} ({reading}: {meaning}).
 - `style.mark.title`: A kanji drawn in lights
 - `style.red.label`: THE RED-LIGHT RULE
 - `style.red.p1`: Grounds, text, rules, buttons, menus, headings, links, code, tables, the KEY panel and the footer use colours whose blue channel is at most 0x{blue} and whose green is at most {green} of their red: light from orange (about 600 nm) to deep red. Body text is scarlet red on the ground (the hero and the footer keep their amber), and every text colour meets WCAG AA (4.5:1) on the ground, the panel and the room.
@@ -13264,7 +13269,7 @@
 - `wtf.term.jev.usage`: It lets the engine fetch the experts before the model asks. SDMJEV does the same thing to SDMCHAT.
 - `wtf.term.kanerva-package.meaning`: A Rust library that stores binary patterns in Kanerva's sparse distributed memory and reads them back from noisy read-addresses.
 - `wtf.term.kanerva-package.usage`: KANERVA is the second package. Its docs call it Redis for sparse distributed memory. It has no dependencies, uses Kanerva's own words for every part, and the SETTLE interpreter depends on it by path. Its page is #/kanerva, in the packages folder of the menu, in electric cyan.
-- `wtf.term.kanji-mark.meaning`: The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the prime red with a touch of neon.
+- `wtf.term.kanji-mark.meaning`: The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the hyper blue with small hyper pink marks.
 - `wtf.term.kanji-mark.usage`: One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint.
 - `wtf.term.key-legend.meaning`: The colour key in a page's corner, listing only the neons that page uses.
 - `wtf.term.key-legend.usage`: Each page declares its own neons.
@@ -13600,6 +13605,8 @@
 - `wtf.term.springs.usage`: Each spring adds a quadratic energy; a set of springs is a linear system A x = b.
 - `wtf.term.statement-family.meaning`: One Rust file of settle-rs that adds a group of statements, such as core, memory or sdm.
 - `wtf.term.statement-family.usage`: The interpreter offers each line to the twenty families in a fixed order, and the first whose pattern matches runs it. The home page lists every family with its glyph.
+- `wtf.term.stdp.meaning`: Spike-timing-dependent plasticity: a synapse strengthens when the spike before it arrives just before the spike after it, and weakens when it arrives just after; the change shrinks as the gap grows.
+- `wtf.term.stdp.usage`: The hero film "spike timing": one synapse under pair-based STDP with A+ 0.05, A- 0.055 and tau 20 ms, 40 spike pairs tracing the timing window.
 - `wtf.term.stochastic-computing.meaning`: Computing on random bit streams in which the share of 1s carries the number; a gate that gives 1 only when both its inputs are 1 then multiplies two numbers.
 - `wtf.term.stochastic-computing.usage`: A hero word.
 - `wtf.term.stochastic-resonance.meaning`: A weak periodic signal made easier to detect by adding the right amount of noise.
