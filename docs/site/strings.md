@@ -5472,6 +5472,16 @@
 - `hero.film.sdm-wake.note`: a read-address walks from one address to another; the hard locations inside its activation radius wake and go back to sleep
 - `hero.film.sdm-write.label`: a write
 - `hero.film.sdm-write.note`: the address wakes the hard locations inside its activation radius; each adds the word to its bit-counters
+- `hero.film.sdmt-capacity.label`: the memory fills
+- `hero.film.sdmt-capacity.note`: a real SDM of 2,000 hard-locations and 256-bit words, each read from a copy 13 bits off: every word exact up to 20 words, reads cleaner than their address up to 120, 19.6% wrong at 1,200
+- `hero.film.sdmt-cerebellum-timing.label`: the cerebellum keeps time
+- `hero.film.sdmt-cerebellum-timing.note`: a cartoon cerebellum as an SDM: 96 granule cells read time since the input; the climbing fibre at beat 7 weakens synapses active a beat before; after 20 trials the Purkinje cell pauses at beat 6
+- `hero.film.sdmt-layers-in-time.label`: six layers in time
+- `hero.film.sdmt-layers-in-time.note`: a cartoon of two areas, six layers of 6 threshold units, one step a hop: the sweep climbs L4, L3, then area 2; feedback from its L6 reaches L1 below at step 8 and never L4
+- `hero.film.sdmt-sequence.label`: a sequence on the beat
+- `hero.film.sdmt-sequence.note`: a real SDM of 2,000 hard-locations: each letter of KANERVA is written at the address of the one before; from K with 40 of 256 bits flipped, one read a beat replays A N E R V A
+- `hero.film.sdmt-write-read.label`: write, then read
+- `hero.film.sdmt-write-read.note`: a real SDM, 144 hard-locations, 64-bit words, radius 27: each write wakes 13 to 25 and their counters climb; a read from the cross with 8 bits flipped sums to 32, 14, 9, then 0 bits off
 - `hero.film.separate.label`: a mixture separates
 - `hero.film.separate.note`: half the spins up and half down, and only swaps of unlike neighbours allowed: the count is kept while the two kinds gather into domains
 - `hero.film.softness.label`: a softness dial
