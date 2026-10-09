@@ -1043,31 +1043,28 @@
 - `data.herocontrols.f94f75e2`: glyphs
 - `data.herocontrols.fc5b45da`: VISUALISERS only · the eight visualisers, on shuffle
 - `data.herocontrols.fee364c7`: ATARI LIGHT ORGAN · eight diamonds, one per band from bass to treble, each swelling with its band
-- `data.heroradio.04fc8233`: a stereo level meter
-- `data.heroradio.0b7f749c`: the whit dance: spins cooling to agree
-- `data.heroradio.0c8438e0`: a spectrum analyser
-- `data.heroradio.1083d300`: a field of sparkles
-- `data.heroradio.1e136bf7`: hearts, drifting right
-- `data.heroradio.25570d85`: fireworks
-- `data.heroradio.316913e7`: magnetic domains, walls moving
-- `data.heroradio.40fb4583`: two waves, crossing
-- `data.heroradio.43dad97f`: the word on a wave
-- `data.heroradio.70f11dd6`: rain, falling and drifting right
-- `data.heroradio.7290824c`: noise, annealing to a word
-- `data.heroradio.76b9a5b2`: stars streaming past
-- `data.heroradio.7ef0b8c0`: a sine wave, travelling right
-- `data.heroradio.8443b2c8`: the scrolling sign
-- `data.heroradio.88144868`: radial pulses
-- `data.heroradio.92fa0370`: a horse, galloping right
-- `data.heroradio.9e631e6b`: the word, glitching
-- `data.heroradio.a018043b`: p-bits counting in binary
-- `data.heroradio.b7e28c81`: a double helix
-- `data.heroradio.b9e55e25`: a heartbeat trace
-- `data.heroradio.bfae63b6`: SETTLE, dropping in
-- `data.heroradio.e4a57642`: chevrons, marching right
-- `data.heroradio.eba8c14e`: a scanner, sweeping
-- `data.heroradio.f2b723fe`: a checkerboard, flipping
-- `data.heroradio.f9780d12`: balls bouncing right
+- `data.heroradio.039b5f5e`: a phasor, home
+- `data.heroradio.185a6d46`: the dial
+- `data.heroradio.1ca40a28`: the demos
+- `data.heroradio.200d6f89`: SDM chat
+- `data.heroradio.3067a418`: seven bridges
+- `data.heroradio.30c42d97`: the film player
+- `data.heroradio.3ecf3b24`: SDM, hard locations
+- `data.heroradio.42c45dfe`: an address, read
+- `data.heroradio.6b090799`: p-bits, cooling
+- `data.heroradio.6fdfc1c9`: the puzzles
+- `data.heroradio.796db8d0`: spins in domains
+- `data.heroradio.8b92c72f`: Euclid I.1
+- `data.heroradio.92498d4f`: into the valley
+- `data.heroradio.99d748ae`: the science
+- `data.heroradio.c1b9f8d5`: the Euler line
+- `data.heroradio.ce645dcb`: the divided line
+- `data.heroradio.d34e1218`: the five solids
+- `data.heroradio.da0deaed`: out of the noise
+- `data.heroradio.dca2b3d6`: the settle meter
+- `data.heroradio.e0613459`: the coin law
+- `data.heroradio.e3c25efe`: the language
+- `data.heroradio.e47d9a80`: rules 30, 90, 110
 - `data.hownotes.00aa096b`: What you saw: pin wet grass on. A held thing never flips.
 - `data.hownotes.04661f83`: Start hot, cool slowly over 5,000 sweeps, and keep the calmest seating seen.
 - `data.hownotes.12d364b4`: A push: rain and the sprinkler tend not to be on together. Nobody waters in the rain.
@@ -3651,7 +3648,7 @@
 - `foot.close`: ▼ close
 - `foot.close.title`: Close the footer picture: scroll back up
 - `foot.cortex`: CEREBRAL CORTEX
-- `foot.credits`: Code: {url}. The picture behind this text is our own drawing of two layers of the brain (a schematic, not a measurement of any one area); its mirrored depth is inspired by Yayoi Kusama’s infinity mirror rooms. Films: Eadweard Muybridge (public domain), Tears of Steel (CC BY 3.0, Blender Foundation). credits
+- `foot.credits`: Code: {url}. The picture behind this text is our own drawing of two layers of the brain (a schematic, not a measurement of any one area); its mirrored depth is inspired by Yayoi Kusama’s infinity mirror rooms. credits
 - `foot.gamma.flicker.beat`: flickering at {hz} Hz on a {refresh} Hz display, on the master beat
 - `foot.gamma.flicker.nearest`: flickering at {hz} Hz on a {refresh} Hz display, the nearest rate it draws exactly (asked {asked}), on the master beat
 - `foot.gamma.off`: OFF
@@ -11254,7 +11251,7 @@
 - `style.mark.chosen`: THE MARK
 - `style.mark.label`: THE MARK
 - `style.mark.lights`: {n} lights
-- `style.mark.p`: The SETTLE mark is a kanji drawn as a dot matrix of p-bit lights. In the header and the favicon it wears the hyper blue with small hyper pink marks; the candidates below keep the prime red with a touch of three neons ({touch}: the first, the middle and the last light). One constant, {name} in {file}, is the source for the header, the favicon and this page. The five candidates below are drawn the same way at 64, 32 and 16 px; the chosen one is {glyph} ({reading}: {meaning}).
+- `style.mark.p`: The SETTLE mark is a kanji drawn as a dot matrix of p-bit lights. In the header it wears the hyper blue with small hyper pink marks, and the favicon is the same kanji in the hyper pink on a deep blue square edged in the hyper blue. The candidates below keep the prime red with a touch of three neons ({touch}: the first, the middle and the last light). One constant, {name} in {file}, is the source for the header, the favicon and this page. The five candidates below are drawn the same way at 64, 32 and 16 px; the chosen one is {glyph} ({reading}: {meaning}).
 - `style.mark.title`: A kanji drawn in lights
 - `style.red.label`: THE RED-LIGHT RULE
 - `style.red.p1`: Grounds, text, rules, buttons, menus, headings, links, code, tables, the KEY panel and the footer use colours whose blue channel is at most 0x{blue} and whose green is at most {green} of their red: light from orange (about 600 nm) to deep red. Body text is scarlet red on the ground (the hero and the footer keep their amber), and every text colour meets WCAG AA (4.5:1) on the ground, the panel and the room.
@@ -13570,7 +13567,7 @@
 - `wtf.term.kanerva-package.meaning`: A Rust library that stores binary patterns in Kanerva's sparse distributed memory and reads them back from noisy read-addresses.
 - `wtf.term.kanerva-package.usage`: KANERVA is the second package. Its docs call it Redis for sparse distributed memory. It has no dependencies, uses Kanerva's own words for every part, and the SETTLE interpreter depends on it by path. Its page is #/kanerva, in the packages folder of the menu, in electric cyan.
 - `wtf.term.kanji-mark.meaning`: The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the hyper blue with small hyper pink marks.
-- `wtf.term.kanji-mark.usage`: One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint.
+- `wtf.term.kanji-mark.usage`: One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint. The favicon wears it in the hyper pink on a deep blue square edged in the hyper blue.
 - `wtf.term.key-legend.meaning`: The colour key in a page's corner, listing only the neons that page uses.
 - `wtf.term.key-legend.usage`: Each page declares its own neons.
 - `wtf.term.key.meaning`: Stores or reads text under a key: SETTLE's keyed notes.

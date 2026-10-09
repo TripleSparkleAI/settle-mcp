@@ -2386,7 +2386,7 @@ settle-see's global.js. A ripple travels at 900 px a second and weakens with dis
 
 The brand mark: the kanji 定 (settle, fix) drawn as a dot matrix of lights in the hyper blue with small hyper pink marks.
 
-One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint.
+One drawing serves the header, the favicon and the candidates on #/style. It settles in on the first paint. The favicon wears it in the hyper pink on a deep blue square edged in the hyper blue.
 
 - also: THE MARK, kanji, 定, the logo
 - Japanese: 定
