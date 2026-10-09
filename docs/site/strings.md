@@ -8498,6 +8498,7 @@
 - `menu.peek.settlesee`: The drawing library: words, shapes, photos and films that settle out of noise as lights, in React or on any canvas.
 - `menu.peek.settletext`: The React component library: your text, images and vectors rendered as a settle of lights, no theory needed.
 - `menu.peek.style`: The design tokens, fonts and sigils (dev builds only).
+- `menu.peek.subs`: More marks for this page
 - `menu.peek.surprise`: A first-person game whose agent acts to stay unsurprised.
 - `menu.peek.weirdlittlesdmguy`: A small memory model with one obsession, how we know things, chatting live.
 - `menu.peek.what`: What SETTLE is, result first, in five live steps.
