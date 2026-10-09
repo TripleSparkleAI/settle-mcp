@@ -126,8 +126,8 @@ Three things on this site are machine learning done with these tools.
 
 - [SDMCHAT](#/sdmchat) is a language model whose context is a Kanerva address: the recent tokens address a store,
   and the store's votes feed the next-token head. Every model it offers reads a store of 3,600 hard locations, and
-  the page lists each one with its held-out bits per byte; the chat opens on the best chat-tuned model. How the
-  models were trained is on [SDMCHAT-MODEL](#/sdmchat-model).
+  the page lists each one with its held-out bits per byte, the newest first; the chat opens on the newest model. How
+  the models were trained is on [SDMCHAT-MODEL](#/sdmchat-model).
 - We also measured the store against its own absence. The learned store costs 0.017 to 0.025 bits per byte against
   the same model without it, in every seed ([the SDMLLM result](#/results/sdmllm)). Read the reports before you
   build on a number.

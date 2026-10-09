@@ -1772,6 +1772,16 @@ Every live picture on the site is lights settling. Their colours follow THE NEON
 - source: SETTLE/settle-see/README.md, SETTLE/settle-site/src/neon.js
 - link: #/glossary#light
 
+### LIKED SETS
+
+Every set of THE DJ you rated 4 or 5 on the home page while signed in, kept with your account.
+
+In the members folder. Each set has a play button, which loads its tag back into THE DJ, and a remove button. A rating given while signed out is kept with a salted hash of your network address instead, and is never a like.
+
+- where: #/liked
+- source: SETTLE/settle-site/src/pages/Liked.jsx, SETTLE/settle-site/api/_lib/members/votes.js
+- link: #/glossary#page-liked
+
 ### llms.txt
 
 A plain-text index of a site for AI agents: a title, a summary, and lists of links to Markdown copies of its documents (the llmstxt.org proposal).
@@ -1950,10 +1960,10 @@ Each puzzle is leans and pulls; anneal looks for the calmest arrangement and a p
 
 Five star glyphs among the hero's own text lines: the middle left of the full hero, the top left of its bar. A click rates the set THE DJ is playing.
 
-A rating counts only after a humanity check on real pointer movement; before that it is held. Rating the same set again replaces the first rating. The ratings stay in this browser unless a feedback endpoint is set.
+A rating counts only after a humanity check on real pointer movement; before that it is held. Rating the same set again replaces the first rating. Each rating goes to the site's own server: signed out with a salted hash of your network address, signed in with your account, where a 4 or 5 lands in LIKED SETS.
 
 - also: YOUR RATINGS, feedback
-- where: #/
+- where: #/, #/liked
 - source: SETTLE/settle-site/src/feedback/index.js, SETTLE/SETTLE_CHANNEL.md
 - link: #/glossary#rate-the-dj
 
@@ -2305,6 +2315,17 @@ settle-hear's symphony: a binaural pair on a 40 Hz beat, tuned from A = 432 Hz, 
 - where: #/
 - source: SETTLE/settle-site/src/heroControls.js, sites/CLAUDE.md
 - link: #/glossary#the-dj
+
+### THE DJ SYSTEM
+
+THE DJ and everything around it on the home page hero: the sound modes, the set line and its controls, the rate marks, and listening together, where listeners share their DJ's settings and can follow each other's DJ.
+
+Listening together shows each listener as a coloured dot beside the rate marks; a press on a dot follows that listener's DJ. Only text about what a DJ plays travels, never sound. It works only in a copy of the site that switches it on, and the privacy page says whether this copy does.
+
+- also: the DJ system, listening together, listen together
+- where: #/
+- source: SETTLE/settle-site/src/liveradio/LiveDots.jsx, SETTLE/settle-site/src/pages/Privacy.jsx
+- link: #/glossary#the-dj-system
 
 ### THE DUET
 

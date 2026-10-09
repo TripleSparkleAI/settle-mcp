@@ -246,9 +246,9 @@ test('the README opens with the repository banner, and the READMEs served to age
   const m = /^<!-- settle-banner -->\n```text\n([\s\S]*?)\n```\n\n<!-- GENERATED /.exec(readme);
   assert.ok(m, 'the banner block is the first thing in the README, then the generated marker');
   const lines = m[1].split('\n');
-  assert.equal(lines.length, 7, 'seven banner lines');
-  assert.equal(lines[5], '↑↓↓↑↓↑↑↑↑↑ ●●●●●●●●', 'the p-bit strip');
-  assert.match(lines[6], /^✦ an MCP server/, 'the description line');
+  assert.equal(lines.length, 6, 'six banner lines: five title rows, then the description');
+  for (const l of lines.slice(0, 5)) assert.match(l, /^[█ ]*█$/, 'a title row is full blocks and spaces, no trailing space');
+  assert.match(lines[5], /^✦ an MCP server/, 'the description line');
   // the documents the server hands an agent go without the banner (the build strips it)
   const docs = JSON.parse(fs.readFileSync(path.join(PKG, 'content', 'docs.json'), 'utf8')).docs;
   const readmes = docs.filter((d) => /:\/\/readme$/.test(d.uri));

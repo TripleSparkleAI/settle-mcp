@@ -143,7 +143,6 @@
 - `bv.f.pw`: password
 - `bv.hint.code`: Type it or paste it. It came in the email we just sent.
 - `bv.hint.newpw`: Ten characters or more. A short sentence works well.
-- `bv.home.balance`: your chat credit
 - `bv.home.balancewait`: reading the balance
 - `bv.home.chat`: It opens the ASK chat, which answers questions about SETTLE and KANERVA from our own docs.
 - `bv.home.cta`: make an account and start with {gift}
@@ -152,6 +151,7 @@
 - `bv.home.keep`: It keeps what you make here: the models you train in SDMSTUDIO and your own SDM WEIRD LITTLE GUY, to download or delete.
 - `bv.home.kicker`: the short version
 - `bv.home.price`: We sell nothing.
+- `bv.home.savings`: your savings balance
 - `bv.home.title`: What an account is for
 - `bv.kicker`: the members door
 - `bv.line.closed`: He is around somewhere.
@@ -1147,6 +1147,7 @@
 - `data.marks.d1004c14`: a speaker and its waves
 - `data.marks.d4218530`: a little robot
 - `data.marks.d471dc9d`: a memory ring with a climbing line: a sparse memory learning
+- `data.marks.e64f12a0`: a heart with a play mark: the sets you liked
 - `data.mcp.2908a356`: its `mcp_config.json`, which the MCP settings open (the current docs, now under the name Devin Desktop, give `~/.config/devin/mcp_config.json`)
 - `data.mcp.4c4023ab`: `~/.codex/config.toml`, or `.codex/config.toml` in a trusted project
 - `data.mcp.509c71f4`: `.vscode/mcp.json` in a workspace, or the user configuration (MCP: Open User Configuration)
@@ -1268,7 +1269,7 @@
 - `data.mnist.ff93a8f5`: SVM, Gaussian kernel
 - `data.neon.0069413b`: what one light wants on its own
 - `data.neon.0072999b`: a thing that says yes (+1), a lit light
-- `data.neon.06d74397`: HYPER PINK: every heading (page, section, chart, table) and the highlighted words in prose
+- `data.neon.04590d27`: HYPER PINK, the logo's pink: page titles and the highlighted words in prose
 - `data.neon.07e34bbc`: lime
 - `data.neon.0b0ddd6d`: panels behind text
 - `data.neon.0b7bd0fc`: settled: the lights stopped arguing
@@ -1296,11 +1297,11 @@
 - `data.neon.4fb94b95`: hairlines and the meter track (decorative)
 - `data.neon.53f913be`: burl
 - `data.neon.56458fc0`: body text, a scarlet red (the hero and the footer keep their own ink)
-- `data.neon.56e45a62`: text on a honey fill (9.43:1)
 - `data.neon.5712969b`: the ground of every panel and the members room
 - `data.neon.5775bf1c`: a pull (coupling J) between two things
 - `data.neon.5eaa1b6a`: how much two lights want to agree
 - `data.neon.677c63b1`: a light you pinned in place
+- `data.neon.67f798c1`: the neon: the beaver border, focus rings, the primary fill, the mark, links (10.54:1 on bark)
 - `data.neon.685caed6`: an MCP server: docs, setup and tools for SETTLE and KANERVA
 - `data.neon.6aff4f53`: honey amber
 - `data.neon.6c548d4e`: THE PRIME RED (BRAND: --chrome-red): headings, links, buttons, the active menu item
@@ -1323,7 +1324,6 @@
 - `data.neon.8a8cc89f`: a main button under the pointer or the keyboard focus (heartwood on it 7.43:1)
 - `data.neon.8c0610e5`: a measured number from a real run
 - `data.neon.8cf39074`: memory: a stored pattern, SDM and Hopfield
-- `data.neon.917fddfe`: the neon: the beaver border, focus rings, the primary fill, the mark, links (9.55:1 on bark)
 - `data.neon.9560744c`: grain
 - `data.neon.99e5eefc`: bright text, a bright red: measured numbers, a hit
 - `data.neon.9a393148`: calm: low energy, settled, converged, a hit
@@ -1350,8 +1350,11 @@
 - `data.neon.e02a5cdc`: fields, quiet buttons, the code boxes
 - `data.neon.e3df337b`: small text in honey: a field label in focus, the code digits
 - `data.neon.e9a63c71`: PLAIN WHITE: the brand kanji in its white moment, and the white light of the logo hover effects
+- `data.neon.eb86dc62`: text on a honey fill (10.41:1)
 - `data.neon.eb93e76a`: the dam and the logs in the drawings (decorative, never text)
 - `data.neon.f2a565b1`: raised bark
+- `data.neon.f3bddedd`: hyper neon blue
+- `data.neon.f76b0cdf`: every number and account value in the members area (13.68:1 on bark, 11.89:1 on burl)
 - `data.nonogram.084f58a8`: a heart
 - `data.nonogram.0ae9085d`: a duck
 - `data.nonogram.3a402043`: a key
@@ -2394,6 +2397,7 @@
 - `data.wtfsource.4abed486`: settle-hear masterbeat.js
 - `data.wtfsource.52522066`: pages/LearnSettle.jsx
 - `data.wtfsource.53651aaa`: pages/Puzzles.jsx
+- `data.wtfsource.5853c158`: the vote door
 - `data.wtfsource.586231c7`: soundModes.js (SOUND_MODE_DEFAULT)
 - `data.wtfsource.613ea6bf`: sdmforward/facts.js
 - `data.wtfsource.628e2602`: settle-mcp's package manifest
@@ -2442,9 +2446,11 @@
 - `data.wtfsource.ac2639a8`: sdmforward/Pictures.jsx (the cost picture)
 - `data.wtfsource.affd0509`: pages/Credits.jsx
 - `data.wtfsource.b098475d`: notation.css (.notation)
+- `data.wtfsource.b09a78a6`: liveradio/LiveDots.jsx
 - `data.wtfsource.b16f08a7`: brand.js (BRAND_KANJI)
 - `data.wtfsource.b5a8fa1e`: pages/Ask.jsx
 - `data.wtfsource.b6dbe78f`: heroControls.js (DEFAULT_MIX)
+- `data.wtfsource.b86d3dc3`: pages/Privacy.jsx
 - `data.wtfsource.b98be0e4`: WIKI_STOCHASTIC_CHIPS page 20
 - `data.wtfsource.bc335bb6`: the SETTLE experiments' working notes
 - `data.wtfsource.bcfc49d7`: pages/SdmStudio.jsx
@@ -2470,6 +2476,7 @@
 - `data.wtfsource.e468192f`: pages/LearnSdmUnfold.jsx
 - `data.wtfsource.e7304408`: settle-mcp's own notes
 - `data.wtfsource.e8fee83a`: settle-hear's own notes
+- `data.wtfsource.e9d6cafa`: pages/Liked.jsx
 - `data.wtfsource.eb3b30e9`: the paper page
 - `data.wtfsource.ed1e1d2b`: navtree.js (FOLDERS)
 - `data.wtfsource.ed48a92e`: the wiki behind the page
@@ -2995,6 +3002,7 @@
 - `fb.note.held`: {n} of 5 · counts once you have moved around a little
 - `fb.note.rated`: {n} of 5 · noted for this set
 - `fb.notice.local`: Anonymous. No account. Your ratings stay in this browser; a saved track sits in one cookie of this site.
+- `fb.notice.ours`: Ratings go to this site’s server. Not signed in, a rating keeps a salted hash of your network address, never the address. Signed in, it is kept with your account, and a 4 or 5 lands in your liked sets. A saved track sits in one cookie of this site.
 - `fb.notice.sent`: Anonymous. No account. Ratings go to {host} with a random visit id; a saved track sits in one cookie of this site.
 - `fb.np.beat`: beat {v} Hz
 - `fb.np.carrier`: carrier {v} Hz
@@ -3020,6 +3028,7 @@
 - `fb.pop.ctl`: The glyph above the set opens the sound controller: a row of instruments to hit (keys 1 to 0) with a small looper, and a row that steers THE DJ on the next bar. Centre means the DJ decides.
 - `fb.pop.title`: Rate the DJ
 - `fb.pop.what`: Rate what is playing: press one of the five marks. Anything counts, a DJ set or a lone drone. Your rating stays in this browser; the bookmark beside the marks saves the track to your playlist.
+- `fb.pop.what.sent`: Rate what is playing: press one of the five marks. Anything counts, a DJ set or a lone drone. Your rating is sent with the set; the bookmark beside the marks saves the track to your playlist.
 - `fb.save.dropped`: The oldest {n} left to make room.
 - `fb.save.failed`: This browser refused the cookie, so nothing was saved.
 - `fb.save.name`: Save this track to your playlist
@@ -7031,6 +7040,38 @@
 - `legend.label`: colour key: what each neon colour means
 - `legend.title`: what the colours mean
 
+## liked
+
+- `liked.caption`: the sets you liked
+- `liked.closed.down`: Accounts are not answering just now. Try again in a moment.
+- `liked.closed.noserver`: This copy of the site has no members server, so there are no liked sets to show.
+- `liked.closed.notopen`: Accounts are not open on this copy of the site yet.
+- `liked.closed.off`: Members are not configured on this copy of the site.
+- `liked.col.actions`: actions
+- `liked.col.rating`: rating
+- `liked.col.set`: set
+- `liked.col.when`: liked
+- `liked.empty`: No liked sets yet. Rate a set 4 or 5 on the home page while signed in, and it lands here.
+- `liked.error`: Your liked sets could not be read just now. Try again in a moment.
+- `liked.here`: liked sets
+- `liked.loading`: Loading your liked sets…
+- `liked.play`: play
+- `liked.play.aria`: play {name} on THE DJ
+- `liked.play.here`: Playing {name} on THE DJ.
+- `liked.play.home`: Playing {name} on THE DJ on the home page.
+- `liked.remove`: remove
+- `liked.remove.aria`: remove {name}
+- `liked.remove.failed`: That like could not be removed just now. Try again in a moment.
+- `liked.remove.keep`: keep it
+- `liked.remove.sure`: yes, remove it
+- `liked.removed`: Removed {name}.
+- `liked.signedout`: Sign in on the members page to see the sets you liked.
+- `liked.signedout.link`: go to members
+- `liked.stars`: {n} of 5
+- `liked.sub`: Every set of THE DJ you rated 4 or 5 on the home page, to play again.
+- `liked.title`: Liked sets
+- `liked.unnamed`: a set with no name
+
 ## llm
 
 - `llm.crumb.memory`: memory
@@ -7119,19 +7160,19 @@
 - `lr.c.teal`: teal
 - `lr.c.violet`: violet
 - `lr.count`: {n} tuned in
-- `lr.dot.go`: {colour}: tune into this radio
-- `lr.dot.me`: you are {colour}: {n} tuned in to your radio
+- `lr.dot.go`: {colour}: tune into this DJ
+- `lr.dot.me`: you are {colour}: {n} tuned in to your DJ
 - `lr.dot.on`: {colour}: you are tuned in. Press to tune out
-- `lr.group`: {n} live listeners. Tune into a listener's radio
+- `lr.group`: {n} live listeners. Tune into a listener's DJ
 - `lr.more`: {n} more listeners
-- `lr.out`: my radio
-- `lr.out.name`: Tune out of {colour}'s radio, back to your own
-- `lr.say.gone`: {colour} left. Back on your own radio.
-- `lr.say.in`: Tuned in to {colour}'s radio.
-- `lr.say.loop`: That radio already follows yours.
-- `lr.say.out`: Back on your own radio.
-- `lr.see`: What we see: every open page gets a random colour and a random id. To show one dot per person and to limit connections, the relay keeps a hash of your address made with a secret that changes every day and is never written down; your address itself is never stored or logged. Only text about what your radio plays travels (the DJ's situation and loop notes), never sound.
-- `lr.see.name`: What the live radio sees
+- `lr.out`: my DJ
+- `lr.out.name`: Tune out of {colour}'s DJ, back to your own
+- `lr.say.gone`: {colour} left. Back on your own DJ.
+- `lr.say.in`: Tuned in to {colour}'s DJ.
+- `lr.say.loop`: That DJ already follows yours.
+- `lr.say.out`: Back on your own DJ.
+- `lr.see`: What we see: every open page gets a random colour and a random id. To show one dot per person and to limit connections, the relay keeps a hash of your address made with a secret that changes every day and is never written down; your address itself is never stored or logged. Only text about what your DJ plays travels (the DJ's situation and loop notes), never sound.
+- `lr.see.name`: What the DJ system sees when you listen together
 - `lr.tip.go`: {colour} · tune in
 - `lr.tip.me`: you · {colour}
 - `lr.tip.on`: {colour} · tuned in
@@ -7653,12 +7694,6 @@
 - `mem.closed.server`: Members are not configured on this server: it has no Clerk secret key.
 - `mem.closed.title2`: The members area is closed here
 - `mem.code.strap`: Type the 6-digit code from the email.
-- `mem.cr.granted`: granted
-- `mem.cr.label`: CREDITS
-- `mem.cr.left`: left
-- `mem.cr.line2`: Every member gets $1 of chat credit, once, on joining. ASK is free to use and does not touch it.
-- `mem.cr.spent`: spent
-- `mem.cr.title`: Your chat balance
 - `mem.del.b`: delete my account
 - `mem.del.head`: Delete the account
 - `mem.del.keep`: keep my account
@@ -7715,6 +7750,16 @@
 - `mem.strap.forgot2`: Type your email and we send a code to choose a new password.
 - `mem.strap.login`: Welcome back.
 - `mem.strap.signup2`: An account keeps the models you train here and gives you $1 of free chat on ASK.
+- `mem.sv.balance`: balance
+- `mem.sv.deposited`: deposited
+- `mem.sv.earned`: interest earned
+- `mem.sv.label`: SAVINGS
+- `mem.sv.nothing`: Nothing draws on it. ASK is free, inside its 4-hour allowance, and does not touch your balance.
+- `mem.sv.notmoney`: It is not real money. You cannot withdraw it, cash it out, move it to someone else or spend it anywhere else. The only withdrawals it has ever seen were ASK answers from before ASK was free.
+- `mem.sv.rate`: interest rate
+- `mem.sv.title`: Your savings account
+- `mem.sv.what`: This is your savings account. It holds the {gift} every member gets once, on joining, and it earns {rate} interest.
+- `mem.sv.withdrawn`: withdrawn
 - `mem.tab.login`: Log in
 - `mem.tab.signup`: Sign up
 - `mem.tabs.label`: sign up or log in
@@ -8068,7 +8113,7 @@
 - `menu.folder.about.note`: who SETTLE rests on, how to reach us, and what every word means
 - `menu.folder.demos.note`: live demos: every one settles in your browser
 - `menu.folder.language.note`: the language: what it is, who you are, its sound
-- `menu.folder.members.note`: membership: your account, ASK, SDMSTUDIO, WEIRD LITTLE SDM GUY and the models you saved
+- `menu.folder.members.note`: membership: your account, ASK, your LIKED SETS, SDMSTUDIO, WEIRD LITTLE SDM GUY and the models you saved
 - `menu.folder.misc.note`: pages the menu map does not place yet
 - `menu.folder.packages.note`: the five packages, the main destinations: the language, its memory crate, its MCP server, its React component library and its drawing library
 - `menu.folder.science.note`: the research and how the machines learn: the results, the paper, the cool-down class, a settling machine learning to read, how a sparse memory learns, writes, reads and looks back, and the SDM chat model’s own story
@@ -8092,6 +8137,7 @@
 - `menu.peek.home`: The live room of lights, how to start, and every statement family on one page.
 - `menu.peek.kanerva`: The sparse distributed memory toolbox, live, with its equations and results.
 - `menu.peek.label`: Page preview
+- `menu.peek.liked`: Every set of THE DJ you rated 4 or 5, kept with your account, to play again or remove.
 - `menu.peek.mcp`: The MCP server: docs, setup and tools for SETTLE and KANERVA, for an assistant.
 - `menu.peek.members`: Your account: the little guys and runs you saved, to download or delete.
 - `menu.peek.neocortex-feedback`: The six layers of the neocortex and their feedback, the Purkinje cells, and Kanerva's cerebellum, settled live.
@@ -8123,6 +8169,11 @@
 - `menu.peek.weirdlittlesdmguy`: A small memory model with one obsession, how we know things, chatting live.
 - `menu.peek.what`: What SETTLE is, result first, in five live steps.
 - `menu.peek.who-you-are`: Who you are: a guide for programmers, one for visual artists, one for sound artists, and where each starts.
+- `menu.sheet.close`: Close the site menu
+- `menu.sheet.hint`: tap a page to open it · esc closes
+- `menu.sheet.label`: Site menu
+- `menu.sheet.open`: ls: open the site menu
+- `menu.sheet.system`: Language, load and menu icons
 - `menu.site`: Site
 
 ## mi
@@ -8217,6 +8268,31 @@
 - `modelcard.why.nodata`: the run names no dataset
 - `modelcard.why.noeval`: no evaluation has run yet
 
+## modelload
+
+- `modelload.bar`: loading {name}
+- `modelload.bytes`: Loading {name}: {loaded} of {total} MB, {pct}%
+- `modelload.bytes.tokenizer`: Loading {name}: the tokenizer, {loaded} of {total} MB, {pct}%
+- `modelload.error`: {name} did not load: {error}
+- `modelload.error.bare`: {name} did not load
+- `modelload.prepare`: Preparing {name} in this tab …
+- `modelload.ready`: {name} is ready
+- `modelload.retry`: retry
+- `modelload.say.download`: Downloading {name}.
+- `modelload.say.error`: {name} did not load. A retry button follows.
+- `modelload.say.prepare`: Downloaded. Preparing {name}.
+- `modelload.say.ready`: {name} is ready. You can send a message.
+- `modelload.sofar`: Loading {name}: {loaded} MB so far
+- `modelload.sofar.tokenizer`: Loading {name}: the tokenizer, {loaded} MB so far
+- `modelload.stage.download`: downloading
+- `modelload.stage.error`: failed
+- `modelload.stage.prepare`: preparing
+- `modelload.stage.ready`: ready
+- `modelload.start`: Loading {name}: starting the download …
+- `modelload.start.tokenizer`: Loading {name}: starting the tokenizer download …
+- `modelload.the`: the model
+- `modelload.title`: {name} ({tokens} tokens)
+
 ## nav
 
 - `nav.ask`: ASK
@@ -8227,6 +8303,7 @@
 - `nav.hear`: HEAR
 - `nav.home`: HOME
 - `nav.kanerva`: KANERVA
+- `nav.liked`: LIKED SETS
 - `nav.mcp`: MCP
 - `nav.members`: MEMBERS
 - `nav.neocortex-feedback`: NEOCORTEX-FEEDBACK
@@ -8882,13 +8959,19 @@
 - `privacy.contact.p4`: The message goes by email to our inbox. To limit how many arrive in ten minutes, the server counts recent messages from each network address: in memory, or, where the site has a members database, as a count under a salted hash of the address.
 - `privacy.contact.p5`: If the puzzle opens, the page sends the slider position you chose and nothing else about it. The server keeps a used puzzle and a count of missed tries, in memory, for a few minutes.
 - `privacy.contact.title`: What the contact form records and sends
+- `privacy.feedback.anon`: If you are not signed in, a rating is kept with a salted hash of your network address, never the address itself. The hash lets us limit how fast one network can send ratings. Only our server holds the secret salt it is made with.
 - `privacy.feedback.gate`: Before a rating or a note counts, a check in your browser looks at how the pointer moves, how the page scrolls and how long you stay, to tell a person from a script. It runs in memory and sends nothing.
 - `privacy.feedback.holds`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load. A note holds your words in place of the rating. Nothing in either names you.
+- `privacy.feedback.holds2`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load.
 - `privacy.feedback.label`: RATE THE DJ
-- `privacy.feedback.p1`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Both are anonymous and need no account.
+- `privacy.feedback.member`: If you are signed in, a rating is kept with your account instead. A rating of 4 or 5 is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
+- `privacy.feedback.notesnone`: WHAT IS THIS? notes are not sent: they stay in your browser.
+- `privacy.feedback.ours`: Your ratings are sent to this site’s server and kept in our database.
+- `privacy.feedback.p1b`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Neither needs an account.
 - `privacy.feedback.sentlive`: Both are sent to our ratings server, which keeps a salted hash of the sender’s network address, never the address itself.
 - `privacy.feedback.sentnone`: This copy of the site sends them nowhere: they stay in your browser.
 - `privacy.feedback.title`: Ratings and WHAT IS THIS? notes
+- `privacy.feedback.totals`: We read the totals for each set, how many people rated it and how many liked it, to learn which sets people like.
 - `privacy.here`: privacy
 - `privacy.members.ask`: ASK answers questions about SETTLE and KANERVA. Your question and the last six turns of the conversation go to DeepSeek V4.1 Flash through OpenRouter, a model service, which asks only for providers that keep no copy of them and handles them under its own terms. The server records the time of each answer and what it cost against your chat balance, never the question itself.
 - `privacy.members.label`: MEMBERS AND ASK
@@ -8901,9 +8984,9 @@
 - `privacy.members.title`: Members accounts and the ASK page
 - `privacy.other.label`: OTHER PARTS
 - `privacy.other.mcp`: settle-mcp runs on your own computer when you install it, and talks only to the program that starts it. It sends nothing to us. Its setup step downloads SETTLE and KANERVA from a source you name, and only when you ask.
-- `privacy.other.radiolive`: The home hero can join the live radio: it shares the state of its sound (THE DJ’s settings, the steering and your loops) with the other listeners, and each listener shows as a coloured dot with a colour name and nothing else.
-- `privacy.other.radionone`: The home hero’s live radio, which shares the state of its sound with other listeners, is a tool for the site’s makers; this copy of the site opens no such connection.
-- `privacy.other.title`: The live radio and settle-mcp
+- `privacy.other.radiolive`: The DJ system on the home page hero shares its sound settings with other listeners, so you can listen together: THE DJ’s settings, the steering and your loops travel as text, never sound, and each listener shows as a coloured dot with a colour name and nothing else.
+- `privacy.other.radionone`: The DJ system on the home page hero can share its sound settings with other listeners, so you can listen together. This copy of the site does not switch that on, so nothing is shared.
+- `privacy.other.title`: The DJ system and settle-mcp
 - `privacy.rights.ask`: You can ask what we hold about you, ask us to correct it, and ask us to delete it. Most of what this site keeps sits in your own browser, where you can see it and clear it yourself.
 - `privacy.rights.changes`: If this policy changes, the change appears on this page with a new date.
 - `privacy.rights.children`: The site is not aimed at children. If you believe a child has made a members account, write to us and we will delete it.
@@ -8915,9 +8998,10 @@
 - `privacy.sent.label`: WHAT LEAVES YOUR BROWSER
 - `privacy.sent.models`: The models on SDM CHAT, SDMPOEM, SDM WEIRD LITTLE GUY, SDMJEV and SDMSTUDIO run in your browser. Their files come from this site, and what you type to them never leaves the tab.
 - `privacy.sent.none`: The site runs no analytics, no advertising and no trackers. Apart from the hero’s YouTube slides, it embeds no video players, and it embeds no social media buttons from other sites. A link to another site, such as YouTube, GitHub or arXiv, takes you there only when you follow it, and that site’s own policy then applies.
-- `privacy.sent.noneva`: Beyond those page counts, the site runs no other analytics, no advertising and no trackers. Apart from the hero’s YouTube slides, it embeds no video players, and it embeds no social media buttons from other sites. A link to another site, such as YouTube, GitHub or arXiv, takes you there only when you follow it, and that site’s own policy then applies.
+- `privacy.sent.noneva`: Beyond those page counts and speed measurements, the site runs no other analytics, no advertising and no trackers. Apart from the hero’s YouTube slides, it embeds no video players, and it embeds no social media buttons from other sites. A link to another site, such as YouTube, GitHub or arXiv, takes you there only when you follow it, and that site’s own policy then applies.
 - `privacy.sent.p1`: By default the site sends nothing about you to any server. Your browser fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
-- `privacy.sent.p1va`: Apart from the page counts below, the site sends nothing about you to any server. Your browser fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.p1va`: Apart from the page counts and the speed measurements below, the site sends nothing about you to any server. Your browser fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.speed`: The site also measures how quickly its pages load and answer, with Vercel Speed Insights, from Vercel. On each page load your browser times a few moments (when the first text and the largest picture appear, how much the layout jumps, how quickly the page answers a click or a key, and how soon the server answered) and sends those timings to Vercel with the page’s name with nothing after it, a short description of the part of the page a timing refers to, your kind of connection (such as 4g), your browser, operating system and kind of device, and your country. It sets no cookie and keeps nothing in your browser. By Vercel’s own description the timings are recorded anonymously and cannot be used to follow a visit from page to page or to identify you. We see only totals.
 - `privacy.sent.title`: What leaves your browser, and who sees it
 - `privacy.sent.youtube`: The home hero can show a YouTube video as one of its slides. Nothing is fetched from YouTube until a video slide is about to show. Then your browser loads YouTube’s player from www.youtube-nocookie.com, YouTube’s privacy-enhanced address, and the video and its pictures from YouTube’s servers (i.ytimg.com, yt3.ggpht.com and googlevideo.com). YouTube sees your network address, your browser’s details and what you do in its player, under Google’s privacy policy. The site does not load YouTube’s player script from www.youtube.com, and sends YouTube nothing else.
 - `privacy.terms.link`: The rules for using the site are in the terms.
@@ -9760,12 +9844,7 @@
 - `sdmchat.empty.smallTok`: A small language model, trained on {tokens} tokens, running here in plain JavaScript.
 - `sdmchat.error`: error: {message}
 - `sdmchat.kind.sdmllm`: SDM-LLM · no attention
-- `sdmchat.load.mb`: {loaded} of {total} MB
 - `sdmchat.load.missing`: The model files are not built ({error}). Run (or ) and reload.
-- `sdmchat.load.model`: the model
-- `sdmchat.load.modelkey`: model {key}
-- `sdmchat.load.progress`: loading {what} into this tab …
-- `sdmchat.load.tokenizer`: tokenizer
 - `sdmchat.model.sdmepic.label`: SDM read at width 512, epic verse
 - `sdmchat.model.sdmepic.name`: the epic composer
 - `sdmchat.model.sdmread.label`: SDM read at width 256, small and fast
@@ -10756,7 +10835,6 @@
 - `studio.intro.simple`: Post-train this model on poems or on your own text, in your browser, and write with the result.
 - `studio.limit.line`: 7-day cap, a product rule: this run has trained {trained} of its 7 days ({pct}%); {left} left. At the cap it stops and keeps its last checkpoint; fork it to train on.
 - `studio.live.idle`: idle
-- `studio.live.loading`: loading {what}: {mb} of {total} MB
 - `studio.live.preparing`: {what} …
 - `studio.lr.bold`: bold
 - `studio.lr.gentle`: gentle
@@ -11596,6 +11674,7 @@
 - `terms.accounts.credits`: ASK is free to use. Each member may send a set number of messages in any 4 hours, so that one person cannot use it all; a message frees its place four hours after it was sent, and the chat says when the next one is free. Each member also gets $1 of chat credit, once, on joining, and ASK does not use it. We sell nothing: there is nothing to buy, and the site takes no payment. Only the operator can add more.
 - `terms.accounts.label`: ACCOUNTS AND CREDITS
 - `terms.accounts.p1`: A members account is needed to save models and to use ASK. The sign-in itself is run by Clerk, an account service. Keep your password to yourself: what happens under your account is treated as yours. You can delete what this site holds about you at any time from the members page.
+- `terms.accounts.savings`: The members page shows the credit as a savings account. It earns 0% interest. It is not money: it has no cash value, and it cannot be withdrawn, cashed out, moved to anyone else or spent anywhere else. It ends when your account ends.
 - `terms.accounts.title`: Accounts and credits
 - `terms.changes.label`: CHANGES
 - `terms.changes.p1`: We may change these terms. A change appears on this page with a new date. You may stop using the site at any time. We may suspend or close an account that breaks these terms.
@@ -13313,6 +13392,8 @@
 - `wtf.term.page-hear.usage`: In the language folder.
 - `wtf.term.page-home.meaning`: The home page: the hero, GETTING STARTED, the statement families and the campaign summary.
 - `wtf.term.page-home.usage`: Its path in the menu is /settle itself. It shows a four-line program running live under its code.
+- `wtf.term.page-liked.meaning`: Every set of THE DJ you rated 4 or 5 on the home page while signed in, kept with your account.
+- `wtf.term.page-liked.usage`: In the members folder. Each set has a play button, which loads its tag back into THE DJ, and a remove button. A rating given while signed out is kept with a salted hash of your network address instead, and is never a like.
 - `wtf.term.page-members.meaning`: Your account, signed in through Clerk: sign up with an emailed code, log in, the little guys and runs you saved from the studio, the ASK chat and your chat balance.
 - `wtf.term.page-members.usage`: In the members folder, which lists only this page until you log in. The saved models come first, then ASK, the balance, and your email, password, data export and account deletion. Without Clerk keys the page says members are not configured.
 - `wtf.term.page-neocortex-feedback.meaning`: A demo page of twelve live settles: the six layers of the neocortex, the loops inside a column and the feedback between areas, the Purkinje cells of the cerebellum, and Kanerva's reading of the cerebellum as a sparse distributed memory. Each panel prints its program and its recorded outputs, and says what is faithful and what is a cartoon.
@@ -13386,7 +13467,7 @@
 - `wtf.term.random-address.meaning`: A hard location's address, drawn at random once and never changed.
 - `wtf.term.random-address.usage`: A hero word.
 - `wtf.term.rate-the-dj.meaning`: Five star glyphs among the hero's own text lines: the middle left of the full hero, the top left of its bar. A click rates the set THE DJ is playing.
-- `wtf.term.rate-the-dj.usage`: A rating counts only after a humanity check on real pointer movement; before that it is held. Rating the same set again replaces the first rating. The ratings stay in this browser unless a feedback endpoint is set.
+- `wtf.term.rate-the-dj.usage`: A rating counts only after a humanity check on real pointer movement; before that it is held. Rating the same set again replaces the first rating. Each rating goes to the site's own server: signed out with a salted hash of your network address, signed in with your account, where a 4 or 5 lands in LIKED SETS.
 - `wtf.term.read-address.meaning`: The address you read a memory at.
 - `wtf.term.read-address.usage`: Kanerva: "When x is used as the retrieval address, the locations activated by x are pooled" (1993, P. 6); he also says retrieval cue and memory cue. SETTLE says read because the statement is `m.read`. The keyword was `cue:`; a program that still writes `cue:` stops with an error naming `read-address:`.
 - `wtf.term.read-threshold.meaning`: A read sums the bit-counters of the activated hard locations and keeps each bit whose sum is above 0.
@@ -13507,6 +13588,8 @@
 - `wtf.term.temperature-kw.usage`: A run block starts at temperature 1. Hotter means more random tosses; colder means each thing follows its lean and pulls more closely.
 - `wtf.term.temperature.meaning`: How random the tosses are; β = 1/T. Hot is noisy, cold follows the energy closely.
 - `wtf.term.temperature.usage`: In physics the temperature enters as kT; SETTLE folds k into the units. On the site heat is orange.
+- `wtf.term.the-dj-system.meaning`: THE DJ and everything around it on the home page hero: the sound modes, the set line and its controls, the rate marks, and listening together, where listeners share their DJ's settings and can follow each other's DJ.
+- `wtf.term.the-dj-system.usage`: Listening together shows each listener as a coloured dot beside the rate marks; a press on a dot follows that listener's DJ. Only text about what a DJ plays travels, never sound. It works only in a copy of the site that switches it on, and the privacy page says whether this copy does.
 - `wtf.term.the-dj.meaning`: The part of the hero symphony that picks the flute and old tunes from the picture, shown as one line at the bottom of the hero.
 - `wtf.term.the-dj.usage`: settle-hear's symphony: a binaural pair on a 40 Hz beat, tuned from A = 432 Hz, the flute and old tunes chosen by THE DJ. THE SPECTRUM interleaves live items while its house set is heard.
 - `wtf.term.the-navigator.meaning`: The person who directs this work: he charts the course and makes the calls.
