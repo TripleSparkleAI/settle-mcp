@@ -16,8 +16,8 @@ The whole journey a stranger takes, run from the export `--push` would publish, 
 | the package's tests in a clone | 37 tests, 32 pass, 0 fail, 5 skip; the full setup end to end passed |
 | a real MCP client | the SDK client listed 12 tools, 177 resources, 1 template and 3 prompts and called every tool once, setup included; 0 unexpected errors |
 | agents on this machine | Hermes (`mcp add`, 12 tools, `mcp test` connected), Codex (`codex mcp add`, listed enabled), Claude Code (`claude mcp add --scope project`, written; a project server waits for approval) |
-| the real GitHub address | `npx -y --allow-git=root github:triplesparkle/settle-mcp --version` worked against the private repository with this machine's git credentials, and printed SDK 1.31.0: the repository still holds the 2026-10-03 push |
-| package.json | `repository`, `homepage`, `bugs` and `author` point at github.com/triplesparkle/settle-mcp; `private` stays true (it blocks `npm publish`, and npx from GitHub still works) |
+| the real GitHub address | `npx -y --allow-git=root github:TripleSparkleAI/settle-mcp --version` worked against the private repository with this machine's git credentials, and printed SDK 1.31.0: the repository still holds the 2026-10-03 push |
+| package.json | `repository`, `homepage`, `bugs` and `author` point at github.com/TripleSparkleAI/settle-mcp; `private` stays true (it blocks `npm publish`, and npx from GitHub still works) |
 | licence | MIT, `LICENSE` in the repository |
 
 ## Making it public (in the launch walk)
@@ -30,7 +30,7 @@ were here are now part of `SETTLE/launch.sh`:
 2. `bash SETTLE/launch.sh --public` (step 7 of the walk, just before the site's deploying push) makes settle-mcp
    public with the other seven SETTLE repositories, refuses one whose GitHub copy has no MIT licence yet, and reads
    each one back as PUBLIC.
-3. Check it from outside this checkout: `npx -y --allow-git=root github:triplesparkle/settle-mcp --version` must print
+3. Check it from outside this checkout: `npx -y --allow-git=root github:TripleSparkleAI/settle-mcp --version` must print
    the SDK version in package.json.
 4. Optional, later: publish to npm (remove `"private": true`, `npm publish`); the one command becomes
    `npx -y settle-mcp` and needs no git flag. And list it in an MCP registry.
@@ -51,7 +51,7 @@ KANERVA go public in the same step, so setup can fetch them for anyone.
 | dependencies | `@modelcontextprotocol/sdk` 1.32.0 and `zod` 4.6.5, both pinned exactly, both the npm latest on 2026-10-05; `npm audit` reports 0 vulnerabilities |
 | licence | MIT, `LICENSE` in the folder, copyright "TripleSparkle" |
 | privilege | the command runner refuses sudo, su, doas, pkexec and runas; no step runs an installer |
-| URLs | setup has no default source; README.md, AGENTS.md, docs/SETUP.md, docs/USAGE.md and the three guides name only the triplesparkle repositories (settle-mcp, SETTLE, KANERVA, settle-see, settle-hear), which exist and are private; the server's own messages name only rustup.rs, git-scm.com/downloads and nodejs.org |
+| URLs | setup has no default source; README.md, AGENTS.md, docs/SETUP.md, docs/USAGE.md and the three guides name only the TripleSparkleAI repositories (settle-mcp, SETTLE, KANERVA, settle-see, settle-hear), which exist and are private; the server's own messages name only rustup.rs, git-scm.com/downloads and nodejs.org |
 | the docs | README.md, AGENTS.md and docs/ are generated from the SETTLE site and match a fresh build (`npm run check-docs`) |
 | the standalone repository | `SETTLE/tools/export_settle_repos.sh --only settle-mcp` into a scratch folder: the secret and dev-only scans pass, and `npm install && npm test` pass in the export |
 
@@ -62,7 +62,7 @@ KANERVA go public in the same step, so setup can fetch them for anyone.
 2. **Make the repositories public or not.** DECIDED: public at launch (the navigator, 2026-10-09). The README and
    docs say so; `SETTLE/launch.sh --public` does it.
 3. **The repository fields in package.json.** Done 2026-10-06: `repository`, `homepage`, `bugs` and `author` point at
-   github.com/triplesparkle/settle-mcp.
+   github.com/TripleSparkleAI/settle-mcp.
 4. **The copyright holder.** `LICENSE` says "Copyright (c) 2026 TripleSparkle". Confirm the legal name of the holder.
 5. **The Node version.** `engines` says Node 18 or newer. Every run on 2026-10-05 used Node 22.22.3. Node 18 is past
    its end of life and was not tested. Decide whether to test it or to require Node 20.

@@ -1,17 +1,17 @@
 {
- "hash": "6d1f77a917e29218ffe62c1be5ee3ca35d2166fb2c33020975472a518d66653f",
+ "hash": "0c827a4c1535b27c4a6b97f3fc7cf13d2c7ed30977aea8dfdf45954e4ff4c20c",
  "inputs": [
   {
    "path": "SETTLE/settle-site/src/data/mcpDocs.js",
-   "sha256": "5a83f48b431acb1773c93e2140a5f471d69396436a6a396b4262405f574e92e0"
+   "sha256": "e3fb2bb5024de7f843cf38984d8ba817d8dbbb1f49dbb5eea6434fcff98ecf10"
   },
   {
    "path": "SETTLE/settle-site/i18n/en.json",
-   "sha256": "9c4ce1259995588a58519756503d27bad9845805ce20d2efe3c6f59fef8d1d4b"
+   "sha256": "ccb7c50dc8200277bf6e6383797e5971f90c7209a567570087013bb71b0252d3"
   },
   {
    "path": "SETTLE/settle-site/i18n/GLOSSARY.md",
-   "sha256": "4757407392479d4b47fded9bbc3c103968fd908eadd949ac9883b6682601a7d6"
+   "sha256": "c0185da098decbad81ef97370d6db76742858987b5431d904f576653cf561339"
   },
   {
    "path": "SETTLE/settle-site/src/pages/What.jsx",
@@ -47,7 +47,7 @@
   },
   {
    "path": "SETTLE/settle-rs/docs/01-install-and-run.md",
-   "sha256": "9bec901de94f3c48f51f316e82057e2942e03a0638740aa3f2a43e54abedb20e"
+   "sha256": "f9b18b61ea0d9b08ba60e333d6a9f735e42cda800be060e8aaf8a8926cc9eb4b"
   },
   {
    "path": "SETTLE/settle-rs/docs/02-tour.md",
@@ -171,7 +171,7 @@
   },
   {
    "path": "SETTLE/settle-rs/docs/README.md",
-   "sha256": "8c535cee575b2d332b06fa7906075fca5bf9aea462e4e8ca0f89ee8f838de653"
+   "sha256": "de2731e58d34c6e55f10647734d1a1b4e39a5736d46980139a2681aeafcddf5f"
   },
   {
    "path": "SETTLE/settle-rs/docs/examples/coded-choices.out",
@@ -1147,11 +1147,11 @@
   },
   {
    "path": "SETTLE/settle-rs/README.md",
-   "sha256": "caed8e41fca6565d86bb25e4dd848c550c11a0de5e0a436a5fd776286a36f317"
+   "sha256": "f040783c3ccbe8e1dece84978690a06cac1c61d8fc5ea7527b9b77de79da6667"
   },
   {
    "path": "SETTLE/kanerva/README.md",
-   "sha256": "d714d70be697af7284780a84321678521cb9b3ba299cfb3aeca29b503762aec5"
+   "sha256": "33272863f455ff309558fb3df712ade2a4cb7bb902f3cbb24084b7a8bdf16b8f"
   },
   {
    "path": "SETTLE/kanerva/KANERVA_TERMS.md",
@@ -1199,7 +1199,7 @@
   },
   {
    "path": "SETTLE/settle-site/src/wtf/terms.js",
-   "sha256": "bd39fa825e82897ae489953a504e95a8302ea997756f905ad02191e9a03eaf9a"
+   "sha256": "beda921a476b03928541725801e628a01b4cbeb6d17c4d4e01aa5a3017ea5346"
   },
   {
    "path": "SETTLE/settle-site/docs/who-you-are/README.md",
@@ -1207,15 +1207,15 @@
   },
   {
    "path": "SETTLE/settle-site/docs/who-you-are/for-programmers/README.md",
-   "sha256": "bf95f58d223dd327cf356703ef5d1e65f89723026c8bb8a2455c7c05cf9eda4f"
+   "sha256": "ff11531d5b68c76dd8dab0da158a9816f09421959791f90d3a06d9a75254ea0c"
   },
   {
    "path": "SETTLE/settle-site/docs/who-you-are/for-visual-artists/README.md",
-   "sha256": "8c431b980f1949c800aef6388f50fb4913b4184f307841ece90545149c9e570f"
+   "sha256": "51525caf54d27563f30ffde399387e7f34c7bd546a07fd0a39c6114cd63c369e"
   },
   {
    "path": "SETTLE/settle-site/docs/who-you-are/for-sound-artists/README.md",
-   "sha256": "8fac8281c621a07d60ca601aa6020c6d2bc39612015befe2d5e639d5d9b5952c"
+   "sha256": "723165819025b99230a697c279ec10d365a549bfb5c5c73bdc6bca56896460de"
   },
   {
    "path": "SETTLE/tools/readme_banner.mjs",

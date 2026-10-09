@@ -13,7 +13,7 @@
 
 ## Where the code comes from
 
-settle-mcp has no default source and never guesses one. Give it a local folder (a clone of SETTLE, or a folder that holds the `settle-rs` crate) or a git URL, such as `https://github.com/triplesparkle/SETTLE`, which is public. KANERVA is found where `settle-rs/Cargo.toml` names it by path (`../kanerva`); SETTLE's own repository names KANERVA by its git URL instead, so with it pass `kanerva_source` as well (`https://github.com/triplesparkle/KANERVA`).
+settle-mcp has no default source and never guesses one. Give it a local folder (a clone of SETTLE, or a folder that holds the `settle-rs` crate) or a git URL, such as `https://github.com/TripleSparkleAI/SETTLE`, which is public. KANERVA is found where `settle-rs/Cargo.toml` names it by path (`../kanerva`); SETTLE's own repository names KANERVA by its git URL instead, so with it pass `kanerva_source` as well (`https://github.com/TripleSparkleAI/KANERVA`).
 
 A git source is cloned with `git clone --depth 1`. The SETTLE and KANERVA repositories are public; a private repository you name instead asks for your credentials at that step, and the step reports git's own words if access is refused.
 

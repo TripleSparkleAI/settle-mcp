@@ -19,32 +19,32 @@ An MCP server that explains SETTLE and KANERVA, sets them up on your machine, an
 ## The one command
 
 ```sh
-claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
+claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 This adds settle-mcp to Claude Code, straight from its GitHub repository. `npx` fetches the repository, installs its two dependencies and starts the server; you clone and build nothing yourself.
 
-It needs Node 18 or newer. The repository, `github.com/triplesparkle/settle-mcp`, is public, so no access or credentials are needed.
+It needs Node 18 or newer. The repository, `github.com/TripleSparkleAI/settle-mcp`, is public, so no access or credentials are needed.
 
 `--allow-git=root` lets npm fetch this one package from git: npm 12 and newer refuse a git package unless told, and an older npm takes the flag and changes nothing.
 
 | when | the server command | |
 |---|---|---|
-| From its public GitHub repository | `npx -y --allow-git=root github:triplesparkle/settle-mcp` | Works for everyone, with no access needed. |
+| From its public GitHub repository | `npx -y --allow-git=root github:TripleSparkleAI/settle-mcp` | Works for everyone, with no access needed. |
 | If it is published to npm | `npx -y settle-mcp` | Shorter, and versioned by npm. Nothing is published yet. |
 | From a clone, in any state | `node /path/to/settle-mcp/src/bin.js` | Clone it, run `npm install` in it, and point your agent at this file. |
 
 ## What it needs
 
 - Node 18 or newer, to run settle-mcp. `node --version` says which you have; nodejs.org has the installers.
-- git, which npx uses to fetch `github.com/triplesparkle/settle-mcp` (a public repository).
+- git, which npx uses to fetch `github.com/TripleSparkleAI/settle-mcp` (a public repository).
 - Rust (`rustc` and `cargo`), only for setup, which builds SETTLE and KANERVA. rustup.rs installs it. Help and the docs need nothing but Node.
 
 Built on `@modelcontextprotocol/sdk` 1.32.0 over standard input and output (stdio). Version 0.1.0. MIT. The LICENSE file in the repository holds the text.
 
 ## Get it going in your agent
 
-Every agent below starts the same server: the command `npx` with the arguments `-y --allow-git=root github:triplesparkle/settle-mcp`. From a clone, use the command `node` with the path of `src/bin.js` instead. The agents come in this order: Hermes, Claude Code, Claude Desktop, Codex, Cursor, Windsurf, Cline, Gemini CLI, Zed, VS Code (GitHub Copilot), Continue, Any other MCP client.
+Every agent below starts the same server: the command `npx` with the arguments `-y --allow-git=root github:TripleSparkleAI/settle-mcp`. From a clone, use the command `node` with the path of `src/bin.js` instead. The agents come in this order: Hermes, Claude Code, Claude Desktop, Codex, Cursor, Windsurf, Cline, Gemini CLI, Zed, VS Code (GitHub Copilot), Continue, Any other MCP client.
 
 ### Hermes
 
@@ -53,7 +53,7 @@ Where: `~/.hermes/config.yaml`, under `mcp_servers`.
 Hermes adds a server with one command, which writes the entry for you. Then start `hermes chat` and ask it to use settle-mcp.
 
 ```sh
-hermes mcp add settle --command npx --args -y --allow-git=root github:triplesparkle/settle-mcp
+hermes mcp add settle --command npx --args -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 Or the same entry by hand:
@@ -62,7 +62,7 @@ Or the same entry by hand:
 mcp_servers:
   settle:
     command: "npx"
-    args: ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+    args: ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
 ```
 
 Source: https://github.com/NousResearch/hermes-agent (website/docs/user-guide/features/mcp.md)
@@ -74,7 +74,7 @@ Where: `~/.claude.json` for you alone, or `.mcp.json` at a project root for ever
 `--scope user` adds it for every project of yours; `--scope project` writes `.mcp.json` so the project carries it. Everything after `--` is the server command.
 
 ```sh
-claude mcp add --scope user settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
+claude mcp add --scope user settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 Or the same entry by hand:
@@ -84,7 +84,7 @@ Or the same entry by hand:
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -103,7 +103,7 @@ Put the `mcpServers` block in the file (the Claude menu, Settings, Developer, Ed
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -118,7 +118,7 @@ Where: `~/.codex/config.toml`, or `.codex/config.toml` in a trusted project.
 OpenAI’s Codex CLI adds it with one command, or takes the same entry in its TOML config.
 
 ```sh
-codex mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
+codex mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 Or the same entry by hand:
@@ -126,7 +126,7 @@ Or the same entry by hand:
 ```toml
 [mcp_servers.settle]
 command = "npx"
-args = ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+args = ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
 ```
 
 Source: https://learn.chatgpt.com/docs/extend/mcp?surface=cli
@@ -140,7 +140,7 @@ Put the `mcpServers` block in the file; Cursor lists the server under its MCP se
 One-click install (Add to Cursor), the agent's documented link format (https://cursor.com/docs/context/mcp/install-links):
 
 ```text
-cursor://anysphere.cursor-deeplink/mcp/install?name=settle&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIi0tYWxsb3ctZ2l0PXJvb3QiLCJnaXRodWI6dHJpcGxlc3BhcmtsZS9zZXR0bGUtbWNwIl19
+cursor://anysphere.cursor-deeplink/mcp/install?name=settle&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIi0tYWxsb3ctZ2l0PXJvb3QiLCJnaXRodWI6VHJpcGxlU3BhcmtsZUFJL3NldHRsZS1tY3AiXX0%3D
 ```
 
 ```json
@@ -148,7 +148,7 @@ cursor://anysphere.cursor-deeplink/mcp/install?name=settle&config=eyJjb21tYW5kIj
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -167,7 +167,7 @@ Open the MCP settings, edit the raw config, and add the same `mcpServers` block.
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -186,7 +186,7 @@ Cline takes the same block, with its own two keys: `disabled` and `autoApprove`.
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"],
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"],
       "disabled": false,
       "autoApprove": []
     }
@@ -203,7 +203,7 @@ Where: `~/.gemini/settings.json` (with `-s user`), or `.gemini/settings.json` in
 Gemini CLI adds it with one command; its documented form puts the server command straight after the name.
 
 ```sh
-gemini mcp add -s user settle npx -y --allow-git=root github:triplesparkle/settle-mcp
+gemini mcp add -s user settle npx -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 Or the same entry by hand:
@@ -213,7 +213,7 @@ Or the same entry by hand:
   "mcpServers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -232,7 +232,7 @@ Zed names the block `context_servers`; the command and arguments are the same.
   "context_servers": {
     "settle": {
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"],
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"],
       "env": {}
     }
   }
@@ -250,11 +250,11 @@ VS Code names the block `servers` and wants `type`. One command adds it for your
 One-click install (Install in VS Code), the agent's documented link format (https://code.visualstudio.com/api/extension-guides/ai/mcp):
 
 ```text
-vscode:mcp/install?%7B%22name%22%3A%22settle%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22--allow-git%3Droot%22%2C%22github%3Atriplesparkle%2Fsettle-mcp%22%5D%7D
+vscode:mcp/install?%7B%22name%22%3A%22settle%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22--allow-git%3Droot%22%2C%22github%3ATripleSparkleAI%2Fsettle-mcp%22%5D%7D
 ```
 
 ```sh
-code --add-mcp '{"name":"settle","command":"npx","args":["-y","--allow-git=root","github:triplesparkle/settle-mcp"]}'
+code --add-mcp '{"name":"settle","command":"npx","args":["-y","--allow-git=root","github:TripleSparkleAI/settle-mcp"]}'
 ```
 
 Or the same entry by hand:
@@ -265,7 +265,7 @@ Or the same entry by hand:
     "settle": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+      "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
     }
   }
 }
@@ -290,7 +290,7 @@ mcpServers:
     args:
       - "-y"
       - "--allow-git=root"
-      - "github:triplesparkle/settle-mcp"
+      - "github:TripleSparkleAI/settle-mcp"
 ```
 
 Source: https://docs.continue.dev/customize/deep-dives/mcp
@@ -299,12 +299,12 @@ Source: https://docs.continue.dev/customize/deep-dives/mcp
 
 Where: wherever it keeps its servers.
 
-settle-mcp speaks MCP over standard input and output. Give the client the command `npx` and the arguments `-y --allow-git=root github:triplesparkle/settle-mcp`, or, from a clone, the command `node` and the argument `/path/to/settle-mcp/src/bin.js`.
+settle-mcp speaks MCP over standard input and output. Give the client the command `npx` and the arguments `-y --allow-git=root github:TripleSparkleAI/settle-mcp`, or, from a clone, the command `node` and the argument `/path/to/settle-mcp/src/bin.js`.
 
 ```json
 {
   "command": "npx",
-  "args": ["-y", "--allow-git=root", "github:triplesparkle/settle-mcp"]
+  "args": ["-y", "--allow-git=root", "github:TripleSparkleAI/settle-mcp"]
 }
 ```
 
@@ -334,7 +334,7 @@ Check the machine, then fetch, build and verify SETTLE and KANERVA in a folder y
 - `check_system`: Check this machine for what SETTLE needs (rustc, cargo, git, node) by running only version commands, and ask any settle and kanerva already built for their --version. Shows each command it ran.
   Example: `{}`
 - `setup`: Fetch, build and verify SETTLE, KANERVA and the kanerva command in a folder. Dry run by default: returns every command and a plan id. Run it with dry_run false and confirm set to that id.
-  Example: `{ "folder": "~/settle", "settle_source": "https://github.com/triplesparkle/SETTLE", "kanerva_source": "https://github.com/triplesparkle/KANERVA" }`
+  Example: `{ "folder": "~/settle", "settle_source": "https://github.com/TripleSparkleAI/SETTLE", "kanerva_source": "https://github.com/TripleSparkleAI/KANERVA" }`
 - `setup_status`: Report a setup that is still running in the background, step by step, or the last setup this server ran.
   Example: `{}`
 
@@ -395,15 +395,15 @@ settle-mcp runs on Node 18 or newer. Check with `node --version`; if it is missi
 One command adds it to Claude Code, straight from GitHub. The guides below give the same for Hermes, Claude Desktop, Codex, Cursor and the rest.
 
 ```sh
-claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp
+claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp
 ```
 
 ### 3. Or run it from a clone
 
-Clone its public repository, `github.com/triplesparkle/settle-mcp`. Then install its two dependencies, the MCP SDK and zod, and give your agent the command `node` with the path of `src/bin.js`:
+Clone its public repository, `github.com/TripleSparkleAI/settle-mcp`. Then install its two dependencies, the MCP SDK and zod, and give your agent the command `node` with the path of `src/bin.js`:
 
 ```sh
-git clone https://github.com/triplesparkle/settle-mcp
+git clone https://github.com/TripleSparkleAI/settle-mcp
 cd settle-mcp
 npm install
 node src/bin.js --version
@@ -460,7 +460,7 @@ MIT. The LICENSE file in the repository holds the text.
 
 ## Problems
 
-Report a problem at `github.com/triplesparkle/settle-mcp/issues`. Say which tool you called, with its arguments, and paste the reply.
+Report a problem at `github.com/TripleSparkleAI/settle-mcp/issues`. Say which tool you called, with its arguments, and paste the reply.
 
 ## More
 

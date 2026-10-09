@@ -16,13 +16,13 @@
   "type": "module",
   "license": "MIT",
   "author": "TripleSparkle",
-  "homepage": "https://github.com/triplesparkle/settle-mcp#readme",
+  "homepage": "https://github.com/TripleSparkleAI/settle-mcp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/triplesparkle/settle-mcp.git"
+    "url": "git+https://github.com/TripleSparkleAI/settle-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/triplesparkle/settle-mcp/issues"
+    "url": "https://github.com/TripleSparkleAI/settle-mcp/issues"
   },
   "bin": {
     "settle-mcp": "src/bin.js"

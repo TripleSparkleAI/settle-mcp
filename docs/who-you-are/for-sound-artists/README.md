@@ -100,8 +100,8 @@ the direction the README states.
 1. Listen first. Open the home page, click once (sound waits for a gesture), and let the hero play. Open
    [HEAR](#/hear), move the sliders, press a setup card. MUTE ALL is in the header.
 2. Give a settle a sound. settle-hear sits beside settle-see and imports nothing from it. Clone both beside your
-   page (`git clone https://github.com/triplesparkle/settle-see` and
-   `git clone https://github.com/triplesparkle/settle-hear`):
+   page (`git clone https://github.com/TripleSparkleAI/settle-see` and
+   `git clone https://github.com/TripleSparkleAI/settle-hear`):
 
 ```js
 import { settle } from './settle-see/src/index.js';

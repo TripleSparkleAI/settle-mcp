@@ -89,7 +89,7 @@ second at 10 sweeps on a loaded laptop, one thread ([the GRIDPLAYER result](#/re
 1. Look first. Open [the film player](#/film) and move the sweeps slider; open [SDMMEMORY](#/sdmmemory) and damage a
    letter; open [WHAT?](#/what) and read the picture step, where the horse frame settles under TRUE TIME RENDER in the middle of the page.
 2. Draw your own field. settle-see is plain JavaScript with no build step. Clone it
-   beside your page (`git clone https://github.com/triplesparkle/settle-see`) and write:
+   beside your page (`git clone https://github.com/TripleSparkleAI/settle-see`) and write:
 
 ```js
 import { settle } from './settle-see/src/index.js';
@@ -104,7 +104,7 @@ handle.show(bits);   // settle into a new target now
 3. Make a film. The site's film tool, `tools/make_hero_film.mjs` in the settle-site repository, turns a video or a folder of frames into the two-file
    film format settle-see plays (`<name>.json` and `<name>.bin`); a film item in a settle plays it on TRUE TIME,
    one frame every `1000 / fps` ms.
-4. Print a picture from a program. Build the interpreter (`git clone https://github.com/triplesparkle/SETTLE`,
+4. Print a picture from a program. Build the interpreter (`git clone https://github.com/TripleSparkleAI/SETTLE`,
    `cd SETTLE`, `cargo build --release`), put a PGM beside the picture program above, run it, and open the PGMs it writes.
 5. Ask the assistant. With settle-mcp added to Claude Code, ask for a program that stores three 16 by 16 tiles in
    a memory and recalls one from a damaged copy; the `sdm_store_recall` tool writes and runs it and shows the program.

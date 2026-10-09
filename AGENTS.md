@@ -7,7 +7,7 @@ You are connected to settle-mcp: an MCP server that explains SETTLE and KANERVA,
 
 ## If you are installing it rather than using it
 
-Add it to the agent you run in with one command, `claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp`, or the config for your agent in `docs/INSTALL.md` (Hermes, Claude Code, Claude Desktop, Codex, Cursor, Windsurf, Cline, Gemini CLI, Zed, VS Code (GitHub Copilot), Continue, Any other MCP client). Node 18 or newer, to run settle-mcp. `node --version` says which you have; nodejs.org has the installers.
+Add it to the agent you run in with one command, `claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp`, or the config for your agent in `docs/INSTALL.md` (Hermes, Claude Code, Claude Desktop, Codex, Cursor, Windsurf, Cline, Gemini CLI, Zed, VS Code (GitHub Copilot), Continue, Any other MCP client). Node 18 or newer, to run settle-mcp. `node --version` says which you have; nodejs.org has the installers.
 
 ## Who you are helping
 
@@ -72,7 +72,7 @@ Run SETTLE programs and .kanerva programs, store and recall with a sparse distri
 ## The rules
 
 - `setup` is a dry run until you pass `dry_run` false with the plan id it returned as `confirm`, so the person sees every command before anything runs. It never uses sudo.
-- Nothing is published to npm. The repositories are public, under github.com/triplesparkle: never invent another URL. For setup, use the folder or git URL the person gives you.
+- Nothing is published to npm. The repositories are public, under github.com/TripleSparkleAI: never invent another URL. For setup, use the folder or git URL the person gives you.
 - When a program fails, hand `explain_error` the whole printed error: the `settle: line N:` line and the excerpt and caret lines under it. It names the marked word and the suggested fix.
 - `.kanerva` programs hold only the sdm family and run on the kanerva command (`run_kanerva`); `via: :pulls` is the one read only SETTLE runs.
 - Quote a number with the document or the program output it came from; the guides name their sources.

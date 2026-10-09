@@ -19,9 +19,16 @@ The first release. Nothing has been published to npm, and the repository is priv
 - Every doc the server serves (README.md, AGENTS.md, docs/) is generated from the SETTLE website by
   `tools/build_mcp_docs.mjs`; the tool descriptions are the website's words.
 
+### The organisation (2026-10-09)
+
+- The repository moved from the GitHub user account `triplesparkle` to the organisation `TripleSparkleAI`. GitHub
+  redirects the old address. The one command, `package.json` (`repository`, `homepage`, `bugs`), the README, the
+  install guides and every generated doc name `github:TripleSparkleAI/settle-mcp` and
+  `github.com/TripleSparkleAI/...`.
+
 ### Ready from GitHub (2026-10-06)
 
-- THE ONE COMMAND: `claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp` runs the server
+- THE ONE COMMAND: `claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp` runs the server
   straight from its GitHub repository, with nothing cloned or built by hand. `--allow-git=root` is needed because npm 12
   refuses a git package by default (`allow-git` defaults to `none`); npm 10 takes the flag and changes nothing. Measured
   on npm 10.9.8 and 12.0.2 (SETTLE/runs/mcpready/JOURNEY.md).
@@ -40,7 +47,7 @@ The first release. Nothing has been published to npm, and the repository is priv
 - `check_system` asks a built `settle` and `kanerva` for their `--version`.
 - `setup` builds the `kanerva` command (`cargo build --release --bins`) and verifies it on one of its own
   `programs/*.kanerva`; the state file records its path, and `KANERVA_BIN` points at one directly.
-- package.json carries `repository`, `homepage`, `bugs` and `author` for github.com/triplesparkle/settle-mcp.
+- package.json carries `repository`, `homepage`, `bugs` and `author` for github.com/TripleSparkleAI/settle-mcp.
 - The docs build also writes the SETTLE site's files for agents: `/llms.txt`, `/llms-full.txt`, a Markdown mirror of
   every document under `/llms/`, and `/robots.txt`.
 - The end-to-end setup test compares the quickstart with KANERVA's own recorded output (it asserted an older wording).

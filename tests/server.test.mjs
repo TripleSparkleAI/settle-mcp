@@ -230,7 +230,7 @@ test('the README a stranger reads: the one command first, every agent in order, 
   const readme = fs.readFileSync(path.join(PKG, 'README.md'), 'utf8');
   const body = readme.replace(/^<!--[\s\S]*?-->\s*/, '');
   const firstFence = body.match(/```sh\n([^\n]+)\n```/);
-  assert.equal(firstFence[1], 'claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp', 'the first command in the README is the one command');
+  assert.equal(firstFence[1], 'claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp', 'the first command in the README is the one command');
   const order = ['Hermes', 'Claude Code', 'Claude Desktop', 'Codex', 'Cursor', 'Windsurf', 'Cline', 'Gemini CLI', 'Zed', 'VS Code (GitHub Copilot)', 'Continue'];
   const at = order.map((n) => body.indexOf(`### ${n}\n`));
   assert.ok(at.every((i) => i > 0), `every agent has a section: ${order.filter((n, i) => at[i] < 0).join(', ')}`);
@@ -258,9 +258,9 @@ test('the README opens with the repository banner, and the READMEs served to age
 
 test('package.json points at the repository, the issues and the licence, and stays unpublishable by accident', () => {
   const pkg = JSON.parse(fs.readFileSync(path.join(PKG, 'package.json'), 'utf8'));
-  assert.equal(pkg.repository.url, 'git+https://github.com/triplesparkle/settle-mcp.git');
-  assert.equal(pkg.bugs.url, 'https://github.com/triplesparkle/settle-mcp/issues');
-  assert.equal(pkg.homepage, 'https://github.com/triplesparkle/settle-mcp#readme');
+  assert.equal(pkg.repository.url, 'git+https://github.com/TripleSparkleAI/settle-mcp.git');
+  assert.equal(pkg.bugs.url, 'https://github.com/TripleSparkleAI/settle-mcp/issues');
+  assert.equal(pkg.homepage, 'https://github.com/TripleSparkleAI/settle-mcp#readme');
   assert.equal(pkg.license, 'MIT');
   assert.equal(pkg.private, true, 'private: true blocks npm publish; npx github: still runs it');
   assert.deepEqual(Object.keys(pkg.bin), ['settle-mcp'], 'one bin, so npx picks it');

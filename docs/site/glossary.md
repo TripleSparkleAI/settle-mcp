@@ -1609,16 +1609,6 @@ The hero plays ten films at 2 frames a second; nine are computed in code, and th
 - source: SETTLE/settle-site/src/topicFilms.js, sites/CLAUDE.md
 - link: #/glossary#film
 
-### FILMS AND FRAMES
-
-The hero's main bag: its films and still pictures, played on shuffle.
-
-The hero's rotation is two seeded bags on one slot clock: FILMS AND FRAMES take 7 slots of every 8 and a visualiser the eighth, never two visualisers in a row, each bag used up before it repeats. Every slot starts on a master bar line. THE DJ's line names the bag and the item on air.
-
-- where: #/
-- source: SETTLE/settle-site/src/heroRotation.js
-- link: #/glossary#films-and-frames
-
 ### FILMSHARP
 
 The experiment whose question was: Can leans fitted to the grid itself hold the picture where TAP collapses, does a Rao-Blackwellised read recover the last 1 dB, and does another update rule mix faster?
@@ -2486,14 +2476,13 @@ Nine chains, every path ends. what? sits beside the MCP line, the others in the 
 
 ### TRUE TIME
 
-A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame.
+The hero's time system, and the name of its main playlist. A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame; the playlist is the hero's films and still pictures, played on shuffle in that time.
 
-settle-see's truetime.js. The film player, the hero films, the footer brain and the morphs all play in TRUE TIME, and it measures how many changed lights the field caught.
+settle-see's truetime.js. The film player, the hero films, the footer brain and the morphs all play in TRUE TIME, and it measures how many changed lights the field caught. On the hero, TRUE TIME is also the main playlist: two seeded bags share one slot clock, TRUE TIME takes 7 slots of every 8 and VISUALISERS the eighth, never two visualisers in a row, each bag used up before it repeats. Every slot starts on a master bar line, and THE DJ's line names the playlist and the item on air.
 
-- also: TRUE TIME render, true time
-- Japanese: トゥルータイム
+- also: TRUE TIME render, true time, FILMS AND FRAMES
 - where: #/what, #/film, #/
-- source: SETTLE/settle-see/src/truetime.js
+- source: SETTLE/settle-see/src/truetime.js, SETTLE/settle-site/src/heroRotation.js
 - link: #/glossary#true-time
 
 ### VALLEYMAP

@@ -67,7 +67,7 @@ patterns, read one back from a copy with a fifth of its bits flipped, ask the me
 before reads blur, refuse a read-address it never stored. The quickstart example does all of that in one run:
 
 ```sh
-git clone https://github.com/triplesparkle/KANERVA
+git clone https://github.com/TripleSparkleAI/KANERVA
 cd KANERVA
 cargo run --release --example quickstart
 ```
@@ -158,13 +158,13 @@ long-range constraints that cannot be written pairwise is a poor fit, and the do
 
 ## Getting started
 
-1. Build the interpreter: `git clone https://github.com/triplesparkle/SETTLE`, `cd SETTLE`, `cargo build --release`.
+1. Build the interpreter: `git clone https://github.com/TripleSparkleAI/SETTLE`, `cd SETTLE`, `cargo build --release`.
    The binary is `target/release/settle`; `./target/release/settle --help` lists every statement.
 2. Run a program. Copy the weather program above into `weather.settle` and run `settle weather.settle`. Change a
    lean, run it again, watch the percentage move.
 3. Add the memory. Write `memory :m, size: 512`, `m.remember :cat`, `m.recall read-address: :cat, address-noise:
    0.3, seed: 1` in a run block. The output names what came back and how clearly.
-4. Give it to your assistant. `claude mcp add settle -- npx -y --allow-git=root github:triplesparkle/settle-mcp`,
+4. Give it to your assistant. `claude mcp add settle -- npx -y --allow-git=root github:TripleSparkleAI/settle-mcp`,
    then ask `help` with a topic. The setup tool builds both packages in a folder you choose, and runs nothing until you confirm the plan id
    it printed.
 

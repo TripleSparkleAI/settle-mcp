@@ -51,8 +51,15 @@
 - `ask.placeholder`: Ask about SETTLE or KANERVA
 - `ask.read`: read more:
 - `ask.s1`: What is SETTLE, in one paragraph?
+- `ask.s10`: Which pages on this site show an SDM working live?
 - `ask.s2`: What does a read-address do in a KANERVA memory?
 - `ask.s3`: How do I write my first SETTLE program?
+- `ask.s4`: What is a p-bit?
+- `ask.s5`: How does a SETTLE program cool down to an answer?
+- `ask.s6`: How is an SDM different from a hash table?
+- `ask.s7`: How do I run a SETTLE program in my browser?
+- `ask.s8`: What does the temperature do in a settle?
+- `ask.s9`: How do I add the KANERVA crate to a Rust project?
 - `ask.send`: ask
 - `ask.signin`: Questions need a member account.
 - `ask.signinlink`: Sign up or log in
@@ -919,7 +926,6 @@
 - `data.herocontrols.06814486`: 3 Hz on a 108 / 111 Hz pair: a very slow breathing; the lowest, softest pad.
 - `data.herocontrols.096ea445`: lights across
 - `data.herocontrols.0ae51c6d`: cool once
-- `data.herocontrols.0b2ded6c`: FILMS AND FRAMES only · the films and pictures, on shuffle
 - `data.herocontrols.0fe4a5df`: one temperature for ever (cold T)
 - `data.herocontrols.1062dca0`: the eight music visualisers, one slot in eight
 - `data.herocontrols.14d2b26a`: MEDIA PLAYER BARS · thin bars standing on a floor, their reflection fading below it
@@ -958,6 +964,7 @@
 - `data.herocontrols.7040e1ec`: pictures drawn in code: landscapes, lattices, codes and curves
 - `data.herocontrols.71a43c10`: hot, cool, hold, reheat, next picture
 - `data.herocontrols.7201bc54`: MILKDROP FIELD · the last picture zoomed and turned, the wave drawn on top as a ring: the bass zooms, the treble turns
+- `data.herocontrols.73353c65`: TRUE TIME only · the films and pictures, on shuffle
 - `data.herocontrols.7738e412`: YouTube videos, each in YouTube’s own player
 - `data.herocontrols.7a7c5bc4`: OLD PLATES only · figures from old science books, on shuffle
 - `data.herocontrols.7d0a67b4`: maths
@@ -2517,6 +2524,10 @@
 - `docs.art.writeread.3`: a noisy read-address
 - `docs.art.zoo.1`: small models, each solved exactly
 - `docs.claim`: Write the model as leans and pulls, let a machine flip the coins, and stop deriving Bayes’ rule by hand.
+- `docs.foot.nav`: {set}: the previous and next page
+- `docs.foot.next`: next
+- `docs.foot.page`: page {n} of {m}
+- `docs.foot.prev`: previous
 - `docs.info.more`: more in the glossary
 - `docs.info.whatis`: what is {term}?
 - `docs.kanerva.intro`: These are the crate’s own docs, the words it ships with. They say what a sparse distributed memory is, in plain words and then precisely, show the calls, and record what the crate has measured.
@@ -4566,7 +4577,7 @@
 - `hero.abstract.world-two-mirrors.note`: a lamp between two facing mirrors, seen from above: its images make a repeating pattern, twice the gap apart, shrinking with their distance from the eye
 - `hero.abstract.world-vote-temperatures.label`: TEMPERATURE
 - `hero.abstract.world-vote-temperatures.note`: the same vote at three temperatures: cold sharpens it toward the winner, hot spreads it out, as a settle does
-- `hero.adjust.all.rotation`: the rotation: films and frames 7 slots in 8, a visualiser 1 in 8
+- `hero.adjust.all.rotation`: the rotation: TRUE TIME 7 slots in 8, a visualiser 1 in 8
 - `hero.adjust.aria`: Adjust the hero picture
 - `hero.adjust.colour`: colour
 - `hero.adjust.colour.aria`: colour mode
@@ -5784,7 +5795,7 @@
 - `hero.tip.unpin`: UNPIN
 - `hero.tip.volume`: VOLUME
 - `hero.totop`: Back to the top
-- `hero.track.film`: FILMS AND FRAMES
+- `hero.track.film`: TRUE TIME
 - `hero.track.vis`: VISUALISERS
 - `hero.tube.failed`: This video could not be played here. Moving on.
 - `hero.tube.frame`: YouTube video: {title}
@@ -7017,12 +7028,14 @@
 - `llm2.more.label`: READ MORE
 - `llm2.more.learn`: FULL and PARTIAL, taken apart
 - `llm2.more.lookback`: how far back the memory reaches
+- `llm2.more.sweep`: which shape of FULL learns best, the shape sweep
 - `llm2.more.title`: How the new models work
 - `llm2.more.unfold`: how a word goes in and comes out
 - `llm2.next.cap`: Chat score: bits per byte on held-out chat turns, lower is better
 - `llm2.next.label`: WHAT REPLACES IT
 - `llm2.next.p1`: We are training FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, so the start of a chat stays within reach. Its full run is tuned for chat, and then it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
 - `llm2.next.tok`: The chat tune read {tok} tokens of chat.
+- `llm2.sweep.next`: FULL SDM CHAT is built on FULL’s first shape. A shape sweep has since found a better one: on the same {tok} tokens it scored {best}, against {first} for the first shape. The next FULL base will be trained in the winning shape. The shape sweep has every run.
 - `llm2.top.sub`: A chat with an SDM language model: no attention, no transformer, running live in this tab.
 - `llm2.which.history`: How this model was built and what it scored, beside every other shape we tried, is on the history page.
 - `llm2.which.label`: WHICH MODEL THIS IS
@@ -7154,7 +7167,7 @@
 - `lsdm2.why.label`: WHY WE TRY EACH
 - `lsdm2.why.off`: Both are measured against a control: the same layers with the memory switched off, so that nothing at all passes between positions. A model that cannot beat it has learned nothing from its memory.
 - `lsdm2.why.partial`: PARTIAL keeps the MLP, which nearly every working language model has. So it asks one new question: does a memory written while reading make a better language model?
-- `lsdm2.why.ruling`: FULL goes forward. It becomes the base of the next SDM CHAT, and we will try other shapes of it, each compared with a transformer of the same size. PARTIAL stops after its first test, where it served as the comparison.
+- `lsdm2.why.ruling`: FULL goes forward. It becomes the base of the next SDM CHAT. We are trying other shapes of it now, in the shape sweep below, and each winning shape is to be compared with a transformer of the same shape. PARTIAL stops after its first test, where it served as the comparison.
 - `lsdm2.why.title`: Two questions, a control, and the one we take forward
 - `lsdm2.write.label`: HOW IT WRITES
 - `lsdm2.write.p1`: From its vector, each token makes a key, a value and a gate. The key picks the best {k} of a head’s {s} slots. The value is added into those slots, weighted by how well each one matched. The gate scales the whole write between nothing and full strength, so a token that matters little can write weakly.
@@ -7325,7 +7338,9 @@
 - `magic8.rec.report`: this experiment's report; its predictions were sealed in the ledger first
 - `magic8.rec.settle`: this experiment's settle record
 - `magic8.rec.train`: this experiment's training record
+- `magic8.samples.all`: all questions
 - `magic8.samples.aria`: sample questions
+- `magic8.samples.fewer`: fewer questions
 - `magic8.sdm.intro.lead`: Two of the arms in the training comparison are decision stores, each a sparse distributed memory.
 - `magic8.settle.aria`: the settle
 - `magic8.settle.h`: The settle: from three chances to one answer
@@ -8883,11 +8898,14 @@
 - `privacy.rights.complain`: Raise any privacy concern with us first. If we do not resolve it, you can complain to the data protection authority where you live.
 - `privacy.rights.label`: YOUR RIGHTS
 - `privacy.rights.title`: Children, your rights and changes
+- `privacy.sent.analytics`: The site counts its visits with Vercel Web Analytics, from Vercel, which hosts the site. Each time you open a page, your browser sends Vercel one page view: the page’s name with nothing after it, the time, and, on your first page, the site that sent you here. Vercel records with it your rough location (country, region and city), your browser and operating system, and your kind of device. It sets no cookie and keeps nothing in your browser. Vercel tells visitors apart by a hash made from each request and discards it after 24 hours; by its own description the page views are recorded anonymously, not tied to you or to your network address. We see only totals.
 - `privacy.sent.fonts`: Every page loads its typefaces from Google Fonts (fonts.googleapis.com and fonts.gstatic.com). So your browser asks Google’s servers for them, and Google sees your network address and your browser’s details, as it would for any web request. Japanese, Chinese and Hindi each add one more Google Fonts request, only when you choose that language. The site sends Google nothing else.
 - `privacy.sent.label`: WHAT LEAVES YOUR BROWSER
 - `privacy.sent.models`: The models on SDM CHAT, SDMPOEM, SDM WEIRD LITTLE GUY, SDMJEV and SDMSTUDIO run in your browser. Their files come from this site, and what you type to them never leaves the tab.
 - `privacy.sent.none`: The site runs no analytics, no advertising and no trackers. Apart from the hero’s YouTube slides, it embeds no video players, and it embeds no social media buttons from other sites. A link to another site, such as YouTube, GitHub or arXiv, takes you there only when you follow it, and that site’s own policy then applies.
+- `privacy.sent.noneva`: Beyond those page counts, the site runs no other analytics, no advertising and no trackers. Apart from the hero’s YouTube slides, it embeds no video players, and it embeds no social media buttons from other sites. A link to another site, such as YouTube, GitHub or arXiv, takes you there only when you follow it, and that site’s own policy then applies.
 - `privacy.sent.p1`: By default the site sends nothing about you to any server. Your browser fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.p1va`: Apart from the page counts below, the site sends nothing about you to any server. Your browser fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
 - `privacy.sent.title`: What leaves your browser, and who sees it
 - `privacy.sent.youtube`: The home hero can show a YouTube video as one of its slides. Nothing is fetched from YouTube until a video slide is about to show. Then your browser loads YouTube’s player from www.youtube-nocookie.com, YouTube’s privacy-enhanced address, and the video and its pictures from YouTube’s servers (i.ytimg.com, yt3.ggpht.com and googlevideo.com). YouTube sees your network address, your browser’s details and what you do in its player, under Google’s privacy policy. The site does not load YouTube’s player script from www.youtube.com, and sends YouTube nothing else.
 - `privacy.terms.link`: The rules for using the site are in the terms.
@@ -9568,6 +9586,12 @@
 - `sdm2.fades.then.full`: then the table, which holds no past
 - `sdm2.fades.then.partial`: then the MLP, which holds no past
 - `sdm2.fades.title`: {h} ways to remember the past
+- `sdm2.held.base`: a transformer in the next FULL base’s shape and token count, trained on the same text in the same order
+- `sdm2.held.depth`: a transformer in the deeper winning shape on {tok} tokens, so the deeper FULL shapes have a yardstick of their own shape
+- `sdm2.held.depthnotok`: a transformer in the deeper winning shape, so the deeper FULL shapes have a yardstick of their own shape
+- `sdm2.held.finish`: the transformer in the table above, from step {step} to the end of its run, then its final TEST
+- `sdm2.held.lead`: Held for later, not cancelled.
+- `sdm2.held.why`: Every side-by-side transformer run waits until the SDM work is done: the shape sweep, then the next FULL base in the winning shape and its chat model. Then they run in this order:
 - `sdm2.history`: Before these two models we tried other shapes. What each one was and what it found is on the history page.
 - `sdm2.keys.aria`: {m}: a grid of {s} by {s} slots, with the scores of the query’s two halves along two sides; the best of each cross, and the best {k} slots light.
 - `sdm2.keys.cap.full`: FULL uses this address twice in every layer: in its memory ({ms} by {ms} slots, {mk} picked) and in its table ({s} by {s} rows, {k} picked). Shown here: the table. The search scores {two} sub-keys, not all {m} slots, and still finds the exact best.
@@ -9605,6 +9629,7 @@
 - `sdm2.score.col.model`: model
 - `sdm2.score.off`: memory off (the control)
 - `sdm2.score.ruling`: FULL is the model we take forward: it goes on to the full run and then to chat, and PARTIAL stops after its first test. The transformer is a yardstick of the same size on the same tokens, not one of our models. A gap under {noise} between two scores is not called.
+- `sdm2.score.sweep`: Since the first test, the shape sweep found a better FULL on the same {tok} tokens: {best}, against the {first} above. The shape sweep has every run.
 - `sdm2.score.tf`: a transformer (the yardstick)
 - `sdm2.score.tfahead`: The transformer did better than both on the first test. FULL has ground to make up, and we measure it against a transformer at every step.
 - `sdm2.sources`: Every number about FULL and PARTIAL on this page is read from the training records by one script, and is rebuilt whenever a new record lands.
@@ -9645,6 +9670,48 @@
 - `sdm2.stream.l.partial`: layer {k}: + memory read + MLP
 - `sdm2.stream.start`: enfold
 - `sdm2.stream.title`: The one vector, layer by layer
+- `sdm2.sweep.best`: The best FULL so far, at {test}, is the one with {setting}, against {first} for the first test. It trains at {speed} tokens a second, {x} times the first test’s speed.
+- `sdm2.sweep.bestTag`: best so far
+- `sdm2.sweep.both`: {s} slots a head, {l} layers, {d} wide
+- `sdm2.sweep.call.better`: better
+- `sdm2.sweep.call.tie`: tie
+- `sdm2.sweep.call.worse`: worse
+- `sdm2.sweep.cap.depth`: The depth line: layers and width, with each shape’s weights beside it
+- `sdm2.sweep.cap.memory`: The memory line: the slots each head of the memory between tokens has, at the first test’s width and depth
+- `sdm2.sweep.cap.others`: The other changes, each against the first test
+- `sdm2.sweep.col.call`: call
+- `sdm2.sweep.col.delta`: against the first test
+- `sdm2.sweep.col.setting`: setting
+- `sdm2.sweep.col.speed`: training speed, tokens a second
+- `sdm2.sweep.col.test`: TEST bits per byte, shorter bar is better
+- `sdm2.sweep.col.weights`: weights, millions
+- `sdm2.sweep.first`: the first test
+- `sdm2.sweep.gap`: A transformer of the same shape, trained on the same {tok} tokens, scored {tf}. The gap to it has narrowed from {first} at the first test to {best}.
+- `sdm2.sweep.heads`: {h} table heads
+- `sdm2.sweep.label`: THE SHAPE SWEEP
+- `sdm2.sweep.layers`: {l} layers, {d} wide
+- `sdm2.sweep.mark.high`: UNBRACKETED: the best is the largest setting tried, so this line has not turned yet.
+- `sdm2.sweep.mark.in`: BRACKETED: the best setting lies inside the range tried, with a worse one on each side.
+- `sdm2.sweep.mark.low`: UNBRACKETED: the best is the smallest setting tried, so this line has not turned yet.
+- `sdm2.sweep.memtrend`: Along the memory line, every smaller memory between tokens scored better.
+- `sdm2.sweep.memtrend.fast`: Along the memory line, every smaller memory between tokens scored better and trained faster.
+- `sdm2.sweep.next`: The FULL base, trained on {tok} tokens, has the first test’s shape. The next FULL base will be trained in the shape this sweep picks.
+- `sdm2.sweep.other`: another change
+- `sdm2.sweep.others.tie`: A bigger trained table, more rows read a token and more table heads all tied with the first test: the table’s size is not what FULL is short of. The seed row is the same shape trained again; it sets the noise line.
+- `sdm2.sweep.p1`: After the first test we swept the shape of FULL: the same recipe on the same {tok} tokens, one change at a time, every run scored on the same held-out web text. Two runs of one shape on different seeds differed by {noise}, so a change counts as better or worse only beyond {line}.
+- `sdm2.sweep.pending.many`: {n} more settings on this line have no score yet; their rows fill in when they are scored.
+- `sdm2.sweep.pending.one`: One more setting on this line has no score yet; its row fills in when it is scored.
+- `sdm2.sweep.reads`: {k} table rows read a token
+- `sdm2.sweep.sealed`: sealed, not run yet
+- `sdm2.sweep.seed`: the first test’s shape, another seed
+- `sdm2.sweep.slots`: {s} slots a head
+- `sdm2.sweep.speednote`: Training speed is the median over each run’s logged steps, on one GPU. Weights count everything trained, the word table included.
+- `sdm2.sweep.tablesize`: {x} times the table’s rows
+- `sdm2.sweep.title`: Which shape of FULL learns best
+- `sdm2.sweep.top`: the shape sweep
+- `sdm2.sweep.training`: being trained, no score yet
+- `sdm2.sweep.twin`: its twin’s
+- `sdm2.sweep.twinnote`: The first test kept no log of its own, so its speed is its twin’s: the same shape on another seed.
 - `sdm2.tag.full`: FULL
 - `sdm2.tag.partial`: PARTIAL
 - `sdm2.unf.aria`: {m}: the last vector is matched against every row of the word table; one bar per word; the longest is the guess.
@@ -12989,8 +13056,6 @@
 - `wtf.term.filesystem-menu.usage`: Its folders are packages, language, demos, science, members, about and misc. The tour row marks the page you are on and the next one.
 - `wtf.term.film.meaning`: A sequence of frames a grid settles through: the Muybridge horse, Tears of Steel, or a film computed in code.
 - `wtf.term.film.usage`: The hero plays ten films at 2 frames a second; nine are computed in code, and their facts are tested.
-- `wtf.term.films-and-frames.meaning`: The hero's main bag: its films and still pictures, played on shuffle.
-- `wtf.term.films-and-frames.usage`: The hero's rotation is two seeded bags on one slot clock: FILMS AND FRAMES take 7 slots of every 8 and a visualiser the eighth, never two visualisers in a row, each bag used up before it repeats. Every slot starts on a master bar line. THE DJ's line names the bag and the item on air.
 - `wtf.term.fluctuation-dissipation.meaning`: The theorem that one coupling to the heat bath sets both a system's random fluctuations and its friction.
 - `wtf.term.fluctuation-dissipation.usage`: A hero word.
 - `wtf.term.fnv-1a.meaning`: The hash KANERVA uses on names and keys.
@@ -13443,8 +13508,8 @@
 - `wtf.term.track-prediction.usage`: At a million hard locations and 30% address-noise the plain S-map predicted 1,648 words where 700 were measured; TRACK-P predicts the failure fraction within 0.015 on average. Sdm::predicted_capacity_track and Sdm::predicted_failure_rate in the crate.
 - `wtf.term.transformer.meaning`: A network of stacked attention layers and small feed-forward nets; the shape of today's large language models.
 - `wtf.term.transformer.usage`: A hero word.
-- `wtf.term.true-time.meaning`: A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame.
-- `wtf.term.true-time.usage`: settle-see's truetime.js. The film player, the hero films, the footer brain and the morphs all play in TRUE TIME, and it measures how many changed lights the field caught.
+- `wtf.term.true-time.meaning`: The hero's time system, and the name of its main playlist. A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame; the playlist is the hero's films and still pictures, played on shuffle in that time.
+- `wtf.term.true-time.usage`: settle-see's truetime.js. The film player, the hero films, the footer brain and the morphs all play in TRUE TIME, and it measures how many changed lights the field caught. On the hero, TRUE TIME is also the main playlist: two seeded bags share one slot clock, TRUE TIME takes 7 slots of every 8 and VISUALISERS the eighth, never two visualisers in a row, each bag used up before it repeats. Every slot starts on a master bar line, and THE DJ's line names the playlist and the item on air.
 - `wtf.term.two-panels.meaning`: The two kinds of panel around a block of text. The purple panel holds SETTLE and KANERVA code and stays stock standard, because it stands for a standard library. The orange notation panel, a chamfered frame around a paragraph of our own notation, is ours.
 - `wtf.term.two-panels.usage`: The two sentences on Settling on the home page wear the orange notation panel; every program block and install box wears the purple one.
 - `wtf.term.uci-digits.meaning`: The small set of 8x8 handwritten digits bundled with scikit-learn.

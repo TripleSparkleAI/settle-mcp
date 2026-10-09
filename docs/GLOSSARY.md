@@ -116,6 +116,7 @@
 - **token**: an LLM token _(SETTLE/settle-site/i18n/GLOSSARY.md)_
 - **tolerate-noise**: SETTLE's own: the address-noise a memory is sized to tolerate _(SETTLE/settle-site/i18n/GLOSSARY.md)_
 - **toot.**: the sound it goes _(SETTLE/settle-site/i18n/GLOSSARY.md)_
+- **TRUE TIME**: a name, kept in Latin letters: the hero's time system and its main playlist (TRUETIMENAME, 2026-10-09) _(SETTLE/settle-site/i18n/GLOSSARY.md)_
 - **true time render**: Here it runs under TRUE TIME RENDER. _(SETTLE/settle-site/src/pages/What.jsx)_
 - **unbinding**: the inverse of バインディング _(SETTLE/settle-site/i18n/GLOSSARY.md)_
 - **vote**: A vote blends several words into one that looks a little like each. _(SETTLE/settle-site/src/pages/kanerva/FirstSteps.jsx)_
@@ -140,7 +141,6 @@
 - **DJ MODE**: The sound mode in which THE DJ plays its sets one after another, and nothing else. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#dj-mode))_
 - **DOOMWORLD**: The experiment that turned the SURPRISE game into a textured, neon, multi-room world. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#lane-doomworld))_
 - **film**: A sequence of frames a grid settles through: the Muybridge horse, Tears of Steel, or a film computed in code. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#film))_
-- **FILMS AND FRAMES**: The hero's main bag: its films and still pictures, played on shuffle. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#films-and-frames))_
 - **FILMSHARP**: The experiment whose question was: Can leans fitted to the grid itself hold the picture where TAP collapses, does a Rao-Blackwellised read recover the last 1 dB, and does another update rule mix faster? _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#lane-filmsharp))_
 - **FULL**: Our SDM language model built from sparse distributed memories in every part: each layer writes and reads a run-time SDM, then reads a few rows of a trained SDM table where a transformer has its MLP. No attention and no MLP. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#full-sdm))_
 - **glossary**: The site's dictionary: every word on this site, what we mean by it, where it is used, and where it came from. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#glossary))_
@@ -221,7 +221,7 @@
 - **the strip**: The hero folded small: a 25 px still strip on other pages, or a 60 px live bar once pinned or scrolled away; the footer has a 50 px strip of its own. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#hero-strip))_
 - **THE TWO PANELS**: The two kinds of panel around a block of text. The purple panel holds SETTLE and KANERVA code and stays stock standard, because it stands for a standard library. The orange notation panel, a chamfered frame around a paragraph of our own notation, is ours. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#two-panels))_
 - **the what chains**: Small shimmering words on the WHAT page that open in place into a short chain of lines, each chain in one neon. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#what-chains))_
-- **TRUE TIME**: A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#true-time))_
+- **TRUE TIME**: The hero's time system, and the name of its main playlist. A film keeps its own pace behind, and the field in front settles toward whatever frame is current, frame by frame; the playlist is the hero's films and still pictures, played on shuffle in that time. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#true-time))_
 - **VALLEYMAP**: The experiment whose question was: How many valleys does a settle landscape have, how wide, how regular, and what is the shape good for? _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#lane-valleymap))_
 - **VISUALISERS**: The hero's second bag: eight pictures of the sound, after the old music players, one slot in every eight. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#visualisers))_
 - **VU METERS**: Two needles: the left reads the sound below 500 Hz, the right the sound above it. _(SETTLE/settle-site/src/wtf/terms.js (#/glossary#vu-meters))_
