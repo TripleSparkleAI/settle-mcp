@@ -1,5 +1,5 @@
 {
- "hash": "069949d711f9105fb0d51c5bd6d393bc435b920392fb372061c4f9d296f85271",
+ "hash": "89e69d0689346032fc0d9961bd42a6606a65e554208d77f0a35f7665d843e91b",
  "inputs": [
   {
    "path": "SETTLE/settle-site/src/data/mcpDocs.js",
@@ -7,7 +7,7 @@
   },
   {
    "path": "SETTLE/settle-site/i18n/en.json",
-   "sha256": "ad6bd53d0a87fe5dc79f0d1a519250f2c3b449a7b15e5539b0003ac4c899d55c"
+   "sha256": "bc987e9bfa7884b9bf65ce769a009ff21ccd02f80c0ec85561daf1d35a4765d1"
   },
   {
    "path": "SETTLE/settle-site/i18n/GLOSSARY.md",

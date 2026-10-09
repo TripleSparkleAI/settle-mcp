@@ -32,59 +32,58 @@
 
 ## ask
 
-- `ask.balance`: {left} of chat left
+- `ask.allow.line`: {left} of {limit} messages left in this 4-hour window.
 - `ask.blocked`: The model service will not let this copy of the site use the chat model yet: its key’s settings block it. That is a setup problem here, not your question. Nothing was counted.
-- `ask.chat.label`: LIVE · THE CHAT
-- `ask.chat.title`: Ask it
-- `ask.chip.docs`: reads our own docs
-- `ask.chip.free2`: $1 of free chat
-- `ask.chip.members`: members only
-- `ask.chip.wrong`: it can be wrong
 - `ask.confirm`: Confirm your email to ask questions.
 - `ask.confirmlink`: your account
-- `ask.credits`: More questions use credits.
-- `ask.empty`: Ask anything about the language, the memory, or this site.
+- `ask.empty2`: Ask anything about SDM, SETTLE, the KANERVA memory or this site.
 - `ask.err`: not answered
 - `ask.failed`: No answer came back. Nothing was counted; ask again.
 - `ask.here`: ask
 - `ask.info.answers`: answers
-- `ask.info.balance`: balance
+- `ask.info.cost`: cost
+- `ask.info.free`: free, with a 4-hour limit
 - `ask.info.model2`: DeepSeek V4.1 Flash, reading our own docs
-- `ask.info.spent`: spent
+- `ask.intro`: A chat about what SDM and SETTLE are. It runs on DeepSeek V4.1 Flash and is free to use.
 - `ask.it`: answer
 - `ask.label`: your question
+- `ask.limit.box`: Wait until {time} to ask again
+- `ask.limit.line`: This 4-hour window is full. Wait until {time} to ask again.
+- `ask.limit.soon`: This 4-hour window is full. It frees up again shortly.
+- `ask.limit.tokens`: You have used this 4-hour window’s reading budget. Wait until {time} to ask again.
+- `ask.limit.turn`: This 4-hour window is full, so this question was not sent. The line above says when you can ask again.
+- `ask.limits`: Use it freely, but some limits apply.
+- `ask.low.line`: Only {left} of {limit} messages left in this 4-hour window. One more frees at {time}.
+- `ask.low.tokens`: {left} of {limit} messages left, and this window’s reading budget is nearly used. One more frees at {time}.
 - `ask.membersoff`: Members are not configured on this copy of the site, so the chat is closed here.
 - `ask.noserver`: The chat is not open on this copy of the site.
 - `ask.notset`: The chat is not set up on this copy of the site.
-- `ask.placeholder`: Ask about SETTLE or KANERVA
+- `ask.placeholder2`: Ask what SDM or SETTLE is
 - `ask.read`: read more:
 - `ask.s1`: What is SETTLE, in one paragraph?
-- `ask.s10`: Which pages on this site show an SDM working live?
-- `ask.s2`: What does a read-address do in a KANERVA memory?
-- `ask.s3`: How do I write my first SETTLE program?
+- `ask.s10`: How do SDM and SETTLE work together?
+- `ask.s2`: What is an SDM, a sparse distributed memory?
+- `ask.s3`: How is SETTLE different from an ordinary programming language?
 - `ask.s4`: What is a p-bit?
-- `ask.s5`: How does a SETTLE program cool down to an answer?
+- `ask.s5`: How does a SETTLE program settle on an answer?
 - `ask.s6`: How is an SDM different from a hash table?
-- `ask.s7`: How do I run a SETTLE program in my browser?
-- `ask.s8`: What does the temperature do in a settle?
-- `ask.s9`: How do I add the KANERVA crate to a Rust project?
+- `ask.s7`: What can I build with SETTLE?
+- `ask.s8`: How does an SDM recall something it has never seen exactly?
+- `ask.s9`: What does KANERVA, the SDM crate, do?
 - `ask.send`: ask
-- `ask.signin`: Questions need a member account.
+- `ask.signin2`: ASK needs a member account. It is free.
 - `ask.signinlink`: Sign up or log in
 - `ask.slow`: That is a lot of questions in an hour. Wait a little and ask again.
-- `ask.spent`: {spent} so far
-- `ask.spent.live`: {spent} so far, this answer added when it ends
 - `ask.stoppedempty`: (stopped before the first word)
 - `ask.stoppednote`: Stopped before the end. This question was not counted.
 - `ask.thinking`: reading the docs...
-- `ask.tip.balance`: Every member gets $1 of free chat, once, on joining. Each answer costs what the model service charged for it, often a fraction of a cent. We sell nothing.
+- `ask.tip.free`: ASK costs you nothing and never uses your chat credit. Each message counts for four hours from when you send it, then frees its place. A stopped or failed answer is not counted.
 - `ask.tip.model2`: One model answers every question: DeepSeek V4.1 Flash through OpenRouter. It reads the settle-mcp docs and the glossary, then answers and links what it read.
-- `ask.tip.spent`: What your answers have cost so far, from the ledger. An answer is counted when it ends, at what the model service charged for it; a stopped or failed answer costs nothing.
 - `ask.title`: Ask
-- `ask.top.account`: your account
-- `ask.top.go`: ask a question
-- `ask.top.lede`: A language model on the server reads the settle-mcp docs and the glossary, then answers in plain words and links the pages it read. Every member gets $1 of free chat.
-- `ask.top.sub`: Questions about SETTLE and KANERVA, answered from our own docs.
+- `ask.toolong`: That message is too long for this chat: keep it under 1,000 characters.
+- `ask.top.sub2`: A free chat about what SDM and SETTLE are, answered from our own docs.
+- `ask.wait.hm`: about {h} h {m} min
+- `ask.wait.m`: about {m} min
 - `ask.warn`: Answers come from a language model reading our own docs. It can be wrong, so check the pages it links.
 - `ask.you`: you
 
@@ -1278,10 +1277,12 @@
 - `data.neon.10421806`: rose
 - `data.neon.119a58b7`: the primary fill on hover and focus, the bloom (dark text on it 11.63:1)
 - `data.neon.1a1b9044`: ember
+- `data.neon.1c9346db`: hyper pink
 - `data.neon.22963023`: a done line, a confirmed mark, the chat regenerate (11.53:1 on bark)
 - `data.neon.28faa9a7`: something went wrong: an error or a miss
 - `data.neon.2d2680bf`: the drawing library: words, shapes, pictures and films that settle out of noise as lights
 - `data.neon.325056cd`: text on a prime red fill
+- `data.neon.37fa202e`: the fill of every main button in the members area, and the members headings (5.60:1 on bark; heartwood on it 5.53:1)
 - `data.neon.3c69914a`: sawdust
 - `data.neon.3cbf1858`: tooth white
 - `data.neon.3fc3d770`: sunk bark
@@ -1319,6 +1320,7 @@
 - `data.neon.859dcd52`: HOT PINK NEON: the fill of every action button (.btn--action): run, settle, anneal, send, recall, cue, generate, retrain, play
 - `data.neon.875550d8`: the prime red under the pointer
 - `data.neon.8a8422b9`: the dark rooms the lights live in
+- `data.neon.8a8cc89f`: a main button under the pointer or the keyboard focus (heartwood on it 7.43:1)
 - `data.neon.8c0610e5`: a measured number from a real run
 - `data.neon.8cf39074`: memory: a stored pattern, SDM and Hopfield
 - `data.neon.917fddfe`: the neon: the beaver border, focus rings, the primary fill, the mark, links (9.55:1 on bark)
@@ -1332,10 +1334,13 @@
 - `data.neon.b02bc4cc`: rules between sections
 - `data.neon.b26679a2`: heartwood
 - `data.neon.b48e4322`: something remembered: a pattern kept to recall later
+- `data.neon.b83acfe7`: bright pink
 - `data.neon.bddea4a3`: willow
 - `data.neon.bf3a7a13`: labels, meta, the deadpan line
+- `data.neon.c09222f9`: hyper neon yellow
 - `data.neon.c425201b`: Sparse Distributed Memory as a Rust crate
 - `data.neon.c596ab37`: secondary text and labels, a quieter red
+- `data.neon.c6b24c2c`: the members neon: every panel border, the ASK window border, every button edge, the focus ring (16.12:1 on bark)
 - `data.neon.cbcce942`: a React component library: text, images and vectors rendered as a settle of lights
 - `data.neon.d04f8a22`: pale honey
 - `data.neon.d2fdb353`: the chosen tab, a hovered row, the person's turns in the chat
@@ -7590,11 +7595,6 @@
 
 - `mem.account.label`: ACCOUNT
 - `mem.account.title2`: Email, password, data and deletion
-- `mem.ask.label`: ASK
-- `mem.ask.title`: Ask about SETTLE and KANERVA
-- `mem.asks.balance`: {left} of chat left
-- `mem.asks.link`: ASK
-- `mem.asks.none`: more questions use credits
 - `mem.b.back`: back
 - `mem.b.change`: change it
 - `mem.b.checking`: checking…
@@ -7639,7 +7639,7 @@
 - `mem.c.taken`: That email already has an account. Log in instead.
 - `mem.c.totp`: One more step: type the code from your authenticator app.
 - `mem.c.weak`: That password does not meet the rules. Try a longer one.
-- `mem.chip.ask`: ASK with $1 of free chat
+- `mem.chip.ask2`: ASK, free to use
 - `mem.chip.export`: your data as one JSON file
 - `mem.chip.models`: your saved models
 - `mem.chip.optional`: the rest of the site needs no account
@@ -7652,11 +7652,10 @@
 - `mem.closed.server`: Members are not configured on this server: it has no Clerk secret key.
 - `mem.closed.title2`: The members area is closed here
 - `mem.code.strap`: Type the 6-digit code from the email.
-- `mem.cr.asked`: answers
 - `mem.cr.granted`: granted
 - `mem.cr.label`: CREDITS
 - `mem.cr.left`: left
-- `mem.cr.line`: Every member gets $1 of free chat, once, on joining. Each answer from ASK costs exactly what the model service charged for it, usually a small fraction of a cent, and only a whole answer is charged.
+- `mem.cr.line2`: Every member gets $1 of chat credit, once, on joining. ASK is free to use and does not touch it.
 - `mem.cr.spent`: spent
 - `mem.cr.title`: Your chat balance
 - `mem.del.b`: delete my account
@@ -7688,11 +7687,13 @@
 - `mem.h1`: Members
 - `mem.home.label`: MEMBERSHIP
 - `mem.home.title2`: An account, and what it gives you
-- `mem.lede2`: An account keeps the little guys and runs you train on this site, and opens ASK, a chat about SETTLE and KANERVA with $1 of free chat to start. Everything else here works without one.
+- `mem.lede3`: An account keeps the little guys and runs you train on this site, and opens ASK, a free chat about what SDM and SETTLE are. Everything else here works without one.
 - `mem.loading`: Loading the sign-in…
 - `mem.models.label`: SAVED MODELS
 - `mem.models.title`: Your little guys and runs
 - `mem.off.line`: Members are not configured on this copy of the site.
+- `mem.pages.label`: MEMBERS PAGES
+- `mem.pages.title`: Everything in members
 - `mem.pw.head`: Change the password
 - `mem.reset.strap2`: Choose a new password. Every other place you are signed in is signed out.
 - `mem.runs.actions`: actions
@@ -8078,7 +8079,7 @@
 - `menu.icons.marks`: marks
 - `menu.icons.pixels`: pixels
 - `menu.ls.title`: browse every page (ls)
-- `menu.peek.ask`: Ask anything about SETTLE and KANERVA; the answers come from our own docs.
+- `menu.peek.ask`: A free chat about what SDM and SETTLE are; the answers come from our own docs.
 - `menu.peek.bar`: PREVIEW
 - `menu.peek.canvas`: {name}: {mark}, drawn by {n} p-bits settling
 - `menu.peek.contact`: How to reach us: an address to copy, the repository, and one question.
@@ -11589,7 +11590,7 @@
 - `terms.about.p1`: These terms govern your use of the SETTLE site. Using the site means you accept them. They are written to be read.
 - `terms.about.title`: About these terms
 - `terms.about.who`: The site is run by {operator}, in Australia. In these terms, "we" means the operator and "you" means anyone who uses the site.
-- `terms.accounts.credits`: Each member gets $1 of free chat on ASK, once, on joining, spendable only on its one model. Each answer costs what the model service charged for it. We sell nothing: there is nothing to buy, and the site takes no payment. Only the operator can add more.
+- `terms.accounts.credits`: ASK is free to use. Each member may send a set number of messages in any 4 hours, so that one person cannot use it all; a message frees its place four hours after it was sent, and the chat says when the next one is free. Each member also gets $1 of chat credit, once, on joining, and ASK does not use it. We sell nothing: there is nothing to buy, and the site takes no payment. Only the operator can add more.
 - `terms.accounts.label`: ACCOUNTS AND CREDITS
 - `terms.accounts.p1`: A members account is needed to save models and to use ASK. The sign-in itself is run by Clerk, an account service. Keep your password to yourself: what happens under your account is treated as yours. You can delete what this site holds about you at any time from the members page.
 - `terms.accounts.title`: Accounts and credits
