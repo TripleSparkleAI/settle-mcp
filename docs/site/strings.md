@@ -8439,6 +8439,7 @@
 
 ## menu
 
+- `menu.close`: Close the site menu
 - `menu.count`: {n, plural, one {# page} other {# pages}}
 - `menu.folder.about.note`: who SETTLE rests on, how to reach us, and what every word means
 - `menu.folder.demos.note`: live demos: every one settles in your browser
