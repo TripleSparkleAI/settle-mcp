@@ -1,5 +1,5 @@
 {
- "hash": "65bd505e7b947a4816de28f5a661842330abd62a11c852324f6fc63c52863d08",
+ "hash": "c0c7841d167bbd349f18bd82e35a22fd380a8cfdef1f28e7c7c56fa17a221f65",
  "inputs": [
   {
    "path": "SETTLE/settle-site/src/data/mcpDocs.js",
@@ -1219,7 +1219,7 @@
   },
   {
    "path": "SETTLE/tools/readme_banner.mjs",
-   "sha256": "6fcf462a2893277693166aa7a3baaa7727ea59e99d450cb82955fc8f6aeab023"
+   "sha256": "3dba958032c116e222c75835464761f8cd8a6921bc1cb502c42113710ef37f0d"
   }
  ]
 }

@@ -1040,6 +1040,31 @@
 - `data.herocontrols.f94f75e2`: glyphs
 - `data.herocontrols.fc5b45da`: VISUALISERS only · the eight visualisers, on shuffle
 - `data.herocontrols.fee364c7`: ATARI LIGHT ORGAN · eight diamonds, one per band from bass to treble, each swelling with its band
+- `data.heroradio.04fc8233`: a stereo level meter
+- `data.heroradio.0b7f749c`: the whit dance: spins cooling to agree
+- `data.heroradio.0c8438e0`: a spectrum analyser
+- `data.heroradio.1083d300`: a field of sparkles
+- `data.heroradio.1e136bf7`: hearts, drifting right
+- `data.heroradio.25570d85`: fireworks
+- `data.heroradio.316913e7`: magnetic domains, walls moving
+- `data.heroradio.40fb4583`: two waves, crossing
+- `data.heroradio.43dad97f`: the word on a wave
+- `data.heroradio.70f11dd6`: rain, falling and drifting right
+- `data.heroradio.7290824c`: noise, annealing to a word
+- `data.heroradio.76b9a5b2`: stars streaming past
+- `data.heroradio.7ef0b8c0`: a sine wave, travelling right
+- `data.heroradio.88144868`: radial pulses
+- `data.heroradio.92fa0370`: a horse, galloping right
+- `data.heroradio.99db47b5`: the car radio
+- `data.heroradio.9e631e6b`: the word, glitching
+- `data.heroradio.a018043b`: p-bits counting in binary
+- `data.heroradio.b7e28c81`: a double helix
+- `data.heroradio.b9e55e25`: a heartbeat trace
+- `data.heroradio.bfae63b6`: SETTLE, dropping in
+- `data.heroradio.e4a57642`: chevrons, marching right
+- `data.heroradio.eba8c14e`: a scanner, sweeping
+- `data.heroradio.f2b723fe`: a checkerboard, flipping
+- `data.heroradio.f9780d12`: balls bouncing right
 - `data.hownotes.00aa096b`: What you saw: pin wet grass on. A held thing never flips.
 - `data.hownotes.04661f83`: Start hot, cool slowly over 5,000 sweeps, and keep the calmest seating seen.
 - `data.hownotes.12d364b4`: A push: rain and the sprinkler tend not to be on together. Nobody waters in the rain.
@@ -5754,6 +5779,7 @@
 - `hero.plate.young-two-source-interference.label`: Young's interference
 - `hero.plate.young-two-source-interference.note`: Young's interference of waves from two sources A and B (Course of Lectures on Natural Philosophy, 1807)
 - `hero.play`: ▶ play
+- `hero.radio.track`: THE RADIO
 - `hero.readout.energy`: energy {e} ({per}/light)
 - `hero.readout.flips`: flips {n}
 - `hero.readout.lean`: lean {v}
@@ -5799,8 +5825,9 @@
 - `hero.sound.shuffle.note`: every mode in turn, about {min} minutes each, in a random order, with THE DJ on every fourth turn; pick one to keep it.
 - `hero.sound.shuffle.word`: SHUFFLE
 - `hero.sound.symphony.label`: {flute} (the DJ)
-- `hero.strip`: the hero, still · click to pin it live here
 - `hero.strip.aria`: Show the hero live here, and pin it to every page
+- `hero.strip.label`: A band of lights, each a p-bit, settling into a run of small animations.
+- `hero.strip.tip`: Pin the live hero here
 - `hero.tip.adjust`: ADJUST
 - `hero.tip.bar`: BAR
 - `hero.tip.expand`: EXPAND
@@ -13192,10 +13219,10 @@
 - `wtf.term.heat-bath.usage`: A hero word.
 - `wtf.term.hebbian.meaning`: A weight grows with the product of the activity at its two ends: cells that fire together wire together.
 - `wtf.term.hebbian.usage`: A hero word, followed by the Hebbian rule a Hopfield memory stores its patterns with.
-- `wtf.term.hero-strip.meaning`: The hero folded small: a 25 px still strip on other pages, or a 60 px live bar once pinned or scrolled away; the footer has a 50 px strip of its own.
+- `wtf.term.hero-strip.meaning`: The hero folded small: a 25 px strip of small live animations on other pages, or a 60 px live bar once pinned or scrolled away; the footer has a 50 px strip of its own.
 - `wtf.term.hero-strip.usage`: A click on the hero's strip pins it for the visit and shows the live bar. The footer's strip is docked at the bottom until you reach the end of the page.
 - `wtf.term.hero.meaning`: The big live picture at the top of the home page: p-bits settling into words, shapes and films about thermodynamic computing.
-- `wtf.term.hero.usage`: Mounted once above the router, so it never restarts. On the home page it is full; scrolled away it becomes a 60 px live bar; on other pages it is a 25 px still strip until pinned. Its rotation is a random bag that never repeats an item twice in a row.
+- `wtf.term.hero.usage`: Mounted once above the router, so it never restarts. On the home page it is full; scrolled away it becomes a 60 px live bar; on other pages it is a 25 px strip of small live animations until pinned. Its rotation is a random bag that never repeats an item twice in a row.
 - `wtf.term.heteroassociative.meaning`: A memory that stores a word at another word's address: a pairing, or the next step of a sequence.
 - `wtf.term.heteroassociative.usage`: A hero word.
 - `wtf.term.hold.meaning`: Pins a thing to :yes or :no for the rest of the run block: what was seen.

@@ -1,5 +1,5 @@
 {
- "hash": "65bd505e7b947a4816de28f5a661842330abd62a11c852324f6fc63c52863d08",
+ "hash": "c0c7841d167bbd349f18bd82e35a22fd380a8cfdef1f28e7c7c56fa17a221f65",
  "mcp": {
   "name": "settle-mcp",
   "line": "An MCP server that explains SETTLE and KANERVA, sets them up on your machine, and runs them.",

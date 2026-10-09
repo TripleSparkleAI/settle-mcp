@@ -1685,7 +1685,7 @@ In the language folder.
 
 The big live picture at the top of the home page: p-bits settling into words, shapes and films about thermodynamic computing.
 
-Mounted once above the router, so it never restarts. On the home page it is full; scrolled away it becomes a 60 px live bar; on other pages it is a 25 px still strip until pinned. Its rotation is a random bag that never repeats an item twice in a row.
+Mounted once above the router, so it never restarts. On the home page it is full; scrolled away it becomes a 60 px live bar; on other pages it is a 25 px strip of small live animations until pinned. Its rotation is a random bag that never repeats an item twice in a row.
 
 - also: the infinity room, the home hero
 - Japanese: ヒーロー
@@ -2463,7 +2463,7 @@ On the left block's bottom line MEDITATE MODE is the resting word, and DJ MODE a
 
 ### the strip
 
-The hero folded small: a 25 px still strip on other pages, or a 60 px live bar once pinned or scrolled away; the footer has a 50 px strip of its own.
+The hero folded small: a 25 px strip of small live animations on other pages, or a 60 px live bar once pinned or scrolled away; the footer has a 50 px strip of its own.
 
 A click on the hero's strip pins it for the visit and shows the live bar. The footer's strip is docked at the bottom until you reach the end of the page.
 
