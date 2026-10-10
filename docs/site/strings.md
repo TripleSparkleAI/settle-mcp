@@ -7373,6 +7373,7 @@
 - `legal.cat.signin.name`: This site also remembers the name you signed in with, so the top of every page can show it. It is removed when you log out.
 - `legal.cat.signin.t`: Your sign-in, handled by Clerk
 - `legal.cat.visit.b`: Sound and display choices that hold from page to page while the tab is open, such as the volume, the sound mode and the backdrop, and the picture level measured on your device so the picture does not change halfway through. They are gone when you close the tab.
+- `legal.cat.visit.heal`: When the site is updated while a tab is open, the tab may reload itself once to fetch the new pages, and it keeps the time of that reload so that it never reloads over and over.
 - `legal.cat.visit.t`: Choices for this visit
 - `legal.cat.work.b`: Your conversation on the ASK page, gone when you close the tab, and the models you train in SDMSTUDIO with any text you paste to train them, kept in a database inside your browser until you delete them. A model leaves your browser only if you save it to your members account.
 - `legal.cat.work.t`: Your conversations and your models
