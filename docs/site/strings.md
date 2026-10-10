@@ -7747,6 +7747,8 @@
 - `magic8.readout.settled`: {answer} ({w}, one of {n})
 - `magic8.readout.student`: the one-pass student lean {lean} in {ms} ms · decision {word}
 - `magic8.readout.teacher`: the slow teacher lean {lean} in {ms} ms · decision {word} {verdict}
+- `magic8.readout.teacherFailed`: the slow teacher did not arrive, so it has no read for this question
+- `magic8.readout.teacherPending`: the slow teacher joins when its weights have arrived ({pct}%)
 - `magic8.rec.report`: this experiment's report; its predictions were sealed in the ledger first
 - `magic8.rec.settle`: this experiment's settle record
 - `magic8.rec.train`: this experiment's training record
@@ -7787,9 +7789,17 @@
 - `magic8.stage.aria`: the magic eight ball
 - `magic8.stage.label`: LIVE · THE BALL
 - `magic8.stage.title`: Ask it a yes or no question
-- `magic8.status.error`: the teacher's weights could not be loaded ({error}). Build them with {cmd}.
-- `magic8.status.loading`: loading the teacher, an SDM-read SDMCHAT model
+- `magic8.status.askError`: this question could not be read ({error}). Ask again to try once more.
 - `magic8.status.ready`: ready: the teacher is loaded in this tab
+- `magic8.status.retry`: try again
+- `magic8.status.studentError`: the one-pass student could not be loaded ({error}).
+- `magic8.status.studentLoading`: loading the one-pass student: the tokenizer {pct}%
+- `magic8.status.studentReady`: ready: the one-pass student answers now
+- `magic8.status.studentWaits`: the one-pass student needs the teacher's whole file on this server, so it answers when the teacher has arrived
+- `magic8.status.teacherError`: the slow teacher's weights did not arrive ({error}). The student still answers.
+- `magic8.status.teacherLoading`: the slow teacher (an SDM-read SDMCHAT model) is downloading: {pct}% of {mb} MB
+- `magic8.status.teacherWaiting`: the slow teacher (an SDM-read SDMCHAT model) starts downloading when the student is ready
+- `magic8.status.workerError`: the page could not start its model worker ({error}).
 - `magic8.student.aria`: the one-pass student
 - `magic8.student.h`: {n} · The student's read (one pass)
 - `magic8.student.k.b`: b (the constant)
@@ -7797,10 +7807,12 @@
 - `magic8.student.k.cuts`: cut-offs
 - `magic8.student.k.d`: d (half width)
 - `magic8.student.k.dot`: w · x0 ({d} products)
+- `magic8.student.k.fold`: (W_xᵀ w) · f ({f} products)
 - `magic8.student.k.lean`: predicted lean
 - `magic8.student.k.m`: m (centre)
 - `magic8.student.n.cuts`: below is NO, above is YES, between is UNSURE
 - `magic8.student.n.d`: holds a quarter of the training leans
+- `magic8.student.n.fold`: the same number as w · x0, read before W_x has arrived; x0 follows when it does
 - `magic8.student.n.lean`: the teacher's was {tl}, off by {d}
 - `magic8.student.n.m`: the median of the teacher's training leans
 - `magic8.student.p`: magic-8-ball predicts the teacher's lean as {formula}. Then two cut-offs, set on the training questions, turn the lean into a class.
@@ -7829,6 +7841,7 @@
 - `magic8.time.k.teacher`: teacher, this question
 - `magic8.time.n.bestStudent`: over {n} {n, plural, one {question} other {questions}} in this tab
 - `magic8.time.n.bestTeacher`: over {n} {n, plural, one {question} other {questions}}
+- `magic8.time.n.fold`: the folded form, read before W_x arrived; not counted in the best
 - `magic8.time.n.teacher`: {x} times the student's time
 - `magic8.time.p`: performance.now() around each path, in the page's worker, on your machine. The student is the fastest of {n} runs; the teacher runs once. The settle is not counted.
 - `magic8.time.recorded`: Recorded run (node, {cpu}): teacher {teacher} ms, student {student} ms, {x} times faster.
@@ -7887,6 +7900,7 @@
 - `magic8.vector.nonames`: The dimensions of x0 have no names. No single one carries the decision: it is spread over many small pushes.
 - `magic8.vector.p`: f is built from the last {n} tokens of the prompt ({tokens}), each looked up and normalised, plus {na} running averages over all {total} tokens (decays {decays}). That gives {nf} × {d} = {f} numbers. The teacher's first matrix W_x maps them to x0, {d} numbers. The last tokens are the same for almost every question, so the two averages carry most of what is particular to yours.
 - `magic8.vector.th.dim`: dim
+- `magic8.vector.wait`: x0 is W_x f, and W_x is {mb} MB of the teacher's file. It appears here when W_x has arrived ({pct}% of the teacher so far).
 - `magic8.vector.wlab`: {wx}, each dimension's push on the lean: rose pushes towards yes, indigo towards no
 - `magic8.vector.x0aria`: x0 as {d} bars, up for positive, down for negative
 - `magic8.vector.x0lab`: x0, the {d} numbers (bars up are positive)
