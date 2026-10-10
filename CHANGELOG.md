@@ -19,6 +19,25 @@ The first release. Nothing has been published to npm, and the repository is priv
 - Every doc the server serves (README.md, AGENTS.md, docs/) is generated from the SETTLE website by
   `tools/build_mcp_docs.mjs`; the tool descriptions are the website's words.
 
+### Security (2026-10-11)
+
+The client of an MCP server is not trusted: a tool argument may come from a page or a document the model read.
+`tests/security.test.mjs` holds one test per change below, and each fails on the code before it.
+
+- `settle` and `kanerva_bin` must name a file called `settle` or `kanerva` (a suffix such as `settle-dev` or
+  `.exe` is fine). Before, any program on the machine could be named, and it ran with the program text as its
+  argument. `SETTLE_BIN`, `KANERVA_BIN`, `SETTLE_MCP_HOME` and the setup state are the operator's and are not checked.
+- `run_program`'s `path` must end in `.settle` and `run_kanerva`'s in `.kanerva`, so a tool cannot run over any
+  file and print its lines back in an error excerpt. `run_kanerva`'s `program` is a bare name and cannot leave
+  `programs/`. A `kanerva` folder passed to `kanerva_quickstart` or `run_kanerva` must be the crate named `kanerva`.
+- `setup` refuses a source that starts with `-`, uses a git remote helper (`transport::`), holds a control
+  character, or uses a URL scheme other than http, https, ssh or file.
+- Program text is capped at 256 KB, a stored sdm text at 2,000 characters, and `explain_error`'s message at 20,000
+  characters (its table match grew with the square of the input: 432 KB blocked the server for 4.5 s).
+- A child's output is kept up to 1 MB per stream; past it the child is stopped and the reply says so. A timeout
+  sends SIGTERM to the child's whole process group and SIGKILL 2 s later. The temp folder made for program text is
+  removed after the run.
+
 ### The organisation (2026-10-09)
 
 - The repository moved from the GitHub user account `triplesparkle` to the organisation `TripleSparkleAI`. GitHub

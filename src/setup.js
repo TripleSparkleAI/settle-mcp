@@ -9,6 +9,7 @@
 // findCrate(root, name, depth)   - the folder under root whose Cargo.toml names the package (root, then children)
 // kanervaDepPath(settleDir)      - the path settle-rs's Cargo.toml gives for its kanerva dependency
 // checkSystem()                  - runs only version queries: rustc, cargo, git, node; reports each with a fix
+// checkSource(src, name)         - refuses a source git could read as an option or a remote helper
 // planSetup(opts)                - the exact steps setup would take, every command written out, and a plan id
 // planId(steps)                  - sha256 of the steps' shown commands: the confirm token
 // runSetup(plan, { onStep })     - performs a plan step by step, stopping at the first failure
@@ -129,9 +130,24 @@ export function planId(steps) {
   return crypto.createHash('sha256').update(steps.map((s) => s.shown).join('\n')).digest('hex').slice(0, 16);
 }
 
+// a source reaches git as an argument, so it is checked before it can become one: never an option (a leading -),
+// never a remote-helper form (transport::address, which can name a program), never a control character, and a URL
+// only in the plain forms sourceKind recognises
+export function checkSource(src, name) {
+  const s = String(src);
+  if (/^\s*-/.test(s)) throw new Error(`refused: ${name} may not start with "-" (it would reach git as an option)`);
+  if (/[\u0000-\u001f\u007f]/.test(s)) throw new Error(`refused: ${name} holds a control character`);
+  if (sourceKind(s) === 'git') {
+    if (/^[A-Za-z][A-Za-z0-9+.-]*::/.test(s)) throw new Error(`refused: ${name} uses a git remote helper ("transport::"); give an https, ssh or file URL`);
+    if (/^[a-z]+:\/\//i.test(s) && !/^(https?|ssh|file):\/\//i.test(s)) throw new Error(`refused: ${name} uses an unknown URL scheme`);
+  }
+}
+
 export function planSetup({ folder, settle_source, kanerva_source, build_quickstart = true } = {}) {
   if (!folder) throw new Error('setup needs folder: where to put settle-rs and kanerva');
   if (!settle_source) throw new Error('setup needs settle_source: a local folder or a git URL holding settle-rs (nothing is published yet, so there is no default)');
+  checkSource(settle_source, 'settle_source');
+  if (kanerva_source) checkSource(kanerva_source, 'kanerva_source');
   const dest = path.resolve(String(folder).replace(/^~(?=$|\/)/, os.homedir()));
   const settleOut = path.join(dest, 'settle-rs');
   const kanervaOut = path.join(dest, 'kanerva');

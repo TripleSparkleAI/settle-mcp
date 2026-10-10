@@ -165,7 +165,7 @@ export function createServer({ contentFile } = {}) {
 
   server.registerTool(
     'explain_error',
-    { title: 'Explain an error', description: toolDesc('explain_error'), inputSchema: { message: z.string().describe('the error as printed: the "settle: line N: ..." line, and the excerpt and caret lines under it if you have them'), source: z.string().optional().describe('the program text, to show the line the error names') } },
+    { title: 'Explain an error', description: toolDesc('explain_error'), inputSchema: { message: z.string().max(20000).describe('the error as printed: the "settle: line N: ..." line, and the excerpt and caret lines under it if you have them'), source: z.string().max(262144).optional().describe('the program text, to show the line the error names') } },
     async ({ message, source }) => {
       const r = explainError(content, message);
       const lines = [`# ${r.message}`, ''];
@@ -256,7 +256,7 @@ export function createServer({ contentFile } = {}) {
     async (args) => {
       const r = await runProgram(args);
       if (r.error) return failure(r.error + (r.tried ? `\nLooked in: ${r.tried.join('; ')}` : ''), r);
-      const out = [`ran: ${r.ran}`, `exit ${r.exit}${r.timedOut ? ' (timed out)' : ''} in ${r.ms} ms`, '', r.stdout ? `\`\`\`\n${r.stdout}\`\`\`` : '(no output)'];
+      const out = [`ran: ${r.ran}`, `exit ${r.exit}${r.timedOut ? ' (timed out)' : ''}${r.truncated ? ' (stopped: the output passed 1 MB)' : ''} in ${r.ms} ms`, '', r.stdout ? `\`\`\`\n${r.stdout}\`\`\`` : '(no output)'];
       if (r.stderr) out.push('', 'standard error:', `\`\`\`\n${r.stderr}\`\`\``, '', 'explain_error can say what this error means.');
       // the error's place, as data from `settle --json` (also in the structured result as error_at)
       if (r.error_at && Number.isInteger(r.error_at.line)) out.push('', `error at line ${r.error_at.line}, column ${r.error_at.column} (${r.error_at.width} characters wide), from settle --json`);
@@ -305,7 +305,7 @@ export function createServer({ contentFile } = {}) {
     async (args) => {
       const r = await runKanerva(args);
       if (r.error) return failure(r.error + (r.tried ? `\nLooked in: ${r.tried.join('; ')}` : ''), r);
-      const out = [`ran: ${r.ran}`, `exit ${r.exit}${r.timedOut ? ' (timed out)' : ''} in ${r.ms} ms`, '', r.stdout ? `\`\`\`\n${r.stdout}\`\`\`` : '(no output)'];
+      const out = [`ran: ${r.ran}`, `exit ${r.exit}${r.timedOut ? ' (timed out)' : ''}${r.truncated ? ' (stopped: the output passed 1 MB)' : ''} in ${r.ms} ms`, '', r.stdout ? `\`\`\`\n${r.stdout}\`\`\`` : '(no output)'];
       if (r.matches_recorded_output != null) out.push('', r.matches_recorded_output ? `The output matches the recorded ${r.recorded} byte for byte.` : `The output differs from the recorded ${r.recorded}.`);
       if (r.stderr) out.push('', 'standard error:', `\`\`\`\n${r.stderr}\`\`\``, '', 'explain_error can say what this error means.');
       return (r.ok ? text : failure)(out.join('\n'), r);

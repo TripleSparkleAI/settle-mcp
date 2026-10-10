@@ -11,7 +11,8 @@
 // documentedErrors(content)     - every documented error row (single or double backticks) with its cause and doc
 // parseErrorText(message)       - an error as printed: the message, its line, the caret's column and the marked text,
 //                                  the suggestion (did you mean ...), whether settle or kanerva printed it
-// explainError(content, message) - the error tables and the .err examples that match an error message
+// explainError(content, message) - the error tables and the .err examples that match an error message (input capped
+//                                  at MAX_ERROR_TEXT, the matched line at MAX_ERROR_LINE)
 //
 // ** Technical Review **
 // - Everything here is read-only and needs no install: a person can ask what a word means before SETTLE is on
@@ -133,9 +134,14 @@ export function parseErrorText(message) {
   };
 }
 
+// the longest error text explainError reads, and the longest message line it matches against the tables: a real
+// error is one short line, and the table patterns hold lazy wildcards whose cost grows with the square of the input
+export const MAX_ERROR_TEXT = 20000;
+export const MAX_ERROR_LINE = 2000;
+
 export function explainError(content, message) {
-  const p = parseErrorText(message);
-  const core = p.message;
+  const p = parseErrorText(String(message).slice(0, MAX_ERROR_TEXT));
+  const core = p.message.slice(0, MAX_ERROR_LINE);
   const matches = [];
   for (const row of documentedErrors(content)) {
     const pattern = new RegExp('^' + row.message.split(/<[^>]+>/).map(escapeRe).join('.+?') + '$', 'i');
