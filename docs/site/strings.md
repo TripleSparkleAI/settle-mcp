@@ -5764,15 +5764,19 @@
 - `hero.film.token-vote.note`: an SDM that read one sentence picks each next letter: the hard locations its last three letters wake vote, and the top letter is written
 - `hero.film.wave.label`: two waves
 - `hero.film.wave.note`: two sources ripple the same pond: where crest meets trough the water stays still
+- `hero.gamma.away`: You have been away five minutes, so the light rests lit with the pictures. Move the mouse or press a key and it flashes again.
 - `hero.gamma.dark`: dark {pct}% of the time
 - `hero.gamma.darkmeasuring`: measuring the dark share
 - `hero.gamma.flicker.beat`: flicker {shown} · {dark} · {refresh} Hz display{lock}
+- `hero.gamma.held`: PAUSE ALL holds the light: it stays lit and does not flash, and its sound is held too. Press PAUSE ALL again and it flashes again.
 - `hero.gamma.lock`:  · on the master beat within {ms} ms
 - `hero.gamma.lock.plain`:  · on the master beat
 - `hero.gamma.measuring`: measuring
 - `hero.gamma.measuringdisplay`: measuring the display...
 - `hero.gamma.nearest`: Your display draws {refresh} frames a second, so the light flickers at {hz} Hz, not {asked}: the nearest rate it can draw exactly. The sound plays at exactly 40 Hz. ({parts})
 - `hero.gamma.refused`: Light not shown: {why}. The sound still plays at 40 Hz.
+- `hero.gamma.short.away`: ON, resting while you are away
+- `hero.gamma.short.held`: ON, held by PAUSE ALL
 - `hero.gamma.short.nearest`: ON, {hz} Hz ({refresh} Hz screen)
 - `hero.gamma.short.notshown`: not shown
 - `hero.gamma.short.off`: OFF
@@ -7474,7 +7478,7 @@
 - `load.status.idle`: MEASURING
 - `load.status.ok`: NOMINAL
 - `load.status.warn`: HIGH LOAD
-- `load.sub`: PAUSE ALL holds every picture and the sound on this tab until you press it again.
+- `load.sub`: PAUSE ALL holds every picture, the 40 Hz light and the sound on this tab until you press it again.
 
 ## lr
 
