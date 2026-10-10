@@ -1623,7 +1623,7 @@ Its answer: Fitted leans hold the horse to J 0.44, where TAP falls below 15 dB b
 
 Our SDM language model built from sparse distributed memories in every part: each layer writes and reads a run-time SDM, then reads a few rows of a trained SDM table where a transformer has its MLP. No attention and no MLP.
 
-The model we take forward: it becomes the base of the next SDM CHAT. The SDM page and its two sibling pages draw every step of it beside PARTIAL.
+The model we take forward, even though PARTIAL scored better on the first test: its full run became FULL SDM CHAT, and a shape sweep is finding its next shape. The SDM page and its two sibling pages draw every step of it beside PARTIAL; SDMCHAT-MODEL has every result.
 
 - also: the FULL model, FULL SDM, FULL base, FULL SDM CHAT
 - where: #/sdm, #/sdm-unfold, #/sdm-lookback, #/sdmchat-model
@@ -1929,7 +1929,7 @@ The menu groups them in the packages folder. Each wears a small [pkg] tag and it
 
 Our SDM language model with one ordinary part: each layer writes and reads a run-time SDM, then runs a regular MLP. No attention.
 
-Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. The SDM page draws every step of it beside FULL.
+Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model. It scored better than FULL there, and it goes no further. The SDM page draws every step of it beside FULL.
 
 - also: the PARTIAL model, PARTIAL SDM
 - where: #/sdm, #/sdm-unfold, #/sdm-lookback, #/sdmchat-model
@@ -2056,7 +2056,7 @@ It reads the context as a read-address and votes on the next token, at the DeepS
 
 ### SDMCHAT-MODEL
 
-The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
+The one home for our SDM language models: the law (all SDM, no transformer, from scratch); FULL and PARTIAL, the two categories, with every size, every result, the shape sweep, every sealed prediction and its verdict, the transformer comparison and what is still open; then the history of every shape before them, with its runs, sweeps and walls.
 
 In the science folder after SDM-LOOKBACK. Every SDM chat page carries an EARLY MODEL note linking here; each older picture on it is framed and marked HISTORY.
 

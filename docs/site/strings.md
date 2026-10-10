@@ -955,7 +955,6 @@
 - `data.herocontrols.4efae178`: films
 - `data.herocontrols.5255aaf4`: the deep science fleets: the mathematics under SETTLE and the SDM, worked through
 - `data.herocontrols.58274a24`: enfold / unfold
-- `data.herocontrols.58317efb`: our SDM model's sizing grid, width 256 to 1024 by 20M and 60M tokens: wider and longer score lower, from 1.667 to 1.560 bits per byte; the ring is not run yet
 - `data.herocontrols.592c5264`: WINAMP BARS · the house set as chunky bars, low notes left, each with a cap that hangs and falls
 - `data.herocontrols.5a81bdb0`: recall
 - `data.herocontrols.5b269a4b`: There is no screen version of a binaural beat. A binaural beat works because each ear hears a different tone; both eyes see the same screen.
@@ -1030,6 +1029,7 @@
 - `data.herocontrols.df1a67dd`: fixed T
 - `data.herocontrols.df848a74`: LIVE EQUATIONS only · the equations running live, on shuffle
 - `data.herocontrols.e16cc70e`: 6 Hz on a 162 / 168 Hz pair: a slow swell; a dark pad.
+- `data.herocontrols.e35549df`: our earlier SDM model's sizing grid, width 256 to 1024 by 20M and 60M tokens: wider and longer score lower, from 1.667 to 1.560 bits per byte; the ring is not run yet
 - `data.herocontrols.e58314b9`: static, binaural and the flute
 - `data.herocontrols.e7e53ec5`: deep science
 - `data.herocontrols.ea4d1190`: kinds
@@ -4123,7 +4123,7 @@
 - `hero.abstract.dlrn-room-for-all.label`: room for everyone
 - `hero.abstract.dlrn-room-for-all.note`: five features in two dimensions at sparsity 0, 0.5, 0.8 and 0.95: as features grow rarer the net makes room for 2, 3, then all 5
 - `hero.abstract.dlrn-sdm-grad-rows.label`: where the gradient goes
-- `hero.abstract.dlrn-sdm-grad-rows.note`: our SDM model's gradient on one batch, rows sorted by size, a log scale: the largest 10% of the rows it reaches hold 92.2% to 99.5% of the squared gradient, in each of four hops
+- `hero.abstract.dlrn-sdm-grad-rows.note`: our earlier SDM model's gradient on one batch, rows sorted by size, a log scale: the largest 10% of the rows it reaches hold 92.2% to 99.5% of the squared gradient, in each of four hops
 - `hero.abstract.double-well-contours.label`: a double well
 - `hero.abstract.double-well-contours.note`: the contours of a double-well energy: two valleys and the ridge between them
 - `hero.abstract.dqua-anneal-time.label`: three gentle roads
@@ -4145,7 +4145,7 @@
 - `hero.abstract.dscale-data-repeats.label`: the text comes round again
 - `hero.abstract.dscale-data-repeats.note`: our best SDM recipe learning over 200M tokens drawn from a 65,522,263-token shard; at each dashed line the text it reads starts to repeat
 - `hero.abstract.dscale-grid-measured.label`: the wide keep learning
-- `hero.abstract.dscale-grid-measured.note`: our SDM model (discs) and a transformer (squares) on fresh text, 6 widths, 100M to 1.6B tokens: from 400M to 1.6B the width 256 SDM gains 0.001 bits, width 768 gains 0.013
+- `hero.abstract.dscale-grid-measured.note`: our earlier SDM model (discs) and a transformer (squares) on fresh text, 6 widths, 100M to 1.6B tokens: from 400M to 1.6B the width 256 SDM gains 0.001 bits, width 768 gains 0.013
 - `hero.abstract.dscale-windows-agree.label`: two seeds, one opinion
 - `hero.abstract.dscale-windows-agree.note`: 3,892 test windows scored by our model trained twice from different random starts: each dot is one window, and the two runs agree on which text is hard, r = 0.9977
 - `hero.abstract.dsdm-critical-collapse.label`: one curve
@@ -4167,7 +4167,7 @@
 - `hero.abstract.dspr-neighbours-share.label`: neighbours share
 - `hero.abstract.dspr-neighbours-share.note`: a random distributed scalar encoder: the value 0 shares 30 of its 40 bits with the value 10, 20 with 20, and at most 1 from 40 apart, so near values overlap
 - `hero.abstract.dspr-ours-overlap.label`: shared meeting places
-- `hero.abstract.dspr-ours-overlap.note`: locations two tokens' reads share in our SDM model, of 32: 0.016 by chance, 4.1 for random pairs, 5.6 for the same next token, 6.7 for neighbours, 11.4 for the same token
+- `hero.abstract.dspr-ours-overlap.note`: locations two tokens' reads share in our earlier SDM model, of 32: 0.016 by chance, 4.1 for random pairs, 5.6 for the same next token, 6.7 for neighbours, 11.4 for the same token
 - `hero.abstract.dthm-coalescence-time.label`: the time to agree
 - `hero.abstract.dthm-coalescence-time.note`: two chains, all up and all down, fed the same random numbers: the median sweeps until they agree rises from 15 at T 4 to 1,810 at T 2.3 on a 32 x 32 lattice, and below the critical temperature they wait
 - `hero.abstract.dthm-healing-contours.label`: healing rings
@@ -4293,7 +4293,7 @@
 - `hero.abstract.fhops-fork.label`: the fork
 - `hero.abstract.fhops-fork.note`: two sequences of 8 words share word 4: an SDM read addressed by the last word leaves the fork 64 and 60 bits from the two roads and ends on the wrong one; by the last two words, 0 bits wrong
 - `hero.abstract.fhops-four-hop-arcs.label`: four hops
-- `hero.abstract.fhops-four-hop-arcs.note`: our trained SDM model on real text: 14 contexts, each read becoming the next address four times; each hop's read moves the working vector 3.8 to 4.8 against its length 105
+- `hero.abstract.fhops-four-hop-arcs.note`: our earlier trained SDM model on real text: 14 contexts, each read becoming the next address four times; each hop's read moves the working vector 3.8 to 4.8 against its length 105
 - `hero.abstract.fhops-graded-reach.label`: two read rules
 - `hero.abstract.fhops-graded-reach.note`: one SDM read two ways, 120 noisy reads at each start: every woken hard-location votes 1, or votes by how far inside the activation-radius it lies; from 64 bits off 68 against 70 come home
 - `hero.abstract.fhops-slow-at-the-edge.label`: slow at the edge
@@ -4329,7 +4329,7 @@
 - `hero.abstract.floop-the-cycle.label`: enfold, unfold
 - `hero.abstract.floop-the-cycle.note`: one cycle of a real store: the address 'the' (left) unbinds a vector of 1,024 counters holding 13 facts (top); the noisy read (60% right) cleans up to N
 - `hero.abstract.floop-window-roll.label`: the window rolls
-- `hero.abstract.floop-window-roll.note`: our SDM model's address over time: a token steps through the 8 back slots, then lives on only in 5 running averages; 15 steps on, the 0.99 average keeps 86% of it
+- `hero.abstract.floop-window-roll.note`: our earlier SDM model's address over time: a token steps through the 8 back slots, then lives on only in 5 running averages; 15 steps on, the 0.99 average keeps 86% of it
 - `hero.abstract.fourier-square.label`: Fourier sums
 - `hero.abstract.fourier-square.note`: a square wave built from one, three, nine and 25 sine waves
 - `hero.abstract.fours-four-tables.label`: four tables
@@ -4341,7 +4341,7 @@
 - `hero.abstract.fours-soft-cutoff.label`: a soft cut-off
 - `hero.abstract.fours-soft-cutoff.note`: one real read's 64 candidate locations, weight sigmoid((s - theta) / 0.25): 0.74 to 0.28 at hop 1, all within 0.49 to 0.50 at hop 4, so the cut-off barely cuts
 - `hero.abstract.fours-thirteen-features.label`: the address
-- `hero.abstract.fours-thirteen-features.note`: our trained model's address is 8 back tokens and 5 running averages; each bar is how much its input map takes from one: the last token 40.2, the token 7 back 3.7
+- `hero.abstract.fours-thirteen-features.note`: our earlier trained model's address is 8 back tokens and 5 running averages; each bar is how much its input map takes from one: the last token 40.2, the token 7 back 3.7
 - `hero.abstract.fread-cleanup-crossing.label`: where cleanup fails
 - `hero.abstract.fread-cleanup-crossing.note`: unbinding one fact from bundles of 1 to 512 in 1,024 dimensions: its cos falls as 1/sqrt(K) (line, dots) to the best of 999 wrong vectors (dashed, 0.1017); they cross near K = 96.6
 - `hero.abstract.fread-complicate-strips.label`: complicate to explicate
@@ -4377,7 +4377,7 @@
 - `hero.abstract.ftrain-reads-measured.label`: what the reads add
 - `hero.abstract.ftrain-reads-measured.note`: measured at 20M tokens: no memory reads 1.662 bits per byte, trained SDM reads 1.668, a small dense layer 1.586; zero the reads after training: 2.672
 - `hero.abstract.ftrain-tokenizers.label`: tokenizers at equal bytes
-- `hero.abstract.ftrain-tokenizers.note`: four tokenizers for our SDM model on the same 95.4M bytes, square area its vocabulary: bits per byte 1.638, 1.637, 1.653 and 1.658, from 16k to 129k
+- `hero.abstract.ftrain-tokenizers.note`: four tokenizers for our earlier SDM model on the same 95.4M bytes, square area its vocabulary: bits per byte 1.638, 1.637, 1.653 and 1.658, from 16k to 129k
 - `hero.abstract.ftrain-value-rows.label`: value rows after training
 - `hero.abstract.ftrain-value-rows.note`: our SDM's four value tables after 20M tokens of training, every row started at zero: sorted, lit where rows grew past norm 1; 1% of rows hold 42% of table one's weight
 - `hero.abstract.fwrite-bind-bundle.label`: bind and bundle
@@ -4547,7 +4547,7 @@
 - `hero.abstract.mlrn-saddle-flow.label`: a saddle
 - `hero.abstract.mlrn-saddle-flow.note`: gradient descent on x^2 - y^2 + y^4/2: paths slide into the saddle (ring), linger where the slope vanishes, then leave for one of the two valleys; in high dimensions, saddles slow learning
 - `hero.abstract.mlrn-sdm-address.label`: the SDM address
-- `hero.abstract.mlrn-sdm-address.note`: the address of our SDM language model: the last 4 tokens read one by one, and two moving averages (decay 0.8 and 0.97) whose bars are each past token's weight
+- `hero.abstract.mlrn-sdm-address.note`: the address of our earlier SDM language model: the last 4 tokens read one by one, and two moving averages (decay 0.8 and 0.97) whose bars are each past token's weight
 - `hero.abstract.mlrn-spurious-mixture.label`: a spurious memory
 - `hero.abstract.mlrn-spurious-mixture.note`: a Hopfield net stores three random patterns of 144 units; their majority vote (the fourth) is a spurious memory: it is stable too, agreeing with each on 75% of bits on average
 - `hero.abstract.moire-rings.label`: moire rings
@@ -5105,7 +5105,7 @@
 - `hero.film.dlrn-sae-match.label`: atoms meet their features
 - `hero.film.dlrn-sae-match.note`: a sparse autoencoder learns 16 directions mixed in 12 dimensions: each atom finds its own direction, mean |cos| 0.31 to 0.98, 15 of 16 above 0.95
 - `hero.film.dlrn-sdm-grad.label`: gradient only where it read
-- `hero.film.dlrn-sdm-grad.note`: one batch of 4,096 positions through our trained SDM model: the gradient reaches only the value rows its reads woke, 3,038 of 65,536 in the first table (bars: four hops)
+- `hero.film.dlrn-sdm-grad.note`: one batch of 4,096 positions through our earlier trained SDM model: the gradient reaches only the value rows its reads woke, 3,038 of 65,536 in the first table (bars: four hops)
 - `hero.film.dlrn-tngd-settle.label`: natural gradient by settling
 - `hero.film.dlrn-tngd-settle.note`: a thermodynamic way to the natural gradient: a particle settles in a tilted bowl under noise; its running average lands on A^-1 g within 0.9%, 43.3 degrees from the plain gradient
 - `hero.film.dollar-of-mexico.label`: the dollar of Mexico
@@ -5135,21 +5135,21 @@
 - `hero.film.dscale-capacity-knee.label`: more room, more memories
 - `hero.film.dscale-capacity-knee.note`: a Kanerva SDM filling, read from a 10% noisy address: as hard-locations grow from 500 to 16,000 its capacity grows from 7 to 208 patterns, slope 1.00
 - `hero.film.dscale-curves-descend.label`: four learning side by side
-- `hero.film.dscale-curves-descend.note`: four of our models learning side by side over 200M tokens of one 65,522,263-token shard, the transformer lowest; past each dashed line the text they read repeats
+- `hero.film.dscale-curves-descend.note`: four of our earlier models learning side by side over 200M tokens of one 65,522,263-token shard, the transformer lowest; past each dashed line the text they read repeats
 - `hero.film.dscale-every-doubling.label`: every doubling gives
 - `hero.film.dscale-every-doubling.note`: each doubling of training tokens takes bits off our transformer and our SDM: 0.119 and 0.098 for the first, then 0.04 to 0.06 each, the last two over repeated text
 - `hero.film.dscale-fit-settles.label`: a curve meets its points
-- `hero.film.dscale-fit-settles.note`: the curve L = E + A/N^a + B/D^b fitted step by step to nine scores of our SDM model: its error falls from 0.23 to 0.0016 bits as it settles onto them
+- `hero.film.dscale-fit-settles.note`: the curve L = E + A/N^a + B/D^b fitted step by step to nine scores of our earlier SDM model: its error falls from 0.23 to 0.0016 bits as it settles onto them
 - `hero.film.dscale-frontier-grows.label`: the best so far
-- `hero.film.dscale-frontier-grows.note`: 232 runs of our models over 10.7 hours, placed by compute as they finished: the best score so far falls from 1.578 to 1.164 bits per byte
+- `hero.film.dscale-frontier-grows.note`: 232 runs of our earlier models over 10.7 hours, placed by compute as they finished: the best score so far falls from 1.578 to 1.164 bits per byte
 - `hero.film.dscale-how-far-back.label`: how far back it reads
-- `hero.film.dscale-how-far-back.note`: our trained SDM model with one input token swapped: how far its later predictions move by distance back; no step after its 8 back slots, still 0.060 nats 100 tokens on
+- `hero.film.dscale-how-far-back.note`: our earlier trained SDM model with one input token swapped: how far its later predictions move by distance back; no step after its 8 back slots, still 0.060 nats 100 tokens on
 - `hero.film.dscale-memory-fades.label`: a token, remembered
-- `hero.film.dscale-memory-fades.note`: where one token lives in our model's address as it moves back: in its 8 back slots one step at a time, then in 5 running averages; the slowest still holds 37% of it after 100 tokens
+- `hero.film.dscale-memory-fades.note`: where one token lives in our earlier model's address as it moves back: in its 8 back slots one step at a time, then in 5 running averages; the slowest still holds 37% of it after 100 tokens
 - `hero.film.dscale-seeds-agree.label`: two starts, one answer
-- `hero.film.dscale-seeds-agree.note`: 29 settings of our models each trained twice from different random starts: 27 of the 29 pairs land within 0.005 bits per byte of each other, the median gap 0.0013
+- `hero.film.dscale-seeds-agree.note`: 29 settings of our earlier models each trained twice from different random starts: 27 of the 29 pairs land within 0.005 bits per byte of each other, the median gap 0.0013
 - `hero.film.dscale-widths-together.label`: the widths fall together
-- `hero.film.dscale-widths-together.note`: our SDM model at widths 256, 384, 512 and 768 learning the same text: their quick scores fall together and keep their order at all 14 checks, the widest lowest
+- `hero.film.dscale-widths-together.note`: our earlier SDM model at widths 256, 384, 512 and 768 learning the same text: their quick scores fall together and keep their order at all 14 checks, the widest lowest
 - `hero.film.dscale-window-grows.label`: window or batch
 - `hero.film.dscale-window-grows.note`: every 200M-token run against its window: a longer window gave the transformer 0.019 bits, twice the tokens a step gave it 0.061, and lifted our SDM from 1.459 to 1.417
 - `hero.film.dsdm-film-attention-emerges.label`: attention emerges
@@ -5185,7 +5185,7 @@
 - `hero.film.dspr-noise-forgiven.label`: noise forgiven
 - `hero.film.dspr-noise-forgiven.note`: each of a code's 40 bits moved with probability f: at f = 0.5 it still matches itself on 20 shared bits 56.55% of the time, the binomial law says 56.27%
 - `hero.film.dspr-our-read-code.label`: our read as a sparse code
-- `hero.film.dspr-our-read-code.note`: our SDM model wakes 32 of 65,536 locations a token; over 2,560 tokens of held-out prose it wakes 1,733 locations, and a quarter of all wakes go to 32 of them
+- `hero.film.dspr-our-read-code.note`: our earlier SDM model wakes 32 of 65,536 locations a token; over 2,560 tokens of held-out prose it wakes 1,733 locations, and a quarter of all wakes go to 32 of them
 - `hero.film.dspr-sparsity-balance.label`: the balance of sparsity
 - `hero.film.dspr-sparsity-balance.note`: unions of codes in 2,048 bits matched on all their bits, held to one false match in a billion: 3 codes fit at 4 active bits, 47 at 28, 14 at 400
 - `hero.film.dspr-union-holds-many.label`: room for many
@@ -5437,9 +5437,9 @@
 - `hero.film.fhops-film-cloud-splits.label`: a cloud splits
 - `hero.film.fhops-film-cloud-splits.note`: a small SDM, 200 reads that all start 64 bits off their words, one hop a frame: the cloud of distances splits, 97 reads reach their word and 102 drift out past 64 bits
 - `hero.film.fhops-film-graded-weights.label`: two weight rules
-- `hero.film.fhops-film-graded-weights.note`: our trained SDM model, one read at 16 real positions: the soft cut-off it was trained with spreads the read over 59.5 locations on average, the graded rule on the same scores over 23.6
+- `hero.film.fhops-film-graded-weights.note`: our earlier trained SDM model, one read at 16 real positions: the soft cut-off it was trained with spreads the read over 59.5 locations on average, the graded rule on the same scores over 23.6
 - `hero.film.fhops-film-hop-moves-address.label`: each hop moves the address
-- `hero.film.fhops-film-hop-moves-address.note`: our trained SDM model on real text: how many of a hop's 32 woken locations the earlier reads moved, median 10 at hop 2, 1 at hop 3 and 32 at hop 4
+- `hero.film.fhops-film-hop-moves-address.note`: our earlier trained SDM model on real text: how many of a hop's 32 woken locations the earlier reads moved, median 10 at hop 2, 1 at hop 3 and 32 at hop 4
 - `hero.film.fhops-film-read-becomes-address.label`: the read becomes the address
 - `hero.film.fhops-film-read-becomes-address.note`: an SDM read copied up as the next address, the wrong bits lit: from 26 bits off they fall to 7, then 0; from 52 bits off they grow to 64 and the word is lost
 - `hero.film.fhops-film-woken-gather.label`: the woken gather
@@ -5519,15 +5519,15 @@
 - `hero.film.fsdm-radius-sweep.label`: the activation radius
 - `hero.film.fsdm-radius-sweep.note`: a real SDM read from 200 bits off as the activation-radius widens from 444 to 492: woken hard-locations climb from 1 to 1,265, and a read is best at 465, 60 bits wrong
 - `hero.film.ftrain-loss-falls.label`: the loss falls
-- `hero.film.ftrain-loss-falls.note`: our SDM model's training loss, logged every 100 steps of a 60M-token run at width 768, falls from 6.85 to 5.06 nats while the learning rate cools from 0.003 to 0.0003
+- `hero.film.ftrain-loss-falls.note`: our earlier SDM model's training loss, logged every 100 steps of a 60M-token run at width 768, falls from 6.85 to 5.06 nats while the learning rate cools from 0.003 to 0.0003
 - `hero.film.ftrain-lr-sweep.label`: four learning rates
-- `hero.film.ftrain-lr-sweep.note`: four peak learning rates for our SDM model, 0.001 to 0.01: each cosine schedule above, its loss minus the 0.003 run's below; 0.001 ends 0.139 nats behind, 0.01 0.075 ahead
+- `hero.film.ftrain-lr-sweep.note`: four peak learning rates for our earlier SDM model, 0.001 to 0.01: each cosine schedule above, its loss minus the 0.003 run's below; 0.001 ends 0.139 nats behind, 0.01 0.075 ahead
 - `hero.film.ftrain-rows-used.label`: locations a store uses
 - `hero.film.ftrain-rows-used.note`: the share of each store's locations that test text wakes in our trained SDM: 3 to 4% at k 16, 4 to 6% at k 32, 7 to 16% at k 64; 15 to 22% of 16,384 locations, 1 to 2% of 262,144
 - `hero.film.ftrain-three-arms.label`: reads, none, dense
-- `hero.film.ftrain-three-arms.note`: three of our models trained on 60M tokens: trained SDM reads, no reads, a small dense layer; the reads track no reads to the end (1.609 against 1.607 bits per byte), dense 1.518
+- `hero.film.ftrain-three-arms.note`: three of our earlier models trained on 60M tokens: trained SDM reads, no reads, a small dense layer; the reads track no reads to the end (1.609 against 1.607 bits per byte), dense 1.518
 - `hero.film.ftrain-wider-lower.label`: wider is lower
-- `hero.film.ftrain-wider-lower.note`: our SDM model at four widths over 60M tokens, each line its quick eval minus width 256's, thicker for wider; wider stays lower all run, TEST 1.607, 1.589, 1.578 and 1.560 bits per byte
+- `hero.film.ftrain-wider-lower.note`: our earlier SDM model at four widths over 60M tokens, each line its quick eval minus width 256's, thicker for wider; wider stays lower all run, TEST 1.607, 1.589, 1.578 and 1.560 bits per byte
 - `hero.film.fwrite-bundle-stiffens.label`: the bundle stiffens
 - `hero.film.fwrite-bundle-stiffens.note`: twenty 96-bit hypervectors enfolded one a frame into a counter strip: the counters grow, and each new fact flips fewer bits of the signed Complicate: 22 at the second, 8 at the twentieth
 - `hero.film.fwrite-delta-sweeps.label`: the delta rule
@@ -5589,7 +5589,7 @@
 - `hero.film.krec-film-home.label`: home
 - `hero.film.krec-film-home.note`: the word home stored with four others in an SDM of 4,000 hard-locations, read from four random thirds of it: each comes home, as do 16 of 20 such thirds
 - `hero.film.krec-film-slip-forgiven.label`: a slip forgiven
-- `hero.film.krec-film-slip-forgiven.note`: our model with one of its last 8 tokens slipped: a slip in the newest token keeps 8.9 of 32 woken locations, one 7 back 24.1; the next token holds 9.5% and 86.5% of the time
+- `hero.film.krec-film-slip-forgiven.note`: our earlier model with one of its last 8 tokens slipped: a slip in the newest token keeps 8.9 of 32 woken locations, one 7 back 24.1; the next token holds 9.5% and 86.5% of the time
 - `hero.film.krec-film-spiral.label`: winding home
 - `hero.film.krec-film-spiral.note`: iterated-reads of an SDM from 16 start distances, each read a quarter turn whose radius is the distance from the stored word: every start up to 72 bits away winds home
 - `hero.film.krec-film-stray-drifts.label`: an address strays
@@ -5627,9 +5627,9 @@
 - `hero.film.mlrn-momentum-race.label`: the heavy ball
 - `hero.film.mlrn-momentum-race.note`: gradient descent (ring) zigzags down a narrow valley of the loss while the heavy ball, with momentum (disc), reaches the bottom first
 - `hero.film.mlrn-soft-cutoff.label`: the soft cut-off
-- `hero.film.mlrn-soft-cutoff.note`: our SDM language model's store weighs its 2k best hard locations by sigmoid((s - theta) / softness): hard at small softness, spread wide at large
+- `hero.film.mlrn-soft-cutoff.note`: our earlier SDM language model's store weighs its 2k best hard locations by sigmoid((s - theta) / softness): hard at small softness, spread wide at large
 - `hero.film.mlrn-two-hop.label`: the two-hop read
-- `hero.film.mlrn-two-hop.note`: our SDM language model's read in two dimensions: the address wakes the best keys (rings), the read moves it, and the second hop wakes others (squares)
+- `hero.film.mlrn-two-hop.note`: our earlier SDM language model's read in two dimensions: the address wakes the best keys (rings), the read moves it, and the second hop wakes others (squares)
 - `hero.film.mphys-crooks-cross.label`: the Crooks crossing
 - `hero.film.mphys-crooks-cross.note`: a trap stiffened from 1 to 4 (bars up) and relaxed back (bars down, mirrored): the two work histograms stand equal at the free-energy change, ln 2 (dotted)
 - `hero.film.mphys-entropy-production.label`: entropy runs backward
@@ -7005,6 +7005,7 @@
 - `lb2.blurry.p`: As in the recall puzzle, but each key is several symbols long and some of them are swapped for others before the question. An exact-match memory would fail as soon as one symbol changes. A sparse distributed memory should degrade slowly, because a blurred key still wakes many of the same slots.
 - `lb2.chip.fades`: {h} fades
 - `lb2.chip.size`: one size at any length
+- `lb2.chip.trained`: trained on {w} tokens
 - `lb2.chip.window`: no window
 - `lb2.copy.h`: Copy a run of symbols
 - `lb2.copy.p`: A run of random symbols is followed by the same run again, and every symbol of the second run is scored. To copy, a model must step back by one and match by content. Here the transformer leads at the shortest length, and every model falls away as the run grows.
@@ -7012,6 +7013,9 @@
 - `lb2.cost.p1`: To go on writing, either model keeps only its memory: {mb} MB at the size we train, whether the text so far is ten tokens or ten thousand. A transformer keeps a cache that grows by one entry with every token, so a longer text costs it more memory and more work for every new token.
 - `lb2.cost.p2`: The memory is not free, though. On one GPU the same layers with the memory switched off train at {o} tokens a second; PARTIAL trains at {p} and FULL at {fu}. Most of each model’s time goes to its memory.
 - `lb2.cost.title`: One size at any length
+- `lb2.earlier.label`: THE EARLIER MODELS
+- `lb2.earlier.p1`: Our earlier SDM language models had no run-time memory. They saw a few recent tokens exactly and the rest only as fading averages, so they reached only a short way back. The chat on SDMCHAT still runs one of them. <a2>SDMMEMORY</a2> gives their numbers, and <a3>SDMCHAT-MODEL</a3> tells their whole story.
+- `lb2.earlier.title`: A short lookback, before FULL
 - `lb2.fades.f0`: Fade {f}: only the token just before survives, so this head is a one-step look back.
 - `lb2.fades.f1`: Fade {f}: a write halves in about {h} tokens, so this head holds the last few words.
 - `lb2.fades.f2`: Fade {f}: a write halves in about {h} tokens, so this head holds the last few sentences.
@@ -7022,15 +7026,23 @@
 - `lb2.fades.title`: One head for the last token, one that never forgets
 - `lb2.not.l1`: One run each, one seed. A gap of a few points between two models is inside what a second seed could move.
 - `lb2.not.l2`: Small models on puzzles with their own alphabet, where the noise is easy to tell apart from the keys. A model that wins here may still lose on real text.
+- `lb2.not.l3`: How far back FULL reaches on a text longer than its {w}-token training window. It has not been measured.
 - `lb2.not.title`: What the puzzles do not show
 - `lb2.puzzles.before`: The puzzles were run before FULL was chosen, so FULL has no puzzle scores; the charts below are PARTIAL’s alone.
 - `lb2.puzzles.label`: THE PUZZLES
 - `lb2.puzzles.p1`: These puzzles test the memory alone, on small versions of the models: {w} wide and {l} layers, each trained for {s} steps on the puzzle itself. Each sequence holds {n} pairs of a key and a value, and then asks for some of the values back. Guessing gives about {c}% right.
 - `lb2.puzzles.title`: The memory puzzles, measured
+- `lb2.reach.label`: HOW FAR IT REACHES
+- `lb2.reach.p1`: The head with fade {f} is never emptied while a text runs. Each window FULL trains on starts with an empty memory, and nothing empties it again before the window ends, not even the start of a new document inside it. So a word from the first line is still in that head at the last, blended with every word written since.
+- `lb2.reach.p2`: Each head has {s} slots, and the count never grows. A longer text means more writes into the same slots, not more slots, so what is far back is kept as a blur, never as a copy.
+- `lb2.reach.p3`: FULL trained on windows of {w} tokens, so it has never practised reading further. Its code runs on longer texts, but how far back it really reaches there, and how much a word from far back still changes what it writes, has not been measured.
+- `lb2.reach.p4`: The transformer we compare FULL against trained on windows of {t} tokens too, so the two have practised on the same length of text. Guessing the next token of web text is mostly a local job, so neither score says much about a long reach. A test that asks for a fact seen once, far back, would. FULL has not taken one yet.
+- `lb2.reach.sweep`: More slots did not help at this size. In the shape sweep, every smaller memory scored better: {lo} slots a head scored {tlo} against {tat} for {at} slots, on the same {tok} tokens. The shape sweep has every size tried.
+- `lb2.reach.title`: Trained on {w} tokens, not yet measured beyond
 - `lb2.recall.h`: Recall after a gap
 - `lb2.recall.p`: A gap of noise sits between the pairs and the questions. The models trained with gaps of up to {g} tokens, so the longer gaps were never seen in training. PARTIAL answers {a}% right at a gap of {g0} and {b}% at {g1}. With the memory off the answers sit at chance. The transformer answers {ta}% at {g0} and falls to {tb}% at {g1}.
 - `lb2.top.go`: how it forgets
-- `lb2.top.lede`: Neither model has a window of past tokens to look back over. Each reads only the newest token, and everything earlier lives in a memory of fixed size that the text writes into as it goes. This page shows how that memory forgets, why it costs the same at any length, and what the memory puzzles measured.
+- `lb2.top.lede`: Neither model has a window of past tokens to look back over. Each reads only the newest token, and everything earlier lives in a memory of fixed size that the text writes into as it goes. This page shows how that memory forgets, why it costs the same at any length, what is and is not known about how far it reaches, and what the memory puzzles measured.
 - `lb2.top.puzzles`: the puzzles
 - `lb2.top.sub`: How far back FULL and PARTIAL reach, and what it costs them.
 - `lb2.window.label`: NO WINDOW
@@ -7084,7 +7096,7 @@
 - `learning.dyn.table.head`: The table made whole.
 - `learning.dyn.taught.decay`: Grokking needs a gentle pressure: without weight decay the same network stays at 4.5% on the unseen sums.
 - `learning.dyn.taught.muon`: Muon gives every direction a fair step: all 8 directions of a target reach 90% by step 233, the faintest first, while plain gradient descent leaves the faintest behind.
-- `learning.dyn.taught.sdm`: In our SDM language model one batch's gradient reaches only the memory rows its reads woke, 3,038 of 65,536 in the first table. That is how it learns, not a gain: at 20M tokens its reads still score the same as no reads (1.668 against 1.662 bits per byte).
+- `learning.dyn.taught.sdm`: In our earlier SDM language model, one batch's gradient reaches only the memory rows its reads woke, 3,038 of 65,536 in the first table. That is how it learns, not a gain: at 20M tokens its reads still score the same as no reads (1.668 against 1.662 bits per byte).
 - `learning.dyn.taught.title`: What the experiments taught
 - `learning.dyn.taught.tngd`: A settling particle can do the linear algebra of learning: its average position lands within 0.91% of the natural-gradient step, the idea behind thermodynamic natural gradient descent.
 - `learning.explain.classic`: The classic route. A second machine learns only the pixels (no labels). Its hidden things' yes-rates become 500 features, and an ordinary logistic regression reads the digit from them. That is how Boltzmann machines were first used on MNIST.
@@ -7409,16 +7421,17 @@
 
 ## llm2
 
-- `llm2.more.history`: every shape we tried before
 - `llm2.more.label`: READ MORE
 - `llm2.more.learn`: FULL and PARTIAL, taken apart
 - `llm2.more.lookback`: how far back the memory reaches
+- `llm2.more.story`: every size, result and sealed prediction for FULL and PARTIAL, and every shape we tried before
 - `llm2.more.sweep`: which shape of FULL learns best, the shape sweep
 - `llm2.more.title`: How the new models work
 - `llm2.more.unfold`: how a word goes in and comes out
 - `llm2.next.cap`: Chat score: bits per byte on held-out chat turns, lower is better
 - `llm2.next.label`: WHAT REPLACES IT
-- `llm2.next.p1`: We are training FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, so the start of a chat stays within reach. Its full run is tuned for chat, and then it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
+- `llm2.next.p1`: We are training FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, and one head of that memory never fades, so the start of a chat is still in it, blended with everything since. Its full run is tuned for chat, and then it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
+- `llm2.next.reach`: FULL trained on windows of {w} tokens. How well it uses the start of a chat longer than that has not been measured; SDM-LOOKBACK says what is known.
 - `llm2.next.tok`: The chat tune read {tok} tokens of chat.
 - `llm2.sweep.next`: FULL SDM CHAT is built on FULL’s first shape. A shape sweep has since found a better one: on the same {tok} tokens it scored {best}, against {first} for the first shape. The next FULL base will be trained in the winning shape. The shape sweep has every run.
 - `llm2.top.sub`: A chat with an SDM language model: no attention, no transformer, running live in this tab.
@@ -7514,8 +7527,9 @@
 - `lsdm2.chip.full`: FULL: SDM in every part
 - `lsdm2.chip.noatt`: no attention
 - `lsdm2.chip.partial`: PARTIAL: SDM and an MLP
+- `lsdm2.differ.big`: The shape sweep tried it: a table with {x} times the rows scored {t1} against {t0} for the first shape, a tie, and trained at {s1} tokens a second against {s0}. Its weights rose from {w0} million to {w1} million.
 - `lsdm2.differ.label`: HOW THEY DIFFER
-- `lsdm2.differ.p1`: Without the word table, FULL has {a} weights and PARTIAL has {b}, almost the same. PARTIAL’s MLP uses all of its weights for every token. FULL’s table reads {r} rows a layer for each token, so most of its weights sit unused on any one token. A larger table would cost more memory and no more work per token.
+- `lsdm2.differ.p1b`: Without the word table, FULL has {a} weights and PARTIAL has {b}, almost the same. PARTIAL’s MLP uses all of its weights for every token. FULL’s table reads {r} rows a layer for each token, so most of its weights sit unused on any one token. A larger table costs more memory, and each token still reads the same number of rows.
 - `lsdm2.differ.p2`: Today the dense MLP trains faster. On one GPU, PARTIAL trains at about {p} tokens a second and FULL at about {f}. With the memory switched off the same layers run at {o}, so the memory between tokens is most of the cost of both.
 - `lsdm2.differ.title`: The same number of weights, spent two ways
 - `lsdm2.not.l1`: Neither model has been shown to beat a transformer of its size. Where a score has not landed, the page says no score yet.
@@ -7536,12 +7550,13 @@
 - `lsdm2.step.s4`: The scores become chances and one token is drawn. It becomes the next input, and the memory carries everything that came before.
 - `lsdm2.step.title`: How either model writes, one token at a time
 - `lsdm2.store.label`: WHAT EACH STORES
-- `lsdm2.store.p1`: The memory between tokens is written while the model reads. Each layer has {h} heads, each head has {s} slots, and each slot keeps a running sum of the values written into it and how much was written. It starts empty for every new text, and it holds only what this text has put there.
+- `lsdm2.store.p1`: The memory between tokens is written while the model reads. Each layer has {h} heads, each head has {s} slots, and each slot keeps a running sum of the values written into it and how much was written. It starts empty when the model starts reading, and it holds only what has been read since.
 - `lsdm2.store.p2`: FULL’s table and PARTIAL’s MLP are written by training and then frozen. They hold what the model learned from all of its training text. Reading never changes them.
 - `lsdm2.store.title`: A memory for this text, and a store for everything learned
 - `lsdm2.top.go`: the two models
 - `lsdm2.top.history`: the history
 - `lsdm2.top.lede`: Both models are built from sparse distributed memories, and neither has attention. FULL is SDM all the way through. PARTIAL keeps one ordinary part, the MLP. This page shows what each one stores, how it writes and reads, how it picks the next word, and why FULL is the one we take forward.
+- `lsdm2.top.results`: every result
 - `lsdm2.top.sub`: Our two SDM language models, FULL and PARTIAL, taken apart.
 - `lsdm2.two.label`: THE TWO MODELS
 - `lsdm2.two.p1`: Both models read a text one token at a time, through {n} layers. Every layer does two things. First it writes the token into a memory and reads back what earlier tokens wrote there. That memory is the only way one position in the text learns anything about another. Second, it thinks about the current token on its own.
@@ -7573,7 +7588,7 @@
 - `lsl.curves.key`: fade {d} · half-life {h}
 - `lsl.curves.reach`: {n} back: the slowest keeps {p}
 - `lsl.curves.x`: tokens back
-- `lsl.flow.aria`: The newest model from left to right: the text, the lookback, one map, then 16 hops of a memory read and a small dense step, then the head and the next token.
+- `lsl.flow.aria`: The hop model from left to right: the text, the lookback, one map, then {h} hops of a memory read and a small dense step, then the head and the next token.
 - `lsl.flow.head`: the head
 - `lsl.flow.head.sub`: scores tokens
 - `lsl.flow.hops`: these two, {h} times over: the hops
@@ -8181,13 +8196,13 @@
 - `memory.keys.title`: Store a note under a key
 - `memory.labscrate.line`: These two labs, the soft SDM above and the keyed notes below, run the KANERVA crate since 2026-10-06 (before that day they ran a JavaScript copy, whose curves and counts differ); the recorded results further down were measured with settle-rs, not with the copy.
 - `memory.lights.default`: a pattern of lights
-- `memory.lm.answer.full`: Our newest model, FULL, is built another way: its run-time memory is the only path from one token to the next, and it beats the same layers with the memory switched off by more than the noise. It is taken apart on SDM.
+- `memory.lm.answer.full`: Our newest models are built another way. In FULL and PARTIAL a memory written while reading is the only path from one token to the next, and it pays: on the same {tok} tokens, FULL scored {fu} and PARTIAL {p}, against {o} with that memory switched off. FULL is the one we take forward. It is taken apart on SDM, and every result is on <a2>SDMCHAT-MODEL</a2>.
 - `memory.lm.answer.label`: THE SHORT ANSWER
 - `memory.lm.answer.links`: The full story, with every number, is further down. The four memories you can try come first.
-- `memory.lm.answer.p1`: Our SDM language model can carry two kinds of memory. The learned store is filled during training and read at every hop. The run-time memory is written while the model reads. We test each one the same way: train the model with it, train it again without it, and compare the test scores.
-- `memory.lm.answer.p2b`: On the web test, every time the learned store trained stably, it tied. After a chat tune it came out a hair worse. The run-time memory helped one small early model, then fell behind on every larger one. Our best guess at why: the model looks back only about {reach} tokens, and guessing the next word of web text rarely needs more.
+- `memory.lm.answer.p1`: Our earlier SDM language model, the hop model, could carry two kinds of memory. The learned store is filled during training and read at every hop. The run-time memory is written while the model reads. We tested each one the same way: train the model with it, train it again without it, and compare the test scores.
+- `memory.lm.answer.p2b`: On the web test, every time the learned store trained stably, it tied. After a chat tune it came out a hair worse. The hop model’s run-time memory helped one small early model, then fell behind on every larger one. Our best guess at why: the hop model looks back only about {reach} tokens, and guessing the next word of web text rarely needs more.
 - `memory.lm.answer.p3`: The last big test has finished: this model at full scale, with its store on, beside the same model with it off. Their scores are on the SDM model page.
-- `memory.lm.answer.title`: Added memory has not helped our language model yet
+- `memory.lm.answer.title`: A memory written while reading helps FULL. The learned store never helped.
 - `memory.lm.gap.aria`: Our best memory-off SDM against a transformer of the same width: {words}. The transformer leads at every point.
 - `memory.lm.gap.c0`: early runs
 - `memory.lm.gap.c1`: after the shape hunt
@@ -8195,14 +8210,15 @@
 - `memory.lm.gap.c3`: the full runs
 - `memory.lm.gap.fig`: Our SDM against a transformer
 - `memory.lm.gap.figsub`: Width {w}, memory off, against a transformer of the same width. Test bits per byte: lower on the chart is better
-- `memory.lm.gap.label`: AGAINST A TRANSFORMER
+- `memory.lm.gap.full`: FULL, our newest model, is measured against its own transformer of the same shape, on another tokenizer, so its gaps do not compare with these: {g} on the first test, {gs} for its best shape so far, and {gr} at the last matched step of its full run. SDMCHAT-MODEL has every number.
+- `memory.lm.gap.label`: THE HOP MODEL AGAINST A TRANSFORMER
 - `memory.lm.gap.lon`: our SDM, memory on
 - `memory.lm.gap.lsdm`: our SDM, memory off
 - `memory.lm.gap.ltf`: transformer
 - `memory.lm.gap.lwide`: our SDM at width {w}
-- `memory.lm.gap.p1`: The chart sets our best memory-off SDM beside a transformer of the same width, at each amount of training data we tried. Lower is better. The number between each pair is how far the SDM is behind, in bits per byte.
+- `memory.lm.gap.p1`: The chart sets the hop model’s best memory-off run beside a transformer of the same width, at each amount of training data we tried. Lower is better. The number between each pair is how far the SDM is behind, in bits per byte.
 - `memory.lm.gap.p2`: The gap fell from {g0} in the early runs to {g3} at {tok}B tokens. Most of the early drop came from a better shape, not from more data, and the shape changed between the later points too: the hop block grew from {m1} to {m2} wide. So this is not one clean curve.
-- `memory.lm.gap.p3`: Our widest model, at width {w}, reaches {v}: still {g} behind. The transformer leads at every amount of data we have run.
+- `memory.lm.gap.p3`: The hop model’s widest run, at width {w}, reaches {v}: still {g} behind. The transformer leads at every amount of data we have run.
 - `memory.lm.gap.p4`: One idea we hold: the SDM may learn more slowly and catch up later, once it has seen more data. It is a fair guess, and it is untested. The test is one fixed shape, memory on and off, and the transformer, each trained on {a}M, {b}M, {c}B and {d}B tokens.
 - `memory.lm.gap.title`: The gap has narrowed. It has not closed.
 - `memory.lm.gap.tokb`: {tok}B tokens
@@ -8211,7 +8227,7 @@
 - `memory.lm.hops.card`: {gb} card
 - `memory.lm.hops.fig`: More hops, a lower score, then a wall
 - `memory.lm.hops.figsub`: Width {w}, {tok}M tokens each, memory off unless marked. Test bits per byte: lower is better
-- `memory.lm.hops.label`: MORE HOPS
+- `memory.lm.hops.label`: THE HOP MODEL · MORE HOPS
 - `memory.lm.hops.loff`: memory off
 - `memory.lm.hops.lon`: memory on
 - `memory.lm.hops.onwall`: memory on stops here
@@ -8228,10 +8244,10 @@
 - `memory.lm.mixer.fig`: The run-time memory’s lead, step by step
 - `memory.lm.mixer.figsub`: Training loss, width {w}, window {win}. Above zero the run-time memory is ahead; below zero it is behind
 - `memory.lm.mixer.flip`: behind by step {s}
-- `memory.lm.mixer.label`: THE RUN-TIME MEMORY
+- `memory.lm.mixer.label`: THE HOP MODEL’S RUN-TIME MEMORY
 - `memory.lm.mixer.p1`: This chart follows one run of the run-time memory against its control, the same model without it, through training. It plots the control’s training loss minus the run-time memory’s. Above zero, the run-time memory is ahead. Below zero, it is behind.
 - `memory.lm.mixer.p2`: It led by {lead} at step {s1}. By step {s2} the control was ahead. At step {s3} the run-time memory trailed by {behind}, and its gradients kept growing. The test score agreed: {fade} bits per byte worse than the control. Weight decay cut the damage to {wd} but did not remove it.
-- `memory.lm.mixer.p3`: Past run-time memories followed the same shape: ahead early, unstable later. A training loss is not a test score, so this chart shows the shape and the test score gives the verdict. The verdict: leave it out of the base run until it trains stably.
+- `memory.lm.mixer.p3`: Past run-time memories followed the same shape: ahead early, unstable later. A training loss is not a test score, so this chart shows the shape and the test score gives the verdict. The verdict for the hop model: leave it out of its base run until it trains stably. FULL and PARTIAL, built another way, trained with a memory written while reading through every run, and gained from it.
 - `memory.lm.mixer.peak`: ahead by {v} at step {s}
 - `memory.lm.mixer.title`: A lead that faded
 - `memory.lm.mixer.x`: training step
@@ -8242,6 +8258,7 @@
 - `memory.lm.next.chat`: A small cousin of this model runs live in your browser on SDMCHAT; every result so far is on the SDM model page.
 - `memory.lm.next.fair`: A fair long-context test
 - `memory.lm.next.fair.t`: Our model against a transformer that sees {w} tokens or more, on text that needs a long memory.
+- `memory.lm.next.full`: This list was written for the hop model. FULL has since answered part of it: its memory written while reading trains through a whole run and beats memory off, and every write passes through a learned gate. A recall test, a long-context test and a learned fade are still untried for FULL.
 - `memory.lm.next.label`: FUTURE · NOT IN ANY RUN YET
 - `memory.lm.next.later`: Does the SDM catch up later?
 - `memory.lm.next.later.t`: Extend the base run’s kept {kept}B-token checkpoint toward {big}B tokens, beside a transformer at {big}B. A gap that keeps shrinking supports a late catch-up. A flat gap does not.
@@ -8292,7 +8309,7 @@
 - `memory.lm.pairs.x`: memory on minus memory off, test bits per byte
 - `memory.lm.run.chat`: One more pair has finished: the two {tok}B-token window-{win} models, tuned for chat. On the chat test, memory off went from {a} to {b} and memory on from {c} to {d}: memory on is {gap} worse, just outside the noise. On the web test they still tie ({e} on, {f} off). We had predicted a tie at chat; that missed by a hair.
 - `memory.lm.run.done`: Both have finished. Their scores, with every run before them, are on the SDM model page.
-- `memory.lm.run.label`: THE LAST BIG TEST
+- `memory.lm.run.label`: THE HOP MODEL’S LAST BIG TEST
 - `memory.lm.run.p1`: The base run is this model at full scale: memory on, width {w}, {h} hops, a hop block {mlp} wide, a {win}-token window, {tok}B tokens, on {g} GPUs. Its twin is the same model with memory off: same data, same order, same code.
 - `memory.lm.run.p3`: What we predicted before either finished: the store ties memory off at full scale, within {noise}; the longer window beats the window-{w} model; and the transformer stays ahead.
 - `memory.lm.run.p6`: Stopped with no score: a {tok}B-token run at width {w} that asked whether more data still helps the {h}-hop shape ended at step {s} of {n}, so that question is still open.
@@ -8307,10 +8324,10 @@
 - `memory.lm.two.l1`: written by training, then fixed
 - `memory.lm.two.l2`: read at every hop: about {k} of {m} locations wake
 - `memory.lm.two.l3`: never sees the text it is reading
-- `memory.lm.two.label`: OUR LANGUAGE MODEL · TWO KINDS OF MEMORY
+- `memory.lm.two.label`: THE HOP MODEL · TWO KINDS OF MEMORY
 - `memory.lm.two.lh`: the learned store
 - `memory.lm.two.lstat`: in the base run · ties memory off
-- `memory.lm.two.p1`: Our SDM language model reads text and predicts the next token. In between, it passes one vector through the same block again and again. Each pass is a hop. A memory is something a hop can look things up in, and the model has room for two.
+- `memory.lm.two.p1`: Our earlier SDM language model, the hop model, reads text and predicts the next token. In between, it passes one vector through the same block again and again. Each pass is a hop. A memory is something a hop can look things up in, and the model has room for two.
 - `memory.lm.two.p2`: The learned store holds what training taught: {m} locations, written by gradient descent like every other weight. At each hop about {k} of them wake and are read. It never sees the text in front of it. It is in the base run.
 - `memory.lm.two.p3`: The run-time memory is written while the model reads. Each token writes into the slots its address picks, and a later token reads what earlier ones left there, faded by each head’s own decay. It is the one part that could let the model reach far back. It is not in the base run, for the reasons below.
 - `memory.lm.two.r1`: written while reading, token by token
@@ -8320,13 +8337,15 @@
 - `memory.lm.two.rstat`: not in the base run · fell behind
 - `memory.lm.two.text`: the text being read, one token at a time
 - `memory.lm.two.title`: A store it learns, and a memory it writes as it reads
-- `memory.lm.why.label`: WHY MEMORY MAY NOT PAY ON THIS TEST
-- `memory.lm.why.p1`: Our model has no context window in the transformer sense. It sees the last {back} tokens exactly, plus {avg} fading averages of everything before them. The slowest average loses half of what it holds in about {half} tokens, so its real reach is about {reach} tokens. The lookback page tells the full story.
-- `memory.lm.why.p2`: Guessing the next token of web text is mostly a local job. The last few words carry most of the answer, and a memory of facts from far back has little to add to that score.
-- `memory.lm.why.p3`: Our yardstick shares the blind spot. The transformer we compare against trains on windows of {tw} tokens. Neither model has been asked to remember something from long ago.
-- `memory.lm.why.p4`: A recall test would ask exactly that: a fact seen once, needed later. Bits per byte averages over every byte, so it can hide a memory that matters on the few bytes where recall counts. We have not run that test yet.
-- `memory.lm.why.p5`: One more clue, with memory off: a longer training window helps up to about {w2} tokens ({a} at {w1}, {b} at {w2}), then goes flat ({c} at {w3}) and then worse ({d} at {w4}). Our reading, untested: at window {w1} many positions sit near the start of their example, where the fading averages have not filled yet. Past {w2}, almost every position already has its full lookback. That fits a reach of a few hundred tokens at most.
-- `memory.lm.why.title`: The model looks back about {reach} tokens
+- `memory.lm.why.hop`: The hop model this page tested was built another way. It saw the last {back} tokens exactly, plus {avg} fading averages of everything before them. The slowest average loses half of what it holds in about {half} tokens, so its real reach was about {reach} tokens.
+- `memory.lm.why.label`: WHY A LONG REACH MAY NOT SHOW ON THIS TEST
+- `memory.lm.why.p1`: Our newest model, FULL, has no context window in the transformer sense, and no fixed lookback either. Each layer has a memory with {h} heads, and each head fades what it holds at its own rate. Fade {f0} keeps only the token just before. Fade {f1} halves in about {h1} tokens, and fade {f2} in about {h2}. Fade {f3} never fades, so that head holds a blend of everything written since the text began. Each head has {slots} slots and never more, so a token costs the same at any length. The lookback page tells the full story.
+- `memory.lm.why.p2`: For either model, guessing the next token of web text is mostly a local job. The last few words carry most of the answer, and a memory of facts from far back has little to add to that score.
+- `memory.lm.why.p3`: Our yardstick shares the blind spot. The transformer we compare FULL against trains on windows of {tw} tokens, the same length as FULL. The one the hop model was compared against trained on windows of {old}. Neither test asks either model to remember something from long ago.
+- `memory.lm.why.p4`: A recall test would ask exactly that: a fact seen once, needed later. Bits per byte averages over every byte, so it can hide a memory that matters on the few bytes where recall counts. FULL has not taken one yet. The memory puzzles on the lookback page ran before FULL was chosen.
+- `memory.lm.why.p5`: One more clue, from the hop model with memory off: a longer training window helps up to about {w2} tokens ({a} at {w1}, {b} at {w2}), then goes flat ({c} at {w3}) and then worse ({d} at {w4}). Our reading, untested: at window {w1} many positions sit near the start of their example, where the fading averages have not filled yet. Past {w2}, almost every position already has its full lookback. That fits a reach of a few hundred tokens at most, for that model.
+- `memory.lm.why.title`: FULL has no fixed lookback. This test rarely needs a long one.
+- `memory.lm.why.train`: FULL trained on windows of {win} tokens, so it has never practised reading further. Its code runs on longer texts, but how far back it really reaches there has not been measured.
 - `memory.locM`: hard locations M
 - `memory.noise`: noise in the address
 - `memory.noisefmt`: {p}% of bits flipped
@@ -8530,7 +8549,7 @@
 - `mi.name.fullchat`: FULL SDM CHAT
 - `mi.next.before`: the same model before the chat tune
 - `mi.next.notyet`: FULL SDM CHAT is trained, not yet runnable in the browser. The dropdown above lists only models that run here.
-- `mi.next.p1`: We trained FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, so the start of a chat stays within reach. Its full run was then tuned for chat as FULL SDM CHAT. It is trained and scored, but it does not run in a browser yet: its browser port is not built. Once it is, it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
+- `mi.next.p1`: We trained FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, and one head of that memory never fades, so the start of a chat is still in it, blended with everything since. Its full run was then tuned for chat as FULL SDM CHAT. It is trained and scored, but it does not run in a browser yet: its browser port is not built. Once it is, it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
 - `mi.next.title`: FULL SDM CHAT, once it runs in your browser
 - `mi.next.tok`: The chat tune read {tok} tokens, {pct}% of them chat turns and the rest web text.
 - `mi.next.vs.higher`: Its chat score is higher, so worse, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
@@ -8547,7 +8566,6 @@
 - `mi.race.shape`: The two curves have different shapes. The transformer falls smoothly, a little less at each eval. FULL falls in a staircase: it sits on a shelf, then drops. So the gap narrows when FULL drops off a shelf and widens while it sits on one, and one quick eval is not a trend. The full TEST decides.
 - `mi.race.title`: FULL against a transformer of the same shape
 - `mi.race.what`: The comparison: a transformer of the same shape as FULL, {l} layers and {d} wide, trained on FULL’s exact {tok} tokens of web text, in the same order and with the same recipe. Both are scored by the same quick eval on {n} held-out tokens every {every} steps, and at the end by the full TEST.
-- `mi.top.models`: every model
 - `mi.which.postfix`: Each name ends in a postfix read from its training record: the kind of model, the tokens it trained on in all, what it was last trained on (base, chat or epic) and its score in bits per byte on that text. Every model, the ones that run here and the ones that do not yet, is listed on the models page.
 
 ## modelcard
@@ -10015,13 +10033,47 @@
 - `sdm2.fades.then.full`: then the table, which holds no past
 - `sdm2.fades.then.partial`: then the MLP, which holds no past
 - `sdm2.fades.title`: {h} ways to remember the past
+- `sdm2.found.base`: Trained on {tok} tokens, FULL scored {base}, {d} better than on {small}.
+- `sdm2.found.base.chat`: Trained on {tok} tokens, FULL scored {base}, {d} better than on {small}. Then a chat tune on {ct} more tokens took its score on held-out chat turns from {before} to {chat}, and its web score to {web}.
+- `sdm2.found.base.h`: More text helps FULL.
+- `sdm2.found.both.tie`: With the {s}-slot diary, {l} layers at width {d} scored {v} against {v0} for {l0} layers at width {d0}: a tie.
+- `sdm2.found.depth.h`: Depth looks spent at this size.
+- `sdm2.found.depth.h2`: Deeper shapes so far.
+- `sdm2.found.diary`: On the first test, {tok} tokens each, PARTIAL scored {p} and FULL {fu}, against {o} with the diary switched off. The memory written while reading is worth {lo} to {hi} bits per byte.
+- `sdm2.found.diary.h`: The diary does the work.
+- `sdm2.found.diary2`: At {l} layers and width {d}, on {tok} tokens:
+- `sdm2.found.diary2.h`: A smaller diary learns better, down to a tie.
+- `sdm2.found.diary2.tie`: The two smallest, {a} and {b} slots, are {g} apart, inside the noise line, so the diary line is UNDECIDABLE.
+- `sdm2.found.longer`: A further round on {tok} tokens is sealed and has no score yet: {list}.
+- `sdm2.found.longer.h`: The ties run again on more text.
+- `sdm2.found.point`: {s} slots: {v}
+- `sdm2.found.race`: Matched step by step on the same {tok} tokens, the transformer led FULL at every quick eval, by {lo} to {hi}.
+- `sdm2.found.race.h`: On the long run, the transformer stays ahead so far.
+- `sdm2.found.race.held`: Matched step by step on the same {tok} tokens, the transformer led FULL at every quick eval, by {lo} to {hi}. Its run is held for later; the final TEST of both decides.
+- `sdm2.found.settle`: So far the best FULL has {l} layers at width {d} and a diary of {lo} to {hi} slots a head. Those two train at a median of {v1} and {v2} tokens a second.
+- `sdm2.found.settle.both`: {l} layers with the {s}-slot diary train at {v}.
+- `sdm2.found.settle.deep`: {l} layers with the first diary train at {v}.
+- `sdm2.found.settle.h`: The shape is settling, and it is the fastest.
+- `sdm2.found.shape`: The shape sweep found a better FULL on the same {tok} tokens: {best}, with {setting}, against {first} for the first shape.
+- `sdm2.found.shape.depth`: Every deeper shape scored better.
+- `sdm2.found.shape.depthOpen`: The depth line has not turned yet: it is UNBRACKETED.
+- `sdm2.found.shape.depthTie`: Every deeper shape scored lower, but the two deepest tie inside the noise line, so the depth line is UNDECIDABLE.
+- `sdm2.found.shape.gap5`: The gap to the transformer of the first shape narrowed from {a} to {b} bits per byte.
+- `sdm2.found.shape.h`: The shape matters more than the encyclopedia’s size.
+- `sdm2.found.shape.mem`: Every smaller diary scored better.
+- `sdm2.found.shape.memOpen`: The diary line has not turned yet: it is UNBRACKETED.
+- `sdm2.found.table`: In place of the MLP it cost {c} bits per byte on the first test: PARTIAL beat FULL by that much.
+- `sdm2.found.table.h`: The encyclopedia costs a little.
+- `sdm2.found.table.tie`: In place of the MLP it cost {c} bits per byte on the first test: PARTIAL beat FULL by that much. An encyclopedia with {x} times the rows, more rows read and more heads all tied with the first shape, so its size is not what FULL is short of.
+- `sdm2.found.tf`: On the same {tok} tokens it scored {tf}: ahead of FULL by {a} and of PARTIAL by {p}.
+- `sdm2.found.tf.h`: A transformer of the same size is ahead.
 - `sdm2.held.base`: a transformer in the next FULL base’s shape and token count, trained on the same text in the same order
 - `sdm2.held.depth`: a transformer in the deeper winning shape on {tok} tokens, so the deeper FULL shapes have a yardstick of their own shape
 - `sdm2.held.depthnotok`: a transformer in the deeper winning shape, so the deeper FULL shapes have a yardstick of their own shape
 - `sdm2.held.finish`: the transformer in the table above, from step {step} to the end of its run, then its final TEST
 - `sdm2.held.lead`: Held for later, not cancelled.
 - `sdm2.held.why`: Every side-by-side transformer run waits until the SDM work is done: the shape sweep, then the next FULL base in the winning shape and its chat model. Then they run in this order:
-- `sdm2.history`: Before these two models we tried other shapes. What each one was and what it found is on the history page.
+- `sdm2.history2`: Every size, result and sealed prediction for FULL and PARTIAL, and every shape we tried before them, is on SDMCHAT-MODEL.
 - `sdm2.keys.aria`: {m}: a grid of {s} by {s} slots, with the scores of the query’s two halves along two sides; the best of each cross, and the best {k} slots light.
 - `sdm2.keys.cap.full`: FULL uses this address twice in every layer: in its memory ({ms} by {ms} slots, {mk} picked) and in its table ({s} by {s} rows, {k} picked). Shown here: the table. The search scores {two} sub-keys, not all {m} slots, and still finds the exact best.
 - `sdm2.keys.cap.partial`: PARTIAL uses this address once in every layer, in its memory ({s} by {s} slots, {k} picked). Its MLP has no address: every neuron fires. The search scores {two} sub-keys, not all {m} slots, and still finds the exact best.
@@ -10033,7 +10085,70 @@
 - `sdm2.keys.rows`: first half: {s} scores
 - `sdm2.keys.title.full`: The table’s address: {k} of {m}
 - `sdm2.keys.title.partial`: The memory’s address: {k} of {m}
+- `sdm2.kinds.full`: In each of its {l} layers a token does two things. First it writes into a memory written while reading, which we call the diary, and reads back what earlier tokens wrote there. Then it reads a few rows of a trained SDM table, which we call the encyclopedia, in the place where a transformer has its MLP. There is no attention and no MLP, so FULL meets the law.
+- `sdm2.kinds.full.h`: all SDM, the model we take forward
+- `sdm2.kinds.partial`: The same diary in every layer, then an ordinary MLP where FULL has its encyclopedia. There is no attention, but an MLP is not an SDM, so PARTIAL does not meet the law. It was the comparison on the first test, and it goes no further.
+- `sdm2.kinds.partial.h`: one ordinary part, tested beside FULL
+- `sdm2.kinds.refs`: Memory off is the same layers with the diary switched off, so nothing passes from one token to another. It is the control. The transformer has the same width, layers and training text, with attention where the diary is. We train it only to measure our models against.
+- `sdm2.kinds.refs.h`: two references, not models
 - `sdm2.noscore`: no score yet
+- `sdm2.open.base`: The next FULL base, in the shape the sweep picks, and its chat tune.
+- `sdm2.open.browser`: FULL in your browser: FULL base and FULL SDM CHAT are trained, and their browser port is not built.
+- `sdm2.open.deep`: The deeper shapes against a transformer of their own shape: the transformer we have is of the first shape.
+- `sdm2.open.held`: The transformer’s full run on {tok} tokens, held for later; its final TEST gives the last verdict of the full run. The transformer comparison lists every held run in order.
+- `sdm2.open.layers`: What each layer of FULL does: no probe has looked inside a trained layer yet.
+- `sdm2.open.not.h`: Not measured at all
+- `sdm2.open.pending.h`: Pending: runs with no score yet
+- `sdm2.open.puzzles`: FULL on the memory puzzles: they ran on small versions of PARTIAL, before FULL was chosen.
+- `sdm2.open.reach`: How far back FULL reaches on a text longer than its {w}-token training window. SDM-LOOKBACK says what is known.
+- `sdm2.open.sealed`: FULL with {setting}, on {tok} tokens: sealed, no score yet.
+- `sdm2.open.seeds`: A second seed for any shape but the first one.
+- `sdm2.open.training`: FULL with {setting}, on {tok} tokens: being trained.
+- `sdm2.pred.BK1`: PARTIAL beats memory off by at least {a}.
+- `sdm2.pred.BK2`: PARTIAL beats FULL by at least {a}: the MLP beats the trained table again.
+- `sdm2.pred.BK3`: FULL beats memory off by at least {a}.
+- `sdm2.pred.FB1`: FULL on {tok} tokens beats FULL on {small} tokens by at least {a}.
+- `sdm2.pred.FB2`: The transformer on {tok} tokens beats FULL on the same tokens by at least {a}.
+- `sdm2.pred.SW1`: Two seeds of the first shape differ by {a} or less.
+- `sdm2.pred.SW2`: An encyclopedia with {x} times the rows beats the first shape.
+- `sdm2.pred.SW3`: Reading {k} encyclopedia rows a head, not {k0}, ties.
+- `sdm2.pred.SW4`: {h} encyclopedia heads, not {h0}, tie.
+- `sdm2.pred.SW5`: A diary of {s} slots a head, not {s0}, ties.
+- `sdm2.pred.SW6`: {l} layers at width {d} lose on {tok} tokens.
+- `sdm2.pred.SW7`: {l} layers at width {d} tie.
+- `sdm2.pred.SW8`: The best shape of this round closes less than half of PARTIAL’s lead of {a}, so it stays above {b}.
+- `sdm2.pred.SW9`: The encyclopedia with {x} times the rows trains slower than {v} tokens a second.
+- `sdm2.pred.SWB1`: A diary of {s} slots a head beats one of {s0} slots ({v}) by more than {a}.
+- `sdm2.pred.SWB2`: A diary of {s} slots a head is worse than one of {s1}.
+- `sdm2.pred.SWB3`: {l} layers at width {d} beat {l0} layers ({v}) by more than {a}.
+- `sdm2.pred.SWB4`: {l} layers beat {l0}.
+- `sdm2.pred.SWB5`: The best shape of this round scores below {a}.
+- `sdm2.pred.SWC1`: A diary of {s} slots a head beats one of {s0} slots ({v}) by more than {a}.
+- `sdm2.pred.SWC2`: A diary of {s} slots a head is worse than one of {s1}, so the diary line turns between {lo} and {hi} slots.
+- `sdm2.pred.SWC3`: The {s}-slot diary at {l} layers and width {d} beats it at {l0} layers and width {d0} ({v}) by more than {a}.
+- `sdm2.pred.SWC4`: The best shape of this round scores below {a}.
+- `sdm2.pred.SWD1b`: On {tok} tokens with the {s}-slot diary, {l} layers beat {l0} by more than {a}.
+- `sdm2.pred.SWD2b`: On {tok} tokens with the {s}-slot diary, {l} layers at width {d} beat {l0} layers at width {d0} by more than {a}.
+- `sdm2.pred.SWD3`: The best shape of this round scores below {a}.
+- `sdm2.pred.SWD4`: On {tok} tokens at {l} layers, a diary of {s} slots a head beats one of {s0} by more than {a}.
+- `sdm2.pred.YD1`: The transformer beats FULL on {tok} tokens by at least {a}.
+- `sdm2.pred.YD2`: The transformer beats PARTIAL on {tok} tokens by at least {a}.
+- `sdm2.pred.cap`: Every sealed prediction. Measured: a TEST score, a speed, or the first-named TEST minus the second-named, so below zero the first is better.
+- `sdm2.pred.chance`: {c}%
+- `sdm2.pred.col.chance`: stated chance
+- `sdm2.pred.col.measured`: measured
+- `sdm2.pred.col.pred`: prediction
+- `sdm2.pred.col.verdict`: verdict
+- `sdm2.pred.holds`: HOLDS
+- `sdm2.pred.misses`: MISSES
+- `sdm2.pred.nochance`: not stated
+- `sdm2.pred.none`: no verdict yet
+- `sdm2.pred.p1`: Before each run we wrote down what we expected, with a chance where we gave one, and sealed it. After the run we wrote down whether it held. Of the {n} predictions so far, {h} hold, {m} miss and {o} have no verdict yet. A miss is a result too: it says where our picture of the model was wrong.
+- `sdm2.pred.speed`: {v} tokens a second
+- `sdm2.pred.stage.base`: The full run: FULL on {tok} tokens
+- `sdm2.pred.stage.first`: The first test: FULL, PARTIAL and memory off, {tok} tokens each
+- `sdm2.pred.stage.sweep`: The shape sweep, round {r}
+- `sdm2.pred.stage.yardstick`: The transformer of the same shape, on the same tokens
 - `sdm2.read.aria.full`: FULL: above, a query wakes a few slots of the memory and averages them; below, a second query picks a few rows of the trained table and blends them.
 - `sdm2.read.aria.partial`: PARTIAL: above, a query wakes a few slots of the memory and averages them; below, every neuron of the MLP fires.
 - `sdm2.read.cap.full`: Above, the read: {k} slots wake (cyan) and their values are averaged by how well each matched. Below, the table: {tk} rows of {slots} wake, about {pct}% of the head, and their rows are blended.
@@ -10061,6 +10176,27 @@
 - `sdm2.score.sweep`: Since the first test, the shape sweep found a better FULL on the same {tok} tokens: {best}, against the {first} above. The shape sweep has every run.
 - `sdm2.score.tf`: a transformer (the yardstick)
 - `sdm2.score.tfahead`: The transformer did better than both on the first test. FULL has ground to make up, and we measure it against a transformer at every step.
+- `sdm2.size.all`: weights, in all
+- `sdm2.size.cap`: FULL and PARTIAL at their first shape, the shape of the first test and the full run
+- `sdm2.size.diary`: the diary, in each layer
+- `sdm2.size.diary.v`: {h} heads; {side} by {side} = {s} slots a head; a token writes into {k} slots a head and reads {k}
+- `sdm2.size.fades`: the diary’s fades, one a head
+- `sdm2.size.fades.v`: {a}, {b}, {c} and {d}; the middle two halve a write in about {h1} and {h2} tokens
+- `sdm2.size.layers`: layers
+- `sdm2.size.note`: The encyclopedia’s side is chosen so its weights come as close as they can to the MLP’s, so the two models carry almost the same weights. Memory off keeps every weight of PARTIAL with the diary switched off, and trains at {o} tokens a second. The shape sweep below changes these sizes one at a time and gives each shape’s weights.
+- `sdm2.size.settle`: The shape sweep below is settling on {l} layers at width {d} with a diary of {lo} to {hi} slots a head, at {w} million weights in all.
+- `sdm2.size.speed`: training speed on one GPU, tokens a second
+- `sdm2.size.state`: kept to go on writing
+- `sdm2.size.state.v`: {mb} MB of diary, at any length
+- `sdm2.size.think`: the think step, in each layer
+- `sdm2.size.think.full`: the encyclopedia: {h} heads; {side} by {side} = {s} rows a head; a token reads {k} rows a head, {p}% of them
+- `sdm2.size.think.partial`: an MLP of {n} neurons; a token uses all of them
+- `sdm2.size.weights`: weights, without the word table
+- `sdm2.size.width`: width: numbers in each token’s vector
+- `sdm2.size.window`: training window
+- `sdm2.size.window.v`: {w} tokens
+- `sdm2.size.words`: words it knows
+- `sdm2.size.words.v`: {v} words; the word table holds {e} weights
 - `sdm2.sources`: Every number about FULL and PARTIAL on this page is read from the training records by one script, and is rebuilt whenever a new record lands.
 - `sdm2.stack.aria.full`: FULL: a token climbs {n} layers; in each, a few memory slots light, then a few table rows light; the scores for every word form at the top.
 - `sdm2.stack.aria.partial`: PARTIAL: a token climbs {n} layers; in each, a few memory slots light, then the whole MLP lights; the scores for every word form at the top.
@@ -10101,11 +10237,13 @@
 - `sdm2.stream.title`: The one vector, layer by layer
 - `sdm2.sweep.best`: The best FULL so far, at {test}, is the one with {setting}, against {first} for the first test. It trains at {speed} tokens a second, {x} times the first test’s speed.
 - `sdm2.sweep.bestTag`: best so far
+- `sdm2.sweep.bestdiary`: the best memory size so far, {l} layers, {d} wide
 - `sdm2.sweep.both`: {s} slots a head, {l} layers, {d} wide
 - `sdm2.sweep.call.better`: better
 - `sdm2.sweep.call.tie`: tie
 - `sdm2.sweep.call.worse`: worse
 - `sdm2.sweep.cap.depth`: The depth line: layers and width, with each shape’s weights beside it
+- `sdm2.sweep.cap.longer`: Runs on {tok} tokens, read only against each other
 - `sdm2.sweep.cap.memory`: The memory line: the slots each head of the memory between tokens has, at the first test’s width and depth
 - `sdm2.sweep.cap.others`: The other changes, each against the first test
 - `sdm2.sweep.col.call`: call
@@ -10122,6 +10260,8 @@
 - `sdm2.sweep.mark.high`: UNBRACKETED: the best is the largest setting tried, so this line has not turned yet.
 - `sdm2.sweep.mark.in`: BRACKETED: the best setting lies inside the range tried, with a worse one on each side.
 - `sdm2.sweep.mark.low`: UNBRACKETED: the best is the smallest setting tried, so this line has not turned yet.
+- `sdm2.sweep.mark.tied`: UNDECIDABLE: the best setting is at the edge, and the setting next to it ties with it inside the noise line, so this line is not called yet.
+- `sdm2.sweep.mark.undecidable`: UNDECIDABLE
 - `sdm2.sweep.memtrend`: Along the memory line, every smaller memory between tokens scored better.
 - `sdm2.sweep.memtrend.fast`: Along the memory line, every smaller memory between tokens scored better and trained faster.
 - `sdm2.sweep.next`: The FULL base, trained on {tok} tokens, has the first test’s shape. The next FULL base will be trained in the shape this sweep picks.
@@ -10131,7 +10271,7 @@
 - `sdm2.sweep.pending.many`: {n} more settings on this line have no score yet; their rows fill in when they are scored.
 - `sdm2.sweep.pending.one`: One more setting on this line has no score yet; its row fills in when it is scored.
 - `sdm2.sweep.reads`: {k} table rows read a token
-- `sdm2.sweep.sealed`: sealed, not run yet
+- `sdm2.sweep.sealed2`: sealed, no score yet
 - `sdm2.sweep.seed`: the first test’s shape, another seed
 - `sdm2.sweep.slots`: {s} slots a head
 - `sdm2.sweep.speednote`: Training speed is the median over each run’s logged steps, on one GPU. Weights count everything trained, the word table included.
@@ -10268,10 +10408,11 @@
 - `sdmexplore.chat.topk.weight`: FIRING WEIGHT w_m = sigmoid((s_m - theta) / softness)
 - `sdmexplore.chat.v2.first`: The first rounds measured the first of those small models: 3,600 locations, 2 hops. There the store first cost 0.017 to 0.025 bits per byte against the same model without it. Once its query gradient was stopped, it tied.
 - `sdmexplore.chat.v2.flow`: The hop model, left to right. The memory read and the small dense step repeat once per hop.
+- `sdmexplore.chat.v2.full`: FULL and PARTIAL, our newest models, do not tie. Their memory is written while they read, and on their first test it beat the same layers with it switched off: FULL {fu} and PARTIAL {p}, against {o}. SDMCHAT-MODEL has every result.
 - `sdmexplore.chat.v2.how`: Our hop model, the one the memory tests ran on, works like this. Each step it sums up the text so far, turns that into a query, wakes the {k} best of the memory’s locations, and adds what they hold. It does that {h} times, then scores every token and picks one. The picked token joins the text and it runs again. Our newest model, FULL, is taken apart on SDM.
 - `sdmexplore.chat.v2.lede`: SDM CHAT is a language model with no attention. Where a transformer would attend, it reads a learned Kanerva-style memory.
-- `sdmexplore.chat.v2.look`: It sees the last {b} tokens exactly and the rest as {a} fading averages: a short, blurry lookback, not a context window. SDM-LOOKBACK shows what that means and how it matches Mamba.
-- `sdmexplore.chat.v2.result`: So far the memory ties. At {tok} billion tokens, memory on scored {on} and memory off {off}: inside the {noise} noise. The chat in your browser runs smaller models of the same family, each reading a 3,600-location store twice per token.
+- `sdmexplore.chat.v2.look`: The hop model sees the last {b} tokens exactly and the rest as {a} fading averages: a short, blurry lookback, not a context window. FULL has no such lookback. Each of its layers writes the text into a memory of fixed size as it reads, and one head of that memory never fades. SDM-LOOKBACK shows how that memory forgets, and what is not yet measured about how far it reaches.
+- `sdmexplore.chat.v2.result`: In the hop model the trained store ties. At {tok} billion tokens, memory on scored {on} and memory off {off}: inside the {noise} noise. The chat in your browser runs smaller models of the same family, each reading a 3,600-location store twice per token.
 - `sdmexplore.chip.exp`: six live experiments
 - `sdmexplore.chip.locations`: 64 hard locations
 - `sdmexplore.chip.radius`: activation radius 12
@@ -10478,7 +10619,7 @@
 - `sdmm.g.yardstick.what`: A small transformer, the yardstick only, at the same data.
 - `sdmm.here`: sdmchat-model
 - `sdmm.law.label`: THE LAW
-- `sdmm.law.p1`: Every model on this page is built from one part: a sparse distributed memory, Kanerva’s store of hard locations read by an address. The only step that lets one position in the text affect another is an SDM read or write. There is no attention, no softmax over the window, no transformer anywhere in a model we score. The transformer below is a yardstick only, there to say how far the SDM trails.
+- `sdmm.law.p1`: The law is all SDM: Kanerva’s sparse distributed memory, a store of hard locations read by an address. No attention, no softmax over the window, no transformer. In every model on this page the only step that lets one position in the text affect another is an SDM read or write. FULL meets the law in every part, its think step included. PARTIAL keeps one ordinary part, an MLP, and the older shapes below kept a small dense layer. The transformer is a yardstick only, there to say how far the SDM trails.
 - `sdmm.law.title`: All SDM, no transformer, from scratch
 - `sdmm.mem.mixer`: run-time mixer
 - `sdmm.mem.off`: memory off
@@ -10552,19 +10693,28 @@
 
 ## sdmm2
 
+- `sdmm2.found.label`: WHAT WE FOUND
+- `sdmm2.found.title`: The findings so far, in plain words
 - `sdmm2.hist.banner`: From here down is the history: the shapes we tried before FULL and PARTIAL, what each one found, and the scores that sent us to the two models above. Every picture below is of an older shape and is marked HISTORY.
 - `sdmm2.hist.tag`: HISTORY
 - `sdmm2.law.p2`: They are trained from scratch, on web text, with next-token cross-entropy. Every score is TEST bits per byte on held-out text, lower is better, and a gap under {noise} between two runs is not called. Every number in the history is read from the training records, and the site’s tests check each one again against those records and the model code.
-- `sdmm2.lede`: We are exploring the shapes an SDM can take, and where it might fit in LLM land. The newest two are FULL and PARTIAL, and FULL is the one we take forward. Below them is the history of every shape that led there.
+- `sdmm2.lede`: This page holds the whole story of our two newest SDM language models. FULL is SDM in every part, and it is the one we take forward. PARTIAL keeps one ordinary part, an MLP. Here are their sizes, every result, every sealed prediction with its verdict, and what has not been measured yet. Below them is the history of every shape that led there.
 - `sdmm2.now.label`: NOW · FULL AND PARTIAL
 - `sdmm2.now.more`: How each one stores, writes, reads and picks the next word: sdm.
-- `sdmm2.now.p1`: Both models put a memory written while reading in every layer, the one part that passes anything between positions. After it, PARTIAL uses an ordinary MLP of {n} neurons. FULL uses a trained SDM table instead, of which each token reads {k} rows in each head. They are trained at {l} layers and a width of {d}.
-- `sdmm2.now.title`: The two newest models, and the one we take forward
+- `sdmm2.now.title2`: The two categories, and the one we take forward
+- `sdmm2.open.label`: STILL OPEN
+- `sdmm2.open.title`: What is pending, and what has not been measured
+- `sdmm2.preds.label`: THE SEALED PREDICTIONS
+- `sdmm2.preds.title`: What we expected, and whether it held
 - `sdmm2.shape.mid.found`: On puzzles it does what no earlier shape could: its recall holds flat out to a gap of {gap} tokens, where the transformer falls to {tf}. It copies in range worse than the transformer does. It became PARTIAL, tested beside FULL in the section above.
 - `sdmm2.shape.mid.h`: 5 · THE RUN-TIME SDM (it became PARTIAL)
-- `sdmm2.sub`: What we tried, what we found, and where we are going.
+- `sdmm2.sizes.label`: THE SIZES
+- `sdmm2.sizes.title`: Every size of FULL and PARTIAL
+- `sdmm2.sub`: Our SDM language models, FULL and PARTIAL: what they are, what we found, and what is still open.
+- `sdmm2.top.found`: what we found
 - `sdmm2.top.history`: the history
 - `sdmm2.top.now`: the two models now
+- `sdmm2.top.preds`: every prediction
 - `sdmm2.where.label`: WHERE WE WERE
 - `sdmm2.where.title`: The last scores before FULL and PARTIAL, and the honest reading
 
@@ -13496,7 +13646,7 @@
 - `wtf.term.free-energy.meaning`: Energy minus temperature times entropy; in Friston's free-energy principle, a bound on surprise an agent keeps low.
 - `wtf.term.free-energy.usage`: SURPRISE is a game whose agent acts to keep its observations unsurprising, the free-energy principle in toy form.
 - `wtf.term.full-sdm.meaning`: Our SDM language model built from sparse distributed memories in every part: each layer writes and reads a run-time SDM, then reads a few rows of a trained SDM table where a transformer has its MLP. No attention and no MLP.
-- `wtf.term.full-sdm.usage`: The model we take forward: it becomes the base of the next SDM CHAT. The SDM page and its two sibling pages draw every step of it beside PARTIAL.
+- `wtf.term.full-sdm.usage`: The model we take forward, even though PARTIAL scored better on the first test: its full run became FULL SDM CHAT, and a shape sweep is finding its next shape. The SDM page and its two sibling pages draw every step of it beside PARTIAL; SDMCHAT-MODEL has every result.
 - `wtf.term.gain.meaning`: The data input one clean stored pattern gives in a soft memory.
 - `wtf.term.gain.usage`: The default is 64.
 - `wtf.term.gibbs-sampling.meaning`: Re-tossing one variable at a time from its probability given all the others; for a p-bit that is the tanh rule.
@@ -13747,7 +13897,7 @@
 - `wtf.term.page-sdm-unfold.usage`: In the science folder after the SDM page; every picture is drawn for FULL and for PARTIAL. The old address #/enfold leads here.
 - `wtf.term.page-sdm.meaning`: A guide to our two SDM language models, FULL and PARTIAL: what each stores, how it writes and reads, how it picks the next word, how the two differ, and why FULL is the one we take forward.
 - `wtf.term.page-sdm.usage`: In the science folder, between SETTLE-TOUR and SDM-UNFOLD. SDM CHAT sits folded at the top; every step below has a FULL picture and a PARTIAL picture, and every number comes from the run records.
-- `wtf.term.page-sdmchat-model.meaning`: The SDM language model's page: the law (all SDM, no transformer, from scratch), the two newest models, FULL and PARTIAL, with their scores and the one we take forward, then the history: every training run's shape and TEST score, the sweeps in plain words with their walls, and the honest reading of where we were.
+- `wtf.term.page-sdmchat-model.meaning`: The one home for our SDM language models: the law (all SDM, no transformer, from scratch); FULL and PARTIAL, the two categories, with every size, every result, the shape sweep, every sealed prediction and its verdict, the transformer comparison and what is still open; then the history of every shape before them, with its runs, sweeps and walls.
 - `wtf.term.page-sdmchat-model.usage`: In the science folder after SDM-LOOKBACK. Every SDM chat page carries an EARLY MODEL note linking here; each older picture on it is framed and marked HISTORY.
 - `wtf.term.page-sdmexplore.meaning`: An SDM drawn as a state diagram you operate, how SDMCHAT works, and six SETTLE x KANERVA experiments.
 - `wtf.term.page-sdmexplore.usage`: One idea per section: the machine, the address, the vote, the warm read, the program and what the binary printed.
@@ -13766,7 +13916,7 @@
 - `wtf.term.parallel-tempering.meaning`: Copies of a system run at several temperatures and swap states now and then, so the cold copy escapes its traps.
 - `wtf.term.parallel-tempering.usage`: A hero word.
 - `wtf.term.partial-sdm.meaning`: Our SDM language model with one ordinary part: each layer writes and reads a run-time SDM, then runs a regular MLP. No attention.
-- `wtf.term.partial-sdm.usage`: Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model; it goes no further. The SDM page draws every step of it beside FULL.
+- `wtf.term.partial-sdm.usage`: Tested beside FULL on the first test, where it asked whether a memory written while reading makes a better language model. It scored better than FULL there, and it goes no further. The SDM page draws every step of it beside FULL.
 - `wtf.term.partition-function.meaning`: Z, the sum of e^(−E/T) over every state: the number that turns Boltzmann weights into probabilities.
 - `wtf.term.partition-function.usage`: A hero word, followed by its equation. Its log gives the free energy: F = −kT ln Z.
 - `wtf.term.pentti-kanerva.meaning`: Pentti Kanerva, who invented sparse distributed memory and wrote the hyperdimensional computing papers this site leans on.
