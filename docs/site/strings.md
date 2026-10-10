@@ -314,6 +314,14 @@
 - `chatkit.reason.special`: special token {tok}
 - `chatkit.reason.string`: stop string
 
+## chunk
+
+- `chunk.dismiss`: not now
+- `chunk.fix`: Reload to get the current version; you stay on this page.
+- `chunk.reload`: reload
+- `chunk.title`: This page did not load
+- `chunk.why`: The site was updated after this tab opened, or the connection dropped.
+
 ## contact
 
 - `contact.chip.check`: our own human check
