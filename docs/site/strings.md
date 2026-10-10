@@ -349,8 +349,6 @@
 - `contact.ph.email`: you@example.com
 - `contact.ph.message`: Write to us. Each letter you type settles into place.
 - `contact.ph.name`: who is writing
-- `contact.privacy.check`: A quick check that you are a person runs while you type. It is sent with your message as a score and its reasons, never your pointer path.
-- `contact.privacy.link`: what we keep: privacy
 - `contact.puzzle.check`: check
 - `contact.puzzle.checking`: Checking.
 - `contact.puzzle.close`: close
@@ -7042,6 +7040,7 @@
 - `lb2.reach.p3`: FULL trained on windows of {w} tokens, so it has never practised reading further. Its code runs on longer texts, but how far back it really reaches there, and how much a word from far back still changes what it writes, has not been measured.
 - `lb2.reach.p4`: The transformer we compare FULL against trained on windows of {t} tokens too, so the two have practised on the same length of text. Guessing the next token of web text is mostly a local job, so neither score says much about a long reach. A test that asks for a fact seen once, far back, would. FULL has not taken one yet.
 - `lb2.reach.sweep`: More slots did not help at this size. In the shape sweep, every smaller memory scored better: {lo} slots a head scored {tlo} against {tat} for {at} slots, on the same {tok} tokens. The shape sweep has every size tried.
+- `lb2.reach.sweep2`: More slots did not help at this size. In the shape sweep the best memory had {b} slots a head and scored {tb}, against {tat} for {at} slots, on the same {tok} tokens. Smaller than that, {lo} slots, was worse again. The shape sweep has every size tried.
 - `lb2.reach.title`: Trained on {w} tokens, not yet measured beyond
 - `lb2.recall.h`: Recall after a gap
 - `lb2.recall.p`: A gap of noise sits between the pairs and the questions. The models trained with gaps of up to {g} tokens, so the longer gaps were never seen in training. PARTIAL answers {a}% right at a gap of {g0} and {b}% at {g1}. With the memory off the answers sit at chance. The transformer answers {ta}% at {g0} and falls to {tb}% at {g1}.
@@ -7438,6 +7437,7 @@
 - `llm2.next.reach`: FULL trained on windows of {w} tokens. How well it uses the start of a chat longer than that has not been measured; SDM-LOOKBACK says what is known.
 - `llm2.next.tok`: The chat tune read {tok} tokens of chat.
 - `llm2.sweep.next`: FULL SDM CHAT is built on FULL’s first shape. A shape sweep has since found a better one: on the same {tok} tokens it scored {best}, against {first} for the first shape. The next FULL base will be trained in the winning shape. The shape sweep has every run.
+- `llm2.sweep.next2`: FULL SDM CHAT is built on FULL’s first shape. A shape sweep has since found a better one: on the same {tok} tokens it scored {best}, against {first} for the first shape. The new FULL base takes the shape the sweep picked, on {tok2} tokens. The shape sweep has every run.
 - `llm2.top.sub`: A chat with an SDM language model: no attention, no transformer, running live in this tab.
 - `llm2.which.history`: How this model was built and what it scored, beside every other shape we tried, is on the history page.
 - `llm2.which.label`: WHICH MODEL THIS IS
@@ -8560,6 +8560,9 @@
 - `mi.next.vs.lower`: Its chat score is lower, so better, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
 - `mi.next.vs.same`: The model the chat opens on scores {run} on its held-out chat turns. Both held-out chat sets hold {b} bytes; the records do not say whether they are the same turns.
 - `mi.race.behind`: From the evals so far, FULL is somewhat behind: at step {step} it reads {full} bits per byte and the transformer {tf}, a gap of {gap}.
+- `mi.race.budgets.cap`: The same comparison on the shape sweep’s shorter runs: the transformer of {l} layers at width {d} beside the best FULL of that width and depth on the same tokens, TEST bits per byte, lower is better
+- `mi.race.budgets.col.diary`: its diary, slots a head
+- `mi.race.budgets.col.tokens`: tokens
 - `mi.race.cap`: Quick evals at the same step, bits per byte on the same held-out tokens, lower is better
 - `mi.race.col.gap`: gap
 - `mi.race.col.step`: step
@@ -10041,6 +10044,11 @@
 - `sdm2.found.base.chat`: Trained on {tok} tokens, FULL scored {base}, {d} better than on {small}. Then a chat tune on {ct} more tokens took its score on held-out chat turns from {before} to {chat}, and its web score to {web}.
 - `sdm2.found.base.h`: More text helps FULL.
 - `sdm2.found.both.tie`: With the {s}-slot diary, {l} layers at width {d} scored {v} against {v0} for {l0} layers at width {d0}: a tie.
+- `sdm2.found.chosen`: The sweep picked {l} layers at width {d} and a diary of {s} slots a head, with {w} million weights in all.
+- `sdm2.found.chosen.base`: The new FULL base takes that shape, on {tok} tokens, with a checkpoint kept at {k} tokens to compare with the old base.
+- `sdm2.found.chosen.h`: The shape is chosen.
+- `sdm2.found.chosen.shared`: Its own speed is not a fair reading: another run shared its GPU. The nearest diary that trained alone, {s2} slots, ran at {v} tokens a second.
+- `sdm2.found.chosen.speed`: It trains at {v} tokens a second.
 - `sdm2.found.depth.h`: Depth looks spent at this size.
 - `sdm2.found.depth.h2`: Deeper shapes so far.
 - `sdm2.found.diary`: On the first test, {tok} tokens each, PARTIAL scored {p} and FULL {fu}, against {o} with the diary switched off. The memory written while reading is worth {lo} to {hi} bits per byte.
@@ -10048,8 +10056,22 @@
 - `sdm2.found.diary2`: At {l} layers and width {d}, on {tok} tokens:
 - `sdm2.found.diary2.h`: A smaller diary learns better, down to a tie.
 - `sdm2.found.diary2.tie`: The two smallest, {a} and {b} slots, are {g} apart, inside the noise line, so the diary line is UNDECIDABLE.
+- `sdm2.found.diary3.h`: A smaller diary learns better, down to a turn.
+- `sdm2.found.diary3.in`: The best is {s} slots a head, with a worse size on each side, so the diary line is BRACKETED.
+- `sdm2.found.diary3.turn`: The best is {s} slots a head. The next smaller, {lo} slots, scored {g} worse, beyond the noise line of {line}, so the diary line is BRACKETED. The best beats the next bigger, {hi} slots, by {g2}, on one seed each.
+- `sdm2.found.diary3.up`: From there up, every bigger diary scored worse.
+- `sdm2.found.layerpoint`: {l} layers: {v}
 - `sdm2.found.longer`: A further round on {tok} tokens is sealed and has no score yet: {list}.
 - `sdm2.found.longer.h`: The ties run again on more text.
+- `sdm2.found.longer2`: On {tok} tokens with the {s}-slot diary: {list}.
+- `sdm2.found.longer2.h`: On more text, depth still ties.
+- `sdm2.found.longer2.pair`: At {l} layers, {s} slots scored {v} and {s2} slots {v2}: {g} apart, a tie.
+- `sdm2.found.longer2.pairwin`: At {l} layers, {s} slots scored {v}, better than {s2} slots ({v2}) by {g}.
+- `sdm2.found.longer2.speed`: It costs speed: {l} layers train at {v} tokens a second, {l0} layers at {v0}.
+- `sdm2.found.longer2.tie`: All lie within {g} of each other, inside the noise line, so depth buys nothing here.
+- `sdm2.found.longer3.h`: The runs on more text.
+- `sdm2.found.nextbase`: On {tok} tokens it scored {v}, against {old} for the old FULL base on {tok0} tokens.
+- `sdm2.found.nextbase.h`: The new FULL base is scored.
 - `sdm2.found.point`: {s} slots: {v}
 - `sdm2.found.race`: Matched step by step on the same {tok} tokens, the transformer led FULL at every quick eval, by {lo} to {hi}.
 - `sdm2.found.race.h`: On the long run, the transformer stays ahead so far.
@@ -10071,6 +10093,9 @@
 - `sdm2.found.table.tie`: In place of the MLP it cost {c} bits per byte on the first test: PARTIAL beat FULL by that much. An encyclopedia with {x} times the rows, more rows read and more heads all tied with the first shape, so its size is not what FULL is short of.
 - `sdm2.found.tf`: On the same {tok} tokens it scored {tf}: ahead of FULL by {a} and of PARTIAL by {p}.
 - `sdm2.found.tf.h`: A transformer of the same size is ahead.
+- `sdm2.found.tfmore`: With the {s}-slot diary at the first test’s width and depth, FULL scored {f0} on {t0} tokens and {f1} on {t1}. The transformer of that shape scored {x0} and {x1}. The gap went from {g0} to {g1}: FULL gained {fg} and the transformer {tg}.
+- `sdm2.found.tfmore.h`: More text narrows the gap to the transformer.
+- `sdm2.found.tfmore2.h`: More text does not narrow the gap to the transformer.
 - `sdm2.held.base`: a transformer in the next FULL base’s shape and token count, trained on the same text in the same order
 - `sdm2.held.depth`: a transformer in the deeper winning shape on {tok} tokens, so the deeper FULL shapes have a yardstick of their own shape
 - `sdm2.held.depthnotok`: a transformer in the deeper winning shape, so the deeper FULL shapes have a yardstick of their own shape
@@ -10097,10 +10122,13 @@
 - `sdm2.kinds.refs.h`: two references, not models
 - `sdm2.noscore`: no score yet
 - `sdm2.open.base`: The next FULL base, in the shape the sweep picks, and its chat tune.
+- `sdm2.open.base2`: The new FULL base’s chat tune, after it.
 - `sdm2.open.browser`: FULL in your browser: FULL base and FULL SDM CHAT are trained, and their browser port is not built.
 - `sdm2.open.deep`: The deeper shapes against a transformer of their own shape: the transformer we have is of the first shape.
 - `sdm2.open.held`: The transformer’s full run on {tok} tokens, held for later; its final TEST gives the last verdict of the full run. The transformer comparison lists every held run in order.
 - `sdm2.open.layers`: What each layer of FULL does: no probe has looked inside a trained layer yet.
+- `sdm2.open.nextbase`: The new FULL base: {setting}, on {tok} tokens, with a checkpoint kept at {k} tokens: sealed, no score yet.
+- `sdm2.open.nextbase.training`: The new FULL base: {setting}, on {tok} tokens, with a checkpoint kept at {k} tokens: being trained.
 - `sdm2.open.not.h`: Not measured at all
 - `sdm2.open.pending.h`: Pending: runs with no score yet
 - `sdm2.open.puzzles`: FULL on the memory puzzles: they ran on small versions of PARTIAL, before FULL was chosen.
@@ -10108,6 +10136,9 @@
 - `sdm2.open.sealed`: FULL with {setting}, on {tok} tokens: sealed, no score yet.
 - `sdm2.open.seeds`: A second seed for any shape but the first one.
 - `sdm2.open.training`: FULL with {setting}, on {tok} tokens: being trained.
+- `sdm2.pred.BASE1`: The new FULL base scores below {a}.
+- `sdm2.pred.BASE2`: The new FULL base beats the old one ({s0}-slot diary, {tok} tokens, {v}) by more than {a}.
+- `sdm2.pred.BASE3`: The new FULL base scores below {a}.
 - `sdm2.pred.BK1`: PARTIAL beats memory off by at least {a}.
 - `sdm2.pred.BK2`: PARTIAL beats FULL by at least {a}: the MLP beats the trained table again.
 - `sdm2.pred.BK3`: FULL beats memory off by at least {a}.
@@ -10135,14 +10166,20 @@
 - `sdm2.pred.SWD2b`: On {tok} tokens with the {s}-slot diary, {l} layers at width {d} beat {l0} layers at width {d0} by more than {a}.
 - `sdm2.pred.SWD3`: The best shape of this round scores below {a}.
 - `sdm2.pred.SWD4`: On {tok} tokens at {l} layers, a diary of {s} slots a head beats one of {s0} by more than {a}.
+- `sdm2.pred.SWE1`: A diary of {s} slots a head beats one of {s0} by more than {a}.
+- `sdm2.pred.SWE2`: A diary of {s} slots a head is worse than one of {s0} by more than {a}, so the diary line turns between them.
+- `sdm2.pred.SWE2.note`: Against the {s0}-slot diary named here, the {s}-slot one is {g} worse, inside the line of {a}. We called it HOLDS against the {s1}-slot diary, which {s} slots trails by {g1}.
 - `sdm2.pred.YD1`: The transformer beats FULL on {tok} tokens by at least {a}.
 - `sdm2.pred.YD2`: The transformer beats PARTIAL on {tok} tokens by at least {a}.
-- `sdm2.pred.cap`: Every sealed prediction. Measured: a TEST score, a speed, or the first-named TEST minus the second-named, so below zero the first is better.
+- `sdm2.pred.YD3`: The transformer on {tok} tokens beats the best FULL of the fourth round by more than {a}.
+- `sdm2.pred.YD4`: With the {s}-slot diary, the gap to the transformer on {tok} tokens is smaller than on {small} tokens ({a}).
+- `sdm2.pred.cap2`: Every sealed prediction. Measured: a TEST score, a speed, a gap between FULL and the transformer, or the first-named TEST minus the second-named, so below zero the first is better.
 - `sdm2.pred.chance`: {c}%
 - `sdm2.pred.col.chance`: stated chance
 - `sdm2.pred.col.measured`: measured
 - `sdm2.pred.col.pred`: prediction
 - `sdm2.pred.col.verdict`: verdict
+- `sdm2.pred.gap`: gap {v}
 - `sdm2.pred.holds`: HOLDS
 - `sdm2.pred.misses`: MISSES
 - `sdm2.pred.nochance`: not stated
@@ -10151,6 +10188,7 @@
 - `sdm2.pred.speed`: {v} tokens a second
 - `sdm2.pred.stage.base`: The full run: FULL on {tok} tokens
 - `sdm2.pred.stage.first`: The first test: FULL, PARTIAL and memory off, {tok} tokens each
+- `sdm2.pred.stage.nextbase`: The new FULL base: the shape the sweep picked, on {tok} tokens
 - `sdm2.pred.stage.sweep`: The shape sweep, round {r}
 - `sdm2.pred.stage.yardstick`: The transformer of the same shape, on the same tokens
 - `sdm2.read.aria.full`: FULL: above, a query wakes a few slots of the memory and averages them; below, a second query picks a few rows of the trained table and blends them.
@@ -10189,6 +10227,7 @@
 - `sdm2.size.layers`: layers
 - `sdm2.size.note`: The encyclopedia’s side is chosen so its weights come as close as they can to the MLP’s, so the two models carry almost the same weights. Memory off keeps every weight of PARTIAL with the diary switched off, and trains at {o} tokens a second. The shape sweep below changes these sizes one at a time and gives each shape’s weights.
 - `sdm2.size.settle`: The shape sweep below is settling on {l} layers at width {d} with a diary of {lo} to {hi} slots a head, at {w} million weights in all.
+- `sdm2.size.settled`: The shape sweep below settled on {l} layers at width {d} with a diary of {s} slots a head, at {w} million weights in all.
 - `sdm2.size.speed`: training speed on one GPU, tokens a second
 - `sdm2.size.state`: kept to go on writing
 - `sdm2.size.state.v`: {mb} MB of diary, at any length
@@ -10240,6 +10279,7 @@
 - `sdm2.stream.start`: enfold
 - `sdm2.stream.title`: The one vector, layer by layer
 - `sdm2.sweep.best`: The best FULL so far, at {test}, is the one with {setting}, against {first} for the first test. It trains at {speed} tokens a second, {x} times the first test’s speed.
+- `sdm2.sweep.best.shared`: The best FULL so far, at {test}, is the one with {setting}, against {first} for the first test. It trained while another run shared its GPU, so its speed is not a fair reading.
 - `sdm2.sweep.bestTag`: best so far
 - `sdm2.sweep.bestdiary`: the best memory size so far, {l} layers, {d} wide
 - `sdm2.sweep.both`: {s} slots a head, {l} layers, {d} wide
@@ -10261,6 +10301,7 @@
 - `sdm2.sweep.heads`: {h} table heads
 - `sdm2.sweep.label`: THE SHAPE SWEEP
 - `sdm2.sweep.layers`: {l} layers, {d} wide
+- `sdm2.sweep.longer.tf`: A transformer of {l} layers at width {d}, trained on the same {tok} tokens, scored {tf}.
 - `sdm2.sweep.mark.high`: UNBRACKETED: the best is the largest setting tried, so this line has not turned yet.
 - `sdm2.sweep.mark.in`: BRACKETED: the best setting lies inside the range tried, with a worse one on each side.
 - `sdm2.sweep.mark.low`: UNBRACKETED: the best is the smallest setting tried, so this line has not turned yet.
@@ -10269,6 +10310,7 @@
 - `sdm2.sweep.memtrend`: Along the memory line, every smaller memory between tokens scored better.
 - `sdm2.sweep.memtrend.fast`: Along the memory line, every smaller memory between tokens scored better and trained faster.
 - `sdm2.sweep.next`: The FULL base, trained on {tok} tokens, has the first test’s shape. The next FULL base will be trained in the shape this sweep picks.
+- `sdm2.sweep.next2`: The FULL base, trained on {tok} tokens, has the first test’s shape. The new FULL base takes the shape this sweep picked, {setting}, on {tok2} tokens.
 - `sdm2.sweep.other`: another change
 - `sdm2.sweep.others.tie`: A bigger trained table, more rows read a token and more table heads all tied with the first test: the table’s size is not what FULL is short of. The seed row is the same shape trained again; it sets the noise line.
 - `sdm2.sweep.p1`: After the first test we swept the shape of FULL: the same recipe on the same {tok} tokens, one change at a time, every run scored on the same held-out web text. Two runs of one shape on different seeds differed by {noise}, so a change counts as better or worse only beyond {line}.
@@ -10277,6 +10319,8 @@
 - `sdm2.sweep.reads`: {k} table rows read a token
 - `sdm2.sweep.sealed2`: sealed, no score yet
 - `sdm2.sweep.seed`: the first test’s shape, another seed
+- `sdm2.sweep.sharedTag`: GPU shared
+- `sdm2.sweep.sharednote`: A speed marked GPU shared was taken while another run trained on the same GPU for some or all of its time, so it reads low.
 - `sdm2.sweep.slots`: {s} slots a head
 - `sdm2.sweep.speednote`: Training speed is the median over each run’s logged steps, on one GPU. Weights count everything trained, the word table included.
 - `sdm2.sweep.tablesize`: {x} times the table’s rows
