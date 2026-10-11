@@ -313,6 +313,16 @@
 - `chatkit.reason.max`: max tokens
 - `chatkit.reason.special`: special token {tok}
 - `chatkit.reason.string`: stop string
+- `chatkit.tag.base`: BASE
+- `chatkit.tag.chat`: {v} chat bpb
+- `chatkit.tag.epic`: {v} epic bpb
+- `chatkit.tag.params`: {n} params
+- `chatkit.tag.run`: YOUR RUN
+- `chatkit.tag.test`: {v} test bpb
+- `chatkit.tag.tokens`: {n} tokens
+- `chatkit.tag.tuned`: INSTRUCTION-TUNED
+- `chatkit.tag.verse`: EPIC VERSE
+- `chatkit.tag.width`: d {d}
 
 ## chunk
 
@@ -8580,9 +8590,9 @@
 - `mi.next.p1`: We trained FULL, a new SDM model that is SDM in every part. It writes the conversation into a memory as it reads it, and one head of that memory never fades, so the start of a chat is still in it, blended with everything since. Its full run was then tuned for chat as FULL SDM CHAT. It is trained and scored, but it does not run in a browser yet: its browser port is not built. Once it is, it replaces the model above. PARTIAL, the same model with an ordinary MLP in each layer, was tested beside it and stops there.
 - `mi.next.title`: FULL SDM CHAT, once it runs in your browser
 - `mi.next.tok`: The chat tune read {tok} tokens, {pct}% of them chat turns and the rest web text.
-- `mi.next.vs.higher`: Its chat score is higher, so worse, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
-- `mi.next.vs.lower`: Its chat score is lower, so better, than the {run} of the model the chat opens on, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
-- `mi.next.vs.same`: The model the chat opens on scores {run} on its held-out chat turns. Both held-out chat sets hold {b} bytes; the records do not say whether they are the same turns.
+- `mi.next.vs.higher`: Its chat score is higher, so worse, than the {run} of the chat-tuned model {name}, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
+- `mi.next.vs.lower`: Its chat score is lower, so better, than the {run} of the chat-tuned model {name}, but the two were not scored on the same chat turns: FULL SDM CHAT’s held-out set holds {fb} bytes of chat and that model’s {rb}. The two numbers do not say which model chats better.
+- `mi.next.vs.same`: The chat-tuned model {name} scores {run} on its held-out chat turns. Both held-out chat sets hold {b} bytes; the records do not say whether they are the same turns.
 - `mi.race.behind`: From the evals so far, FULL is somewhat behind: at step {step} it reads {full} bits per byte and the transformer {tf}, a gap of {gap}.
 - `mi.race.budgets.cap`: The same comparison on the shape sweep’s shorter runs: the transformer of {l} layers at width {d} beside the best FULL of that width and depth on the same tokens, TEST bits per byte, lower is better
 - `mi.race.budgets.col.diary`: its diary, slots a head
