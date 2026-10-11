@@ -390,6 +390,7 @@
 - `contact.send.rejected`: Nothing was sent: the message was not accepted.
 - `contact.send.sending`: Sending.
 - `contact.send.sent`: Sent. Thank you. We will read it.
+- `contact.send.server`: Nothing was sent: the server ran into an error. Your message is still in the form; please try again later.
 - `contact.top.cap`: $ settle --say hello
 - `contact.top.cap.live`: settling live
 - `contact.top.go`: write to us
@@ -3318,10 +3319,15 @@
 - `fb.mck.tip.idle`: The flute plays the melody, tuned to A = 432 Hz, whenever the music has one. None is playing now. Press to mute the flute alone.
 - `fb.mck.tip.muted`: The flute is muted. Press to bring it back; the rest of the music plays on.
 - `fb.mck.tip.muted.idle`: The flute is muted, and stays silent whenever the music has one. Press to let it play again; the rest of the music plays on.
+- `fb.note.anon`: {n} of 5 · sent, but not with your account: open a members page, then rate again
 - `fb.note.held`: {n} of 5 · counts once you have moved around a little
+- `fb.note.kept`: {n} of 5 · not sent yet: kept here and sent with your next rating
+- `fb.note.liked`: {n} of 5 · kept with your account, in your liked sets
+- `fb.note.mine`: {n} of 5 · kept with your account
 - `fb.note.rated`: {n} of 5 · noted for this set
+- `fb.note.refused`: {n} of 5 · our server turned it away, so it stays only in this browser
 - `fb.notice.local`: Anonymous. No account. Your ratings stay in this browser; a saved track sits in one cookie of this site.
-- `fb.notice.ours`: Ratings go to this site’s server. Not signed in, a rating keeps a salted hash of your network address, never the address. Signed in, it is kept with your account, and a 4 or 5 lands in your liked sets. A saved track sits in one cookie of this site.
+- `fb.notice.ours2`: Ratings go to this site’s server. Not signed in, a rating keeps a salted hash of your network address, never the address. Signed in, once this page has loaded your sign-in, it is kept with your account and a 4 or 5 lands in your liked sets; the note after each rating says which. A saved track sits in one cookie of this site.
 - `fb.notice.sent`: Anonymous. No account. Ratings go to {host} with a random visit id; a saved track sits in one cookie of this site.
 - `fb.np.beat`: beat {v} Hz
 - `fb.np.carrier`: carrier {v} Hz
@@ -9350,7 +9356,7 @@
 ## privacy
 
 - `privacy.browser.clear`: You can remove all of it at once by clearing this site’s data in your browser’s settings.
-- `privacy.browser.groups`: The site keeps a few small things in your browser so that your choices hold on the next page or the next visit. They fall into the groups below. None of them is used for advertising or to follow you across other sites, and none is sent anywhere by default.
+- `privacy.browser.groups2`: The site keeps a few small things in your browser so that your choices hold on the next page or the next visit. They fall into the groups below. None of them is used for advertising or to follow you across other sites. Two kinds are cookies, which your browser sends with each request to this site: the sign-in cookies, which tell our server who you are, and your saved tracks, which our server does not read. The rest leaves your browser only as the sections below describe, such as a rating waiting to be sent, or the last turns of an ASK conversation, which go with your next question.
 - `privacy.browser.label`: IN YOUR BROWSER
 - `privacy.browser.memory`: Some things live only in the page’s memory and are gone when you reload: your ADJUST choices on the home hero, the pointer and key timings the contact page records, and the random visit id a rating carries.
 - `privacy.browser.title`: What the site keeps in your browser
@@ -9371,7 +9377,7 @@
 - `privacy.feedback.holds`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load. A note holds your words in place of the rating. Nothing in either names you.
 - `privacy.feedback.holds2`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load.
 - `privacy.feedback.label`: RATE THE DJ
-- `privacy.feedback.member`: If you are signed in, a rating is kept with your account instead. A rating of 4 or 5 is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
+- `privacy.feedback.member2`: If you are signed in, a rating is kept with your account instead, once the page has loaded your sign-in, which it does when you open a members page. Before that it is kept as above, without your account, and the note after the rating says so. A rating of 4 or 5 kept with your account is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
 - `privacy.feedback.notesnone`: WHAT IS THIS? notes are not sent: they stay in your browser.
 - `privacy.feedback.ours`: Your ratings are sent to this site’s server and kept in our database.
 - `privacy.feedback.p1b`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Neither needs an account.
@@ -9400,6 +9406,8 @@
 - `privacy.rights.complain`: Raise any privacy concern with us first. If we do not resolve it, you can complain to the data protection authority where you live.
 - `privacy.rights.label`: YOUR RIGHTS
 - `privacy.rights.title`: Children, your rights and changes
+- `privacy.sent.act`: The site sends something about you only when you act: a rating when you press a rate mark, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.actva`: Apart from the page counts and the speed measurements below, the site sends something about you only when you act: a rating when you press a rate mark, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
 - `privacy.sent.analytics`: The site counts its visits with Vercel Web Analytics, from Vercel, which hosts the site. Each time you open a page, your browser sends Vercel one page view: the page’s name with nothing after it, the time, and, on your first page, the site that sent you here. Vercel records with it your rough location (country, region and city), your browser and operating system, and your kind of device. It sets no cookie and keeps nothing in your browser. Vercel tells visitors apart by a hash made from each request and discards it after 24 hours; by its own description the page views are recorded anonymously, not tied to you or to your network address. We see only totals.
 - `privacy.sent.fonts`: Every page loads its typefaces from Google Fonts (fonts.googleapis.com and fonts.gstatic.com). So your browser asks Google’s servers for them, and Google sees your network address and your browser’s details, as it would for any web request. Japanese, Chinese and Hindi each add one more Google Fonts request, only when you choose that language. The site sends Google nothing else.
 - `privacy.sent.label`: WHAT LEAVES YOUR BROWSER
