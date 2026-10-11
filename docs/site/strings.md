@@ -3233,7 +3233,7 @@
 - `fb.djv.groove.straight`: straight
 - `fb.djv.groove.swing`: swing {s}
 - `fb.djv.groove.words`: bar {bar}: kick, snare, hats and percussion in 16 steps, {swing}, {feel}
-- `fb.djv.idle`: THE DJ is not playing. Its set appears here, whole, when the sound starts.
+- `fb.djv.idle`: THE DJ is not playing. Its set appears here, whole, when THE DJ plays one.
 - `fb.djv.key.major`: {tonic} major
 - `fb.djv.key.minor`: {tonic} minor
 - `fb.djv.legend.roles`: the roles, top to bottom
@@ -3244,7 +3244,8 @@
 - `fb.djv.mark.section`: a new section
 - `fb.djv.mark.want`: where a drop wants to land (a 32- or 16-bar line)
 - `fb.djv.mini`: THE DJ VISUALISER: {set}, the whole set at once. Press to open the whole DJ.
-- `fb.djv.mini.idle`: THE DJ VISUALISER: nothing playing. Press to open the whole DJ.
+- `fb.djv.mini.idle`: THE DJ VISUALISER: THE DJ is not playing. Press to open the whole DJ.
+- `fb.djv.mini.old`: THE DJ VISUALISER: {set}, the parts playing now. Press to open the whole DJ.
 - `fb.djv.none`: none
 - `fb.djv.noset`: no set playing
 - `fb.djv.notes`: STAGE 3 · THE NOTES
@@ -3262,7 +3263,7 @@
 - `fb.djv.tip.drop`: next drop at bar {bar}
 - `fb.djv.tip.dropnow`: a drop lands now
 - `fb.djv.tip.hum`: the warm-down after bar {bars}
-- `fb.djv.tip.idle`: THE DJ is not playing: the picture of its set wakes with the sound
+- `fb.djv.tip.idle`: THE DJ is not playing: the picture of its set wakes when THE DJ plays one
 - `fb.djv.tip.nodrop`: no drop left in this set
 - `fb.djv.tip.none`: nothing
 - `fb.djv.tip.old`: old DJ: no settled set to draw, only what plays now ({layers})
