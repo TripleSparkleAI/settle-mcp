@@ -3257,7 +3257,7 @@
 - `fb.djv.notes.pieceend`: stage 3, {piece} in {key}: the warm-down after the piece
 - `fb.djv.notes.stage3`: stage 3: the piece's bass and lead of this bar
 - `fb.djv.notes.tune`: the chord of the bar, then the tune the DJ composed for this set
-- `fb.djv.old`: The old DJ settles no whole set: it plans four bars at a time, so only what plays now can be drawn.
+- `fb.djv.old`: The first DJ settles no whole set: it plans four bars at a time, so only what plays now can be drawn.
 - `fb.djv.region`: THE DJ, the whole machine: {set}
 - `fb.djv.stage1`: STAGE 1 · THE ARRANGEMENT: who plays in each 8-bar block, settled in one shot
 - `fb.djv.stage2.lines`: STAGE 2 rides on it: the top rows are the line plan and the drop pull, the rows under the roles the phrase events of every bar.
@@ -3268,7 +3268,7 @@
 - `fb.djv.tip.idle`: THE DJ is not playing: the picture of its set wakes when THE DJ plays one
 - `fb.djv.tip.nodrop`: no drop left in this set
 - `fb.djv.tip.none`: nothing
-- `fb.djv.tip.old`: old DJ: no settled set to draw, only what plays now ({layers})
+- `fb.djv.tip.old`: first DJ: no settled set to draw, only what plays now ({layers})
 - `fb.djv.tip.onair`: showing: {name}
 - `fb.djv.tip.open`: press to open the whole DJ
 - `fb.djv.title`: THE DJ, THE WHOLE MACHINE
@@ -3290,7 +3290,7 @@
 - `fb.djv.what.fence.spark`: a piece checked against real songs before it was shipped: 0 near-copies of a real song
 - `fb.djv.what.length`: length
 - `fb.djv.what.lengthv`: {bars} bars in {blocks} blocks of 8
-- `fb.djv.what.old`: the old DJ, a plan four bars at a time
+- `fb.djv.what.old`: the first DJ, a plan four bars at a time
 - `fb.djv.what.seed`: seed
 - `fb.djv.what.theme`: theme
 - `fb.djv.what.trained`: the trained DJ, one settle for the whole set
@@ -3341,6 +3341,7 @@
 - `fb.line.idle`: nothing is playing yet
 - `fb.line.phrase`: a DJ phrase
 - `fb.line.setbtn`: The set playing now: {set}. What is this?
+- `fb.line.setbtn.paused`: The set paused now: {set}. What is this?
 - `fb.line.star`: rate this set {n} of 5
 - `fb.line.star.last`: rate your last track {n} of 5
 - `fb.line.wait`: (it counts once you have moved around a little)
@@ -3443,6 +3444,7 @@
 - `fb.skip.next`: next track
 - `fb.skip.now`: Playing now: {set}
 - `fb.skip.old`: the first DJ
+- `fb.skip.paused`: Paused: {set}
 - `fb.skip.piece`: a stage 3 piece in {key}
 - `fb.skip.prev`: previous track
 - `fb.skip.said.next`: Next set: {set}
@@ -3852,13 +3854,13 @@
 - `gridlearn.hero.next`: NEXT SET
 - `gridlearn.hero.next.wait`: NEXT SET, on the next bar line
 - `gridlearn.hero.now.off`: the hero’s DJ is not playing a house set
-- `gridlearn.hero.now.old`: now playing: the old DJ
+- `gridlearn.hero.now.old`: now playing: the first DJ
 - `gridlearn.hero.now.trained`: now playing: the trained DJ, a {family} set, block {block} of {blocks}
-- `gridlearn.hero.old`: OLD DJ
-- `gridlearn.hero.p`: The DJ on the hero composes each house set from these models: which roles play in each 8-bar block, where the drops land, the phrase events and the grooves, on THE MASTER BEAT. The old DJ planned its sets from a hand-written arc. The switch picks which one composes the next set, and a change starts a new set on the next bar line. It is a dev-only switch and resets when the page reloads.
-- `gridlearn.hero.row.old`: old
+- `gridlearn.hero.old`: FIRST DJ
+- `gridlearn.hero.p`: The DJ on the hero composes each house set from these models: which roles play in each 8-bar block, where the drops land, the phrase events and the grooves, on THE MASTER BEAT. The first DJ planned its sets from a hand-written arc. The switch picks which one composes the next set, and a change starts a new set on the next bar line. It is a dev-only switch and resets when the page reloads.
+- `gridlearn.hero.row.old`: first
 - `gridlearn.hero.row.trained`: trained
-- `gridlearn.hero.title`: The trained DJ against the old one
+- `gridlearn.hero.title`: The trained DJ against the first DJ
 - `gridlearn.hero.trained`: TRAINED DJ
 - `gridlearn.lede`: A whole track is a grid of lights: one light a role for each block of 8 bars. A settling machine learned from about eight thousand electronic MIDI arrangements how long layers stay, which roles come in together and where the changes land; these grids are settled from it, and no note of any song is in them. Press play to hear a grid through the house DJ’s own instruments. The hero’s DJ composes its house sets from the same models. Dev builds only.
 - `gridlearn.name.acid_line`: Acid line
@@ -6233,7 +6235,8 @@
 - `hero.sound.more`: more sounds
 - `hero.sound.now`: now
 - `hero.sound.shuffle.note`: every mode in turn, about {min} minutes each, in a random order, with THE DJ on every fourth turn; pick one to keep it.
-- `hero.sound.shuffle.word`: SHUFFLE
+- `hero.sound.shuffle.note.binaural`: the binaural tracks only, about {min} minutes each, in a random order; pick one to keep it.
+- `hero.sound.shuffle.note.dj`: THE DJ’s sets only, one after another; pick one to keep it.
 - `hero.sound.symphony.label`: {flute} (the DJ)
 - `hero.strip.aria`: Show the hero live here, and pin it to every page
 - `hero.strip.label`: A band of lights, each a p-bit, settling into a run of small animations.
