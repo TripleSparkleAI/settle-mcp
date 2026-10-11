@@ -8781,7 +8781,7 @@
 - `nav.contact`: CONTACT
 - `nav.credits`: CREDITS
 - `nav.film`: THE FILM PLAYER
-- `nav.glossary`: glossary
+- `nav.glossary`: GLOSSARY
 - `nav.hear`: HEAR
 - `nav.home`: HOME
 - `nav.kanerva`: KANERVA
@@ -13597,6 +13597,7 @@
 - `wtf.line`: every word on this site, what we mean by it, where it is used, and where it came from.
 - `wtf.link`: link
 - `wtf.none`: No term matches that. Try a shorter word, or clear the filter.
+- `wtf.none.word`: No term matches that. Try a shorter word.
 - `wtf.related`: related
 - `wtf.search.label`: SEARCH
 - `wtf.search.placeholder`: a word, in English or in this page’s language
