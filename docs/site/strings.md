@@ -1060,20 +1060,29 @@
 - `data.herocontrols.fc5b45da`: VISUALISERS only · the eight visualisers, on shuffle
 - `data.herocontrols.fee364c7`: ATARI LIGHT ORGAN · eight diamonds, one per band from bass to treble, each swelling with its band
 - `data.heroradio.039b5f5e`: a phasor, home
+- `data.heroradio.16818e48`: a write, spread
 - `data.heroradio.185a6d46`: the dial
 - `data.heroradio.1ca40a28`: the demos
 - `data.heroradio.200d6f89`: SDM chat
+- `data.heroradio.2648d557`: a memory, recalled
 - `data.heroradio.3067a418`: seven bridges
 - `data.heroradio.30c42d97`: the film player
+- `data.heroradio.361405d6`: a rule, unfolding
 - `data.heroradio.3ecf3b24`: SDM, hard locations
 - `data.heroradio.42c45dfe`: an address, read
 - `data.heroradio.6b090799`: p-bits, cooling
 - `data.heroradio.6fdfc1c9`: the puzzles
 - `data.heroradio.796db8d0`: spins in domains
+- `data.heroradio.86e1cac1`: three schedules
+- `data.heroradio.86f5eda5`: an energy, falling
 - `data.heroradio.8b92c72f`: Euclid I.1
 - `data.heroradio.92498d4f`: into the valley
+- `data.heroradio.9608e001`: Zeno's runner
 - `data.heroradio.99d748ae`: the science
+- `data.heroradio.af716bea`: most points are far
+- `data.heroradio.ba139855`: the Boltzmann law
 - `data.heroradio.c1b9f8d5`: the Euler line
+- `data.heroradio.cce7ed35`: a p-bit's coin
 - `data.heroradio.ce645dcb`: the divided line
 - `data.heroradio.d34e1218`: the five solids
 - `data.heroradio.da0deaed`: out of the noise
@@ -1081,6 +1090,7 @@
 - `data.heroradio.e0613459`: the coin law
 - `data.heroradio.e3c25efe`: the language
 - `data.heroradio.e47d9a80`: rules 30, 90, 110
+- `data.heroradio.f78162a6`: Pythagoras' strings
 - `data.hownotes.00aa096b`: What you saw: pin wet grass on. A held thing never flips.
 - `data.hownotes.04661f83`: Start hot, cool slowly over 5,000 sweeps, and keep the calmest seating seen.
 - `data.hownotes.12d364b4`: A push: rain and the sprinkler tend not to be on together. Nobody waters in the rain.
@@ -3188,6 +3198,7 @@
 - `fb.djv.tip.nodrop`: no drop left in this set
 - `fb.djv.tip.none`: nothing
 - `fb.djv.tip.old`: old DJ: no settled set to draw, only what plays now ({layers})
+- `fb.djv.tip.onair`: showing: {name}
 - `fb.djv.tip.open`: press to open the whole DJ
 - `fb.djv.title`: THE DJ, THE WHOLE MACHINE
 - `fb.djv.voice.answer`: the answer
