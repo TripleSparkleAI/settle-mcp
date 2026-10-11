@@ -1,5 +1,5 @@
 {
- "hash": "720f70573f80d1f9be67b4399dac9fd1f442198f0b26c06574acc344c6ef1cd0",
+ "hash": "f411cd917c06dbd1d13e49b2e3293d4dfc6a11557f94146eb8f6b1e1b799c6d7",
  "inputs": [
   {
    "path": "SETTLE/settle-site/src/data/mcpDocs.js",
@@ -1151,7 +1151,7 @@
   },
   {
    "path": "SETTLE/kanerva/README.md",
-   "sha256": "33272863f455ff309558fb3df712ade2a4cb7bb902f3cbb24084b7a8bdf16b8f"
+   "sha256": "151bc822e2f7241831731307b0105a8d382dab64b76c730e6cfae9116a444733"
   },
   {
    "path": "SETTLE/kanerva/KANERVA_TERMS.md",
