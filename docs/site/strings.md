@@ -500,6 +500,56 @@
 - `data.brand.fc3c37aa`: blue-green on the left, a contest on the right: fourteen strokes
 - `data.brand.fdd1842b`: the calm when the wind drops on the sea
 - `data.brand.ff3bc11c`: chin · shizumeru
+- `data.bursts.016c6b92`: band by band
+- `data.bursts.0615b571`: five pulses
+- `data.bursts.0e950022`: heat pulse
+- `data.bursts.11fe00a9`: a ring grows from the centre, flipping every light it crosses
+- `data.bursts.204ff28a`: a growing disc of shaken lights
+- `data.bursts.256d5182`: a diagonal edge crosses the field corner to corner
+- `data.bursts.27e9aca1`: implosion
+- `data.bursts.2a1a8a9e`: a ring closes in from the edges to the centre
+- `data.bursts.2b1cd835`: sparkle
+- `data.bursts.30019c47`: checkerboard flip
+- `data.bursts.3020deec`: every light of one checkerboard colour flips at once
+- `data.bursts.30c707a2`: freeze
+- `data.bursts.363b0082`: vertical wipe
+- `data.bursts.36805db3`: the top half shakes, then the bottom half
+- `data.bursts.446ab484`: twin rings
+- `data.bursts.510d1814`: every vertical wire fires at once
+- `data.bursts.520c2392`: scanline
+- `data.bursts.59c09d13`: noise blooms
+- `data.bursts.6b185fb8`: shockwave
+- `data.bursts.6c4c1891`: hundreds of points flare and fade
+- `data.bursts.6e04a25b`: a band is held dark (the exact hold), then let go to re-form
+- `data.bursts.7a51ef25`: a line sweeps down, flipping each row it passes
+- `data.bursts.7dddd364`: half the lights shaken at once, then the cold pulls the picture back
+- `data.bursts.811a2693`: every parallel fibre carries a spike at once
+- `data.bursts.8716dfb0`: spike storm
+- `data.bursts.88e27c45`: starburst
+- `data.bursts.89a3b5d3`: rain
+- `data.bursts.93a117f8`: melt and re-form
+- `data.bursts.979aa475`: diagonal wipe
+- `data.bursts.9a6cb578`: a column sweeps across, flipping as it goes
+- `data.bursts.a4c9c558`: a bolt walks from top to bottom, flipping its path
+- `data.bursts.aa1431f1`: the picture melts a little more each frame, then re-forms
+- `data.bursts.abfdf427`: fibre rush
+- `data.bursts.ae4333d8`: spiral
+- `data.bursts.b7777e2d`: a spiral unwinds from the centre
+- `data.bursts.bf07183e`: rings from five random points
+- `data.bursts.c2d0cb4f`: a glowing grid lights across the whole field
+- `data.bursts.c40a8133`: every light flips: the picture goes negative, then rights itself
+- `data.bursts.c47879a1`: the columns fire
+- `data.bursts.c8c8c9d3`: a ring of flips
+- `data.bursts.c9b17772`: blooms of noise open at random points and close again
+- `data.bursts.cbebd025`: the pointer's own rings: held lights that fade behind them
+- `data.bursts.cd31a354`: radial heat
+- `data.bursts.d6e48b13`: rays race out from the centre
+- `data.bursts.d794f4a4`: matrix grid
+- `data.bursts.ddb32b18`: two rings from the left and right thirds cross in the middle
+- `data.bursts.ddbd163d`: sixty spikes fire along the wiring at once
+- `data.bursts.e812f405`: lightning
+- `data.bursts.fe93863a`: negative
+- `data.bursts.ffe569f3`: streaks fall through the field
 - `data.chime.00b430f7`: harp de doop
 - `data.chime.03014423`: sparse ping
 - `data.chime.06d5a845`: question
@@ -5965,6 +6015,7 @@
 - `hero.math.sk-overlap.note`: the Edwards-Anderson order of the Sherrington-Kirkpatrick spin glass: frozen below T = 1 and gone above with no field; a small field rounds the corner
 - `hero.math.variational-free-energy.label`: variational free energy
 - `hero.math.variational-free-energy.note`: a true posterior (solid) and a simpler guess (dashed); free energy is surprise (the filled bar) plus their divergence (the open bar above it)
+- `hero.media.album`: the hero
 - `hero.paper.bricken-circle-intersection.label`: two access circles
 - `hero.paper.bricken-circle-intersection.note`: the intersection of the read circle and a pattern's write circle, at distance d apart (Bricken and Pehlevan 2021, arXiv, CC BY 4.0)
 - `hero.paper.bricken-critical-distance.label`: SDM critical distance
@@ -6121,6 +6172,7 @@
 - `hero.readout.energy`: energy {e} ({per}/light)
 - `hero.readout.flips`: flips {n}
 - `hero.readout.lean`: lean {v}
+- `hero.readout.max`: MAX
 - `hero.readout.overlap`: overlap {q}%
 - `hero.readout.pbits`: {w} x {h} = {n} p-bits
 - `hero.readout.phase.cooling`: cooling
@@ -7720,7 +7772,7 @@
 - `magic8.honest.p1`: The teacher is a small base language model trained on {tokens} tokens of educational web text. It continues text; it was never taught to answer questions, and it does not know whether Paris is the capital of France.
 - `magic8.honest.p2`: Its decision is a property of the words in the question, and magic-8-ball reproduces that property. The table measures the teacher against the true answers: it is at chance, and on BoolQ it is below the score of always answering yes.
 - `magic8.honest.title`: This model is not a knowledge source
-- `magic8.intro.p1`: The model here is magic-8-ball. It answers a yes or no question with YES, UNSURE or NO. It does not run a language model to do it. It reads one vector, the {d} numbers the teacher (SDMCHAT's best model that reads an SDM) forms for the question before it does anything else, and turns them into a decision with {d} weights and one constant.
+- `magic8.intro.p1`: The model here is magic-8-ball. It answers a yes or no question with YES, UNSURE or NO. It does not run a language model to do it. It reads one vector, the {d} numbers the teacher (one of SDMCHAT's base models that read an SDM, at width {d}) forms for the question before it does anything else, and turns them into a decision with {d} weights and one constant.
 - `magic8.intro.p2a`: The idea. JEV is a small head that predicts which experts a large model will route to next. It is trained on that model's own routing traces, so the engine can fetch the experts before the model asks.
 - `magic8.intro.p2b`: SDMJEV does the same thing to SDMCHAT. We asked the teacher {rows} questions, recorded how far it leaned towards yes or no on each, and fitted a fast head to that record. The bet is that the decision is already present in the teacher's first vector, before its memory, its readout and its 129,280-way output layer run. On the {test} held-out test questions the head agrees with the teacher on {agree} of them.
 - `magic8.intro.p3`: The head was taught to copy the teacher. The teacher is a small base model and is near chance on the truth (see HOW IT WAS TRAINED), so this is a magic 8 ball, no oracle.
@@ -11416,7 +11468,7 @@
 - `studio.fork.name`: {name} (fork at step {step})
 - `studio.here`: sdmstudio
 - `studio.how.label`: HOW IT WORKS
-- `studio.how.p1a`: Every base model here is an SDM read: a network whose next token comes from reading a sparse distributed memory of 3,600 locations, addressed by its last tokens. The width-512 models have 74.7M trainable parameters and the small one 36.0M.
+- `studio.how.p1a`: Every base model here is an SDM read: a network whose next token comes from reading a sparse distributed memory of 3,600 locations, addressed by its last tokens. The width-768 models have 115.8M trainable parameters, the width-512 models 74.7M, and the small one 36.0M.
 - `studio.how.p1b`: A run keeps the 129,280-token table fixed (it is int8) and trains the rest: the memory’s values and keys, the readout, and the address weights, by AdamW on the next-token loss over your dataset, in plain JavaScript in a Web Worker.
 - `studio.how.p2`: The loss is in bits per byte, the unit the recorded results use. The train curve is the loss of each batch; the eval curve is the model’s loss on the last five percent of the dataset, which it never trains on. A sample is drawn every hundred steps from the same prompt, so you can read the model change. Speed is timed on this machine.
 - `studio.intro`: Post-train {name} in your own browser on a dataset, watch its loss fall, read its samples, and chat with it here. Runs live in this browser; the studio at {studio} lists all of them.
