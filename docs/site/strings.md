@@ -109,6 +109,7 @@
 
 - `brand.sdm.base`: SDM BASE
 - `brand.sdm.chat`: SDM CHAT
+- `brand.sdm.epic`: SDM EPIC
 - `brand.sdm.guy`: SDM WEIRD LITTLE GUY
 
 ## bv
@@ -316,6 +317,7 @@
 - `chatkit.tag.base`: BASE
 - `chatkit.tag.chat`: {v} chat bpb
 - `chatkit.tag.epic`: {v} epic bpb
+- `chatkit.tag.epictuned`: EPIC-TUNED
 - `chatkit.tag.params`: {n} params
 - `chatkit.tag.run`: YOUR RUN
 - `chatkit.tag.test`: {v} test bpb
