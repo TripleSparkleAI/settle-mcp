@@ -3387,15 +3387,15 @@
 - `fb.mck.tip.idle`: The flute plays the melody, tuned to A = 432 Hz, whenever the music has one. None is playing now. Press to mute the flute alone.
 - `fb.mck.tip.muted`: The flute is muted. Press to bring it back; the rest of the music plays on.
 - `fb.mck.tip.muted.idle`: The flute is muted, and stays silent whenever the music has one. Press to let it play again; the rest of the music plays on.
-- `fb.note.anon`: {n} of 5 · sent, but not with your account: open a members page, then rate again
+- `fb.note.anon`: {n} of 5 · sent, but not with your account: your sign-in could not be checked. Rate again in a moment
 - `fb.note.held`: {n} of 5 · counts once you have moved around a little
-- `fb.note.kept`: {n} of 5 · not sent yet: kept here and sent with your next rating
+- `fb.note.kept`: {n} of 5 · not sent yet: kept here and tried again with your next rating or the next page you open
 - `fb.note.liked`: {n} of 5 · kept with your account, in your liked sets
 - `fb.note.mine`: {n} of 5 · kept with your account
 - `fb.note.rated`: {n} of 5 · noted for this set
 - `fb.note.refused`: {n} of 5 · our server turned it away, so it stays only in this browser
 - `fb.notice.local`: Anonymous. No account. Your ratings stay in this browser; a saved track sits in one cookie of this site.
-- `fb.notice.ours2`: Ratings go to this site’s server. Not signed in, a rating keeps a salted hash of your network address, never the address. Signed in, once this page has loaded your sign-in, it is kept with your account and a 4 or 5 lands in your liked sets; the note after each rating says which. A saved track sits in one cookie of this site.
+- `fb.notice.ours2`: Ratings go to this site’s server. Not signed in, a rating keeps a salted hash of your network address, never the address. Signed in, it is kept with your account and a 4 or 5 lands in your liked sets; the note after each rating says which. A saved track sits in one cookie of this site.
 - `fb.notice.sent`: Anonymous. No account. Ratings go to {host} with a random visit id; a saved track sits in one cookie of this site.
 - `fb.np.beat`: beat {v} Hz
 - `fb.np.carrier`: carrier {v} Hz
@@ -9447,10 +9447,10 @@
 - `privacy.feedback.holds`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load. A note holds your words in place of the rating. Nothing in either names you.
 - `privacy.feedback.holds2`: A rating holds its time, the set that was playing (its mode, theme, tune, beat and the other settings of the sound), your rating, the track as text and a random visit id that is new on every page load.
 - `privacy.feedback.label`: RATE THE DJ
-- `privacy.feedback.member2`: If you are signed in, a rating is kept with your account instead, once the page has loaded your sign-in, which it does when you open a members page. Before that it is kept as above, without your account, and the note after the rating says so. A rating of 4 or 5 kept with your account is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
+- `privacy.feedback.member2`: If you are signed in, a rating is kept with your account instead: while you are signed in, every page loads your sign-in, so a rating carries it. If your sign-in cannot be loaded or checked, the rating is kept as above, without your account, and the note after the rating says so. A rating of 4 or 5 kept with your account is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
 - `privacy.feedback.notesnone`: WHAT IS THIS? notes are not sent: they stay in your browser.
 - `privacy.feedback.notesours`: A WHAT IS THIS? note is sent when you press SEND: your words, the topic you chose, what was playing (the same settings a rating holds, and the track as text), the page it was written on, its time, the random visit id, and that the check above passed. It reaches our inbox by email, through the contact form’s server and the same mail service, Resend, and it carries no name, no email address and no reply address. To limit how many arrive, the server counts recent notes from each network address: in memory, or, where the site has a members database, as a count under a salted hash of the address. A copy of each note stays in your browser; one that cannot be sent yet waits there and is tried again later.
-- `privacy.feedback.ours`: Your ratings are sent to this site’s server and kept in our database.
+- `privacy.feedback.ours`: Your ratings are sent to this site’s server and kept in our database. A rating that cannot be sent yet waits in your browser and is tried again with your next rating, on the next page you open, and when your connection comes back.
 - `privacy.feedback.p1b`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Neither needs an account.
 - `privacy.feedback.sentlive`: Both are sent to our ratings server, which keeps a salted hash of the sender’s network address, never the address itself.
 - `privacy.feedback.sentnone`: This copy of the site sends them nowhere: they stay in your browser.
@@ -9461,7 +9461,7 @@
 - `privacy.members.label`: MEMBERS AND ASK
 - `privacy.members.limits`: To slow down abuse, the server counts recent requests from each network address and each account under a salted hash rather than the address itself: in memory, or in the members database where the site has one. Clerk applies its own limits to signing in.
 - `privacy.members.mail`: Clerk emails you the 6-digit codes that confirm your address, sign you in on a new device and reset a password.
-- `privacy.members.p1`: Sign-up and sign-in on the members page are run by Clerk (clerk.com), an account service. Clerk holds your email address, the name you give, your password (as a hash, never the password itself) and your sessions, under its own terms. Its script loads only once you open a page in the members folder. This site keeps your Clerk user id, the day it first saw you, your saved runs and your chat balance with what each answer cost.
+- `privacy.members.p1`: Sign-up and sign-in on the members page are run by Clerk (clerk.com), an account service. Clerk holds your email address, the name you give, your password (as a hash, never the password itself) and your sessions, under its own terms. Its script loads when you open a page in the members folder, and on every page while you are signed in, so that your ratings are kept with your account. If you are not signed in, it loads only on the members pages. This site keeps your Clerk user id, the day it first saw you, your saved runs and your chat balance with what each answer cost.
 - `privacy.members.rights`: From your account page you can download what this site holds about you as one JSON file, change your email and your password, and delete your saved runs, your chat balance and your record here. Deleting your record deletes your Clerk sign-in too, unless that sign-in is shared with another site of ours; then the page tells you it was kept, and we remove it when you write to us.
 - `privacy.members.runs`: You can save the models you train in SDMSTUDIO to your account: up to 50 runs and 256 MiB in all. A saved run holds its name, its kind, its record and its weights.
 - `privacy.members.store`: The account records and the chat balance are kept in a Postgres database at Neon, and the weights of saved runs in Vercel Blob, private storage that only the site’s server can read or hand you a short link to.
