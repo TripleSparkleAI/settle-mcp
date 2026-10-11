@@ -3090,8 +3090,14 @@
 - `fb.ask.failed`: That did not save. Try again in a moment.
 - `fb.ask.field`: your words
 - `fb.ask.held`: Thank you. It counts once you have moved around a little.
+- `fb.ask.kept.busy`: Kept in this browser: a few notes came from your network just now. It will be tried again later.
+- `fb.ask.kept.down`: Kept in this browser: our server did not answer. It will be tried again later.
+- `fb.ask.kept.network`: Kept in this browser: it did not reach us just now. It will be tried again later.
+- `fb.ask.kept.notconfigured`: Kept in this browser: this copy of the site cannot send notes yet. It will be tried again later.
+- `fb.ask.kept.offline`: Kept in this browser: you seem to be offline. It will be sent when you are back online.
 - `fb.ask.keys`: Ctrl or Cmd + Enter sends.
 - `fb.ask.lede`: Tell us what you see or hear, what you think it is, or ask anything. It goes in with what was playing.
+- `fb.ask.local`: Kept in this browser. This copy of the site sends notes nowhere.
 - `fb.ask.mine`: vote if you like this one of your creations before we cycle it
 - `fb.ask.mine.title`: You changed this set, so it is your track too. Vote if you like it before the DJ cycles it.
 - `fb.ask.p.address`: what address is it reading from?
@@ -3177,16 +3183,27 @@
 - `fb.ask.p.weather`: does it look like weather?
 - `fb.ask.p.word`: what is the first word that comes to mind?
 - `fb.ask.p.work`: would you listen to this while working?
-- `fb.ask.privacy`: Anonymous. Kept in this browser with what was playing, and sent nowhere unless this site sets an address for it.
+- `fb.ask.privacy.local`: Anonymous. This copy of the site sends notes nowhere: they stay in this browser with what was playing.
+- `fb.ask.privacy.ours`: Anonymous: no name, no email. SEND brings us your words, the topic, what was playing and this page, by email. A copy stays in this browser, and a note that cannot go yet waits here and is sent later.
+- `fb.ask.privacy.outside`: Anonymous: no name, no email. SEND sends your words, the topic and what was playing to our ratings server. A copy stays in this browser.
 - `fb.ask.prompts`: ideas to start with
 - `fb.ask.read`: rather read about it? what?
+- `fb.ask.refused.challenge`: Not sent: the check that you are a person had not passed. It stays in this browser.
+- `fb.ask.refused.crosssite`: Not sent: our server only takes notes from this site’s own pages. It stays in this browser.
+- `fb.ask.refused.invalid`: Not sent: the note did not pass our server’s check. It stays in this browser; you can change the words and send again.
+- `fb.ask.refused.nodoor`: Not sent: this copy of the site has no address for notes. It stays in this browser.
+- `fb.ask.refused.notjson`: Not sent: our server could not read it. It stays in this browser.
+- `fb.ask.refused.other`: Not sent: our server refused it. It stays in this browser.
+- `fb.ask.refused.toolarge`: Not sent: it is too long for our server. It stays in this browser; shorten it and send again.
 - `fb.ask.said.mine`: Cool. Vote if you like this one of your creations before we cycle it.
 - `fb.ask.said.window`: The DJ cycled. Your last track: ten seconds left to vote on it.
 - `fb.ask.send`: send
+- `fb.ask.sending`: Sending your note.
+- `fb.ask.sent`: Sent. It reached us, with what was playing. Thank you.
+- `fb.ask.sentword`: SENT
 - `fb.ask.tab.ask`: ask us back
 - `fb.ask.tab.tell`: tell us
 - `fb.ask.tabs`: tell us or ask us
-- `fb.ask.thanks`: Thank you. Noted, with what was playing.
 - `fb.ask.title`: what is this?
 - `fb.ask.use`: start with: {p}
 - `fb.ask.window`: your last track · vote
@@ -9431,6 +9448,7 @@
 - `privacy.feedback.label`: RATE THE DJ
 - `privacy.feedback.member2`: If you are signed in, a rating is kept with your account instead, once the page has loaded your sign-in, which it does when you open a members page. Before that it is kept as above, without your account, and the note after the rating says so. A rating of 4 or 5 kept with your account is a like: it appears on your LIKED SETS page, where you can play the set again or remove it. The download of your data includes your ratings, and deleting your account deletes them.
 - `privacy.feedback.notesnone`: WHAT IS THIS? notes are not sent: they stay in your browser.
+- `privacy.feedback.notesours`: A WHAT IS THIS? note is sent when you press SEND: your words, the topic you chose, what was playing (the same settings a rating holds, and the track as text), the page it was written on, its time, the random visit id, and that the check above passed. It reaches our inbox by email, through the contact form’s server and the same mail service, Resend, and it carries no name, no email address and no reply address. To limit how many arrive, the server counts recent notes from each network address: in memory, or, where the site has a members database, as a count under a salted hash of the address. A copy of each note stays in your browser; one that cannot be sent yet waits there and is tried again later.
 - `privacy.feedback.ours`: Your ratings are sent to this site’s server and kept in our database.
 - `privacy.feedback.p1b`: The rate marks on the home hero let you rate the sound, and WHAT IS THIS? lets you write a note. Neither needs an account.
 - `privacy.feedback.sentlive`: Both are sent to our ratings server, which keeps a salted hash of the sender’s network address, never the address itself.
@@ -9458,8 +9476,8 @@
 - `privacy.rights.complain`: Raise any privacy concern with us first. If we do not resolve it, you can complain to the data protection authority where you live.
 - `privacy.rights.label`: YOUR RIGHTS
 - `privacy.rights.title`: Children, your rights and changes
-- `privacy.sent.act`: The site sends something about you only when you act: a rating when you press a rate mark, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
-- `privacy.sent.actva`: Apart from the page counts and the speed measurements below, the site sends something about you only when you act: a rating when you press a rate mark, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.act`: The site sends something about you only when you act: a rating when you press a rate mark, a WHAT IS THIS? note when you press send in that box, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
+- `privacy.sent.actva`: Apart from the page counts and the speed measurements below, the site sends something about you only when you act: a rating when you press a rate mark, a WHAT IS THIS? note when you press send in that box, a message when you press send on the contact page, and, with a members account, your sign-in, your questions on the ASK page and the models you save. The sections below say what each one carries. Your browser also fetches the site’s own files from the site: its pages, its pictures, its data and the small models the demos run.
 - `privacy.sent.analytics`: The site counts its visits with Vercel Web Analytics, from Vercel, which hosts the site. Each time you open a page, your browser sends Vercel one page view: the page’s name with nothing after it, the time, and, on your first page, the site that sent you here. Vercel records with it your rough location (country, region and city), your browser and operating system, and your kind of device. It sets no cookie and keeps nothing in your browser. Vercel tells visitors apart by a hash made from each request and discards it after 24 hours; by its own description the page views are recorded anonymously, not tied to you or to your network address. We see only totals.
 - `privacy.sent.fonts`: Every page loads its typefaces from Google Fonts (fonts.googleapis.com and fonts.gstatic.com). So your browser asks Google’s servers for them, and Google sees your network address and your browser’s details, as it would for any web request. Japanese, Chinese and Hindi each add one more Google Fonts request, only when you choose that language. The site sends Google nothing else.
 - `privacy.sent.label`: WHAT LEAVES YOUR BROWSER
