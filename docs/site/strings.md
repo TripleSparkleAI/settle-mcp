@@ -7797,6 +7797,7 @@
 - `magic8.status.studentLoading`: loading the one-pass student: the tokenizer {pct}%
 - `magic8.status.studentReady`: ready: the one-pass student answers now
 - `magic8.status.studentWaits`: the one-pass student needs the teacher's whole file on this server, so it answers when the teacher has arrived
+- `magic8.status.teacherCache`: the slow teacher (an SDM-read SDMCHAT model) is loading from this browser's cache: {mb} MB
 - `magic8.status.teacherError`: the slow teacher's weights did not arrive ({error}). The student still answers.
 - `magic8.status.teacherLoading`: the slow teacher (an SDM-read SDMCHAT model) is downloading: {pct}% of {mb} MB
 - `magic8.status.teacherWaiting`: the slow teacher (an SDM-read SDMCHAT model) starts downloading when the student is ready
@@ -8653,17 +8654,21 @@
 - `modelload.bar`: loading {name}
 - `modelload.bytes`: Loading {name}: {loaded} of {total} MB, {pct}%
 - `modelload.bytes.tokenizer`: Loading {name}: the tokenizer, {loaded} of {total} MB, {pct}%
+- `modelload.cache`: Loading {name} from this browser's cache: {total} MB
+- `modelload.cache.start`: Loading {name} from this browser's cache …
 - `modelload.error`: {name} did not load: {error}
 - `modelload.error.bare`: {name} did not load
 - `modelload.prepare`: Preparing {name} in this tab …
 - `modelload.ready`: {name} is ready
 - `modelload.retry`: retry
+- `modelload.say.cache`: Loading {name} from this browser's cache.
 - `modelload.say.download`: Downloading {name}.
 - `modelload.say.error`: {name} did not load. A retry button follows.
 - `modelload.say.prepare`: Downloaded. Preparing {name}.
 - `modelload.say.ready`: {name} is ready. You can send a message.
 - `modelload.sofar`: Loading {name}: {loaded} MB so far
 - `modelload.sofar.tokenizer`: Loading {name}: the tokenizer, {loaded} MB so far
+- `modelload.stage.cache`: from cache
 - `modelload.stage.download`: downloading
 - `modelload.stage.error`: failed
 - `modelload.stage.prepare`: preparing
